@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hanshit Study Hub - a simple student resource library for notes, subjects and study material.">
+  <title>Hanshit Study Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Hanshit Study Hub home">Hanshit <span>Study Hub</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#resources">Resources</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">STUDENT RESOURCE LIBRARY</p>
+        <h1>Study smarter. Keep everything in one place.</h1>
+        <p class="hero-text">A clean starting point for organizing notes, formulas, presentations, videos and useful study files.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#subjects">Explore subjects</a>
+          <button class="btn secondary" id="randomBtn" type="button">Surprise me</button>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Library summary">
+        <div class="hero-icon">📚</div>
+        <strong>Study Library</strong>
+        <span>Organized • Simple • Student-first</span>
+      </div>
+    </section>
+
+    <section class="section" id="subjects">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BROWSE</p>
+          <h2>Subjects</h2>
+        </div>
+        <div class="search-wrap">
+          <label class="sr-only" for="search">Search subjects</label>
+          <input id="search" type="search" placeholder="Search subjects...">
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Subject filters">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="cse" type="button">CSE</button>
+        <button class="filter" data-filter="science" type="button">Science</button>
+        <button class="filter" data-filter="other" type="button">Other</button>
+      </div>
+
+      <div class="subject-grid" id="subjectGrid">
+        <article class="subject-card" data-category="cse" data-name="Computer Science">
+          <div class="card-icon">💻</div>
+          <h3>Computer Science</h3>
+          <p>Computer fundamentals, programming, networking and more.</p>
+          <button class="text-btn" data-subject="Computer Science" type="button">View resources →</button>
+        </article>
+        <article class="subject-card" data-category="science" data-name="Physics">
+          <div class="card-icon">⚡</div>
+          <h3>Physics</h3>
+          <p>Concepts, formulas, short notes and revision material.</p>
+          <button class="text-btn" data-subject="Physics" type="button">View resources →</button>
+        </article>
+        <article class="subject-card" data-category="science" data-name="Chemistry">
+          <div class="card-icon">🧪</div>
+          <h3>Chemistry</h3>
+          <p>Important concepts, reactions, formulas and notes.</p>
+          <button class="text-btn" data-subject="Chemistry" type="button">View resources →</button>
+        </article>
+        <article class="subject-card" data-category="science" data-name="Mathematics">
+          <div class="card-icon">📐</div>
+          <h3>Mathematics</h3>
+          <p>Formulas, examples, practice questions and revision.</p>
+          <button class="text-btn" data-subject="Mathematics" type="button">View resources →</button>
+        </article>
+        <article class="subject-card" data-category="other" data-name="English">
+          <div class="card-icon">✍️</div>
+          <h3>English</h3>
+          <p>Grammar, communication skills and useful notes.</p>
+          <button class="text-btn" data-subject="English" type="button">View resources →</button>
+        </article>
+        <article class="subject-card" data-category="other" data-name="Mechanics">
+          <div class="card-icon">⚙️</div>
+          <h3>Mechanics</h3>
+          <p>Definitions, laws, diagrams and exam-focused notes.</p>
+          <button class="text-btn" data-subject="Mechanics" type="button">View resources →</button>
+        </article>
+      </div>
+      <p class="empty" id="emptyState" hidden>No matching subjects found.</p>
+    </section>
+
+    <section class="section resources" id="resources">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMING NEXT</p>
+          <h2>Resource types</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-item"><span>📄</span><div><strong>PDF Notes</strong><p>Chapter-wise notes and revision material.</p></div></div>
+        <div class="resource-item"><span>🎥</span><div><strong>Study Videos</strong><p>Useful videos organized by subject.</p></div></div>
+        <div class="resource-item"><span>📊</span><div><strong>PPT & Excel</strong><p>Presentations, sheets and practical files.</p></div></div>
+        <div class="resource-item"><span>🧠</span><div><strong>Formulas</strong><p>Quick-reference formulas and important points.</p></div></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <p class="eyebrow">ABOUT THIS PROJECT</p>
+        <h2>Built as a practical CSE project.</h2>
+        <p>This is the first MVP of Hanshit Study Hub. The next versions can add real PDF uploads, chapter pages, authentication, an admin dashboard, and a proper database.</p>
+      </div>
+      <div class="roadmap">
+        <span>01 UI</span><span>02 Resources</span><span>03 Admin</span><span>04 Database</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer>© 2026 Hanshit Study Hub • Built while learning CSE</footer>
+  <script src="script.js"></script>
+</body>
+</html>
