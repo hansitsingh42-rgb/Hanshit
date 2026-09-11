@@ -42,7 +42,7 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 **Ask Jems about Hanshit, this repository, projects, skills, technologies, and documented work.**
 
-<a href="./.github/agents/jems.md">
+<a href="./.github/agents/jems.agent.md">
 <img src="https://img.shields.io/badge/🤖_Meet_Jems-Open_Assistant-555555?style=for-the-badge" alt="Meet Jems" />
 </a>
 
