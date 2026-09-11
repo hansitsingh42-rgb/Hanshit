@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Resource Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><strong>Study Resource Manager</strong><span>Student Library</span></div>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PERSONAL STUDY SPACE</p>
+        <h1>Find your resources faster.</h1>
+        <p class="muted">Organize notes, videos, PDFs and useful links by subject.</p>
+      </div>
+      <button id="addResourceBtn" class="primary">+ Add Resource</button>
+    </section>
+
+    <section class="stats" aria-label="Library statistics">
+      <article><span>Total resources</span><strong id="totalCount">0</strong></article>
+      <article><span>Subjects</span><strong id="subjectCount">0</strong></article>
+      <article><span>Favorites</span><strong id="favoriteCount">0</strong></article>
+    </section>
+
+    <section class="toolbar">
+      <input id="searchInput" type="search" placeholder="Search resources..." aria-label="Search resources">
+      <select id="subjectFilter" aria-label="Filter by subject"><option value="all">All subjects</option></select>
+      <select id="typeFilter" aria-label="Filter by type"><option value="all">All types</option><option value="PDF">PDF</option><option value="Video">Video</option><option value="Link">Link</option><option value="Notes">Notes</option></select>
+      <button id="favoritesFilter" class="secondary">☆ Favorites</button>
+    </section>
+
+    <section class="section-head"><div><p class="eyebrow">LIBRARY</p><h2>Your resources</h2></div><span id="resultCount" class="muted"></span></section>
+    <section id="resourceGrid" class="grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty hidden">No resources match your search.</p>
+  </main>
+
+  <dialog id="resourceDialog">
+    <form id="resourceForm" method="dialog">
+      <div class="dialog-head"><h2>Add resource</h2><button type="button" id="closeDialog" class="icon-btn">×</button></div>
+      <label>Title<input id="titleInput" required maxlength="100" placeholder="e.g. Computer Networks Notes"></label>
+      <label>Subject<input id="subjectInput" required maxlength="40" placeholder="e.g. Computer"></label>
+      <label>Type<select id="typeInput"><option>PDF</option><option>Video</option><option>Link</option><option>Notes</option></select></label>
+      <label>URL <span class="muted">(optional)</span><input id="urlInput" type="url" placeholder="https://example.com"></label>
+      <div class="dialog-actions"><button type="button" id="cancelBtn" class="secondary">Cancel</button><button class="primary" type="submit">Save resource</button></div>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
