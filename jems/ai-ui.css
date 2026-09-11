@@ -1,0 +1,151 @@
+/* Premium AI interface layer for Jems */
+:root {
+  --ai-accent: #7c5cff;
+  --ai-accent-2: #21d4fd;
+  --ai-glow: rgba(124, 92, 255, .18);
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.top {
+  position: relative;
+}
+
+.brand strong {
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.brand span {
+  font-size: .68rem;
+  font-weight: 650;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  opacity: .68;
+}
+
+.logo {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--ai-accent), var(--ai-accent-2));
+  box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 8px 28px var(--ai-glow);
+  font-weight: 850;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  right: 7px;
+  top: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 12px #fff;
+  opacity: .9;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(124,92,255,.12), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(33,212,253,.09), transparent 28%);
+}
+
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(124,92,255,.25);
+  border-radius: 999px;
+  background: rgba(124,92,255,.07);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .085em;
+  color: var(--ai-accent);
+}
+
+.hero .eyebrow::before {
+  content: "✦";
+  font-size: .72rem;
+}
+
+.hero h1 {
+  font-weight: 850;
+  letter-spacing: -0.055em;
+  line-height: .98;
+}
+
+.capabilities span {
+  font-weight: 650;
+  letter-spacing: -.01em;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.capabilities span:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124,92,255,.28);
+  background: rgba(124,92,255,.07);
+}
+
+.chat {
+  position: relative;
+  overflow: hidden;
+}
+
+.chat::before {
+  content: "";
+  position: absolute;
+  inset: 0 18% auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,92,255,.65), rgba(33,212,253,.5), transparent);
+  pointer-events: none;
+}
+
+.searchbox input,
+#input {
+  font-family: inherit;
+  font-weight: 520;
+  letter-spacing: -.012em;
+}
+
+#sendBtn {
+  min-width: 108px;
+  font-weight: 800;
+  letter-spacing: -.015em;
+  background: linear-gradient(135deg, var(--ai-accent), #6351e8);
+  box-shadow: 0 8px 24px var(--ai-glow);
+}
+
+#sendBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 30px var(--ai-glow);
+}
+
+.quick-actions button,
+.suggestions button,
+.actions button,
+#shortcutBtn {
+  font-weight: 650;
+}
+
+.status {
+  font-weight: 750;
+  letter-spacing: .015em;
+}
+
+.note {
+  line-height: 1.5;
+  opacity: .62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capabilities span,
+  #sendBtn { transition: none; }
+}
