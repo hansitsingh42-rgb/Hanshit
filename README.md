@@ -65,6 +65,57 @@ A console-based C project for managing student records with add, list, search, a
 
 ---
 
+## 📱 Project QR Preview
+
+Scan or click a project QR code to open the **Demo Hub**, where you can choose **See Live Preview** for the project.
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+### 📚 Study Resource Manager
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for Study Resource Manager demo hub" />
+</a>
+
+**Scan / Click QR**  
+→ **See Live Preview**
+
+</td>
+<td align="center" width="33%">
+
+### ⏱️ Student Productivity Dashboard
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for Student Productivity Dashboard demo hub" />
+</a>
+
+**Scan / Click QR**  
+→ **See Live Preview**
+
+</td>
+<td align="center" width="33%">
+
+### 🎓 C Student Record Manager
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for C Student Record Manager demo hub" />
+</a>
+
+**Scan / Click QR**  
+→ **See Live Preview**
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
 # 🧠 Skills & Tools
 
 ## 💻 Development & Computer Science
