@@ -108,7 +108,19 @@ Each QR code now opens its corresponding deployed project directly.
 
 <table>
 <tr>
-<td align="center" width="33%">
+<td align="center" width="25%">
+
+### 🌐 Hanshit Portfolio
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2F&size=220&margin=2" width="180" alt="QR code for Hanshit Portfolio" />
+</a>
+
+**Scan / Click QR**  
+→ **Open Portfolio**
+
+</td>
+<td align="center" width="25%">
 
 ### 📚 Study Resource Manager
 
@@ -120,7 +132,7 @@ Each QR code now opens its corresponding deployed project directly.
 → **Open Project**
 
 </td>
-<td align="center" width="33%">
+<td align="center" width="25%">
 
 ### ⏱️ Student Productivity Dashboard
 
@@ -132,7 +144,7 @@ Each QR code now opens its corresponding deployed project directly.
 → **Open Project**
 
 </td>
-<td align="center" width="33%">
+<td align="center" width="25%">
 
 ### 🎓 C Student Record Manager
 
