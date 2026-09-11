@@ -34,6 +34,34 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 ---
 
+## 🤖 Meet Jems — Hanshit's GitHub Assistant
+
+<div align="center">
+
+### `JEMS` • `Hanshit Sir Assistant` • `GitHub Knowledge Agent`
+
+**Ask Jems about Hanshit, this repository, projects, skills, technologies, and documented work.**
+
+<a href="./.github/agents/jems.md">
+<img src="https://img.shields.io/badge/🤖_Meet_Jems-Open_Assistant-555555?style=for-the-badge" alt="Meet Jems" />
+</a>
+
+</div>
+
+Jems is the repository's dedicated AI assistant persona. Its job is to help visitors understand the information that is actually documented in this GitHub repository.
+
+**Jems can explain:**
+- 👤 Hanshit's documented profile and learning journey
+- 📁 Repository structure and important files
+- 🚀 Projects, features, and technologies
+- 💻 Development skills and current learning areas
+- 🔗 Live demos and project documentation
+- 🧩 Project status and future plans when documented
+
+> **Jems rule:** It should use repository information as its source of truth and clearly say when something is not documented instead of inventing information.
+
+---
+
 ## ⭐ Featured Projects
 
 ### 📚 Study Resource Manager
