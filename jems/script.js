@@ -9,21 +9,31 @@ const copyBtn=document.getElementById('copyBtn');
 const history=[];
 
 const facts={
-  who:`Hanshit is a Polytechnic Computer Science student and student developer. This repository works as his project portfolio and learning workspace. His documented approach is simple: Learn → Build → Improve → Repeat.`,
-  projects:`There are three featured projects documented here:\n\n• Study Resource Manager — a browser-based study library\n• Student Productivity Dashboard — productivity, focus and progress tracking\n• C Student Record Management System — a C-based record manager\n\nIf you want, I can also explain any one of them in more detail.`,
-  learning:`The documented learning areas include C Programming, JavaScript, Web Development, Git & GitHub, Computer Networks and core Computer Science fundamentals. The profile also mentions exploration of AI tools and prompt engineering.`,
-  repo:`This repository is more than just a code dump. It is being used as a portfolio and learning workspace, with projects, resources, documentation, the Jems assistant and GitHub Pages deployment files.`,
-  skills:`The documented skills include basic C, JavaScript and HTML/CSS learning, Git/GitHub workflow, Computer Networks, AI tools and prompt engineering, plus familiarity with Excel, Word, PowerPoint, Jira, Agile/Scrum, project planning and risk management.`,
-  study:`The Study Resource Manager is a browser-based resource library for students. It includes search, subject/type filters, favorites, adding and deleting resources, theme switching, statistics and localStorage.`,
-  productivity:`The Student Productivity Dashboard is designed around everyday study tracking. It includes tasks, a 25-minute focus timer, study-time tracking, subject progress, statistics, theme switching and localStorage.`,
-  cproject:`The C Student Record Management System is a console-style C project. It uses structs, arrays, functions and validation, with operations for adding, listing, searching and deleting student records.`,
-  web:`The documented web stack is HTML, CSS and JavaScript. GitHub Pages is used for the portfolio and browser-based project demos.`,
-  github:`Git and GitHub are used for source control, documentation, project development and GitHub Pages deployment.`,
-  comparison:`They each show a different side of the work:\n\n• Study Resource Manager → organization and browser UI\n• Student Productivity Dashboard → productivity and tracking\n• C Student Record Manager → C programming and data handling\n\nSo there isn't one “best” project—the strongest one depends on what you want to see.`,
-  architecture:`Right now, Jems is a client-side repository knowledge assistant. Its interface is built with HTML, CSS and JavaScript, and its documented knowledge is stored in the local assistant logic. It can sound conversational, but it is not connected to a live LLM or private GitHub data.`,
-  greetings:[`Hey! 👋 I'm Jems. What would you like to know about Hanshit or the repository?`,`Hi! 👋 Jems here. Ask me about the projects, skills, learning journey, or anything documented in this repo.`,`Hello! I'm Jems — Hanshit Sir Assistant. What are you curious about?`],
-  help:`You can talk to me naturally. For example:\n\n• “Who is Hanshit?”\n• “Which project should I check first?”\n• “Explain the productivity dashboard.”\n• “What is he learning right now?”\n• “What technologies are used?”\n• “Compare the three projects.”\n• “How does Jems work?”\n\nI can also tell you when something isn't documented instead of making it up.`,
-  unknown:`I don't have enough documented information to answer that confidently. I’d rather be honest than make something up.\n\nTry asking me about Hanshit, his projects, skills, technologies, learning areas, GitHub work, or Jems.`
+  who:`Hanshit is a Polytechnic Computer Science student and student developer. This repository is his project portfolio and learning workspace. His documented approach is: Learn → Build → Improve → Repeat.`,
+  projects:`Haan, bilkul. Abhi repository mein 3 featured projects documented hain:\n\n1. Study Resource Manager — students ke liye browser-based study resource library.\n2. Student Productivity Dashboard — tasks, focus timer, study time aur progress tracking.\n3. C Student Record Management System — C mein bana console-style record manager.\n\nAgar chaho, main teeno mein se kisi ek ko simple language mein detail mein samjha sakta hoon.`,
+  learning:`Abhi documented learning areas mein C Programming, JavaScript, Web Development, Git & GitHub, Computer Networks aur core Computer Science fundamentals shamil hain. Profile mein AI tools aur prompt engineering ki exploration bhi documented hai.`,
+  repo:`Ye repository sirf code store karne ke liye nahi hai. Ye portfolio + learning workspace hai, jisme projects, resources, documentation, Jems assistant aur GitHub Pages deployment files hain.`,
+  skills:`Documented skills mein basic C, JavaScript, HTML/CSS learning, Git/GitHub workflow, Computer Networks, AI tools aur prompt engineering shamil hain. Saath hi Excel, Word, PowerPoint, Jira, Agile/Scrum, project planning aur risk management ki familiarity bhi documented hai.`,
+  study:`Study Resource Manager ek browser-based study library hai. Isme search, subject/type filters, favorites, resources add/delete karna, theme switching, statistics aur localStorage support hai.`,
+  productivity:`Student Productivity Dashboard daily study tracking ke liye bana hai. Isme tasks, 25-minute focus timer, study-time tracking, subject progress, statistics, theme switching aur localStorage hai.`,
+  cproject:`C Student Record Management System ek console-style C project hai. Isme structs, arrays, functions aur validation use hote hain, aur student records add, list, search aur delete kiye ja sakte hain.`,
+  web:`Documented web stack HTML, CSS aur JavaScript hai. Portfolio aur browser-based demos ke liye GitHub Pages use kiya gaya hai.`,
+  github:`Git aur GitHub ka use source control, documentation, project development aur GitHub Pages deployment ke liye kiya ja raha hai.`,
+  comparison:`Agar simple comparison karein:\n\n• Study Resource Manager → organization + browser UI\n• Student Productivity Dashboard → productivity + tracking\n• C Student Record Manager → C programming + data handling\n\nIsliye ek fixed “best” project nahi hai. Aap kis skill ko dekhna chahte ho, uske hisaab se best project change hota hai.`,
+  architecture:`Jems ka current version client-side repository knowledge assistant hai. Interface HTML, CSS aur JavaScript se bana hai aur documented knowledge assistant logic mein stored hai. Ye conversational ho sakta hai, lekin abhi live LLM ya private GitHub data se directly connected nahi hai.`,
+  greetings:[
+    `Hey! 👋 Main Jems hoon. Main badhiya hoon 😄 Tum batao, Hanshit ke baare mein kya jaana hai?`,
+    `Hi! 👋 Jems here. Kya scene hai? Hanshit ke projects, skills ya GitHub ke baare mein kuch poochna hai?`,
+    `Hello! 👋 Main Jems — Hanshit Sir Assistant. Bolo, kya explore karna hai?`,
+    `Hey! 😄 Main ready hoon. Hanshit ne kya banaya, kya seekh raha hai, ya koi project detail chahiye?`
+  ],
+  thanks:[
+    `You're welcome! 😊`,
+    `Anytime! 😄 Aur kuch poochna ho to bolo.`,
+    `Bilkul! 👍 Chalo, aur explore karte hain.`
+  ],
+  help:`Tum mujhse bilkul normal conversation ki tarah baat kar sakte ho. Jaise:\n\n• “Hanshit ne abhi tak kya-kya banaya hai?”\n• “Inmein se best project kaunsa hai?”\n• “Study Resource Manager kya karta hai?”\n• “Wo abhi kya seekh raha hai?”\n• “Kaunsi technologies use karta hai?”\n• “Teeno projects compare karo.”\n• “Jems actually kaise kaam karta hai?”\n\nAgar koi information repository mein documented nahi hai, main guess karke answer nahi banaunga.`,
+  unknown:`Hmm, is question ka reliable answer mujhe repository ke documented data mein nahi mil raha. Main guess karke galat information dena prefer nahi karunga. 🙂\n\nTum Hanshit, uske projects, skills, technologies, learning, GitHub work ya Jems ke baare mein pooch sakte ho.`
 };
 
 function add(text,type,save=true){
@@ -39,44 +49,73 @@ function normalize(q){
   return q.toLowerCase().replace(/[^a-z0-9\s?&/-]/g,' ').replace(/\s+/g,' ').trim();
 }
 
-function recentContext(){
-  const users=history.filter(m=>m.type==='user');
-  return users.length?users[users.length-1].text.toLowerCase():'';
+function recentUsers(count=4){
+  return history.filter(m=>m.type==='user').slice(-count).map(m=>m.text.toLowerCase()).join(' | ');
+}
+
+function lastTopic(){
+  const text=recentUsers(3);
+  if(text.includes('study resource')||text.includes('resource manager'))return 'study';
+  if(text.includes('productivity')||text.includes('focus timer')||text.includes('dashboard'))return 'productivity';
+  if(text.includes('student record')||text.includes('c project'))return 'cproject';
+  if(text.includes('project')||text.includes('banaya')||text.includes('built'))return 'projects';
+  return '';
 }
 
 function answer(q){
   const s=normalize(q);
-  const previous=recentContext();
+  const context=recentUsers();
+  const topic=lastTopic();
 
-  if(!s)return `I'm listening. What would you like to know?`;
+  if(!s)return `I'm listening. Bolo, kya jaana hai?`;
   if(/^(hi|hello|hey|hii|yo|good morning|good evening)\b/.test(s))return facts.greetings[Math.floor(Math.random()*facts.greetings.length)];
-  if(/^(thanks|thank you|thx|great|nice|okay|ok)\b/.test(s))return `You're welcome! 😊 If you want, we can keep exploring the repository.`;
-  if(s.includes('who are you')||s.includes('what are you'))return `I'm Jems — Hanshit Sir Assistant. I help visitors understand the documented profile, projects, skills and repository. Think of me as the conversational guide for this portfolio.`;
-  if(s.includes('who is hanshit')||s.includes('about hanshit')||s.includes('tell me about hanshit'))return facts.who;
+  if(/^(thanks|thank you|thx|great|nice|okay|ok|cool)\b/.test(s))return facts.thanks[Math.floor(Math.random()*facts.thanks.length)];
+  if(s.includes('who are you')||s.includes('what are you'))return `Main Jems hoon — Hanshit Sir Assistant. 👋 Main visitors ko Hanshit ke documented profile, projects, skills aur repository ko samajhne mein help karta hoon. Simple words mein, main is portfolio ka conversational guide hoon.`;
+  if(s.includes('who is hanshit')||s.includes('about hanshit')||s.includes('tell me about hanshit')||s.includes('hanshit kaun'))return facts.who;
+
+  if(s.includes('abhi tak')||s.includes('so far')||s.includes('has built')||s.includes('built')||s.includes('banaya')||s.includes('banaye')||s.includes('what did hanshit make'))return facts.projects;
   if(s.includes('study resource')||s.includes('resource manager'))return facts.study;
   if(s.includes('productivity')||s.includes('focus timer')||s.includes('study dashboard'))return facts.productivity;
   if(s.includes('student record')||s.includes('c project')||s.includes('c programming project'))return facts.cproject;
-  if(s.includes('compare')||s.includes('difference between')||s.includes('which project')||s.includes('best project'))return facts.comparison;
+
+  if((s.includes('ye')||s.includes('this')||s.includes('that')||s.includes('it')||s.includes('iske')||s.includes('iska')) && (s.includes('kya')||s.includes('kaise')||s.includes('explain')||s.includes('detail')||s.includes('more'))){
+    if(topic==='study')return facts.study;
+    if(topic==='productivity')return facts.productivity;
+    if(topic==='cproject')return facts.cproject;
+    if(topic==='projects')return facts.projects;
+  }
+
+  if(s.includes('compare')||s.includes('difference between')||s.includes('which project')||s.includes('best project')||s.includes('kaunsa project')||s.includes('kaun sa project'))return facts.comparison;
   if(s.includes('project'))return facts.projects;
-  if(s.includes('learn')||s.includes('currently learning')||s.includes('what is he learning'))return facts.learning;
-  if(s.includes('skill')||s.includes('technology')||s.includes('tech stack')||s.includes('tools'))return facts.skills;
+  if(s.includes('learn')||s.includes('currently learning')||s.includes('what is he learning')||s.includes('kya seekh'))return facts.learning;
+  if(s.includes('skill')||s.includes('technology')||s.includes('tech stack')||s.includes('tools')||s.includes('technologies'))return facts.skills;
   if(s.includes('web development')||s.includes('html')||s.includes('javascript')||s.includes('css'))return facts.web;
   if(s.includes('github')||s.includes('git workflow'))return facts.github;
   if(s.includes('repository')||s.includes('repo'))return facts.repo;
-  if(s.includes('how does jems work')||s.includes('what is jems')||s.includes('who is jems')||s.includes('architecture'))return facts.architecture;
+  if(s.includes('how does jems work')||s.includes('what is jems')||s.includes('who is jems')||s.includes('architecture')||s.includes('jems kaise'))return facts.architecture;
   if(s.includes('help')||s.includes('what can you do')||s.includes('what should i ask'))return facts.help;
-  if((s==='more'||s.includes('tell me more')||s.includes('explain more'))&&previous.includes('project'))return facts.projects;
+
+  if(s.includes('more')||s.includes('aur batao')||s.includes('aur bata')||s.includes('detail')||s.includes('explain more')||s.includes('phir')||s.includes('why')){
+    if(topic==='study')return `Haan, Study Resource Manager mein main focus student resources ko easily organize aur find karna hai. Search aur filters se resources dhoondhe ja sakte hain, favorites save kiye ja sakte hain aur browser mein data localStorage ke through persist hota hai.`;
+    if(topic==='productivity')return `Haan. Productivity Dashboard ka idea daily study workflow ko ek jagah track karna hai — tasks complete karna, focus timer chalana, study time dekhna aur subject progress monitor karna.`;
+    if(topic==='cproject')return `Is project mein C ke core concepts practical way mein use kiye gaye hain — structs, arrays, functions aur validation. User student records ko add, list, search aur delete kar sakta hai.`;
+    if(topic==='projects')return `Sure! Repository mein 3 featured projects documented hain. Agar tum chaho to main ab ek-ek karke bata sakta hoon ki har project kya karta hai aur usmein kaunsi skills use hui hain.`;
+    if(context.includes('hanshit'))return facts.who;
+  }
+
   return facts.unknown;
 }
 
-function persist(){localStorage.setItem('jems-history',JSON.stringify(history.slice(-60)));}
+function persist(){
+  try{localStorage.setItem('jems-history',JSON.stringify(history.slice(-60)));}catch(e){}
+}
 
 function restore(){
   try{
     const saved=JSON.parse(localStorage.getItem('jems-history')||'[]');
-    saved.forEach(m=>{history.push(m);add(m.text,m.type,false)});
+    if(Array.isArray(saved))saved.forEach(m=>{if(m&&m.text&&m.type){history.push(m);add(m.text,m.type,false);}});
   }catch(e){localStorage.removeItem('jems-history');}
-  if(!history.length)add(`Hi! I'm Jems — Hanshit Sir Assistant. 👋\n\nAsk me anything about Hanshit, his projects, skills, learning journey or this repository.`,`bot`);
+  if(!history.length)add(`Hi! I'm Jems — Hanshit Sir Assistant. 👋\n\nMain Hanshit ke projects, skills, learning journey aur repository ke baare mein bata sakta hoon. Bolo, kya jaana hai?`,'bot');
 }
 
 function send(q){
@@ -87,7 +126,7 @@ function send(q){
   input.value='';
   input.focus();
   typing.classList.add('show');
-  const delay=Math.min(900,350+q.length*8);
+  const delay=Math.min(1000,350+q.length*8);
   setTimeout(()=>{
     typing.classList.remove('show');
     add(answer(q),'bot');
@@ -101,7 +140,7 @@ clearBtn.addEventListener('click',()=>{
   localStorage.removeItem('jems-history');
   history.length=0;
   messages.innerHTML='';
-  add(`All clear. 👋 Fresh conversation from here. What would you like to explore?`,'bot');
+  add(`All clear. 👋 Fresh conversation from here. Bolo, kya explore karna hai?`,'bot');
   persist();
 });
 themeBtn.addEventListener('click',()=>{
