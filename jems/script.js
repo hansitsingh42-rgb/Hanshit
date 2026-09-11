@@ -7,6 +7,10 @@ const themeBtn=document.getElementById('themeBtn');
 const exportBtn=document.getElementById('exportBtn');
 const copyBtn=document.getElementById('copyBtn');
 const history=[];
+const MAX_INPUT=1000;
+const MAX_HISTORY=60;
+const STORAGE_KEY='jems-history';
+const THEME_KEY='jems-theme';
 
 const facts={
   who:`Hanshit is a Polytechnic Computer Science student and student developer. This repository is his project portfolio and learning workspace. His documented approach is: Learn → Build → Improve → Repeat.`,
@@ -36,9 +40,15 @@ const facts={
   unknown:`Hmm, is question ka reliable answer mujhe repository ke documented data mein nahi mil raha. Main guess karke galat information dena prefer nahi karunga. 🙂\n\nTum Hanshit, uske projects, skills, technologies, learning, GitHub work ya Jems ke baare mein pooch sakte ho.`
 };
 
+function safeString(value,max=MAX_INPUT){
+  return typeof value==='string'?value.slice(0,max):'';
+}
+
 function add(text,type,save=true){
+  text=safeString(text);
+  if(type!=='user'&&type!=='bot')return;
   const el=document.createElement('div');
-  el.className=`msg ${type}`;
+  el.className=type==='user'?'msg user':'msg bot';
   el.textContent=text;
   messages.appendChild(el);
   messages.scrollTop=messages.scrollHeight;
@@ -46,7 +56,7 @@ function add(text,type,save=true){
 }
 
 function normalize(q){
-  return q.toLowerCase().replace(/[^a-z0-9\s?&/-]/g,' ').replace(/\s+/g,' ').trim();
+  return safeString(q).toLowerCase().replace(/[^a-z0-9\s?&/-]/g,' ').replace(/\s+/g,' ').trim();
 }
 
 function recentUsers(count=4){
@@ -66,25 +76,21 @@ function answer(q){
   const s=normalize(q);
   const context=recentUsers();
   const topic=lastTopic();
-
   if(!s)return `I'm listening. Bolo, kya jaana hai?`;
   if(/^(hi|hello|hey|hii|yo|good morning|good evening)\b/.test(s))return facts.greetings[Math.floor(Math.random()*facts.greetings.length)];
   if(/^(thanks|thank you|thx|great|nice|okay|ok|cool)\b/.test(s))return facts.thanks[Math.floor(Math.random()*facts.thanks.length)];
   if(s.includes('who are you')||s.includes('what are you'))return `Main Jems hoon — Hanshit Sir Assistant. 👋 Main visitors ko Hanshit ke documented profile, projects, skills aur repository ko samajhne mein help karta hoon. Simple words mein, main is portfolio ka conversational guide hoon.`;
   if(s.includes('who is hanshit')||s.includes('about hanshit')||s.includes('tell me about hanshit')||s.includes('hanshit kaun'))return facts.who;
-
   if(s.includes('abhi tak')||s.includes('so far')||s.includes('has built')||s.includes('built')||s.includes('banaya')||s.includes('banaye')||s.includes('what did hanshit make'))return facts.projects;
   if(s.includes('study resource')||s.includes('resource manager'))return facts.study;
   if(s.includes('productivity')||s.includes('focus timer')||s.includes('study dashboard'))return facts.productivity;
   if(s.includes('student record')||s.includes('c project')||s.includes('c programming project'))return facts.cproject;
-
-  if((s.includes('ye')||s.includes('this')||s.includes('that')||s.includes('it')||s.includes('iske')||s.includes('iska')) && (s.includes('kya')||s.includes('kaise')||s.includes('explain')||s.includes('detail')||s.includes('more'))){
+  if((s.includes('ye')||s.includes('this')||s.includes('that')||s.includes('it')||s.includes('iske')||s.includes('iska'))&&(s.includes('kya')||s.includes('kaise')||s.includes('explain')||s.includes('detail')||s.includes('more'))){
     if(topic==='study')return facts.study;
     if(topic==='productivity')return facts.productivity;
     if(topic==='cproject')return facts.cproject;
     if(topic==='projects')return facts.projects;
   }
-
   if(s.includes('compare')||s.includes('difference between')||s.includes('which project')||s.includes('best project')||s.includes('kaunsa project')||s.includes('kaun sa project'))return facts.comparison;
   if(s.includes('project'))return facts.projects;
   if(s.includes('learn')||s.includes('currently learning')||s.includes('what is he learning')||s.includes('kya seekh'))return facts.learning;
@@ -94,7 +100,6 @@ function answer(q){
   if(s.includes('repository')||s.includes('repo'))return facts.repo;
   if(s.includes('how does jems work')||s.includes('what is jems')||s.includes('who is jems')||s.includes('architecture')||s.includes('jems kaise'))return facts.architecture;
   if(s.includes('help')||s.includes('what can you do')||s.includes('what should i ask'))return facts.help;
-
   if(s.includes('more')||s.includes('aur batao')||s.includes('aur bata')||s.includes('detail')||s.includes('explain more')||s.includes('phir')||s.includes('why')){
     if(topic==='study')return `Haan, Study Resource Manager mein main focus student resources ko easily organize aur find karna hai. Search aur filters se resources dhoondhe ja sakte hain, favorites save kiye ja sakte hain aur browser mein data localStorage ke through persist hota hai.`;
     if(topic==='productivity')return `Haan. Productivity Dashboard ka idea daily study workflow ko ek jagah track karna hai — tasks complete karna, focus timer chalana, study time dekhna aur subject progress monitor karna.`;
@@ -102,69 +107,87 @@ function answer(q){
     if(topic==='projects')return `Sure! Repository mein 3 featured projects documented hain. Agar tum chaho to main ab ek-ek karke bata sakta hoon ki har project kya karta hai aur usmein kaunsi skills use hui hain.`;
     if(context.includes('hanshit'))return facts.who;
   }
-
   return facts.unknown;
 }
 
 function persist(){
-  try{localStorage.setItem('jems-history',JSON.stringify(history.slice(-60)));}catch(e){}
+  try{
+    const clean=history.slice(-MAX_HISTORY).map(m=>({type:m.type,text:safeString(m.text),time:safeString(m.time,20)}));
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(clean));
+  }catch(e){}
 }
 
 function restore(){
   try{
-    const saved=JSON.parse(localStorage.getItem('jems-history')||'[]');
-    if(Array.isArray(saved))saved.forEach(m=>{if(m&&m.text&&m.type){history.push(m);add(m.text,m.type,false);}});
-  }catch(e){localStorage.removeItem('jems-history');}
+    const raw=localStorage.getItem(STORAGE_KEY);
+    const saved=raw?JSON.parse(raw):[];
+    if(Array.isArray(saved))saved.slice(-MAX_HISTORY).forEach(m=>{
+      if(m&& (m.type==='user'||m.type==='bot') && typeof m.text==='string' && m.text.length<=MAX_INPUT){
+        history.push({type:m.type,text:m.text,time:safeString(m.time,20)});
+        add(m.text,m.type,false);
+      }
+    });
+  }catch(e){
+    try{localStorage.removeItem(STORAGE_KEY);}catch(_e){}
+  }
   if(!history.length)add(`Hi! I'm Jems — Hanshit Sir Assistant. 👋\n\nMain Hanshit ke projects, skills, learning journey aur repository ke baare mein bata sakta hoon. Bolo, kya jaana hai?`,'bot');
 }
 
+let busy=false;
 function send(q){
-  q=q.trim();
+  if(busy)return;
+  q=safeString(q).trim();
   if(!q)return;
   add(q,'user');
   persist();
   input.value='';
   input.focus();
   typing.classList.add('show');
+  busy=true;
   const delay=Math.min(1000,350+q.length*8);
   setTimeout(()=>{
     typing.classList.remove('show');
     add(answer(q),'bot');
     persist();
+    busy=false;
   },delay);
 }
 
 form.addEventListener('submit',e=>{e.preventDefault();send(input.value)});
 document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>send(b.dataset.q)));
 clearBtn.addEventListener('click',()=>{
-  localStorage.removeItem('jems-history');
+  localStorage.removeItem(STORAGE_KEY);
   history.length=0;
-  messages.innerHTML='';
+  messages.replaceChildren();
   add(`All clear. 👋 Fresh conversation from here. Bolo, kya explore karna hai?`,'bot');
   persist();
 });
 themeBtn.addEventListener('click',()=>{
   document.body.classList.toggle('light');
-  localStorage.setItem('jems-theme',document.body.classList.contains('light')?'light':'dark');
+  localStorage.setItem(THEME_KEY,document.body.classList.contains('light')?'light':'dark');
 });
-if(localStorage.getItem('jems-theme')==='light')document.body.classList.add('light');
+if(localStorage.getItem(THEME_KEY)==='light')document.body.classList.add('light');
 exportBtn.addEventListener('click',()=>{
-  const text=history.map(m=>`${m.type==='user'?'You':'Jems'} [${m.time||''}]: ${m.text}`).join('\n\n');
-  const blob=new Blob([text],{type:'text/plain'});
+  const text=history.map(m=>`${m.type==='user'?'You':'Jems'} [${safeString(m.time,20)}]: ${safeString(m.text)}`).join('\n\n');
+  const blob=new Blob([text],{type:'text/plain;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
+  a.href=url;
   a.download='jems-chat.txt';
+  document.body.appendChild(a);
   a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),500);
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
 });
 copyBtn.addEventListener('click',async()=>{
   const bots=history.filter(m=>m.type==='bot');
   const last=bots[bots.length-1];
   if(!last)return;
   try{
-    await navigator.clipboard.writeText(last.text);
+    await navigator.clipboard.writeText(safeString(last.text));
     copyBtn.textContent='Copied ✓';
     setTimeout(()=>copyBtn.textContent='Copy last answer',1200);
   }catch(e){copyBtn.textContent='Copy unavailable';setTimeout(()=>copyBtn.textContent='Copy last answer',1200);}
 });
+
 restore();
