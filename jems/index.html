@@ -13,16 +13,24 @@
 <main class="app">
 <header class="top">
 <a class="back" href="../" rel="noopener">← Hanshit.dev</a>
-<div class="brand"><div class="logo" aria-hidden="true">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant · v3</span></div></div>
-<div class="actions"><button id="themeBtn" type="button" title="Toggle theme" aria-label="Toggle theme">☼</button><button id="clearBtn" type="button" title="Clear chat">Clear</button><div class="status" aria-label="Jems status"><i aria-hidden="true"></i> Online</div></div>
+<div class="brand"><div class="logo" aria-hidden="true">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant · v4</span></div></div>
+<div class="actions">
+<button id="themeBtn" type="button" title="Toggle theme" aria-label="Toggle theme">☼</button>
+<button id="clearBtn" type="button" title="Clear chat">Clear</button>
+<div class="status" aria-label="Jems status"><i aria-hidden="true"></i> Ready</div>
+</div>
 </header>
 <section class="hero">
 <p class="eyebrow">REPOSITORY-AWARE KNOWLEDGE ASSISTANT</p>
 <h1>Ask Jems anything about Hanshit.</h1>
 <p>Explore the documented profile, projects, technologies, learning journey and repository through one smart chat interface.</p>
-<div class="capabilities"><span>🧠 Context</span><span>🔎 Knowledge search</span><span>💻 Code-aware topics</span><span>📁 Project details</span></div>
+<div class="capabilities"><span>🧠 Context</span><span>🔎 Knowledge search</span><span>💻 Code-aware topics</span><span>📁 Project details</span><span>⚡ Quick actions</span></div>
 </section>
 <section class="chat" aria-label="Jems chat">
+<div class="toolbar">
+<label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" maxlength="80" placeholder="Search this conversation..." aria-label="Search this conversation"></label>
+<span id="charCount" class="char-count">0/1000</span>
+</div>
 <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
 <div class="typing" id="typing" role="status" aria-live="polite"><span></span><span></span><span></span> Jems is thinking…</div>
 <div class="suggestions" aria-label="Suggested questions">
@@ -34,12 +42,22 @@
 <button type="button" data-q="What technologies does Hanshit use?">🛠️ Technologies</button>
 </div>
 <form id="chatForm" autocomplete="off">
-<input id="input" name="message" maxlength="1000" autocomplete="off" spellcheck="true" placeholder="Ask Jems a question..." aria-label="Message Jems">
-<button type="submit">Send ↑</button>
+<textarea id="input" name="message" maxlength="1000" autocomplete="off" spellcheck="true" rows="1" placeholder="Ask Jems a question..." aria-label="Message Jems"></textarea>
+<button id="sendBtn" type="submit">Send ↑</button>
 </form>
-<div class="footer-tools"><button id="exportBtn" type="button">↓ Export chat</button><button id="copyBtn" type="button">Copy last answer</button></div>
+<div class="quick-actions" aria-label="Conversation actions">
+<button id="regenerateBtn" type="button">↻ Regenerate</button>
+<button id="copyBtn" type="button">Copy last answer</button>
+<button id="exportBtn" type="button">↓ Export</button>
+<button id="jsonBtn" type="button">{} JSON</button>
+</div>
+<div class="footer-row"><span id="stats">0 messages</span><button id="shortcutBtn" type="button" title="Show keyboard shortcuts">⌨ Shortcuts</button></div>
 <small class="note">Jems uses documented repository knowledge. Chat history stays in this browser. Do not enter passwords, API keys, or other secrets.</small>
 </section>
+<dialog id="shortcutsDialog" aria-labelledby="shortcutsTitle">
+<div class="dialog-head"><h2 id="shortcutsTitle">Keyboard shortcuts</h2><button id="closeDialog" type="button" aria-label="Close">×</button></div>
+<ul><li><kbd>Enter</kbd> Send message</li><li><kbd>Shift</kbd> + <kbd>Enter</kbd> New line</li><li><kbd>/</kbd> Focus message box</li><li><kbd>Esc</kbd> Clear conversation search</li></ul>
+</dialog>
 </main>
 <script src="script.js" defer></script>
 </body>
