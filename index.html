@@ -3,34 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hanshit Study Library — organized notes, PDFs, videos, PPTs, formulas and practical CSE resources.">
-  <title>Hanshit Study Library</title>
+  <meta name="description" content="Hanshit — Polytechnic CSE student profile and study resource library.">
+  <title>Hanshit — CSE Student Profile</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Hanshit Study Library home"><b>H</b> Hanshit <span>Library</span></a>
+    <a class="brand" href="#home" aria-label="Hanshit home"><b>H</b> Hanshit <span>Profile</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
     <nav id="navMenu">
-      <a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#resources">Resources</a><a href="#about">About</a>
+      <a href="#home">Profile</a><a href="#subjects">Skills</a><a href="#resources">Resources</a><a href="#about">About</a>
       <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
     </nav>
   </header>
 
   <main id="home">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">STUDENT RESOURCE LIBRARY</p>
-        <h1>Everything you need to <span>study better.</span></h1>
-        <p class="hero-text">A clean, chapter-friendly space for notes, PDFs, videos, PPTs, formulas and practical computer resources.</p>
-        <div class="hero-actions"><a class="btn primary" href="#resources">Explore resources →</a><button class="btn secondary" id="randomBtn">Surprise me</button></div>
-        <div class="mini-points"><span>✓ Free to organize</span><span>✓ Student-first</span><span>✓ Mobile friendly</span></div>
+    <section class="profile-hero">
+      <div class="profile-photo-wrap">
+        <div class="profile-photo-placeholder" aria-label="Profile photo placeholder">H</div>
       </div>
-      <div class="hero-card"><div class="library-badge">H</div><p>Hanshit Library</p><strong>Learn → Practice → Improve</strong><div class="stats"><div><b>06</b><small>Subjects</small></div><div><b>04</b><small>Types</small></div><div><b>24/7</b><small>Access</small></div></div></div>
+      <div class="profile-content">
+        <p class="eyebrow">POLYTECHNIC CSE STUDENT</p>
+        <h1>Hi, I'm <span>Hanshit Singh.</span></h1>
+        <p class="profile-lead">I’m learning Computer Science through practical projects, computer fundamentals, programming, web development and GitHub.</p>
+        <div class="profile-actions">
+          <a class="btn primary" href="#resources">View my work →</a>
+          <a class="btn secondary" href="#about">About me</a>
+        </div>
+        <div class="profile-tags"><span>Computer Science</span><span>Web Development</span><span>Git & GitHub</span><span>Learning by Building</span></div>
+      </div>
+    </section>
+
+    <section class="section quick-profile">
+      <div class="profile-stats">
+        <div><strong>CSE</strong><small>Diploma</small></div>
+        <div><strong>06+</strong><small>Core subjects</small></div>
+        <div><strong>∞</strong><small>Learning mindset</small></div>
+      </div>
     </section>
 
     <section class="section" id="subjects">
-      <div class="section-heading"><div><p class="eyebrow">BROWSE</p><h2>Subjects</h2></div><div class="search-wrap"><label class="sr-only" for="search">Search subjects</label><input id="search" type="search" placeholder="Search subjects..."></div></div>
+      <div class="section-heading"><div><p class="eyebrow">WHAT I'M LEARNING</p><h2>Skills & Subjects</h2></div><div class="search-wrap"><label class="sr-only" for="search">Search subjects</label><input id="search" type="search" placeholder="Search subjects..."></div></div>
       <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="cse">CSE</button><button class="filter" data-filter="science">Science</button><button class="filter" data-filter="other">Other</button></div>
       <div class="subject-grid" id="subjectGrid">
         <article class="subject-card" data-category="cse" data-name="Computer Science"><div class="card-icon">⌘</div><h3>Computer Science</h3><p>Fundamentals, programming, networking and practical CSE topics.</p><button class="text-btn" data-subject="Computer Science">View resources →</button></article>
@@ -43,17 +56,22 @@
     </section>
 
     <section class="section resources" id="resources">
-      <div class="section-heading"><div><p class="eyebrow">LIBRARY</p><h2>Study resources</h2></div><p id="resourceCount">6 resources available</p></div>
+      <div class="section-heading"><div><p class="eyebrow">MY STUDY LIBRARY</p><h2>Resources & Projects</h2></div><p id="resourceCount">6 resources available</p></div>
       <div class="toolbar"><label class="search-box">⌕ <input id="resourceSearch" type="search" placeholder="Search resources..."></label><select id="typeFilter"><option value="all">All types</option><option value="PDF">PDF</option><option value="Notes">Notes</option><option value="PPT">PPT</option><option value="Video">Video</option></select><button class="btn secondary small" id="clearResources">Clear</button></div>
       <div class="resource-grid" id="resourceGrid"></div><p class="empty" id="resourceEmpty" hidden>No matching resources found.</p>
     </section>
 
-    <section class="section about" id="about"><div class="about-card"><div><p class="eyebrow">ABOUT THE PROJECT</p><h2>Built while learning CSE.</h2><p>Hanshit Library is a student-first resource hub. It is designed to grow chapter-by-chapter with useful study material rather than selling courses or certificates.</p></div><div class="roadmap"><span>01 UI</span><span>02 Resources</span><span>03 Admin</span><span>04 Database</span></div></div></section>
+    <section class="section about" id="about">
+      <div class="about-card profile-about">
+        <div><p class="eyebrow">ABOUT HANSHiT</p><h2>Learning → Building → Improving.</h2><p>I'm a Polytechnic CSE student building practical skills step by step. This website is part of my learning journey and will grow with projects, study resources and useful experiments.</p></div>
+        <div class="roadmap"><span>Computer Fundamentals</span><span>C Programming</span><span>Computer Networks</span><span>HTML & CSS</span><span>JavaScript</span><span>Git & GitHub</span></div>
+      </div>
+    </section>
   </main>
 
   <div class="modal" id="resourceModal" hidden><div class="modal-box"><button class="close" id="closeModal">×</button><p class="eyebrow">RESOURCE</p><h2 id="modalTitle">Resource</h2><p id="modalText"></p><button class="btn primary" id="modalAction">Open resource</button></div></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <footer><span>© <span id="year"></span> Hanshit Library</span><span>Learning → Building → Improving</span></footer>
+  <footer><span>© <span id="year"></span> Hanshit</span><span>Polytechnic CSE • Learning by Building</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
