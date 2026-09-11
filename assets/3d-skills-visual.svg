@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="3D-style skills visualization">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070b14"/><stop offset="1" stop-color="#111827"/></linearGradient><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="5" result="x"/><feMerge><feMergeNode in="x"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="900" height="300" rx="24" fill="url(#b)"/>
+<g stroke="#334155" opacity=".35"><path d="M40 250L450 35L860 250" fill="none"/><path d="M120 250L450 78L780 250" fill="none"/><path d="M200 250L450 120L700 250" fill="none"/><path d="M40 250H860"/></g>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#e2e8f0"><text x="450" y="38" font-size="21" font-weight="700">3D SKILLS SPACE</text><text x="450" y="62" font-size="12" fill="#64748b">AI • DEVELOPMENT • PRODUCTIVITY • WORKFLOW</text></g>
+<g transform="translate(450 145)" filter="url(#g)">
+<path d="M0-65L75-22L75 65L0 108L-75 65L-75-22Z" fill="none" stroke="url(#a)" stroke-width="3"/><path d="M0-65V22M-75-22L0 22L75-22M0 22V108" fill="none" stroke="#67e8f9" stroke-width="2"/>
+<circle cx="0" cy="22" r="10" fill="#67e8f9"/><circle cx="0" cy="-65" r="7" fill="#818cf8"/><circle cx="75" cy="-22" r="7" fill="#a78bfa"/><circle cx="-75" cy="-22" r="7" fill="#22d3ee"/>
+<animateTransform attributeName="transform" type="rotate" from="0 450 145" to="360 450 145" dur="18s" repeatCount="indefinite"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="600" fill="#cbd5e1"><text x="145" y="118">AI &amp; PROMPTING</text><text x="755" y="118">WEB &amp; C</text><text x="155" y="215">EXCEL • OFFICE</text><text x="745" y="215">JIRA • AGILE</text></g>
+</svg>
