@@ -1,9 +1,63 @@
-# 💫 About Me:
-**I'm currently working on**<br>Building practical web projects and a personal study library.<br><br>**I'm looking to collaborate on**<br>Beginner-friendly web development, student projects, and open-source projects.<br><br>**I'm looking for help with**<br>Improving my web development skills and learning better coding practices.<br><br>**I'm currently learning**<br>C Programming, JavaScript, Git & GitHub, Computer Networks, and Web Development.<br><br>**Ask me about**<br>Computer Science, student projects, web development, GitHub, and learning resources.<br><br>**Fun fact**<br>I'm a CSE student who enjoys turning what I learn into practical projects.<br>
+# Hi, I'm Hanshit Singh 👋
 
+### CSE Student • Learning by Building • Exploring Technology
 
-## 🌐 Socials:
-[![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:hansitsingh42@gmail.com) 
+I'm a Computer Science student focused on building practical projects and improving my development skills step by step. I use this space to document what I learn, experiment with ideas, and build useful projects.
 
-# 💻 Tech Stack:
-![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) ![Alibaba Cloud](https://img.shields.io/badge/AlibabaCloud-%23FF6701.svg?style=for-the-badge&logo=alibabacloud&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+---
+
+## 🚀 Currently Working On
+- Building practical web projects
+- Developing a personal study-resource library
+- Improving my programming and GitHub workflow
+
+## 🤝 Looking to Collaborate On
+- Beginner-friendly web projects
+- Student-focused projects
+- Open-source projects where I can learn and contribute
+
+## 🌱 Currently Learning
+- C Programming
+- JavaScript
+- Web Development
+- Git & GitHub
+- Computer Networks
+
+## 💡 Ask Me About
+- Computer Science student projects
+- Web development basics
+- Git & GitHub
+- Learning resources
+
+---
+
+## 🛠️ Skills & Tools
+
+![C](https://img.shields.io/badge/C-Programming-555555?style=flat-square&logo=c&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Learning-555555?style=flat-square&logo=javascript&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Tools-555555?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-Workflow-555555?style=flat-square&logo=github&logoColor=white)
+
+---
+
+## 📌 What You'll Find Here
+
+This repository is part of my learning journey. I'll be adding projects, experiments, notes, and useful resources as I continue developing my skills.
+
+---
+
+## 🎯 My Goal
+
+**Learn → Build → Improve → Repeat.**
+
+I believe consistent practice and real projects are the best way to grow as a developer.
+
+---
+
+## ⚡ Fun Fact
+
+I'm a CSE student who enjoys turning what I learn into practical projects.
+
+---
+
+⭐ If you find something useful here, feel free to explore the repository.
