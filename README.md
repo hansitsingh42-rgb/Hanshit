@@ -2,11 +2,11 @@
 
 # Hi, I'm Hanshit Singh 👋
 
-### `CSE Student` • `Builder` • `Tech Explorer`
+### `CSE Student` • `Student Developer` • `Builder`
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;AI+%26+Prompting+Enthusiast+%F0%9F%A4%96;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%92%BB;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
 
-<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-profile-animation.svg" width="900" alt="Animated 3D profile visual" />
+<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-profile-animation.svg" width="900" alt="Animated developer visual" />
 
 </div>
 
@@ -14,11 +14,9 @@
 
 ## 👨‍💻 About Me
 
-I'm a Computer Science student focused on learning through practical projects. I use this GitHub to experiment, build useful ideas, document my learning, and improve step by step.
+I'm a Polytechnic Computer Science student who learns by building practical projects. This repository is my project portfolio, learning workspace, and place to document progress step by step.
 
 > **Learn → Build → Improve → Repeat.**
-
----
 
 ## 🚀 Currently Working On
 
@@ -31,8 +29,8 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 - Beginner-friendly web projects
 - Student projects
-- Open-source projects
-- Learning-focused experiments
+- Open-source learning projects
+- Practical frontend experiments
 
 ---
 
@@ -48,7 +46,7 @@ A browser-based student resource library for organizing study materials by subje
 👉 [Open Project](./projects/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
 
 ### ⏱️ Student Productivity Dashboard
-A practical dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring subject progress.
+A responsive dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring subject progress.
 
 **Features:** Tasks • 25-Minute Focus Timer • Study-Time Tracking • Progress Stats • LocalStorage • Responsive UI
 
@@ -69,12 +67,12 @@ A console-based C project for managing student records with add, list, search, a
 
 # 🧠 Skills & Tools
 
-## 💻 Computer & Development
+## 💻 Development & Computer Science
 
 <p align="center">
-<img src="https://img.shields.io/badge/C-Programming-555555?style=for-the-badge&logo=c&logoColor=white" alt="C Programming" />
+<img src="https://img.shields.io/badge/C-Basic-555555?style=for-the-badge&logo=c&logoColor=white" alt="C" />
 <img src="https://img.shields.io/badge/JavaScript-Learning-555555?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
-<img src="https://img.shields.io/badge/Web_Development-Learning-555555?style=for-the-badge&logo=html5&logoColor=white" alt="Web Development" />
+<img src="https://img.shields.io/badge/HTML%2FCSS-Learning-555555?style=for-the-badge&logo=html5&logoColor=white" alt="HTML CSS" />
 <img src="https://img.shields.io/badge/Git-Workflow-555555?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 <img src="https://img.shields.io/badge/GitHub-Workflow-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 <img src="https://img.shields.io/badge/Computer_Networks-Learning-555555?style=for-the-badge&logo=cisco&logoColor=white" alt="Computer Networks" />
@@ -83,12 +81,8 @@ A console-based C project for managing student records with add, list, search, a
 ## 🤖 AI & Prompting
 
 <p align="center">
-<img src="https://img.shields.io/badge/Prompt_Engineering-Skilled-555555?style=for-the-badge" alt="Prompt Engineering" />
-<img src="https://img.shields.io/badge/ChatGPT-Using-555555?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT" />
-<img src="https://img.shields.io/badge/Google_Gemini-Using-555555?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" />
-<img src="https://img.shields.io/badge/Claude-Using-555555?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
-<img src="https://img.shields.io/badge/Grok-Using-555555?style=for-the-badge" alt="Grok" />
-<img src="https://img.shields.io/badge/NotebookLM-Using-555555?style=for-the-badge&logo=google&logoColor=white" alt="NotebookLM" />
+<img src="https://img.shields.io/badge/AI_Tools-Exploring-555555?style=for-the-badge" alt="AI tools" />
+<img src="https://img.shields.io/badge/Prompt_Engineering-Learning-555555?style=for-the-badge" alt="Prompt engineering" />
 </p>
 
 ## 📊 Productivity & Office
@@ -104,8 +98,8 @@ A console-based C project for managing student records with add, list, search, a
 <p align="center">
 <img src="https://img.shields.io/badge/Jira-Familiar-555555?style=for-the-badge&logo=jira&logoColor=white" alt="Jira" />
 <img src="https://img.shields.io/badge/Agile%2FScrum-Familiar-555555?style=for-the-badge" alt="Agile Scrum" />
-<img src="https://img.shields.io/badge/Project_Planning-Familiar-555555?style=for-the-badge" alt="Project Planning" />
-<img src="https://img.shields.io/badge/Risk_Management-Familiar-555555?style=for-the-badge" alt="Risk Management" />
+<img src="https://img.shields.io/badge/Project_Planning-Familiar-555555?style=for-the-badge" alt="Project planning" />
+<img src="https://img.shields.io/badge/Risk_Management-Familiar-555555?style=for-the-badge" alt="Risk management" />
 </p>
 
 ## 🎓 Certification
@@ -122,53 +116,8 @@ A console-based C project for managing student records with add, list, search, a
 ## 🧊 3D Skills Visualization
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="Animated 3D skills visualization" />
+<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
 </div>
-
----
-
-## 📈 Skills Overview
-
-<div align="center">
-
-<img src="https://quickchart.io/chart?c={type:'bar',data:{labels:['AI%20%26%20Prompting','Computer%20%26%20Development','Productivity','Project%20%26%20Workflow'],datasets:[{label:'Skill%20Areas',data:[6,6,3,4]}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1}}}}}" width="700" alt="Skills overview chart" />
-
-</div>
-
-> The chart shows the number of tools/areas represented in each skill category, not a percentage of proficiency.
-
----
-
-## 🧊 3D Contribution Activity
-
-<div align="center">
-
-<img src="./profile-3d-contrib/profile-green-animate.svg" width="900" alt="Animated 3D GitHub contribution calendar" />
-
-</div>
-
-> This 3D contribution visual is generated automatically by GitHub Actions and refreshed daily.
-
----
-
-## 👀 Visitor Analytics
-
-<div align="center">
-
-<img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=for-the-badge&label=PROFILE+VISITS" alt="Profile visits" />
-
-<br><br>
-
-**Visitor insights**  
-`Country` • `Device` • `Browser` • `Referrer` • `Visits`
-
-<br>
-
-<a href="https://github.com/hansitsingh42-rgb/Hanshit/graphs/traffic">📊 Open GitHub Visitor Traffic</a>
-
-</div>
-
-> GitHub's profile README is rendered as Markdown and does not run custom JavaScript, so detailed live visitor information cannot be embedded directly inside the README. The live counter above shows profile visits, while GitHub's Traffic analytics provides repository visitor and referrer data. For website-level country/device/browser analytics, the GitHub Pages site can use a privacy-first analytics service such as Cloudflare Web Analytics.
 
 ---
 
@@ -181,24 +130,16 @@ A console-based C project for managing student records with add, list, search, a
 
 </div>
 
----
-
 ## 🔥 Contribution Streak
 
 <div align="center">
-
 <img src="https://streak-stats.demolab.com?user=hansitsingh42-rgb&hide_border=true" alt="GitHub contribution streak" />
-
 </div>
-
----
 
 ## 📈 Contribution Activity
 
 <div align="center">
-
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&hide_border=true&area=true" alt="GitHub contribution activity graph" />
-
 </div>
 
 ---
@@ -210,30 +151,23 @@ A console-based C project for managing student records with add, list, search, a
 - Web Development
 - Git & GitHub
 - Computer Networks
-
----
+- Core Computer Science fundamentals
 
 ## 💡 Ask Me About
 
 Computer Science • Student Projects • AI Prompting • Web Development Basics • Git & GitHub • Learning Resources
 
----
-
 ## 🧩 What You'll Find Here
 
 📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🤖 AI experiments  •  🚀 Future builds
-
----
 
 ## 🎯 My Goal
 
 To become a stronger developer by consistently learning, building practical projects, and improving my problem-solving skills.
 
----
-
 ## ⚡ Fun Fact
 
-I enjoy turning things I learn into practical projects.
+I enjoy turning what I learn into practical projects.
 
 ---
 
