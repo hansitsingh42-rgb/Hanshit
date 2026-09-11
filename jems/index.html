@@ -8,12 +8,13 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>Jems — Hanshit Sir Assistant</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ai-ui.css">
 </head>
 <body>
 <main class="app">
 <header class="top">
 <a class="back" href="../" rel="noopener">← Hanshit.dev</a>
-<div class="brand"><div class="logo" aria-hidden="true">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant · v4</span></div></div>
+<div class="brand"><div class="logo" aria-hidden="true">J</div><div><strong>Jems</strong><span>AI Knowledge Assistant · v4</span></div></div>
 <div class="actions">
 <button id="themeBtn" type="button" title="Toggle theme" aria-label="Toggle theme">☼</button>
 <button id="clearBtn" type="button" title="Clear chat">Clear</button>
@@ -21,7 +22,7 @@
 </div>
 </header>
 <section class="hero">
-<p class="eyebrow">REPOSITORY-AWARE KNOWLEDGE ASSISTANT</p>
+<p class="eyebrow">AI KNOWLEDGE ASSISTANT</p>
 <h1>Ask Jems anything about Hanshit.</h1>
 <p>Explore the documented profile, projects, technologies, learning journey and repository through one smart chat interface.</p>
 <div class="capabilities"><span>🧠 Context</span><span>🔎 Knowledge search</span><span>💻 Code-aware topics</span><span>📁 Project details</span><span>⚡ Quick actions</span></div>
@@ -43,7 +44,7 @@
 </div>
 <form id="chatForm" autocomplete="off">
 <textarea id="input" name="message" maxlength="1000" autocomplete="off" spellcheck="true" rows="1" placeholder="Ask Jems a question..." aria-label="Message Jems"></textarea>
-<button id="sendBtn" type="submit">Send ↑</button>
+<button id="sendBtn" type="submit">Ask Jems ↗</button>
 </form>
 <div class="quick-actions" aria-label="Conversation actions">
 <button id="regenerateBtn" type="button">↻ Regenerate</button>
