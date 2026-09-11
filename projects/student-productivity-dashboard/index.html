@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div><p class="eyebrow">STUDENT PRODUCTIVITY</p><h1>Focus Dashboard</h1><p class="muted">Plan your day. Track your progress. Keep improving.</p></div>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+    </header>
+
+    <section class="stats">
+      <article class="card stat"><span>Tasks completed</span><strong id="taskCount">0/0</strong></article>
+      <article class="card stat"><span>Study time</span><strong id="studyTime">00:00:00</strong></article>
+      <article class="card stat"><span>Daily progress</span><strong id="progress">0%</strong></article>
+    </section>
+
+    <section class="grid">
+      <article class="card tasks">
+        <div class="section-head"><h2>Today's Tasks</h2><button id="clearBtn" class="text-btn">Clear done</button></div>
+        <form id="taskForm" class="task-form"><input id="taskInput" placeholder="Add a task..." maxlength="100" required><button>Add</button></form>
+        <ul id="taskList"></ul>
+      </article>
+
+      <article class="card timer-card">
+        <div class="section-head"><h2>Focus Timer</h2><span class="badge">25 min</span></div>
+        <div id="timer">25:00</div>
+        <div class="timer-actions"><button id="startBtn">Start</button><button id="resetBtn" class="secondary">Reset</button></div>
+        <p class="muted center">Use focused sessions with short breaks.</p>
+      </article>
+
+      <article class="card subjects">
+        <div class="section-head"><h2>Subject Progress</h2></div>
+        <div class="subject"><div><span>Computer</span><b>80%</b></div><div class="bar"><i style="width:80%"></i></div></div>
+        <div class="subject"><div><span>Mathematics</span><b>55%</b></div><div class="bar"><i style="width:55%"></i></div></div>
+        <div class="subject"><div><span>Physics</span><b>45%</b></div><div class="bar"><i style="width:45%"></i></div></div>
+        <div class="subject"><div><span>Chemistry</span><b>40%</b></div><div class="bar"><i style="width:40%"></i></div></div>
+      </article>
+    </section>
+
+    <footer>Built as a student-focused web project • HTML • CSS • JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
