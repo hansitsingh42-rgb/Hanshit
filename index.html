@@ -3,75 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hanshit — Polytechnic CSE student profile and study resource library.">
-  <title>Hanshit — CSE Student Profile</title>
+  <meta name="description" content="Hanshit Singh — Polytechnic CSE student building practical computer science projects.">
+  <title>Hanshit Singh — Student Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Hanshit home"><b>H</b> Hanshit <span>Profile</span></a>
+    <a class="brand" href="#home"><span class="brand-mark">H</span><span>Hanshit<span class="brand-muted">.dev</span></span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
     <nav id="navMenu">
-      <a href="#home">Profile</a><a href="#subjects">Skills</a><a href="#resources">Resources</a><a href="#about">About</a>
-      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#library">Library</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">◐</button>
     </nav>
   </header>
 
   <main id="home">
-    <section class="profile-hero">
-      <div class="profile-photo-wrap">
-        <div class="profile-photo-placeholder" aria-label="Profile photo placeholder">H</div>
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="status"><span></span> Currently learning • Polytechnic CSE</div>
+        <p class="eyebrow">STUDENT DEVELOPER / BUILDER</p>
+        <h1>Learning Computer Science.<br><em>Building it into reality.</em></h1>
+        <p class="hero-lead">Hi, I'm Hanshit Singh — a Polytechnic CSE student exploring programming, web development, computer fundamentals and practical projects.</p>
+        <div class="hero-actions"><a class="btn primary" href="#projects">Explore projects <span>↗</span></a><a class="btn secondary" href="#library">Open study library</a></div>
+        <div class="mini-proof"><span>HTML & CSS</span><span>JavaScript</span><span>C Programming</span><span>Git & GitHub</span></div>
       </div>
-      <div class="profile-content">
-        <p class="eyebrow">POLYTECHNIC CSE STUDENT</p>
-        <h1>Hi, I'm <span>Hanshit Singh.</span></h1>
-        <p class="profile-lead">I’m learning Computer Science through practical projects, computer fundamentals, programming, web development and GitHub.</p>
-        <div class="profile-actions">
-          <a class="btn primary" href="#resources">View my work →</a>
-          <a class="btn secondary" href="#about">About me</a>
-        </div>
-        <div class="profile-tags"><span>Computer Science</span><span>Web Development</span><span>Git & GitHub</span><span>Learning by Building</span></div>
-      </div>
-    </section>
 
-    <section class="section quick-profile">
-      <div class="profile-stats">
-        <div><strong>CSE</strong><small>Diploma</small></div>
-        <div><strong>06+</strong><small>Core subjects</small></div>
-        <div><strong>∞</strong><small>Learning mindset</small></div>
+      <div class="profile-card">
+        <div class="profile-photo-placeholder" aria-label="Profile photo placeholder"><span>H</span><small>PROFILE PHOTO</small></div>
+        <div class="profile-card-body"><div><strong>Hanshit Singh</strong><span>Polytechnic CSE Student</span></div><span class="available">LEARNING</span></div>
+        <div class="profile-card-line"></div>
+        <div class="profile-meta"><span>Focus</span><strong>Practical CSE + Web</strong></div>
       </div>
     </section>
 
-    <section class="section" id="subjects">
-      <div class="section-heading"><div><p class="eyebrow">WHAT I'M LEARNING</p><h2>Skills & Subjects</h2></div><div class="search-wrap"><label class="sr-only" for="search">Search subjects</label><input id="search" type="search" placeholder="Search subjects..."></div></div>
-      <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="cse">CSE</button><button class="filter" data-filter="science">Science</button><button class="filter" data-filter="other">Other</button></div>
-      <div class="subject-grid" id="subjectGrid">
-        <article class="subject-card" data-category="cse" data-name="Computer Science"><div class="card-icon">⌘</div><h3>Computer Science</h3><p>Fundamentals, programming, networking and practical CSE topics.</p><button class="text-btn" data-subject="Computer Science">View resources →</button></article>
-        <article class="subject-card" data-category="science" data-name="Physics"><div class="card-icon">Φ</div><h3>Physics</h3><p>Concepts, formulas, short notes and revision material.</p><button class="text-btn" data-subject="Physics">View resources →</button></article>
-        <article class="subject-card" data-category="science" data-name="Chemistry"><div class="card-icon">⚗</div><h3>Chemistry</h3><p>Important concepts, reactions, formulas and notes.</p><button class="text-btn" data-subject="Chemistry">View resources →</button></article>
-        <article class="subject-card" data-category="science" data-name="Mathematics"><div class="card-icon">∑</div><h3>Mathematics</h3><p>Formulas, examples, practice questions and revision.</p><button class="text-btn" data-subject="Mathematics">View resources →</button></article>
-        <article class="subject-card" data-category="other" data-name="English"><div class="card-icon">Aa</div><h3>English</h3><p>Grammar, communication skills and useful notes.</p><button class="text-btn" data-subject="English">View resources →</button></article>
-        <article class="subject-card" data-category="other" data-name="Mechanics"><div class="card-icon">⚙</div><h3>Mechanics</h3><p>Definitions, laws, diagrams and exam-focused notes.</p><button class="text-btn" data-subject="Mechanics">View resources →</button></article>
-      </div><p class="empty" id="emptyState" hidden>No matching subjects found.</p>
+    <section class="stats section-shell" aria-label="Profile highlights">
+      <div><strong>01</strong><span>Student developer</span></div><div><strong>CSE</strong><span>Diploma path</span></div><div><strong>∞</strong><span>Learning mindset</span></div><div><strong>BUILD</strong><span>Learn by doing</span></div>
     </section>
 
-    <section class="section resources" id="resources">
-      <div class="section-heading"><div><p class="eyebrow">MY STUDY LIBRARY</p><h2>Resources & Projects</h2></div><p id="resourceCount">6 resources available</p></div>
-      <div class="toolbar"><label class="search-box">⌕ <input id="resourceSearch" type="search" placeholder="Search resources..."></label><select id="typeFilter"><option value="all">All types</option><option value="PDF">PDF</option><option value="Notes">Notes</option><option value="PPT">PPT</option><option value="Video">Video</option></select><button class="btn secondary small" id="clearResources">Clear</button></div>
-      <div class="resource-grid" id="resourceGrid"></div><p class="empty" id="resourceEmpty" hidden>No matching resources found.</p>
+    <section class="section-shell section-block" id="about">
+      <div class="section-label">01 — ABOUT</div>
+      <div class="about-layout"><div><h2>A student with a<br><em>builder mindset.</em></h2></div><div class="about-copy"><p>I’m building my Computer Science foundation step by step — from computer fundamentals and networking to programming, web development and GitHub.</p><p>This site is my personal space for projects, experiments, learning notes and useful study resources.</p><a class="text-link" href="#skills">See what I'm learning →</a></div></div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="about-card profile-about">
-        <div><p class="eyebrow">ABOUT HANSHiT</p><h2>Learning → Building → Improving.</h2><p>I'm a Polytechnic CSE student building practical skills step by step. This website is part of my learning journey and will grow with projects, study resources and useful experiments.</p></div>
-        <div class="roadmap"><span>Computer Fundamentals</span><span>C Programming</span><span>Computer Networks</span><span>HTML & CSS</span><span>JavaScript</span><span>Git & GitHub</span></div>
+    <section class="section-shell section-block" id="skills">
+      <div class="section-label">02 — SKILLS & LEARNING</div>
+      <div class="section-title-row"><h2>Tools, topics & <em>foundations.</em></h2><span>Always evolving</span></div>
+      <div class="skill-grid">
+        <article><span class="skill-number">01</span><h3>Web Development</h3><p>HTML, CSS and JavaScript with a focus on clean, responsive interfaces.</p><div class="skill-tags"><b>HTML</b><b>CSS</b><b>JS</b></div></article>
+        <article><span class="skill-number">02</span><h3>Computer Science</h3><p>C programming, computer fundamentals, networking and core CSE concepts.</p><div class="skill-tags"><b>C</b><b>Networks</b><b>OS</b></div></article>
+        <article><span class="skill-number">03</span><h3>Developer Tools</h3><p>Git and GitHub for version control, project organization and learning in public.</p><div class="skill-tags"><b>Git</b><b>GitHub</b><b>VS Code</b></div></article>
+        <article><span class="skill-number">04</span><h3>Data Foundations</h3><p>Exploring Python basics, SQL and DBMS as part of my CSE learning path.</p><div class="skill-tags"><b>Python</b><b>SQL</b><b>DBMS</b></div></article>
       </div>
+    </section>
+
+    <section class="section-shell section-block" id="projects">
+      <div class="section-label">03 — PROJECTS</div>
+      <div class="section-title-row"><h2>Things I'm <em>building.</em></h2><a class="text-link" href="#library">View study work →</a></div>
+      <div class="project-grid">
+        <article class="project-card featured"><div class="project-top"><span class="project-index">01 / FEATURED</span><span class="project-status">In progress</span></div><div class="project-visual visual-one"><span>HS</span></div><div class="project-info"><h3>Hanshit Study Library</h3><p>A clean home for chapter-wise notes, formulas, presentations and useful study material.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><button class="text-btn project-btn" data-project="study">Explore project →</button></div></article>
+        <article class="project-card"><div class="project-top"><span class="project-index">02</span><span class="project-status">Planned</span></div><div class="project-visual visual-two"><span>01</span></div><div class="project-info"><h3>Student Habit Tracker</h3><p>A practical dashboard concept for tracking study habits and daily progress.</p><div class="project-tags"><span>Web</span><span>Charts</span><span>UI</span></div><button class="text-btn project-btn" data-project="tracker">View concept →</button></div></article>
+        <article class="project-card"><div class="project-top"><span class="project-index">03</span><span class="project-status">Planned</span></div><div class="project-visual visual-three"><span>&lt;/&gt;</span></div><div class="project-info"><h3>C Programming Practice</h3><p>A growing collection of beginner-friendly programs and problem-solving practice.</p><div class="project-tags"><span>C</span><span>Logic</span><span>Practice</span></div><button class="text-btn project-btn" data-project="c">View concept →</button></div></article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block library-section" id="library">
+      <div class="section-label">04 — STUDY LIBRARY</div>
+      <div class="library-head"><div><h2>Learn. Revise. <em>Repeat.</em></h2><p>Quick access to the subjects currently part of my study journey.</p></div><div class="library-search"><span>⌕</span><input id="librarySearch" type="search" placeholder="Search subjects..."></div></div>
+      <div class="library-grid" id="libraryGrid">
+        <button class="library-card" data-name="Computer Science"><span>⌘</span><strong>Computer Science</strong><small>Networks · Programming</small><i>→</i></button>
+        <button class="library-card" data-name="Physics"><span>Φ</span><strong>Physics</strong><small>Concepts · Formulas</small><i>→</i></button>
+        <button class="library-card" data-name="Chemistry"><span>⚗</span><strong>Chemistry</strong><small>Concepts · Revision</small><i>→</i></button>
+        <button class="library-card" data-name="Mathematics"><span>∑</span><strong>Mathematics</strong><small>Practice · Formulas</small><i>→</i></button>
+        <button class="library-card" data-name="English"><span>Aa</span><strong>English</strong><small>Grammar · Communication</small><i>→</i></button>
+        <button class="library-card" data-name="Mechanics"><span>⚙</span><strong>Mechanics</strong><small>Laws · Diagrams</small><i>→</i></button>
+      </div><p class="empty" id="libraryEmpty" hidden>No matching subject found.</p>
+    </section>
+
+    <section class="section-shell final-cta">
+      <div><p class="eyebrow">THE JOURNEY CONTINUES</p><h2>Learning today.<br><em>Building tomorrow.</em></h2></div><a class="btn primary" href="#home">Back to top ↑</a>
     </section>
   </main>
 
-  <div class="modal" id="resourceModal" hidden><div class="modal-box"><button class="close" id="closeModal">×</button><p class="eyebrow">RESOURCE</p><h2 id="modalTitle">Resource</h2><p id="modalText"></p><button class="btn primary" id="modalAction">Open resource</button></div></div>
+  <div class="modal" id="projectModal" hidden><div class="modal-box"><button class="close" id="closeModal">×</button><p class="eyebrow">PROJECT</p><h2 id="modalTitle">Project</h2><p id="modalText"></p><button class="btn primary" id="modalAction">Close</button></div></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <footer><span>© <span id="year"></span> Hanshit</span><span>Polytechnic CSE • Learning by Building</span></footer>
+  <footer class="section-shell"><span>© <span id="year"></span> Hanshit Singh</span><span>Polytechnic CSE • Learning by Building</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
