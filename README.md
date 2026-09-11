@@ -34,17 +34,22 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 ---
 
-## 🤖 Meet Jems — Hanshit's GitHub Assistant
+# 🤖 Chat with Jems
 
 <div align="center">
 
-### `JEMS` • `Hanshit Sir Assistant` • `GitHub Knowledge Agent`
+### `JEMS` • `Hanshit Sir Assistant`
 
-**Ask Jems about Hanshit, this repository, projects, skills, technologies, and documented work.**
+**Want to know about Hanshit, his projects, skills, or this repository?**
 
-<a href="./jems/">
-<img src="https://img.shields.io/badge/🤖_Ask_Jems-Open_Chat-555555?style=for-the-badge" alt="Ask Jems" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">
+<img src="https://img.shields.io/badge/%F0%9F%A4%96%20CHAT%20WITH%20JEMS-OPEN%20CHAT-555555?style=for-the-badge&labelColor=111111" alt="Chat with Jems" />
 </a>
+
+<br><br>
+
+**Try asking:**  
+`Who is Hanshit?` · `What projects has he built?` · `What is he learning?` · `Tell me about this repository`
 
 </div>
 
@@ -59,6 +64,8 @@ Jems is the repository's visitor-facing assistant. It provides an interactive ch
 - 🧩 Project status and future plans when documented
 
 > **Jems rule:** It uses repository information as its source of truth and clearly says when something is not documented instead of inventing information.
+
+> **Note:** GitHub README pages cannot run custom JavaScript directly. The **CHAT WITH JEMS** button opens the deployed Jems web chat.
 
 ---
 
