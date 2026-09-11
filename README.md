@@ -6,6 +6,8 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;AI+%26+Prompting+Enthusiast+%F0%9F%A4%96;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
 
+<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-profile-animation.svg" width="900" alt="Animated 3D profile visual" />
+
 </div>
 
 ---
