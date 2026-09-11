@@ -151,6 +151,27 @@ A console-based C project for managing student records with add, list, search, a
 
 ---
 
+## 👀 Visitor Analytics
+
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=for-the-badge&label=PROFILE+VISITS" alt="Profile visits" />
+
+<br><br>
+
+**Visitor insights**  
+`Country` • `Device` • `Browser` • `Referrer` • `Visits`
+
+<br>
+
+<a href="https://github.com/hansitsingh42-rgb/Hanshit/graphs/traffic">📊 Open GitHub Visitor Traffic</a>
+
+</div>
+
+> GitHub's profile README is rendered as Markdown and does not run custom JavaScript, so detailed live visitor information cannot be embedded directly inside the README. The live counter above shows profile visits, while GitHub's Traffic analytics provides repository visitor and referrer data. For website-level country/device/browser analytics, the GitHub Pages site can use a privacy-first analytics service such as Cloudflare Web Analytics.
+
+---
+
 ## 📊 GitHub Analytics
 
 <div align="center">
