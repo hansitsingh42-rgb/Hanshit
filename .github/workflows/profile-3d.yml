@@ -14,7 +14,7 @@ jobs:
     name: Generate GitHub profile 3D contribution visual
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Generate 3D contribution visual
         uses: yoshi389111/github-profile-3d-contrib@9e3f937195cf840d364388973f73e3c4b3753586
