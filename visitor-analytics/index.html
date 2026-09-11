@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Privacy-first visitor analytics dashboard for Hanshit's portfolio.">
+  <title>Visitor Analytics | Hanshit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="../"><span class="brand-mark">&lt;/&gt;</span><span><b>Hanshit</b><small>Developer • Learner • Builder</small></span></a>
+    <div class="status"><i></i> Privacy-first analytics</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">PORTFOLIO INTELLIGENCE</span>
+        <h1>Visitor <em>Analytics</em></h1>
+        <p>Understand how people discover and use the portfolio — with privacy-respecting, aggregate analytics rather than personal identification.</p>
+        <div class="hero-pills"><span>Real visits</span><span>Device insights</span><span>Country insights</span><span>No personal identity</span></div>
+      </div>
+      <div class="orb" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="globe">◎</div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span></div>
+    </section>
+
+    <section class="metrics">
+      <article><span class="icon">◉</span><small>Total visits</small><strong id="totalVisits">—</strong><b>Waiting for analytics</b></article>
+      <article><span class="icon">◌</span><small>Unique visitors</small><strong id="uniqueVisitors">—</strong><b>Privacy-safe aggregate</b></article>
+      <article><span class="icon">◷</span><small>Avg. visit duration</small><strong id="duration">—</strong><b>Provider dependent</b></article>
+      <article><span class="icon">▣</span><small>Pages viewed</small><strong id="pageViews">—</strong><b>Portfolio activity</b></article>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel map-panel"><div class="panel-head"><div><span class="eyebrow">GEOGRAPHY</span><h2>Visitors by country</h2></div><span class="live-dot">● Live feed</span></div><div class="world"><span class="land l1"></span><span class="land l2"></span><span class="land l3"></span><span class="land l4"></span><span class="pulse p1"></span><span class="pulse p2"></span><span class="pulse p3"></span><div class="map-empty">Connect analytics to populate country insights</div></div></article>
+      <article class="panel"><div class="panel-head"><div><span class="eyebrow">TECHNOLOGY</span><h2>Devices & browsers</h2></div></div><div class="donut"><div><strong>—</strong><small>visitors</small></div></div><div class="legend"><span><i></i>Desktop <b>—</b></span><span><i></i>Mobile <b>—</b></span><span><i></i>Tablet <b>—</b></span></div></article>
+    </section>
+
+    <section class="grid-three">
+      <article class="panel list-panel"><div class="panel-head"><div><span class="eyebrow">BROWSERS</span><h2>Browser usage</h2></div></div><div class="bars"><p><span>Chrome</span><b>—</b><i><u></u></i></p><p><span>Safari</span><b>—</b><i><u></u></i></p><p><span>Edge</span><b>—</b><i><u></u></i></p><p><span>Firefox</span><b>—</b><i><u></u></i></p></div></article>
+      <article class="panel list-panel"><div class="panel-head"><div><span class="eyebrow">ACTIVITY</span><h2>Recent visits</h2></div></div><div class="empty-state"><span>◌</span><strong>No visitor records yet</strong><p>Analytics data will appear here after the tracking provider is connected.</p></div></article>
+      <article class="panel insights"><div class="panel-head"><div><span class="eyebrow">INSIGHTS</span><h2>What you can learn</h2></div></div><ul><li><span>01</span><div><b>Audience geography</b><small>See country-level trends without identifying individuals.</small></div></li><li><span>02</span><div><b>Device patterns</b><small>Understand desktop, mobile and tablet usage.</small></div></li><li><span>03</span><div><b>Browser trends</b><small>Check compatibility priorities for your portfolio.</small></div></li></ul></article>
+    </section>
+
+    <section class="privacy panel"><div><span class="eyebrow">PRIVACY STANDARD</span><h2>No creepy tracking.</h2><p>This dashboard is designed for aggregate analytics. It does not attempt to reveal a visitor's name, email, phone number, exact address, password or other private identity data.</p></div><div class="privacy-badge"><span>✓</span><b>Privacy-first</b><small>Aggregate insights only</small></div></section>
+
+    <section class="setup panel"><div><span class="eyebrow">ACTIVATION</span><h2>Analytics connection</h2><p id="setupText">The dashboard UI is ready. Connect a privacy-first analytics provider to start receiving real visitor metrics.</p></div><div class="setup-state"><span class="state-dot"></span><b id="connectionState">Not connected</b><small>Tracking status</small></div></section>
+  </main>
+  <footer><span>© <span id="year"></span> Hanshit Singh</span><a href="../">Back to portfolio ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
