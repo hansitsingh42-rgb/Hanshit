@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hanshit Study Hub - a simple student resource library for notes, subjects and study material.">
-  <title>Hanshit Study Hub</title>
+  <meta name="description" content="Hanshit Study Library — organized notes, PDFs, videos, PPTs, formulas and practical CSE resources.">
+  <title>Hanshit Study Library</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Hanshit Study Hub home">Hanshit <span>Study Hub</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#resources">Resources</a>
-      <a href="#about">About</a>
+    <a class="brand" href="#home" aria-label="Hanshit Study Library home"><b>H</b> Hanshit <span>Library</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    <nav id="navMenu">
+      <a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#resources">Resources</a><a href="#about">About</a>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
     </nav>
   </header>
 
@@ -22,109 +21,39 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">STUDENT RESOURCE LIBRARY</p>
-        <h1>Study smarter. Keep everything in one place.</h1>
-        <p class="hero-text">A clean starting point for organizing notes, formulas, presentations, videos and useful study files.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#subjects">Explore subjects</a>
-          <button class="btn secondary" id="randomBtn" type="button">Surprise me</button>
-        </div>
+        <h1>Everything you need to <span>study better.</span></h1>
+        <p class="hero-text">A clean, chapter-friendly space for notes, PDFs, videos, PPTs, formulas and practical computer resources.</p>
+        <div class="hero-actions"><a class="btn primary" href="#resources">Explore resources →</a><button class="btn secondary" id="randomBtn">Surprise me</button></div>
+        <div class="mini-points"><span>✓ Free to organize</span><span>✓ Student-first</span><span>✓ Mobile friendly</span></div>
       </div>
-      <div class="hero-card" aria-label="Library summary">
-        <div class="hero-icon">📚</div>
-        <strong>Study Library</strong>
-        <span>Organized • Simple • Student-first</span>
-      </div>
+      <div class="hero-card"><div class="library-badge">H</div><p>Hanshit Library</p><strong>Learn → Practice → Improve</strong><div class="stats"><div><b>06</b><small>Subjects</small></div><div><b>04</b><small>Types</small></div><div><b>24/7</b><small>Access</small></div></div></div>
     </section>
 
     <section class="section" id="subjects">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">BROWSE</p>
-          <h2>Subjects</h2>
-        </div>
-        <div class="search-wrap">
-          <label class="sr-only" for="search">Search subjects</label>
-          <input id="search" type="search" placeholder="Search subjects...">
-        </div>
-      </div>
-
-      <div class="filters" role="group" aria-label="Subject filters">
-        <button class="filter active" data-filter="all" type="button">All</button>
-        <button class="filter" data-filter="cse" type="button">CSE</button>
-        <button class="filter" data-filter="science" type="button">Science</button>
-        <button class="filter" data-filter="other" type="button">Other</button>
-      </div>
-
+      <div class="section-heading"><div><p class="eyebrow">BROWSE</p><h2>Subjects</h2></div><div class="search-wrap"><label class="sr-only" for="search">Search subjects</label><input id="search" type="search" placeholder="Search subjects..."></div></div>
+      <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="cse">CSE</button><button class="filter" data-filter="science">Science</button><button class="filter" data-filter="other">Other</button></div>
       <div class="subject-grid" id="subjectGrid">
-        <article class="subject-card" data-category="cse" data-name="Computer Science">
-          <div class="card-icon">💻</div>
-          <h3>Computer Science</h3>
-          <p>Computer fundamentals, programming, networking and more.</p>
-          <button class="text-btn" data-subject="Computer Science" type="button">View resources →</button>
-        </article>
-        <article class="subject-card" data-category="science" data-name="Physics">
-          <div class="card-icon">⚡</div>
-          <h3>Physics</h3>
-          <p>Concepts, formulas, short notes and revision material.</p>
-          <button class="text-btn" data-subject="Physics" type="button">View resources →</button>
-        </article>
-        <article class="subject-card" data-category="science" data-name="Chemistry">
-          <div class="card-icon">🧪</div>
-          <h3>Chemistry</h3>
-          <p>Important concepts, reactions, formulas and notes.</p>
-          <button class="text-btn" data-subject="Chemistry" type="button">View resources →</button>
-        </article>
-        <article class="subject-card" data-category="science" data-name="Mathematics">
-          <div class="card-icon">📐</div>
-          <h3>Mathematics</h3>
-          <p>Formulas, examples, practice questions and revision.</p>
-          <button class="text-btn" data-subject="Mathematics" type="button">View resources →</button>
-        </article>
-        <article class="subject-card" data-category="other" data-name="English">
-          <div class="card-icon">✍️</div>
-          <h3>English</h3>
-          <p>Grammar, communication skills and useful notes.</p>
-          <button class="text-btn" data-subject="English" type="button">View resources →</button>
-        </article>
-        <article class="subject-card" data-category="other" data-name="Mechanics">
-          <div class="card-icon">⚙️</div>
-          <h3>Mechanics</h3>
-          <p>Definitions, laws, diagrams and exam-focused notes.</p>
-          <button class="text-btn" data-subject="Mechanics" type="button">View resources →</button>
-        </article>
-      </div>
-      <p class="empty" id="emptyState" hidden>No matching subjects found.</p>
+        <article class="subject-card" data-category="cse" data-name="Computer Science"><div class="card-icon">⌘</div><h3>Computer Science</h3><p>Fundamentals, programming, networking and practical CSE topics.</p><button class="text-btn" data-subject="Computer Science">View resources →</button></article>
+        <article class="subject-card" data-category="science" data-name="Physics"><div class="card-icon">Φ</div><h3>Physics</h3><p>Concepts, formulas, short notes and revision material.</p><button class="text-btn" data-subject="Physics">View resources →</button></article>
+        <article class="subject-card" data-category="science" data-name="Chemistry"><div class="card-icon">⚗</div><h3>Chemistry</h3><p>Important concepts, reactions, formulas and notes.</p><button class="text-btn" data-subject="Chemistry">View resources →</button></article>
+        <article class="subject-card" data-category="science" data-name="Mathematics"><div class="card-icon">∑</div><h3>Mathematics</h3><p>Formulas, examples, practice questions and revision.</p><button class="text-btn" data-subject="Mathematics">View resources →</button></article>
+        <article class="subject-card" data-category="other" data-name="English"><div class="card-icon">Aa</div><h3>English</h3><p>Grammar, communication skills and useful notes.</p><button class="text-btn" data-subject="English">View resources →</button></article>
+        <article class="subject-card" data-category="other" data-name="Mechanics"><div class="card-icon">⚙</div><h3>Mechanics</h3><p>Definitions, laws, diagrams and exam-focused notes.</p><button class="text-btn" data-subject="Mechanics">View resources →</button></article>
+      </div><p class="empty" id="emptyState" hidden>No matching subjects found.</p>
     </section>
 
     <section class="section resources" id="resources">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">COMING NEXT</p>
-          <h2>Resource types</h2>
-        </div>
-      </div>
-      <div class="resource-grid">
-        <div class="resource-item"><span>📄</span><div><strong>PDF Notes</strong><p>Chapter-wise notes and revision material.</p></div></div>
-        <div class="resource-item"><span>🎥</span><div><strong>Study Videos</strong><p>Useful videos organized by subject.</p></div></div>
-        <div class="resource-item"><span>📊</span><div><strong>PPT & Excel</strong><p>Presentations, sheets and practical files.</p></div></div>
-        <div class="resource-item"><span>🧠</span><div><strong>Formulas</strong><p>Quick-reference formulas and important points.</p></div></div>
-      </div>
+      <div class="section-heading"><div><p class="eyebrow">LIBRARY</p><h2>Study resources</h2></div><p id="resourceCount">6 resources available</p></div>
+      <div class="toolbar"><label class="search-box">⌕ <input id="resourceSearch" type="search" placeholder="Search resources..."></label><select id="typeFilter"><option value="all">All types</option><option value="PDF">PDF</option><option value="Notes">Notes</option><option value="PPT">PPT</option><option value="Video">Video</option></select><button class="btn secondary small" id="clearResources">Clear</button></div>
+      <div class="resource-grid" id="resourceGrid"></div><p class="empty" id="resourceEmpty" hidden>No matching resources found.</p>
     </section>
 
-    <section class="about" id="about">
-      <div>
-        <p class="eyebrow">ABOUT THIS PROJECT</p>
-        <h2>Built as a practical CSE project.</h2>
-        <p>This is the first MVP of Hanshit Study Hub. The next versions can add real PDF uploads, chapter pages, authentication, an admin dashboard, and a proper database.</p>
-      </div>
-      <div class="roadmap">
-        <span>01 UI</span><span>02 Resources</span><span>03 Admin</span><span>04 Database</span>
-      </div>
-    </section>
+    <section class="section about" id="about"><div class="about-card"><div><p class="eyebrow">ABOUT THE PROJECT</p><h2>Built while learning CSE.</h2><p>Hanshit Library is a student-first resource hub. It is designed to grow chapter-by-chapter with useful study material rather than selling courses or certificates.</p></div><div class="roadmap"><span>01 UI</span><span>02 Resources</span><span>03 Admin</span><span>04 Database</span></div></div></section>
   </main>
 
+  <div class="modal" id="resourceModal" hidden><div class="modal-box"><button class="close" id="closeModal">×</button><p class="eyebrow">RESOURCE</p><h2 id="modalTitle">Resource</h2><p id="modalText"></p><button class="btn primary" id="modalAction">Open resource</button></div></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <footer>© 2026 Hanshit Study Hub • Built while learning CSE</footer>
+  <footer><span>© <span id="year"></span> Hanshit Library</span><span>Learning → Building → Improving</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
