@@ -34,16 +34,16 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 ---
 
-# 🤖 Chat with Jems
+# 🤖 Ask Jems AI
 
 <div align="center">
 
 ### `JEMS` • `Hanshit Sir Assistant`
 
-**Want to know about Hanshit, his projects, skills, or this repository?**
+**Explore Hanshit's documented profile, projects, skills, and repository.**
 
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">
-<img src="https://img.shields.io/badge/%F0%9F%A4%96%20CHAT%20WITH%20JEMS-OPEN%20CHAT-555555?style=for-the-badge&labelColor=111111" alt="Chat with Jems" />
+<img src="https://img.shields.io/badge/%F0%9F%A4%96%20ASK%20JEMS%20AI-OPEN%20JEMS-555555?style=for-the-badge&labelColor=111111" alt="Ask Jems AI" />
 </a>
 
 <br><br>
@@ -53,7 +53,7 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 </div>
 
-Jems is the repository's visitor-facing assistant. It provides an interactive chat experience using documented repository knowledge.
+Jems is the repository's visitor-facing knowledge assistant. It provides an interactive chat experience using documented repository knowledge.
 
 **Jems can explain:**
 - 👤 Hanshit's documented profile and learning journey
@@ -65,7 +65,7 @@ Jems is the repository's visitor-facing assistant. It provides an interactive ch
 
 > **Jems rule:** It uses repository information as its source of truth and clearly says when something is not documented instead of inventing information.
 
-> **Note:** GitHub README pages cannot run custom JavaScript directly. The **CHAT WITH JEMS** button opens the deployed Jems web chat.
+> **Note:** GitHub README pages cannot run custom JavaScript directly. The **ASK JEMS AI** button opens the deployed Jems web chat.
 
 ---
 
@@ -112,36 +112,36 @@ Scan or click a project QR code to open the **Demo Hub**, where you can choose *
 
 ### 📚 Study Resource Manager
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for Study Resource Manager demo hub" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/study-resource-manager/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fstudy-resource-manager%2F&size=220&margin=2" width="180" alt="QR code for Study Resource Manager" />
 </a>
 
 **Scan / Click QR**  
-→ **See Live Preview**
+→ **Open Project**
 
 </td>
 <td align="center" width="33%">
 
 ### ⏱️ Student Productivity Dashboard
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for Student Productivity Dashboard demo hub" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/student-productivity-dashboard/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fstudent-productivity-dashboard%2F&size=220&margin=2" width="180" alt="QR code for Student Productivity Dashboard" />
 </a>
 
 **Scan / Click QR**  
-→ **See Live Preview**
+→ **Open Project**
 
 </td>
 <td align="center" width="33%">
 
 ### 🎓 C Student Record Manager
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/demo/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fdemo%2F&size=220&margin=2" width="180" alt="QR code for C Student Record Manager demo hub" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/c-student-record-manager/live-demo/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fc-student-record-manager%2Flive-demo%2F&size=220&margin=2" width="180" alt="QR code for C Student Record Manager live demo" />
 </a>
 
 **Scan / Click QR**  
-→ **See Live Preview**
+→ **Open Live Demo**
 
 </td>
 </tr>
