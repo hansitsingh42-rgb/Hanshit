@@ -36,6 +36,37 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 ---
 
+## ⭐ Featured Projects
+
+### 📚 Study Resource Manager
+A browser-based student resource library for organizing study materials by subject and type.
+
+**Features:** Search • Subject/Type Filters • Favorites • Add/Delete Resources • Dark/Light Mode • LocalStorage
+
+**Tech:** `HTML` `CSS` `JavaScript`
+
+👉 [Open Project](./projects/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
+
+### ⏱️ Student Productivity Dashboard
+A practical dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring subject progress.
+
+**Features:** Tasks • 25-Minute Focus Timer • Study-Time Tracking • Progress Stats • LocalStorage • Responsive UI
+
+**Tech:** `HTML` `CSS` `JavaScript`
+
+👉 [Open Project](./projects/student-productivity-dashboard/) · [View Source](./projects/student-productivity-dashboard/)
+
+### 🎓 C Student Record Management System
+A console-based C project for managing student records with add, list, search, and delete operations.
+
+**Tech:** `C` `Structs` `Arrays` `Functions` `Validation`
+
+👉 [View Source](./projects/c-student-record-manager/)
+
+> More projects will be added as they are genuinely built and tested.
+
+---
+
 # 🧠 Skills & Tools
 
 ## 💻 Computer & Development
