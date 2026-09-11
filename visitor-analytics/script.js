@@ -1,28 +1,37 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
-// The dashboard intentionally starts empty rather than displaying fake visitor data.
-// Connect a privacy-first analytics provider to populate the metrics.
+// Keep the dashboard honest: no fabricated visitor numbers or visitor identities.
 const analyticsConfig = {
   provider: 'cloudflare-web-analytics',
   connected: false
 };
 
-const state = document.getElementById('connectionState');
+const connectionState = document.getElementById('connectionState');
 const setupText = document.getElementById('setupText');
+const stateDot = document.querySelector('.state-dot');
+
 if (analyticsConfig.connected) {
-  state.textContent = 'Connected';
-  state.previousElementSibling.style.background = '#43e8dc';
-  state.previousElementSibling.style.boxShadow = '0 0 15px #43e8dc';
-  setupText.textContent = 'Analytics collection is enabled. Aggregate visitor metrics will appear as the provider processes visits.';
+  if (connectionState) connectionState.textContent = 'Connected';
+  if (stateDot) {
+    stateDot.style.background = '#25e5d0';
+    stateDot.style.boxShadow = '0 0 14px #25e5d0';
+  }
+  if (setupText) {
+    setupText.textContent = 'Analytics collection is enabled. Aggregate visitor metrics will appear as the provider processes visits.';
+  }
 }
 
-// Small entrance animation for dashboard cards.
-document.querySelectorAll('.metrics article,.panel').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(10px)';
-  el.style.animation = `cardIn .55s ease ${Math.min(i * 45, 500)}ms forwards`;
+// Staggered entrance animation for the dashboard cards.
+const cards = document.querySelectorAll('.metric, .panel');
+cards.forEach((card, index) => {
+  card.style.setProperty('--delay', `${Math.min(index * 45, 500)}ms`);
+  card.classList.add('reveal');
 });
 
-const style = document.createElement('style');
-style.textContent = '@keyframes cardIn{to{opacity:1;transform:translateY(0)}}';
-document.head.appendChild(style);
+// Keep navigation links ordinary and predictable; no tracking parameters are added.
+document.querySelectorAll('.sidebar nav a').forEach((link) => {
+  link.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') link.click();
+  });
+});
