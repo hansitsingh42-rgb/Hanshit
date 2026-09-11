@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -25,18 +25,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Prepare site
         run: |
+          rm -rf _site
           mkdir -p _site
           cp -R projects/student-productivity-dashboard/. _site/
+          test -f _site/index.html
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
