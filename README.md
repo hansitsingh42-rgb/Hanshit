@@ -42,13 +42,13 @@ I'm a Polytechnic Computer Science student who learns by building practical proj
 
 **Ask Jems about Hanshit, this repository, projects, skills, technologies, and documented work.**
 
-<a href="./.github/agents/jems.agent.md">
-<img src="https://img.shields.io/badge/🤖_Meet_Jems-Open_Assistant-555555?style=for-the-badge" alt="Meet Jems" />
+<a href="./jems/">
+<img src="https://img.shields.io/badge/🤖_Ask_Jems-Open_Chat-555555?style=for-the-badge" alt="Ask Jems" />
 </a>
 
 </div>
 
-Jems is the repository's dedicated AI assistant persona. Its job is to help visitors understand the information that is actually documented in this GitHub repository.
+Jems is the repository's visitor-facing assistant. It provides an interactive chat experience using documented repository knowledge.
 
 **Jems can explain:**
 - 👤 Hanshit's documented profile and learning journey
@@ -58,7 +58,7 @@ Jems is the repository's dedicated AI assistant persona. Its job is to help visi
 - 🔗 Live demos and project documentation
 - 🧩 Project status and future plans when documented
 
-> **Jems rule:** It should use repository information as its source of truth and clearly say when something is not documented instead of inventing information.
+> **Jems rule:** It uses repository information as its source of truth and clearly says when something is not documented instead of inventing information.
 
 ---
 
