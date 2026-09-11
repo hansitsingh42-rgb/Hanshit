@@ -88,6 +88,14 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 ---
 
+## 🧊 3D Skills Visualization
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="Animated 3D skills visualization" />
+</div>
+
+---
+
 ## 📈 Skills Overview
 
 <div align="center">
@@ -97,6 +105,18 @@ I'm a Computer Science student focused on learning through practical projects. I
 </div>
 
 > The chart shows the number of tools/areas represented in each skill category, not a percentage of proficiency.
+
+---
+
+## 🧊 3D Contribution Activity
+
+<div align="center">
+
+<img src="./profile-3d-contrib/profile-green-animate.svg" width="900" alt="Animated 3D GitHub contribution calendar" />
+
+</div>
+
+> This 3D contribution visual is generated automatically by GitHub Actions and refreshed daily.
 
 ---
 
