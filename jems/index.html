@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Jems — Hanshit Sir Assistant">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>Jems — Hanshit Sir Assistant</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="app">
 <header class="top">
-<a class="back" href="../">← Hanshit.dev</a>
-<div class="brand"><div class="logo">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant · v3</span></div></div>
-<div class="actions"><button id="themeBtn" title="Toggle theme">☼</button><button id="clearBtn" title="Clear chat">Clear</button><div class="status"><i></i> Online</div></div>
+<a class="back" href="../" rel="noopener">← Hanshit.dev</a>
+<div class="brand"><div class="logo" aria-hidden="true">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant · v3</span></div></div>
+<div class="actions"><button id="themeBtn" type="button" title="Toggle theme" aria-label="Toggle theme">☼</button><button id="clearBtn" type="button" title="Clear chat">Clear</button><div class="status" aria-label="Jems status"><i aria-hidden="true"></i> Online</div></div>
 </header>
 <section class="hero">
 <p class="eyebrow">REPOSITORY-AWARE KNOWLEDGE ASSISTANT</p>
@@ -21,9 +23,9 @@
 <div class="capabilities"><span>🧠 Context</span><span>🔎 Knowledge search</span><span>💻 Code-aware topics</span><span>📁 Project details</span></div>
 </section>
 <section class="chat" aria-label="Jems chat">
-<div class="messages" id="messages"></div>
-<div class="typing" id="typing"><span></span><span></span><span></span> Jems is thinking…</div>
-<div class="suggestions">
+<div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+<div class="typing" id="typing" role="status" aria-live="polite"><span></span><span></span><span></span> Jems is thinking…</div>
+<div class="suggestions" aria-label="Suggested questions">
 <button type="button" data-q="Who is Hanshit?">👤 Who is Hanshit?</button>
 <button type="button" data-q="What projects has Hanshit built?">🚀 Projects</button>
 <button type="button" data-q="What is Hanshit learning?">📚 Learning</button>
@@ -31,14 +33,14 @@
 <button type="button" data-q="Explain the Study Resource Manager">🔍 Explain a project</button>
 <button type="button" data-q="What technologies does Hanshit use?">🛠️ Technologies</button>
 </div>
-<form id="chatForm">
-<input id="input" autocomplete="off" placeholder="Ask Jems a question..." aria-label="Message Jems">
+<form id="chatForm" autocomplete="off">
+<input id="input" name="message" maxlength="1000" autocomplete="off" spellcheck="true" placeholder="Ask Jems a question..." aria-label="Message Jems">
 <button type="submit">Send ↑</button>
 </form>
-<div class="footer-tools"><button id="exportBtn">↓ Export chat</button><button id="copyBtn">Copy last answer</button></div>
-<small class="note">Jems uses documented repository knowledge. It clearly identifies information that is not documented.</small>
+<div class="footer-tools"><button id="exportBtn" type="button">↓ Export chat</button><button id="copyBtn" type="button">Copy last answer</button></div>
+<small class="note">Jems uses documented repository knowledge. Chat history stays in this browser. Do not enter passwords, API keys, or other secrets.</small>
 </section>
 </main>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
