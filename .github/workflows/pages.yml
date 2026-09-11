@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
     paths:
+      - 'index.html'
+      - 'style.css'
+      - 'script.js'
+      - 'visitor-analytics/**'
       - 'projects/student-productivity-dashboard/**'
       - 'projects/study-resource-manager/**'
       - '.github/workflows/pages.yml'
@@ -34,9 +38,16 @@ jobs:
       - name: Prepare site
         run: |
           rm -rf _site
-          mkdir -p _site
-          cp -R projects/study-resource-manager/. _site/
+          mkdir -p _site/study-resource-manager
+          mkdir -p _site/student-productivity-dashboard
+          mkdir -p _site/visitor-analytics
+          cp -R projects/student-productivity-dashboard/. _site/
+          cp -R projects/study-resource-manager/. _site/study-resource-manager/
+          cp -R visitor-analytics/. _site/visitor-analytics/
           test -f _site/index.html
+          test -f _site/study-resource-manager/index.html
+          test -f _site/student-productivity-dashboard/index.html
+          test -f _site/visitor-analytics/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
