@@ -1,1 +1,155 @@
-const $=s=>document.querySelector(s);const list=$('#taskList');let tasks=JSON.parse(localStorage.getItem('studentTasks')||'[]');let studySeconds=Number(localStorage.getItem('studySeconds')||'0');let timerId=null;let remaining=25*60;const SESSION_SECONDS=25*60;function save(){localStorage.setItem('studentTasks',JSON.stringify(tasks))}function saveStudyTime(){localStorage.setItem('studySeconds',String(studySeconds))}function render(){list.innerHTML='';tasks.forEach((t,i)=>{const li=document.createElement('li');li.className='task '+(t.done?'done':'');li.innerHTML=`<input type="checkbox" ${t.done?'checked':''} aria-label="Complete task"><label></label><button class="delete" aria-label="Delete task">×</button>`;li.querySelector('label').textContent=t.text;li.querySelector('input').onchange=()=>{tasks[i].done=!tasks[i].done;save();render()};li.querySelector('.delete').onclick=()=>{tasks.splice(i,1);save();render()};list.appendChild(li)});const done=tasks.filter(t=>t.done).length;$('#taskCount').textContent=`${done}/${tasks.length}`;$('#progress').textContent=tasks.length?Math.round(done/tasks.length*100)+'%':'0%'}$('#taskForm').onsubmit=e=>{e.preventDefault();const input=$('#taskInput');const text=input.value.trim();if(!text)return;tasks.push({text,done:false});input.value='';save();render()};$('#clearBtn').onclick=()=>{tasks=tasks.filter(t=>!t.done);save();render()};function formatStudyTime(total){const h=String(Math.floor(total/3600)).padStart(2,'0'),m=String(Math.floor(total%3600/60)).padStart(2,'0'),s=String(total%60).padStart(2,'0');return `${h}:${m}:${s}`}function showTimer(){const m=String(Math.floor(remaining/60)).padStart(2,'0'),s=String(remaining%60).padStart(2,'0');$('#timer').textContent=`${m}:${s}`;$('#studyTime').textContent=formatStudyTime(studySeconds)}function stopTimer(){if(timerId){clearInterval(timerId);timerId=null}}function startNewSession(){remaining=SESSION_SECONDS;showTimer();startTimer()}function startTimer(){if(timerId)return;if(remaining<=0){startNewSession();return}timerId=setInterval(()=>{if(remaining<=1){remaining=0;studySeconds++;saveStudyTime();showTimer();stopTimer();alert('Focus session complete! Take a short break.');return}remaining--;studySeconds++;saveStudyTime();showTimer()},1000)}$('#startBtn').onclick=startTimer;$('#resetBtn').onclick=()=>{stopTimer();remaining=SESSION_SECONDS;showTimer()};$('#themeBtn').onclick=()=>{document.body.classList.toggle('light');$('#themeBtn').textContent=document.body.classList.contains('light')?'☀':'☾';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')};if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');$('#themeBtn').textContent='☀'}render();showTimer();
+const $ = (selector) => document.querySelector(selector);
+const list = $('#taskList');
+const SESSION_SECONDS = 25 * 60;
+let timerId = null;
+let remaining = SESSION_SECONDS;
+
+function readTasks() {
+  try {
+    const stored = JSON.parse(localStorage.getItem('studentTasks') || '[]');
+    return Array.isArray(stored)
+      ? stored.filter((task) => task && typeof task.text === 'string').map((task) => ({
+          text: task.text,
+          done: Boolean(task.done)
+        }))
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function readStudySeconds() {
+  const value = Number(localStorage.getItem('studySeconds') || '0');
+  return Number.isFinite(value) && value >= 0 ? Math.floor(value) : 0;
+}
+
+let tasks = readTasks();
+let studySeconds = readStudySeconds();
+
+function save() {
+  try {
+    localStorage.setItem('studentTasks', JSON.stringify(tasks));
+  } catch {
+    // The dashboard continues to work for the current session if storage is unavailable.
+  }
+}
+
+function saveStudyTime() {
+  try {
+    localStorage.setItem('studySeconds', String(studySeconds));
+  } catch {
+    // Keep the in-memory counter running when persistent storage is unavailable.
+  }
+}
+
+function render() {
+  list.innerHTML = '';
+  tasks.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.className = `task ${task.done ? 'done' : ''}`;
+    li.innerHTML = '<input type="checkbox" aria-label="Complete task"><label></label><button class="delete" aria-label="Delete task">×</button>';
+    li.querySelector('input').checked = task.done;
+    li.querySelector('label').textContent = task.text;
+    li.querySelector('input').onchange = () => {
+      tasks[index].done = !tasks[index].done;
+      save();
+      render();
+    };
+    li.querySelector('.delete').onclick = () => {
+      tasks.splice(index, 1);
+      save();
+      render();
+    };
+    list.appendChild(li);
+  });
+
+  const done = tasks.filter((task) => task.done).length;
+  $('#taskCount').textContent = `${done}/${tasks.length}`;
+  $('#progress').textContent = tasks.length ? `${Math.round((done / tasks.length) * 100)}%` : '0%';
+}
+
+$('#taskForm').onsubmit = (event) => {
+  event.preventDefault();
+  const input = $('#taskInput');
+  const text = input.value.trim();
+  if (!text) return;
+  tasks.push({ text, done: false });
+  input.value = '';
+  save();
+  render();
+};
+
+$('#clearBtn').onclick = () => {
+  tasks = tasks.filter((task) => !task.done);
+  save();
+  render();
+};
+
+function formatStudyTime(total) {
+  const hours = String(Math.floor(total / 3600)).padStart(2, '0');
+  const minutes = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+  const seconds = String(total % 60).padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+function showTimer() {
+  const minutes = String(Math.floor(remaining / 60)).padStart(2, '0');
+  const seconds = String(remaining % 60).padStart(2, '0');
+  $('#timer').textContent = `${minutes}:${seconds}`;
+  $('#studyTime').textContent = formatStudyTime(studySeconds);
+}
+
+function stopTimer() {
+  if (timerId !== null) {
+    clearInterval(timerId);
+    timerId = null;
+  }
+}
+
+function startTimer() {
+  if (timerId !== null) return;
+  if (remaining <= 0) remaining = SESSION_SECONDS;
+
+  timerId = setInterval(() => {
+    remaining -= 1;
+    studySeconds += 1;
+    saveStudyTime();
+    showTimer();
+
+    if (remaining <= 0) {
+      remaining = 0;
+      stopTimer();
+      alert('Focus session complete! Take a short break.');
+    }
+  }, 1000);
+}
+
+$('#startBtn').onclick = startTimer;
+$('#resetBtn').onclick = () => {
+  stopTimer();
+  remaining = SESSION_SECONDS;
+  showTimer();
+};
+
+$('#themeBtn').onclick = () => {
+  document.body.classList.toggle('light');
+  const theme = document.body.classList.contains('light') ? 'light' : 'dark';
+  $('#themeBtn').textContent = theme === 'light' ? '☀' : '☾';
+  try {
+    localStorage.setItem('theme', theme);
+  } catch {
+    // Theme still works for the current session.
+  }
+};
+
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    $('#themeBtn').textContent = '☀';
+  }
+} catch {
+  // Use the default dark theme when storage is unavailable.
+}
+
+render();
+showTimer();
