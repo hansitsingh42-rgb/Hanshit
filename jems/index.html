@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Jems — Hanshit Sir Assistant">
+<title>Jems — Hanshit Sir Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header class="top">
+<a class="back" href="../">← Hanshit.dev</a>
+<div class="brand"><div class="logo">J</div><div><strong>Jems</strong><span>Hanshit Sir Assistant</span></div></div>
+<div class="status"><i></i> Online</div>
+</header>
+<section class="hero">
+<p class="eyebrow">GITHUB KNOWLEDGE ASSISTANT</p>
+<h1>Ask Jems anything about Hanshit.</h1>
+<p>Ask about the profile, projects, technologies, learning journey, repository structure, and documented work.</p>
+</section>
+<section class="chat" aria-label="Jems chat">
+<div class="messages" id="messages"></div>
+<div class="suggestions">
+<button type="button" data-q="Who is Hanshit?">Who is Hanshit?</button>
+<button type="button" data-q="What projects has Hanshit built?">Projects</button>
+<button type="button" data-q="What is Hanshit learning?">Currently learning</button>
+<button type="button" data-q="Tell me about the repository">Repository</button>
+</div>
+<form id="chatForm">
+<input id="input" autocomplete="off" placeholder="Ask Jems a question..." aria-label="Message Jems">
+<button type="submit">Send ↑</button>
+</form>
+<small class="note">Jems answers from documented repository knowledge and does not invent missing facts.</small>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
