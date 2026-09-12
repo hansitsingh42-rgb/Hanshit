@@ -11,7 +11,7 @@
 <p>
 <a href="https://hanshit.vercel.app/">🌐 Live Portfolio</a> •
 <a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Repository</a> •
-<a href="https://hansit.vercel.app/jems/">🤖 Jems AI</a>
+<a href="https://hanshit.vercel.app/jems/">🤖 Jems AI</a>
 </p>
 
 </div>
