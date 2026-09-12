@@ -78,7 +78,7 @@ A browser-based student resource library for organizing study materials by subje
 
 **Tech:** `HTML` `CSS` `JavaScript`
 
-👉 [Open Project](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
+👉 [Open Project](https://hansitsingh42-rgb.github.io/Hanshit/projects/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
 
 ### ⏱️ Student Productivity Dashboard
 A responsive dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring subject progress.
@@ -87,14 +87,14 @@ A responsive dashboard for managing daily tasks, tracking study time, using a fo
 
 **Tech:** `HTML` `CSS` `JavaScript`
 
-👉 [Open Project](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) · [View Source](./projects/student-productivity-dashboard/)
+👉 [Open Project](https://hansitsingh42-rgb.github.io/Hanshit/projects/student-productivity-dashboard/) · [View Source](./projects/student-productivity-dashboard/)
 
 ### 🎓 C Student Record Management System
 A console-based C project for managing student records with add, list, search, and delete operations.
 
 **Tech:** `C` `Structs` `Arrays` `Functions` `Validation`
 
-👉 [Open Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) · [View Source](./projects/c-student-record-manager/)
+👉 [Open Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/projects/c-student-record-manager/live-demo/) · [View Source](./projects/c-student-record-manager/)
 
 > More projects will be added as they are genuinely built and tested.
 
@@ -124,8 +124,8 @@ Each QR code now opens its corresponding deployed project directly.
 
 ### 📚 Study Resource Manager
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fstudy-resource-manager%2F&size=220&margin=2" width="180" alt="QR code for Study Resource Manager" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/study-resource-manager/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fstudy-resource-manager%2F&size=220&margin=2" width="180" alt="QR code for Study Resource Manager" />
 </a>
 
 **Scan / Click QR**  
@@ -136,8 +136,8 @@ Each QR code now opens its corresponding deployed project directly.
 
 ### ⏱️ Student Productivity Dashboard
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fstudent-productivity-dashboard%2F&size=220&margin=2" width="180" alt="QR code for Student Productivity Dashboard" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/student-productivity-dashboard/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fstudent-productivity-dashboard%2F&size=220&margin=2" width="180" alt="QR code for Student Productivity Dashboard" />
 </a>
 
 **Scan / Click QR**  
@@ -148,8 +148,8 @@ Each QR code now opens its corresponding deployed project directly.
 
 ### 🎓 C Student Record Manager
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/">
-<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fc-student-record-manager%2F&size=220&margin=2" width="180" alt="QR code for C Student Record Manager live demo" />
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/projects/c-student-record-manager/live-demo/">
+<img src="https://quickchart.io/qr?text=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2Fprojects%2Fc-student-record-manager%2Flive-demo%2F&size=220&margin=2" width="180" alt="QR code for C Student Record Manager live demo" />
 </a>
 
 **Scan / Click QR**  
