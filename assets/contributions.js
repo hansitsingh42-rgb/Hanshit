@@ -8,44 +8,47 @@
   const status = root.querySelector('[data-contribution-status]');
   const profileLink = root.querySelector('[data-contribution-profile]');
 
-  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
-  }[char]));
+  const render = (calendar) => {
+    total.textContent = `${Number(calendar.totalContributions || 0).toLocaleString()} contributions in the last year`;
+    grid.innerHTML = '';
 
-  const query = `query($login:String!){user(login:$login){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}`;
+    (calendar.weeks || []).forEach((week) => {
+      const column = document.createElement('div');
+      column.className = 'contribution-week';
+
+      (week.contributionDays || []).forEach((day) => {
+        const level = String(day.contributionLevel || 'NONE').toLowerCase().replace('_', '-');
+        const count = Number(day.contributionCount || 0);
+        const cell = document.createElement('span');
+        cell.className = `contribution-cell level-${level}`;
+        cell.title = `${count} contribution${count === 1 ? '' : 's'} on ${day.date}`;
+        cell.setAttribute('aria-label', cell.title);
+        column.appendChild(cell);
+      });
+
+      grid.appendChild(column);
+    });
+  };
 
   async function load() {
-    status.textContent = 'Loading live GitHub contribution data…';
+    status.textContent = 'Loading GitHub contribution data…';
+    profileLink.href = `https://github.com/${encodeURIComponent(username)}`;
+
     try {
-      const response = await fetch('https://api.github.com/graphql', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, variables: { login: username } })
-      });
-      const payload = await response.json();
-      if (!response.ok || payload.errors || !payload.data?.user) throw new Error('GitHub contribution data unavailable');
+      const response = await fetch('assets/contributions.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-      const calendar = payload.data.user.contributionsCollection.contributionCalendar;
-      total.textContent = `${calendar.totalContributions.toLocaleString()} contributions in the last year`;
-      grid.innerHTML = '';
+      const calendar = await response.json();
+      if (!Array.isArray(calendar.weeks) || calendar.weeks.length === 0) {
+        throw new Error('Contribution calendar is not populated yet');
+      }
 
-      calendar.weeks.forEach((week) => {
-        const column = document.createElement('div');
-        column.className = 'contribution-week';
-        week.contributionDays.forEach((day) => {
-          const cell = document.createElement('span');
-          cell.className = `contribution-cell level-${day.contributionLevel.toLowerCase().replace('_', '-')}`;
-          cell.title = `${day.contributionCount} contribution${day.contributionCount === 1 ? '' : 's'} on ${day.date}`;
-          cell.setAttribute('aria-label', cell.title);
-          column.appendChild(cell);
-        });
-        grid.appendChild(column);
-      });
-      status.textContent = 'Live data from GitHub';
-      profileLink.href = `https://github.com/${encodeURIComponent(username)}`;
+      render(calendar);
+      status.textContent = 'Updated automatically from GitHub';
     } catch (error) {
-      grid.innerHTML = '<p class="contribution-error">Live contribution data could not be loaded right now. Open the GitHub profile to view the official contribution calendar.</p>';
-      status.textContent = 'GitHub data unavailable';
+      grid.innerHTML = '<p class="contribution-error">Contribution data is being updated. Open the GitHub profile to view the official calendar.</p>';
+      total.textContent = 'Contribution calendar';
+      status.textContent = 'Data update pending';
     }
   }
 
