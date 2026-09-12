@@ -1,0 +1,57 @@
+name: Update GitHub Contribution Data
+
+on:
+  schedule:
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'assets/contributions.js'
+      - 'assets/contributions.css'
+      - '.github/workflows/update-contributions.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Fetch contribution calendar from GitHub GraphQL
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          query = '''query($login:String!){user(login:$login){contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}'''
+          payload = json.dumps({"query": query, "variables": {"login": "hansitsingh42-rgb"}}).encode()
+          req = urllib.request.Request(
+              "https://api.github.com/graphql",
+              data=payload,
+              headers={
+                  "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+                  "Content-Type": "application/json",
+                  "Accept": "application/vnd.github+json",
+              },
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as response:
+              data = json.load(response)
+          if data.get("errors") or not data.get("data", {}).get("user"):
+              raise SystemExit(f"GitHub GraphQL error: {data}")
+          calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+          with open("assets/contributions.json", "w", encoding="utf-8") as f:
+              json.dump(calendar, f, separators=(",", ":"))
+          PY
+
+      - name: Commit updated contribution data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contributions.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(profile): refresh GitHub contribution data"
+          git push
