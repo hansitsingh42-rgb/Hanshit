@@ -237,7 +237,13 @@ Each QR code now opens its corresponding deployed project directly.
 ## 📈 Contribution Activity
 
 <div align="center">
+
+<a href="https://github.com/hansitsingh42-rgb?tab=overview&from=2026-01-01&to=2026-12-31">
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&hide_border=true&area=true" alt="GitHub contribution activity graph" />
+</a>
+
+<p><strong>Live contribution activity →</strong> <a href="https://github.com/hansitsingh42-rgb?tab=overview">Open GitHub contribution activity</a></p>
+
 </div>
 
 ---
