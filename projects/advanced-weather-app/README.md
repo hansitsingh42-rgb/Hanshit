@@ -1,6 +1,6 @@
-# 🌦️ SkyCast — Advanced Weather Dashboard
+# 🌦️ SKH Cast+ — Advanced Weather Dashboard
 
-A responsive weather dashboard built with **HTML, CSS and JavaScript**, using the **Open-Meteo Forecast API** and **Open-Meteo Geocoding API**.
+**SKH Cast+** is a responsive weather intelligence dashboard built with **HTML, CSS and JavaScript**, using the **Open-Meteo Forecast API** and **Open-Meteo Geocoding API**.
 
 ## ✨ Features
 
@@ -20,7 +20,7 @@ A responsive weather dashboard built with **HTML, CSS and JavaScript**, using th
 
 ## 🔌 API Integration
 
-SkyCast uses Open-Meteo's public forecast endpoint for weather data and its geocoding endpoint for city search. The forecast API supports current, hourly and daily weather variables, while the geocoding API resolves location names to coordinates.
+SKH Cast+ uses Open-Meteo's public forecast endpoint for weather data and its geocoding endpoint for city search. The forecast API provides current, hourly and daily weather variables, while the geocoding API resolves location names to coordinates.
 
 ## 🧰 Tech Stack
 
@@ -36,7 +36,7 @@ This project does not require a private weather API key for the selected Open-Me
 
 ## 📌 Project Goal
 
-The goal is to demonstrate a practical API-integrated frontend with real-time data, responsive UI, persistent preferences and useful derived insights — not just a static weather card.
+The goal is to demonstrate a practical API-integrated frontend with live data, responsive UI, persistent preferences and useful derived insights — not just a static weather card.
 
 ## 📚 API Documentation
 
