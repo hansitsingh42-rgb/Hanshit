@@ -40,6 +40,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
+      # Deployment trigger for the latest SKH Cast+ build.
       - name: Prepare site
         run: |
           rm -rf _site
