@@ -67,6 +67,8 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 </div>
 
+> These analytics cards are self-hosted in the repository, so the profile does not depend on a third-party image endpoint.
+
 ---
 
 ## 🔥 Contribution Streak
