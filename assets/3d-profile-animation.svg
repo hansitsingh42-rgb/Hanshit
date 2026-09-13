@@ -1,25 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Hanshit Singh animated GitHub profile hero">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Hanshit Singh cyberpunk animated GitHub hero">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020617"/><stop offset=".55" stop-color="#071426"/><stop offset="1" stop-color="#02040a"/></linearGradient>
-<linearGradient id="ac"><stop stop-color="#22d3ee"/><stop offset=".5" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-<radialGradient id="gl"><stop stop-color="#22d3ee" stop-opacity=".35"/><stop offset="1" stop-color="#020617" stop-opacity="0"/></radialGradient>
-<filter id="g"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#38bdf8" stroke-opacity=".07"/></pattern>
-<clipPath id="c"><rect x="760" y="90" width="300" height="430" rx="28"/></clipPath>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020712" stop-opacity=".22"/><stop offset=".55" stop-color="#00101d" stop-opacity=".04"/><stop offset="1" stop-color="#02040a" stop-opacity=".30"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#22d3ee" stop-opacity=".40"/><stop offset=".45" stop-color="#3b82f6" stop-opacity=".15"/><stop offset="1" stop-color="#020617" stop-opacity="0"/></radialGradient>
+<linearGradient id="ring"><stop stop-color="#67e8f9"/><stop offset=".45" stop-color="#2563eb"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+<filter id="soft"><feGaussianBlur stdDeviation="2.5"/></filter>
+<filter id="blur"><feGaussianBlur stdDeviation="7"/></filter>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#67e8f9" stroke-opacity=".06"/></pattern>
+<clipPath id="clip"><rect width="1200" height="675" rx="28"/></clipPath>
 </defs>
-<rect width="1200" height="675" rx="30" fill="url(#bg)"/>
-<rect x="14" y="14" width="1172" height="647" rx="24" fill="url(#grid)"/>
-<ellipse cx="900" cy="330" rx="330" ry="300" fill="url(#gl)"><animate attributeName="rx" values="300;350;300" dur="6s" repeatCount="indefinite"/></ellipse>
-<g transform="translate(910 310)" fill="none" stroke="url(#ac)" filter="url(#g)">
-<ellipse rx="220" ry="90" stroke-width="2.5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/></ellipse>
-<ellipse rx="90" ry="220" stroke-width="2" opacity=".7"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="13s" repeatCount="indefinite"/></ellipse>
-<ellipse rx="165" ry="52" stroke-width="2" opacity=".55"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/></ellipse>
+<g clip-path="url(#clip)">
+<image href="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/cyberpunk-hero.jpg" x="0" y="0" width="1200" height="675" preserveAspectRatio="xMidYMid slice"/>
+<rect width="1200" height="675" fill="url(#shade)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<ellipse cx="760" cy="345" rx="310" ry="280" fill="url(#glow)" opacity=".28"><animate attributeName="opacity" values=".18;.34;.18" dur="5s" repeatCount="indefinite"/></ellipse>
+<g transform="translate(760 345)" fill="none" stroke="url(#ring)" filter="url(#soft)" opacity=".72">
+<ellipse rx="230" ry="92" stroke-width="2.2"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="11s" repeatCount="indefinite"/></ellipse>
+<ellipse rx="92" ry="230" stroke-width="1.7" opacity=".7"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/></ellipse>
+<ellipse rx="175" ry="55" stroke-width="2" opacity=".5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/></ellipse>
 </g>
-<g opacity=".95"><rect x="760" y="90" width="300" height="430" rx="28" fill="#020617" stroke="#38bdf8" stroke-opacity=".45"/>
-<image x="760" y="90" width="300" height="430" preserveAspectRatio="xMidYMid slice" clip-path="url(#c)" href="https://avatars.githubusercontent.com/u/318280419?v=4"/>
-<rect x="760" y="90" width="300" height="430" rx="28" fill="none" stroke="#67e8f9" stroke-opacity=".55"><animate attributeName="stroke-opacity" values=".25;.75;.25" dur="4s" repeatCount="indefinite"/></rect></g>
-<g fill="#67e8f9"><circle cx="95" cy="105" r="2"><animate attributeName="cy" values="105;75;105" dur="4s" repeatCount="indefinite"/></circle><circle cx="510" cy="560" r="2"><animate attributeName="opacity" values=".15;1;.15" dur="3s" repeatCount="indefinite"/></circle><circle cx="1120" cy="110" r="2"><animate attributeName="cy" values="110;140;110" dur="3.5s" repeatCount="indefinite"/></circle></g>
-<g stroke="#b9f7ff" fill="none" stroke-linecap="round"><path d="M32 68V32H68" stroke-width="2"/><path d="M1132 32H1168V68" stroke-width="2"/><path d="M32 607V643H68" stroke-width="2"/><path d="M1132 643H1168V607" stroke-width="2"/></g>
-<g font-family="Inter,Segoe UI,Arial,sans-serif" fill="#e0f7ff"><text x="62" y="92" font-size="14" letter-spacing="4">WELCOME TO MY GITHUB</text><text x="62" y="210" font-size="62" font-weight="800" letter-spacing="3">HANSHIT</text><text x="62" y="275" font-size="62" font-weight="800" fill="#22d3ee" letter-spacing="3">SINGH</text><text x="65" y="315" font-size="17" letter-spacing="5">CSE DIPLOMA STUDENT</text><text x="65" y="355" font-size="16" fill="#9bdff0">Turning ideas into code,</text><text x="65" y="380" font-size="16" fill="#9bdff0">and learning into progress.</text><text x="65" y="570" font-size="13" letter-spacing="4" opacity=".8">CODE • LEARN • BUILD • GROW</text><text x="805" y="555" font-size="13" letter-spacing="3" opacity=".8">PROFILE ONLINE</text></g>
+<g fill="#67e8f9"><circle cx="90" cy="90" r="2.4"><animate attributeName="cy" values="90;62;90" dur="4s" repeatCount="indefinite"/></circle><circle cx="230" cy="535" r="2"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></circle><circle cx="470" cy="75" r="2.2"><animate attributeName="cx" values="470;495;470" dur="4.5s" repeatCount="indefinite"/></circle><circle cx="1080" cy="120" r="2.5"><animate attributeName="cy" values="120;145;120" dur="3.6s" repeatCount="indefinite"/></circle><circle cx="1040" cy="520" r="2"><animate attributeName="opacity" values=".15;1;.15" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="650" cy="570" r="2.2"><animate attributeName="cx" values="650;680;650" dur="5s" repeatCount="indefinite"/></circle></g>
+<g stroke="#b9f7ff" fill="none" stroke-linecap="round" opacity=".9"><path d="M28 62V28H62" stroke-width="2"/><path d="M1138 28H1172V62" stroke-width="2"/><path d="M28 613V647H62" stroke-width="2"/><path d="M1138 647H1172V613" stroke-width="2"/></g>
+<g opacity=".18" filter="url(#blur)"><rect x="0" y="0" width="1200" height="3" fill="#67e8f9"><animate attributeName="y" values="0;672;0" dur="6s" repeatCount="indefinite"/></rect></g>
+<g opacity=".32"><rect x="0" y="0" width="1200" height="1.5" fill="#8be9ff"><animate attributeName="y" values="0;675" dur="7s" repeatCount="indefinite"/></rect></g>
 <rect x="12" y="12" width="1176" height="651" rx="24" fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-opacity=".35"><animate attributeName="stroke-opacity" values=".2;.65;.2" dur="4s" repeatCount="indefinite"/></rect>
+</g>
 </svg>
