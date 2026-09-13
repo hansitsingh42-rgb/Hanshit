@@ -85,16 +85,12 @@ Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Sc
 - Git & GitHub
 - Computer Networks
 
----
-
 ## 💡 Ask Me About
 
 - Computer Science student projects
 - Web development basics
 - Git & GitHub
 - Learning resources
-
----
 
 ## 🤝 Looking to Collaborate On
 
