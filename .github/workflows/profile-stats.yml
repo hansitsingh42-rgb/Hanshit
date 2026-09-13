@@ -2,6 +2,11 @@ name: Update profile analytics
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/profile-stats.yml'
+      - 'README.md'
   schedule:
     - cron: '17 3 * * *'
 
@@ -17,7 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate GitHub analytics cards
         uses: stats-organization/github-readme-stats-action@v2
@@ -26,7 +33,6 @@ jobs:
           options: username=${{ github.repository_owner }}&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true
           path: assets/github-stats.svg
           token: ${{ github.token }}
-          git_push: true
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
@@ -35,7 +41,6 @@ jobs:
           options: username=${{ github.repository_owner }}&layout=compact&hide_border=true&langs_count=6
           path: assets/github-top-langs.svg
           token: ${{ github.token }}
-          git_push: true
 
       - name: Generate contribution streak card
         uses: zients/github-readme-streak-stats@v2
@@ -46,7 +51,6 @@ jobs:
           disable_animations: true
           hide_border: true
           date_format: 'j M[ Y]'
-          commit: true
 
       - name: Generate contribution graph
         uses: maurodesouza/github-readme-activity-graph-action@v1
@@ -56,10 +60,14 @@ jobs:
           output_path: assets/github-contribution-graph.svg
           token: ${{ github.token }}
 
-      - name: Commit contribution graph
+      - name: Commit generated analytics
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/github-contribution-graph.svg
-          git diff --cached --quiet || git commit -m 'chore(profile): refresh contribution graph'
+          git add assets/github-stats.svg assets/github-top-langs.svg assets/github-streak.svg assets/github-contribution-graph.svg
+          if git diff --cached --quiet; then
+            echo 'No analytics changes to commit.'
+            exit 0
+          fi
+          git commit -m 'chore(profile): refresh GitHub analytics'
           git push
