@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Academic Planner — a lightweight dashboard for subjects, attendance, assignments, study sessions and notes.">
+  <title>Student Academic Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">SA</span><span>Student<span>OS</span></span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#focus">Focus</a>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+    </nav>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero" id="overview">
+      <div>
+        <p class="eyebrow">STUDENT ACADEMIC PLANNER</p>
+        <h1>Plan smarter.<br><span>Study with direction.</span></h1>
+        <p class="hero-copy">A focused academic dashboard for tracking subjects, attendance, assignments, study sessions and quick notes — stored locally in your browser.</p>
+        <div class="hero-actions"><a class="btn primary" href="#subjects">Open planner</a><button class="btn" id="resetDemo" type="button">Reset demo data</button></div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core"><strong id="overallPercent">0%</strong><small>Academic focus</small></div></div>
+    </section>
+
+    <section class="stats" aria-label="Planner summary">
+      <article><span>Subjects</span><strong id="subjectCount">0</strong><small>Tracked courses</small></article>
+      <article><span>Attendance</span><strong id="attendanceAverage">0%</strong><small>Average attendance</small></article>
+      <article><span>Assignments</span><strong id="pendingCount">0</strong><small>Pending work</small></article>
+      <article><span>Study time</span><strong id="studyMinutes">0m</strong><small>This session</small></article>
+    </section>
+
+    <section class="grid two" id="subjects">
+      <div class="panel">
+        <div class="panel-head"><div><p class="eyebrow">ACADEMIC TRACKER</p><h2>Subjects & attendance</h2></div><button class="small-btn" id="addSubject" type="button">+ Add subject</button></div>
+        <div id="subjectList" class="subject-list"></div>
+      </div>
+      <div class="panel" id="assignments">
+        <div class="panel-head"><div><p class="eyebrow">WORK QUEUE</p><h2>Assignments</h2></div><button class="small-btn" id="addAssignment" type="button">+ Add task</button></div>
+        <div id="assignmentList" class="assignment-list"></div>
+      </div>
+    </section>
+
+    <section class="grid two" id="focus">
+      <div class="panel focus-panel">
+        <div class="panel-head"><div><p class="eyebrow">FOCUS LAB</p><h2>Study timer</h2></div><span class="status-dot">Local</span></div>
+        <div class="timer"><strong id="timerDisplay">25:00</strong><small id="timerLabel">Focus session</small></div>
+        <div class="timer-actions"><button class="btn primary" id="startTimer" type="button">Start</button><button class="btn" id="pauseTimer" type="button">Pause</button><button class="btn" id="resetTimer" type="button">Reset</button></div>
+        <div class="progress"><span id="timerProgress"></span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><p class="eyebrow">QUICK CAPTURE</p><h2>Study notes</h2></div><span id="saveStatus">Saved locally</span></div>
+        <textarea id="notes" rows="9" placeholder="Write a formula, reminder, topic to revise, or question..."></textarea>
+      </div>
+    </section>
+
+    <section class="panel insights">
+      <div class="panel-head"><div><p class="eyebrow">PLANNER INSIGHTS</p><h2>Today's direction</h2></div><span id="todayLabel"></span></div>
+      <div class="insight-grid"><div><b id="bestSubject">—</b><span>Strongest attendance</span></div><div><b id="nextDeadline">—</b><span>Next deadline</span></div><div><b id="focusHint">Start a session</b><span>Recommended action</span></div></div>
+    </section>
+  </main>
+
+  <dialog id="subjectDialog"><form method="dialog" id="subjectForm"><div class="dialog-head"><h2>Add subject</h2><button value="cancel" class="close" aria-label="Close">×</button></div><label>Subject name<input id="subjectName" required maxlength="40" placeholder="e.g. Mathematics"></label><label>Attendance %<input id="subjectAttendance" type="number" min="0" max="100" value="75" required></label><menu><button value="cancel" class="btn">Cancel</button><button value="default" class="btn primary">Add subject</button></menu></form></dialog>
+  <dialog id="assignmentDialog"><form method="dialog" id="assignmentForm"><div class="dialog-head"><h2>Add assignment</h2><button value="cancel" class="close" aria-label="Close">×</button></div><label>Task<input id="assignmentTitle" required maxlength="70" placeholder="e.g. Mechanics Chapter 2 notes"></label><label>Due date<input id="assignmentDate" type="date" required></label><menu><button value="cancel" class="btn">Cancel</button><button value="default" class="btn primary">Add task</button></menu></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <footer>StudentOS · Built by Hanshit Singh · No account required</footer>
+  <script src="script.js"></script>
+</body>
+</html>
