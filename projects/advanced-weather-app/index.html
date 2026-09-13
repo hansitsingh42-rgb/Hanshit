@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced weather dashboard powered by Open-Meteo API.">
+  <title>SkyCast — Advanced Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#">☁ <span>SkyCast</span></a>
+      <div class="top-actions">
+        <button id="unitToggle" class="ghost-btn" type="button">°C</button>
+        <button id="themeToggle" class="ghost-btn" type="button" aria-label="Toggle theme">☾</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">LIVE WEATHER INTELLIGENCE</p>
+          <h1>Weather, explained at a glance.</h1>
+          <p class="subtitle">Search any city, use your location, and explore current conditions, hourly trends, forecasts and useful weather metrics.</p>
+        </div>
+        <div class="search-wrap">
+          <form id="searchForm" class="search-bar">
+            <span>⌕</span>
+            <input id="cityInput" type="search" autocomplete="off" placeholder="Search city or postal code…" aria-label="Search city">
+            <button type="submit">Search</button>
+          </form>
+          <div id="suggestions" class="suggestions" hidden></div>
+          <button id="locationBtn" class="location-btn" type="button">◎ Use my location</button>
+        </div>
+      </section>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="dashboard" class="dashboard" hidden>
+        <article class="current-card card">
+          <div class="location-row">
+            <div>
+              <p id="placeName" class="place">—</p>
+              <p id="localTime" class="muted">—</p>
+            </div>
+            <button id="favoriteBtn" class="favorite" type="button" aria-label="Save location">☆</button>
+          </div>
+          <div class="current-main">
+            <div id="weatherIcon" class="weather-icon">☀️</div>
+            <div>
+              <div id="currentTemp" class="temperature">—</div>
+              <div id="weatherText" class="condition">—</div>
+              <div id="feelsLike" class="muted">Feels like —</div>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <div><span>💧 Humidity</span><strong id="humidity">—</strong></div>
+            <div><span>💨 Wind</span><strong id="wind">—</strong></div>
+            <div><span>👁 Visibility</span><strong id="visibility">—</strong></div>
+            <div><span>🌡 Pressure</span><strong id="pressure">—</strong></div>
+            <div><span>☀️ UV Index</span><strong id="uv">—</strong></div>
+            <div><span>☁ Cloud Cover</span><strong id="cloud">—</strong></div>
+          </div>
+        </article>
+
+        <aside class="side-column">
+          <article class="card sun-card">
+            <div class="card-heading"><h2>Daylight</h2><span>☀</span></div>
+            <div class="sun-times"><div><span>Sunrise</span><strong id="sunrise">—</strong></div><div><span>Sunset</span><strong id="sunset">—</strong></div></div>
+            <div class="sun-track"><span id="sunProgress"></span></div>
+          </article>
+          <article class="card favorites-card">
+            <div class="card-heading"><h2>Saved Places</h2><span>★</span></div>
+            <div id="favoritesList" class="saved-list"><p class="muted">No saved locations yet.</p></div>
+          </article>
+        </aside>
+      </section>
+
+      <section id="forecastSection" class="section" hidden>
+        <div class="section-heading"><div><p class="eyebrow">NEXT 24 HOURS</p><h2>Hourly forecast</h2></div><span id="lastUpdated" class="muted">—</span></div>
+        <div id="hourlyForecast" class="hourly-row"></div>
+      </section>
+
+      <section id="dailySection" class="section" hidden>
+        <div class="section-heading"><div><p class="eyebrow">EXTENDED OUTLOOK</p><h2>7-day forecast</h2></div></div>
+        <div id="dailyForecast" class="daily-grid"></div>
+      </section>
+
+      <section id="insightsSection" class="section" hidden>
+        <div class="section-heading"><div><p class="eyebrow">SMART INSIGHTS</p><h2>Weather insights</h2></div></div>
+        <div id="insights" class="insight-grid"></div>
+      </section>
+    </main>
+
+    <footer>SkyCast • Built with Open-Meteo weather & geocoding APIs • Data is for informational use.</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
