@@ -16,8 +16,6 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 > **Learn → Build → Improve → Repeat.**
 
----
-
 ## 🚀 Currently Working On
 
 - 🌐 Practical web projects
@@ -64,8 +62,8 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true" height="165" alt="GitHub statistics" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&hide_border=true&langs_count=6" height="165" alt="Top languages" />
+<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&cache_seconds=86400" height="165" alt="GitHub statistics" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&hide_border=true&langs_count=6&cache_seconds=86400" height="165" alt="Top languages" />
 
 </div>
 
@@ -75,7 +73,7 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=hansitsingh42-rgb&hide_border=true" alt="GitHub contribution streak" />
+<img src="https://streak-stats.demolab.com?user=hansitsingh42-rgb&hide_border=true&date_format=j%20M%5B%20Y%5D" alt="GitHub contribution streak" />
 
 </div>
 
@@ -85,7 +83,7 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&hide_border=true&area=true" alt="GitHub contribution graph" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="GitHub contribution graph" />
 
 </div>
 
