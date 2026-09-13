@@ -8,6 +8,12 @@
 
 <img src="./assets/3d-profile-animation.svg" width="100%" alt="Hanshit Singh animated cyberpunk profile hero" />
 
+<p>
+<a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
+<a href="https://hanshit.vercel.app/jems/">🤖 Jems AI</a> •
+<a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Main Repository</a>
+</p>
+
 </div>
 
 ---
@@ -18,7 +24,22 @@ I'm a Computer Science student focused on learning through practical projects. I
 
 I'm a Computer Science student focused on building practical projects and improving my development skills step by step. I use this space to document what I learn, experiment with ideas, and build useful projects.
 
-> **Learn → Build → Improve → Repeat.**
+> **Learn → Build → Test → Improve → Repeat.**
+
+---
+
+## ⚡ Developer Snapshot
+
+| Focus | Current Direction |
+|---|---|
+| 🎓 Education | Polytechnic Computer Science |
+| 🌐 Building | Web apps & student-focused tools |
+| 💻 Core | C • JavaScript • HTML • CSS |
+| 🤖 Exploring | AI tools & prompt engineering |
+| 🧰 Workflow | Git • GitHub • Jira • Agile/Scrum |
+| 🎯 Goal | Become a stronger practical developer |
+
+---
 
 ## 🚀 Currently Working On
 
@@ -30,6 +51,34 @@ I'm a Computer Science student focused on building practical projects and improv
 - Developing a personal study-resource library
 - Improving my programming and GitHub workflow
 
+---
+
+## 🚀 Currently Building
+
+**01 — Student-focused web tools**  
+Building practical browser-based tools that solve simple student problems.
+
+**02 — Personal Study Resource Library**  
+Organizing useful learning resources into a simple, searchable experience.
+
+**03 — Jems AI**  
+Improving a visitor-facing assistant that answers from documented profile, project, and repository information.
+
+**04 — Developer Foundations**  
+Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Science concepts.
+
+---
+
+## 🛠️ What I Build
+
+- 🌐 Practical web applications
+- 📚 Study & productivity tools
+- 🤖 AI-powered experiments
+- 💻 Beginner-friendly Computer Science projects
+- 🧩 Small utilities that turn ideas into working products
+
+---
+
 ## 🌱 Currently Learning
 
 - C Programming
@@ -38,12 +87,16 @@ I'm a Computer Science student focused on building practical projects and improv
 - Git & GitHub
 - Computer Networks
 
+---
+
 ## 💡 Ask Me About
 
 - Computer Science student projects
 - Web development basics
 - Git & GitHub
 - Learning resources
+
+---
 
 ## 🤝 Looking to Collaborate On
 
@@ -64,6 +117,48 @@ I'm a Computer Science student focused on building practical projects and improv
 <img src="https://img.shields.io/badge/Git-Tools-555555?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 <img src="https://img.shields.io/badge/GitHub-Workflow-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </p>
+
+---
+
+## 🧠 Skills & Technologies
+
+### 💻 Development
+`C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
+
+### 🤖 AI & Productivity
+`AI Tools` `Prompt Engineering` `Microsoft Excel` `Microsoft Word` `Microsoft PowerPoint`
+
+### 📋 Project Workflow
+`Jira` `Agile/Scrum` `Project Planning` `Risk Management`
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,vscode" alt="Development skills" />
+
+</div>
+
+---
+
+## 🧊 3D Skills Visualization
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
+</div>
+
+---
+
+## 🌱 Learning Progress
+
+```text
+C Programming          ███████░░░  Building fundamentals
+JavaScript             ██████░░░░  Growing web development skills
+Git & GitHub            ███████░░░  Improving workflow
+Computer Networks       ██████░░░░  Strengthening fundamentals
+Core CS                 █████░░░░░  Learning step by step
+Practical AI            ██████░░░░  Exploring useful applications
+```
+
+> Progress matters more than pretending to know everything.
 
 ---
 
@@ -97,6 +192,17 @@ I'm a Computer Science student focused on building practical projects and improv
 <img src="./assets/github-contribution-graph.svg" alt="GitHub contribution graph" />
 
 </div>
+
+---
+
+## 🏆 Milestones
+
+- 🎓 Studying Polytechnic Computer Science
+- 💻 Building and deploying practical web projects
+- 🌐 Maintaining a personal developer portfolio
+- 🤖 Built a project-focused AI assistant — Jems AI
+- 📚 Building student-focused learning resources
+- 🎓 Completed **ADCA — Advanced Diploma in Computer Applications**
 
 ---
 
@@ -149,7 +255,7 @@ A responsive API-integrated weather dashboard using Open-Meteo for live weather,
 A student-focused resource library for organizing study material, notes, files and useful learning resources.
 
 **Highlights**  
-`Resource Library` `Search` `Categories` `Responsive UI` `Student Friendly`
+`Resource Library` `Search` `Categories` `Responsive UI` `Student Friendly` `Search` `Filters` `Favorites` `Add/Delete` `Dark/Light Mode` `LocalStorage`
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
@@ -163,7 +269,7 @@ A student-focused resource library for organizing study material, notes, files a
 A productivity dashboard designed for students to track habits, progress and daily performance through clear visual insights.
 
 **Highlights**  
-`Habit Tracking` `Charts` `Progress` `Daily Tracking` `Responsive UI`
+`Habit Tracking` `Charts` `Progress` `Daily Tracking` `Responsive UI` `Tasks` `25-Minute Focus Timer` `Study Tracking` `Progress Stats` `LocalStorage`
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
@@ -177,7 +283,7 @@ A productivity dashboard designed for students to track habits, progress and dai
 A C-based student record management project focused on structured data handling and core programming fundamentals.
 
 **Highlights**  
-`C Programming` `File Handling` `Records` `CRUD Operations`
+`C Programming` `File Handling` `Records` `CRUD Operations` `Structs` `Arrays` `Functions` `Search` `Validation`
 
 **Stack:** `C`
 
@@ -192,6 +298,8 @@ An AI-focused personal assistant project exploring practical AI interactions and
 
 **Highlights**  
 `AI Assistant` `Interactive UI` `Student Focused` `Local Storage`
+
+**Focus:** Clear answers from documented profile, project, skill, and repository information rather than invented details.
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
@@ -243,11 +351,35 @@ I believe consistent practice and real projects are the best way to grow as a de
 
 ---
 
-## ⚡ Fun Fact
+## 🤖 Ask Jems AI
 
-I enjoy turning things I learn into practical projects.
+<div align="center">
 
-I'm a CSE student who enjoys turning what I learn into practical projects.
+### `JEMS` • `Hanshit Assistant`
+
+**Explore my documented profile, projects, skills and repository.**
+
+<a href="https://hanshit.vercel.app/jems/">
+<img src="https://img.shields.io/badge/%F0%9F%A4%96%20ASK%20JEMS%20AI-OPEN%20JEMS-555555?style=for-the-badge&labelColor=111111" alt="Ask Jems AI" />
+</a>
+
+</div>
+
+Jems uses documented repository information as its source of truth and avoids inventing information that is not documented.
+
+---
+
+## 📱 Portfolio QR
+
+<div align="center">
+
+<a href="https://hanshit.vercel.app/">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
+</a>
+
+**Scan to open my portfolio.**
+
+</div>
 
 ---
 
@@ -263,9 +395,30 @@ I'm a CSE student who enjoys turning what I learn into practical projects.
 
 ---
 
+## 📊 GitHub Activity
+
+<div align="center">
+
+<img src="./assets/github-stats.svg" height="165" alt="GitHub statistics activity" />
+<img src="./assets/github-top-langs.svg" height="165" alt="Top languages activity" />
+
+</div>
+
+---
+
+## ⚡ Fun Fact
+
+I enjoy turning things I learn into practical projects.
+
+I'm a CSE student who enjoys turning what I learn into practical projects.
+
+---
+
 <div align="center">
 
 ### Thanks for visiting! ⭐
+
+**Built with curiosity, consistency, and a lot of learning.**
 
 <img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
 
