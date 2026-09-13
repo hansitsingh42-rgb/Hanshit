@@ -6,7 +6,6 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=720&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%A7%A0;Building+student-focused+tools+%E2%9C%A8" alt="Typing animation" />
 
-<!-- The hero uses the supplied cyberpunk artwork as the actual artwork. The SVG only adds the requested animation layer. -->
 <img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-profile-animation.svg" width="900" alt="Hanshit Singh cyberpunk animated profile hero" />
 
 <p>
@@ -126,6 +125,20 @@ Computer Science • Student Projects • Web Development Basics • AI Promptin
 ## 🎯 My Goal
 
 > **Become a stronger developer by consistently learning, building practical projects, and improving problem-solving skills.**
+
+## 📱 QR Code
+
+<div align="center">
+
+### Scan to Open My Portfolio
+
+<a href="https://hanshit.vercel.app/">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
+</a>
+
+**Scan the QR code to open my portfolio.**
+
+</div>
 
 ## 🤖 Ask Jems AI
 
