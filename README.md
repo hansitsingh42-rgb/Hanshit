@@ -299,7 +299,7 @@ An AI-focused personal assistant project exploring practical AI interactions and
 
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Jems AI live preview" /></a>
 
-[Source](./Jems/)
+[Source](./jems/)
 
 ---
 
@@ -385,7 +385,7 @@ Jems uses documented repository information as its source of truth and avoids in
 | 📚 Study Resource Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
 | 📊 Student Productivity Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
 | 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
-| 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./Jems/) |
+| 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./jems/) |
 
 ---
 
