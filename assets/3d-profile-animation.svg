@@ -1,27 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Hanshit Singh cyberpunk animated GitHub hero">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Hanshit Singh cyberpunk animated profile hero">
 <defs>
-<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020712" stop-opacity=".22"/><stop offset=".55" stop-color="#00101d" stop-opacity=".04"/><stop offset="1" stop-color="#02040a" stop-opacity=".30"/></linearGradient>
-<radialGradient id="glow"><stop stop-color="#22d3ee" stop-opacity=".40"/><stop offset=".45" stop-color="#3b82f6" stop-opacity=".15"/><stop offset="1" stop-color="#020617" stop-opacity="0"/></radialGradient>
-<linearGradient id="ring"><stop stop-color="#67e8f9"/><stop offset=".45" stop-color="#2563eb"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-<filter id="soft"><feGaussianBlur stdDeviation="2.5"/></filter>
-<filter id="blur"><feGaussianBlur stdDeviation="7"/></filter>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#67e8f9" stroke-opacity=".06"/></pattern>
-<clipPath id="clip"><rect width="1200" height="675" rx="28"/></clipPath>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#67e8f9"/><stop offset=".5" stop-color="#2563eb"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+  <radialGradient id="vignette"><stop offset=".68" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#020617" stop-opacity=".58"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="particleGlow"><feGaussianBlur stdDeviation="2"/></filter>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#67e8f9" stroke-opacity=".10"/></pattern>
+  <clipPath id="frame"><rect width="1200" height="675" rx="28"/></clipPath>
+  <clipPath id="reveal"><circle cx="600" cy="337.5" r="0"><animate attributeName="r" values="0;170;470;760" keyTimes="0;.18;.62;1" dur="2.8s" fill="freeze"/></circle></clipPath>
 </defs>
-<g clip-path="url(#clip)">
-<image href="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/cyberpunk-hero.jpg" x="0" y="0" width="1200" height="675" preserveAspectRatio="xMidYMid slice"/>
-<rect width="1200" height="675" fill="url(#shade)"/>
-<rect width="1200" height="675" fill="url(#grid)"/>
-<ellipse cx="760" cy="345" rx="310" ry="280" fill="url(#glow)" opacity=".28"><animate attributeName="opacity" values=".18;.34;.18" dur="5s" repeatCount="indefinite"/></ellipse>
-<g transform="translate(760 345)" fill="none" stroke="url(#ring)" filter="url(#soft)" opacity=".72">
-<ellipse rx="230" ry="92" stroke-width="2.2"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="11s" repeatCount="indefinite"/></ellipse>
-<ellipse rx="92" ry="230" stroke-width="1.7" opacity=".7"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/></ellipse>
-<ellipse rx="175" ry="55" stroke-width="2" opacity=".5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/></ellipse>
-</g>
-<g fill="#67e8f9"><circle cx="90" cy="90" r="2.4"><animate attributeName="cy" values="90;62;90" dur="4s" repeatCount="indefinite"/></circle><circle cx="230" cy="535" r="2"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></circle><circle cx="470" cy="75" r="2.2"><animate attributeName="cx" values="470;495;470" dur="4.5s" repeatCount="indefinite"/></circle><circle cx="1080" cy="120" r="2.5"><animate attributeName="cy" values="120;145;120" dur="3.6s" repeatCount="indefinite"/></circle><circle cx="1040" cy="520" r="2"><animate attributeName="opacity" values=".15;1;.15" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="650" cy="570" r="2.2"><animate attributeName="cx" values="650;680;650" dur="5s" repeatCount="indefinite"/></circle></g>
-<g stroke="#b9f7ff" fill="none" stroke-linecap="round" opacity=".9"><path d="M28 62V28H62" stroke-width="2"/><path d="M1138 28H1172V62" stroke-width="2"/><path d="M28 613V647H62" stroke-width="2"/><path d="M1138 647H1172V613" stroke-width="2"/></g>
-<g opacity=".18" filter="url(#blur)"><rect x="0" y="0" width="1200" height="3" fill="#67e8f9"><animate attributeName="y" values="0;672;0" dur="6s" repeatCount="indefinite"/></rect></g>
-<g opacity=".32"><rect x="0" y="0" width="1200" height="1.5" fill="#8be9ff"><animate attributeName="y" values="0;675" dur="7s" repeatCount="indefinite"/></rect></g>
-<rect x="12" y="12" width="1176" height="651" rx="24" fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-opacity=".35"><animate attributeName="stroke-opacity" values=".2;.65;.2" dur="4s" repeatCount="indefinite"/></rect>
+<g clip-path="url(#frame)">
+  <rect width="1200" height="675" fill="#020617"/>
+
+  <!-- Supplied cyberpunk artwork: revealed from the particle core -->
+  <g clip-path="url(#reveal)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-1.8 600 337.5;0 600 337.5;1.8 600 337.5;0 600 337.5" dur="7s" repeatCount="indefinite"/>
+      <image href="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/cyberpunk-hero.jpg" x="0" y="0" width="1200" height="675" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+  </g>
+
+  <!-- Subtle animated depth/grid, kept transparent so the artwork stays sharp -->
+  <rect width="1200" height="675" fill="url(#grid)" opacity=".42"/>
+  <rect width="1200" height="675" fill="url(#vignette)"/>
+
+  <!-- 3D orbital ring system -->
+  <g transform="translate(600 337.5)" fill="none" stroke="url(#edge)" stroke-linecap="round">
+    <ellipse rx="300" ry="108" stroke-width="2.4" opacity=".78" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="112" ry="300" stroke-width="1.8" opacity=".66" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="245" ry="72" stroke-width="1.8" opacity=".55">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="355" ry="132" stroke-width=".8" opacity=".28">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="19s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Particle burst that drives the reveal -->
+  <g fill="#67e8f9" filter="url(#particleGlow)">
+    <circle cx="600" cy="337" r="3"><animate attributeName="r" values="3;8;2" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.15;1" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="520" cy="270" r="2"><animate attributeName="cx" values="520;455;520" dur="4s" repeatCount="indefinite"/><animate attributeName="cy" values="270;215;270" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="690" cy="275" r="2.5"><animate attributeName="cx" values="690;755;690" dur="4.7s" repeatCount="indefinite"/><animate attributeName="cy" values="275;215;275" dur="4.7s" repeatCount="indefinite"/></circle>
+    <circle cx="520" cy="410" r="2.2"><animate attributeName="cx" values="520;450;520" dur="4.4s" repeatCount="indefinite"/><animate attributeName="cy" values="410;470;410" dur="4.4s" repeatCount="indefinite"/></circle>
+    <circle cx="690" cy="410" r="2"><animate attributeName="cx" values="690;755;690" dur="3.9s" repeatCount="indefinite"/><animate attributeName="cy" values="410;470;410" dur="3.9s" repeatCount="indefinite"/></circle>
+    <circle cx="340" cy="150" r="2"><animate attributeName="cy" values="150;120;150" dur="3.3s" repeatCount="indefinite"/></circle>
+    <circle cx="870" cy="160" r="2.3"><animate attributeName="cy" values="160;125;160" dur="3.7s" repeatCount="indefinite"/></circle>
+    <circle cx="950" cy="500" r="2"><animate attributeName="cx" values="950;915;950" dur="4.2s" repeatCount="indefinite"/></circle>
+    <circle cx="250" cy="505" r="2.2"><animate attributeName="cx" values="250;285;250" dur="4.6s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- HUD corners + scan sweep -->
+  <g stroke="#b9f7ff" fill="none" stroke-linecap="round" opacity=".9">
+    <path d="M28 62V28H62" stroke-width="2"/><path d="M1138 28H1172V62" stroke-width="2"/>
+    <path d="M28 613V647H62" stroke-width="2"/><path d="M1138 647H1172V613" stroke-width="2"/>
+  </g>
+  <rect x="0" y="0" width="1200" height="2" fill="#8be9ff" opacity=".38">
+    <animate attributeName="y" values="0;673;0" dur="6.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="14" y="14" width="1172" height="647" rx="24" fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-opacity=".42">
+    <animate attributeName="stroke-opacity" values=".25;.7;.25" dur="4s" repeatCount="indefinite"/>
+  </rect>
 </g>
 </svg>
