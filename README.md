@@ -14,6 +14,8 @@
 
 I'm a Computer Science student focused on learning through practical projects. I use this GitHub to experiment, build useful ideas, document my learning, and improve step by step.
 
+I'm a Computer Science student focused on building practical projects and improving my development skills step by step. I use this space to document what I learn, experiment with ideas, and build useful projects.
+
 > **Learn → Build → Improve → Repeat.**
 
 ## 🚀 Currently Working On
@@ -22,6 +24,9 @@ I'm a Computer Science student focused on learning through practical projects. I
 - 📚 A personal study-resource library
 - 🧩 Student-focused digital projects
 - 🔧 Improving my Git & GitHub workflow
+- Building practical web projects
+- Developing a personal study-resource library
+- Improving my programming and GitHub workflow
 
 ## 🌱 Currently Learning
 
@@ -44,6 +49,8 @@ I'm a Computer Science student focused on learning through practical projects. I
 - Student projects
 - Open-source projects
 - Learning-focused experiments
+- Student-focused projects
+- Open-source projects where I can learn and contribute
 
 ---
 
@@ -220,17 +227,25 @@ projects/<project-name>/
 
 📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🚀 Future builds
 
+This repository is part of my learning journey. I'll be adding projects, experiments, notes, and useful resources as I continue developing my skills.
+
 ---
 
 ## 🎯 My Goal
 
 To become a stronger developer by consistently learning, building real projects, and improving my problem-solving skills.
 
+**Learn → Build → Improve → Repeat.**
+
+I believe consistent practice and real projects are the best way to grow as a developer.
+
 ---
 
 ## ⚡ Fun Fact
 
 I enjoy turning things I learn into practical projects.
+
+I'm a CSE student who enjoys turning what I learn into practical projects.
 
 ---
 
@@ -253,3 +268,5 @@ I enjoy turning things I learn into practical projects.
 <img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
 
 </div>
+
+⭐ If you find something useful here, feel free to explore the repository.
