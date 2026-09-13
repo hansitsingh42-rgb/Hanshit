@@ -18,9 +18,9 @@
 
 ## 👨‍💻 About Me
 
-I'm a Computer Science student focused on learning through practical projects. I use this GitHub to experiment, build useful ideas, document my learning, and improve step by step.
+I'm a Computer Science student learning by building small projects and trying out ideas. I use this GitHub to keep my work, practice new skills, and see how my projects improve over time.
 
-I'm a Computer Science student focused on building practical projects and improving my development skills step by step. I use this space to document what I learn, experiment with ideas, and build useful projects.
+Most of what you see here is part of my learning process. Some projects are experiments, while others are things I actually use or want to improve further.
 
 > **Learn → Build → Test → Improve → Repeat.**
 
@@ -45,25 +45,24 @@ I'm a Computer Science student focused on building practical projects and improv
 - 📚 A personal study-resource library
 - 🧩 Student-focused digital projects
 - 🔧 Improving my Git & GitHub workflow
-- Building practical web projects
-- Developing a personal study-resource library
-- Improving my programming and GitHub workflow
+- 📖 Practising programming and core Computer Science concepts
+- 🛠️ Turning ideas into small working projects
 
 ---
 
 ## 🚀 Currently Building
 
 **01 — Student-focused web tools**  
-Building practical browser-based tools that solve simple student problems.
+Building simple browser-based tools around problems I come across while studying.
 
 **02 — Personal Study Resource Library**  
-Organizing useful learning resources into a simple, searchable experience.
+Organizing useful learning material so it is easier to find and use.
 
 **03 — Jems AI**  
-Improving a visitor-facing assistant that answers from documented profile, project, and repository information.
+Working on a small assistant that presents documented information about my profile, projects, and repository.
 
 **04 — Developer Foundations**  
-Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Science concepts.
+Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer Science topics.
 
 ---
 
@@ -71,9 +70,9 @@ Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Sc
 
 - 🌐 Practical web applications
 - 📚 Study & productivity tools
-- 🤖 AI-powered experiments
+- 🤖 AI-related experiments
 - 💻 Beginner-friendly Computer Science projects
-- 🧩 Small utilities that turn ideas into working products
+- 🧩 Small utilities that help me learn by doing
 
 ---
 
@@ -98,8 +97,7 @@ Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Sc
 - Student projects
 - Open-source projects
 - Learning-focused experiments
-- Student-focused projects
-- Open-source projects where I can learn and contribute
+- Projects where I can learn while contributing
 
 ---
 
@@ -232,7 +230,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
 <img src="./assets/project-logos/skycast.svg" width="360" alt="SKH Cast+ logo" />
 
-A responsive API-integrated weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
+A responsive weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
 
 **Highlights**  
 `Live API` `Geolocation` `City Search` `Hourly Forecast` `7-Day Forecast` `Favorites` `°C/°F` `Dark/Light Mode` `Smart Insights`
@@ -249,7 +247,7 @@ A responsive API-integrated weather dashboard using Open-Meteo for live weather,
 A student-focused resource library for organizing study material, notes, files and useful learning resources.
 
 **Highlights**  
-`Resource Library` `Search` `Categories` `Responsive UI` `Student Friendly` `Search` `Filters` `Favorites` `Add/Delete` `Dark/Light Mode` `LocalStorage`
+`Resource Library` `Search` `Categories` `Responsive UI` `Student Friendly` `Filters` `Favorites` `Add/Delete` `Dark/Light Mode` `LocalStorage`
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
@@ -260,7 +258,7 @@ A student-focused resource library for organizing study material, notes, files a
 ### 📊 Student Productivity Dashboard
 <img src="./assets/project-logos/productivity-dashboard.svg" width="360" alt="Student Productivity Dashboard logo" />
 
-A productivity dashboard designed for students to track habits, progress and daily performance through clear visual insights.
+A productivity dashboard for tracking habits, progress and daily performance through simple visual insights.
 
 **Highlights**  
 `Habit Tracking` `Charts` `Progress` `Daily Tracking` `Responsive UI` `Tasks` `25-Minute Focus Timer` `Study Tracking` `Progress Stats` `LocalStorage`
@@ -274,7 +272,7 @@ A productivity dashboard designed for students to track habits, progress and dai
 ### 💻 C Student Record Manager
 <img src="./assets/project-logos/c-student-record.svg" width="360" alt="C Student Record Manager logo" />
 
-A C-based student record management project focused on structured data handling and core programming fundamentals.
+A C-based student record management project for practising structured data handling and core programming fundamentals.
 
 **Highlights**  
 `C Programming` `File Handling` `Records` `CRUD Operations` `Structs` `Arrays` `Functions` `Search` `Validation`
@@ -288,7 +286,7 @@ A C-based student record management project focused on structured data handling 
 ### 🤖 Jems AI
 <img src="./assets/project-logos/jems-ai.svg" width="360" alt="Jems AI logo" />
 
-An AI-focused personal assistant project exploring practical AI interactions and a student-oriented experience.
+A small AI-focused assistant project exploring practical AI interactions and a student-oriented experience.
 
 **Highlights**  
 `AI Assistant` `Interactive UI` `Student Focused` `Local Storage`
@@ -305,7 +303,7 @@ An AI-focused personal assistant project exploring practical AI interactions and
 
 ## 🧩 Project Branding Standard
 
-Every project in this repository follows the same professional presentation standard:
+Every project in this repository follows the same presentation standard:
 
 - Dedicated SVG project logo
 - Consistent visual language
@@ -313,7 +311,7 @@ Every project in this repository follows the same professional presentation stan
 - Accessible assets with descriptive alt text
 - Shared animated **LIVE PREVIEW** button for deployed projects
 - All project logos are stored in `assets/project-logos/`
-- New projects must follow the same branding system
+- New projects follow the same branding system
 
 ### New Project Template
 
@@ -331,17 +329,17 @@ projects/<project-name>/
 
 📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🚀 Future builds
 
-This repository is part of my learning journey. I'll be adding projects, experiments, notes, and useful resources as I continue developing my skills.
+This repository is part of my learning journey. I'll add projects, experiments, notes, and useful resources as I continue learning.
 
 ---
 
 ## 🎯 My Goal
 
-To become a stronger developer by consistently learning, building real projects, and improving my problem-solving skills.
+I want to become a stronger developer by learning consistently, building real projects, and improving my problem-solving skills.
 
 **Learn → Build → Improve → Repeat.**
 
-I believe consistent practice and real projects are the best way to grow as a developer.
+For me, working on real projects is one of the best ways to understand what I'm learning.
 
 ---
 
@@ -404,7 +402,7 @@ Jems uses documented repository information as its source of truth and avoids in
 
 I enjoy turning things I learn into practical projects.
 
-I'm a CSE student who enjoys turning what I learn into practical projects.
+I like taking something I'm learning and trying to turn it into a small working project.
 
 ---
 
