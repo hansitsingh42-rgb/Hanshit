@@ -4,12 +4,14 @@
 
 ### `CSE Student` • `Student Developer` • `Builder`
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=720&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%A7%A0;Building+student-focused+tools+%E2%9C%A8" alt="Typing animation" />
+**Learning by building practical projects, exploring web development, and turning ideas into useful tools.**
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=21&pause=1000&center=true&vCenter=true&width=760&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%A7%A0;Building+student-focused+tools+%E2%9C%A8" alt="Typing animation" />
 
 <p>
-<a href="https://hanshit.vercel.app/">🌐 Live Portfolio</a> •
-<a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Repository</a> •
-<a href="https://hanshit.vercel.app/jems/">🤖 Jems AI</a>
+<a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
+<a href="https://hanshit.vercel.app/jems/">🤖 Jems AI</a> •
+<a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Main Repository</a>
 </p>
 
 </div>
@@ -18,70 +20,109 @@
 
 ## 👨‍💻 About Me
 
-I'm a Polytechnic Computer Science student who learns by building practical projects. This profile is my public learning workspace — a place to document projects, experiment with ideas, and improve step by step.
+I'm a Polytechnic Computer Science student who learns by **building, testing, improving, and documenting** practical projects.
 
-> **Learn → Build → Improve → Repeat.**
+This GitHub profile is my public development workspace — a place where I turn learning into working projects and gradually build stronger Computer Science fundamentals.
 
-## 🚀 Currently Working On
+> **Learn → Build → Test → Improve → Repeat.**
 
-- 🌐 Practical web projects and responsive student-focused tools
-- 📚 A personal study-resource library
-- 🤖 Exploring AI tools and prompt engineering
-- 🔧 Improving my Git & GitHub workflow
-- 🧠 Strengthening C, JavaScript and Computer Science fundamentals
+## ⚡ Developer Snapshot
+
+| Focus | Current Direction |
+|---|---|
+| 🎓 Education | Polytechnic Computer Science |
+| 🌐 Building | Web apps & student-focused tools |
+| 💻 Core | C • JavaScript • HTML • CSS |
+| 🤖 Exploring | AI tools & prompt engineering |
+| 🧰 Workflow | Git • GitHub • Jira • Agile/Scrum |
+| 🎯 Goal | Become a stronger practical developer |
+
+---
+
+## 🚀 Currently Building
+
+**01 — Student-focused web tools**  
+Building practical browser-based tools that solve simple student problems.
+
+**02 — Personal Study Resource Library**  
+Organizing useful learning resources into a simple, searchable experience.
+
+**03 — Jems AI**  
+Improving a visitor-facing assistant that answers from documented profile, project, and repository information.
+
+**04 — Developer Foundations**  
+Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Science concepts.
+
+---
 
 ## 🛠️ What I Build
 
 - 🌐 Practical web applications
-- 📚 Study and productivity resources
-- 🤖 AI-powered experiments and prompt-based tools
+- 📚 Study & productivity tools
+- 🤖 AI-powered experiments
 - 💻 Beginner-friendly Computer Science projects
 - 🧩 Small utilities that turn ideas into working products
 
-## ⭐ Featured Projects
+---
+
+## ⭐ Selected Work
 
 ### 📚 Study Resource Manager
-A browser-based student resource library for organizing and finding study material.
+A browser-based student resource library designed to make study material easier to organize and find.
 
-**Features:** Search • Subject/Type Filters • Favorites • Add/Delete Resources • Dark/Light Mode • LocalStorage  
-**Tech:** `HTML` `CSS` `JavaScript`
+**Highlights**  
+`Search` `Filters` `Favorites` `Add/Delete` `Dark/Light Mode` `LocalStorage`
 
-👉 [Open Live Project](https://hanshit.vercel.app/projects/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
+**Stack:** `HTML` `CSS` `JavaScript`
+
+👉 [Live Project](https://hanshit.vercel.app/projects/study-resource-manager/) · [Source](./projects/study-resource-manager/)
+
+---
 
 ### ⏱️ Student Productivity Dashboard
-A responsive dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring progress.
+A responsive dashboard for daily tasks, focused study sessions, time tracking, and progress monitoring.
 
-**Features:** Tasks • 25-Minute Focus Timer • Study-Time Tracking • Progress Stats • LocalStorage • Responsive UI  
-**Tech:** `HTML` `CSS` `JavaScript`
+**Highlights**  
+`Tasks` `25-Minute Focus Timer` `Study Tracking` `Progress Stats` `LocalStorage` `Responsive UI`
 
-👉 [Open Live Project](https://hanshit.vercel.app/projects/student-productivity-dashboard/) · [View Source](./projects/student-productivity-dashboard/)
+**Stack:** `HTML` `CSS` `JavaScript`
+
+👉 [Live Project](https://hanshit.vercel.app/projects/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
+
+---
 
 ### 🎓 C Student Record Manager
-A console-based C project for managing student records with add, list, search and delete operations.
+A console-based C project focused on managing student records through fundamental programming concepts.
 
 **Concepts:** `Structs` `Arrays` `Functions` `Search` `Validation`
 
-👉 [Open Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) · [View Source](./projects/c-student-record-manager/)
+👉 [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) · [Source](./projects/c-student-record-manager/)
+
+---
 
 ### 🤖 Jems AI
-A visitor-facing assistant for documented profile, project and repository information.
+A visitor-facing assistant for documented profile, project, skill, and repository information.
+
+**Focus:** Clear answers from documented information rather than invented details.
 
 👉 [Open Jems AI](https://hanshit.vercel.app/jems/)
 
 ---
 
-## 🔗 Project Links
+## 🏆 Milestones
 
-| Project | Live | Source |
-|---|---|---|
-| 📚 Study Resource Manager | [Open](https://hanshit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
-| ⏱️ Student Productivity Dashboard | [Open](https://hanshit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
-| 🎓 C Student Record Manager | [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
-| 🤖 Jems AI | [Open](https://hanshit.vercel.app/jems/) | — |
+- 🎓 Studying Polytechnic Computer Science
+- 💻 Building and deploying practical web projects
+- 🌐 Maintaining a personal developer portfolio
+- 🤖 Built a project-focused AI assistant — Jems AI
+- 📚 Building student-focused learning resources
+- 🎓 Completed **ADCA — Advanced Diploma in Computer Applications**
 
-## 🧠 Skills & Tools
+---
 
-### 💻 Development & Computer Science
+## 🧠 Skills & Technologies
+
+### 💻 Development
 `C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
 
 ### 🤖 AI & Productivity
@@ -90,9 +131,13 @@ A visitor-facing assistant for documented profile, project and repository inform
 ### 📋 Project Workflow
 `Jira` `Agile/Scrum` `Project Planning` `Risk Management`
 
-## 🎓 Certification
+<div align="center">
 
-**ADCA — Advanced Diploma in Computer Applications** · `Completed`
+<img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,vscode" alt="Development skills" />
+
+</div>
+
+---
 
 ## 🧊 3D Skills Visualization
 
@@ -100,14 +145,33 @@ A visitor-facing assistant for documented profile, project and repository inform
 <img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
 </div>
 
+---
+
 ## 🌱 Currently Learning
 
-- C Programming fundamentals
-- JavaScript and Web Development
-- Git & GitHub workflows
-- Computer Networks
-- Core Computer Science fundamentals
-- Practical AI and prompt engineering
+```text
+C Programming          ███████░░░  Building fundamentals
+JavaScript             ██████░░░░  Growing web development skills
+Git & GitHub            ███████░░░  Improving workflow
+Computer Networks       ██████░░░░  Strengthening fundamentals
+Core CS                 █████░░░░░  Learning step by step
+Practical AI            ██████░░░░  Exploring useful applications
+```
+
+> Progress matters more than pretending to know everything.
+
+---
+
+## 🔗 Project Hub
+
+| Project | Live | Source |
+|---|---|---|
+| 📚 Study Resource Manager | [Open](https://hanshit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
+| ⏱️ Student Productivity Dashboard | [Open](https://hanshit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
+| 🎓 C Student Record Manager | [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
+| 🤖 Jems AI | [Open](https://hanshit.vercel.app/jems/) | — |
+
+---
 
 ## 🤝 Looking to Collaborate On
 
@@ -118,31 +182,21 @@ A visitor-facing assistant for documented profile, project and repository inform
 
 ## 💡 Ask Me About
 
-Computer Science • Student Projects • Web Development Basics • AI Prompting • Git & GitHub • Learning Resources
+**Computer Science • Student Projects • Web Development Basics • AI Prompting • Git & GitHub • Learning Resources**
+
+---
 
 ## 🎯 My Goal
 
-> **Become a stronger developer by consistently learning, building practical projects, and improving problem-solving skills.**
+> **Become a stronger developer by consistently learning, building practical projects, improving problem-solving skills, and creating useful things.**
 
-## 📱 QR Code
-
-<div align="center">
-
-### Scan to Open My Portfolio
-
-<a href="https://hanshit.vercel.app/">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
-</a>
-
-**Scan the QR code to open my portfolio.**
-
-</div>
+---
 
 ## 🤖 Ask Jems AI
 
 <div align="center">
 
-### `JEMS` • `Hanshit Sir Assistant`
+### `JEMS` • `Hanshit Assistant`
 
 **Explore my documented profile, projects, skills and repository.**
 
@@ -154,7 +208,21 @@ Computer Science • Student Projects • Web Development Basics • AI Promptin
 
 Jems uses documented repository information as its source of truth and avoids inventing information that is not documented.
 
-> **GitHub note:** README pages cannot run custom JavaScript directly, so the button opens the deployed Jems web chat.
+---
+
+## 📱 Portfolio QR
+
+<div align="center">
+
+<a href="https://hanshit.vercel.app/">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
+</a>
+
+**Scan to open my portfolio.**
+
+</div>
+
+---
 
 ## 📊 GitHub Activity
 
@@ -169,7 +237,9 @@ Jems uses documented repository information as its source of truth and avoids in
 
 <div align="center">
 
-### Thanks for visiting! ⭐
+### ⭐ Thanks for visiting
+
+**Built with curiosity, consistency, and a lot of learning.**
 
 <img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
 
