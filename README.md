@@ -121,7 +121,9 @@ A responsive API-integrated weather dashboard using Open-Meteo for live weather,
 
 **Stack:** `HTML` `CSS` `JavaScript` `Fetch API` `LocalStorage`
 
-👉 [Open Project](./projects/advanced-weather-app/) · [Source](./projects/advanced-weather-app/)
+<a href="./projects/advanced-weather-app/"><img src="./assets/live-preview-button.svg" width="220" alt="Open SKH Cast+ live preview" /></a>
+
+[Source](./projects/advanced-weather-app/)
 
 ---
 
@@ -135,7 +137,9 @@ A browser-based student resource library designed to make study material easier 
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-👉 [Live Project](https://hanshit.vercel.app/projects/study-resource-manager/) · [Source](./projects/study-resource-manager/)
+<a href="https://hanshit.vercel.app/projects/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Study Resource Manager live preview" /></a>
+
+[Source](./projects/study-resource-manager/)
 
 ---
 
@@ -149,7 +153,9 @@ A responsive dashboard for daily tasks, focused study sessions, time tracking, a
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-👉 [Live Project](https://hanshit.vercel.app/projects/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
+<a href="https://hanshit.vercel.app/projects/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Productivity Dashboard live preview" /></a>
+
+[Source](./projects/student-productivity-dashboard/)
 
 ---
 
@@ -160,7 +166,9 @@ A console-based C project focused on managing student records through fundamenta
 
 **Concepts:** `Structs` `Arrays` `Functions` `Search` `Validation`
 
-👉 [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) · [Source](./projects/c-student-record-manager/)
+<a href="https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/"><img src="./assets/live-preview-button.svg" width="220" alt="Open C Student Record Manager live demo" /></a>
+
+[Source](./projects/c-student-record-manager/)
 
 ---
 
@@ -171,7 +179,7 @@ A visitor-facing assistant for documented profile, project, skill, and repositor
 
 **Focus:** Clear answers from documented information rather than invented details.
 
-👉 [Open Jems AI](https://hanshit.vercel.app/jems/)
+<a href="https://hanshit.vercel.app/jems/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Jems AI live preview" /></a>
 
 ---
 
@@ -242,24 +250,27 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ---
 
-## 🧩 Project Branding Standard
+## 🧩 Project Branding & Preview Standard
 
-From now on, every new project added to this repository will follow the same **Project Identity System**:
+From now on, every new project added to this repository will follow the same **Project Identity + Preview System**:
 
 - **Dedicated logo:** one simple, recognizable SVG logo per project.
+- **Animated Live Preview button:** one-click access from the profile README to the project's live page/demo.
+- **Rotation animation:** the preview icon continuously rotates inside the button to make the action visually noticeable without being flashy.
 - **Consistent visual language:** matching rounded-card proportions, typography, spacing and professional dark UI.
-- **README presentation:** logo + one-line purpose + highlights + stack + live/source links.
+- **README presentation:** logo + one-line purpose + highlights + stack + animated live-preview action + source link.
 - **Accessible assets:** meaningful filenames and descriptive `alt` text.
-- **Scalable structure:** new logos live in `assets/project-logos/` so the gallery stays organized.
+- **Scalable structure:** logos and shared preview UI assets live in `assets/` so the portfolio stays organized.
 - **No random emoji-only branding:** emojis can support a title, but the actual project identity comes from its logo.
 
 **New project template:**
 
 `assets/project-logos/<project-name>.svg` → logo  
-`README.md` → gallery card + selected-work entry + Project Hub entry  
+`assets/live-preview-button.svg` → shared animated preview button  
+`README.md` → gallery + selected-work entry + live-preview action + Project Hub entry  
 `projects/<project-name>/` → project source and documentation
 
-> **One repository. One visual system. Every project gets its own identity.**
+> **One repository. One visual system. Every project gets its own identity — and one-click live preview.**
 
 ---
 
