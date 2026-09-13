@@ -76,7 +76,7 @@ A student-focused resource library for organizing study material, notes, files a
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hanshit.vercel.app/projects/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Study Resource Manager live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Study Resource Manager live preview" /></a>
 
 [Source](./projects/study-resource-manager/)
 
@@ -90,7 +90,7 @@ A productivity dashboard designed for students to track habits, progress and dai
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansit.vercel.app/projects/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Productivity Dashboard live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Productivity Dashboard live preview" /></a>
 
 [Source](./projects/student-productivity-dashboard/)
 
@@ -104,7 +104,7 @@ A C-based student record management project focused on structured data handling 
 
 **Stack:** `C`
 
-<a href="https://hansit.vercel.app/projects/c-student-record-manager/live-demo/"><img src="./assets/live-preview-button.svg" width="220" alt="Open C Student Record Manager live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/live-demo/"><img src="./assets/live-preview-button.svg" width="220" alt="Open C Student Record Manager live preview" /></a>
 
 [Source](./projects/c-student-record-manager/)
 
@@ -118,7 +118,7 @@ An AI-focused personal assistant project exploring practical AI interactions and
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansit.vercel.app/jems/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Jems AI live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Jems AI live preview" /></a>
 
 [Source](./Jems/)
 
@@ -149,10 +149,10 @@ projects/<project-name>/
 | Project | Live Preview | Source |
 |---|---|---|
 | 🌦️ SKH Cast+ Weather Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) | [Source](./projects/advanced-weather-app/) |
-| 📚 Study Resource Manager | [Open](https://hansit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
-| 📊 Student Productivity Dashboard | [Open](https://hansit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
-| 💻 C Student Record Manager | [Open](https://hansit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
-| 🤖 Jems AI | [Open](https://hansit.vercel.app/jems/) | [Source](./Jems/) |
+| 📚 Study Resource Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
+| 📊 Student Productivity Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
+| 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
+| 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./Jems/) |
 
 ## 📈 What I’m Working On
 
