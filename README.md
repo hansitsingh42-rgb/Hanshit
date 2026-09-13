@@ -6,7 +6,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Learning+C+Programming+%F0%9F%8C%B1;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
 
-<img src="./assets/3d-profile-animation.svg" width="100%" alt="Hanshit Singh animated cyberpunk profile hero" />
+
 
 <p>
 <a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
