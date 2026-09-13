@@ -50,7 +50,10 @@ Organizing useful learning resources into a simple, searchable experience.
 **03 — Jems AI**  
 Improving a visitor-facing assistant that answers from documented profile, project, and repository information.
 
-**04 — Developer Foundations**  
+**04 — SkyCast Weather Intelligence**  
+Building an API-integrated weather dashboard with live search, geolocation, forecasts, favorites and smart insights.
+
+**05 — Developer Foundations**  
 Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Science concepts.
 
 ---
@@ -60,12 +63,25 @@ Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Sc
 - 🌐 Practical web applications
 - 📚 Study & productivity tools
 - 🤖 AI-powered experiments
+- 🌦️ API-integrated dashboards
 - 💻 Beginner-friendly Computer Science projects
 - 🧩 Small utilities that turn ideas into working products
 
 ---
 
 ## ⭐ Selected Work
+
+### 🌦️ SkyCast — Advanced Weather Dashboard
+A responsive API-integrated weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
+
+**Highlights**  
+`Live API` `Geolocation` `City Search` `Hourly Forecast` `7-Day Forecast` `Favorites` `°C/°F` `Dark/Light Mode` `Smart Insights`
+
+**Stack:** `HTML` `CSS` `JavaScript` `Fetch API` `LocalStorage`
+
+👉 [Open Project](./projects/advanced-weather-app/) · [Source](./projects/advanced-weather-app/)
+
+---
 
 ### 📚 Study Resource Manager
 A browser-based student resource library designed to make study material easier to organize and find.
@@ -115,6 +131,7 @@ A visitor-facing assistant for documented profile, project, skill, and repositor
 - 💻 Building and deploying practical web projects
 - 🌐 Maintaining a personal developer portfolio
 - 🤖 Built a project-focused AI assistant — Jems AI
+- 🌦️ Built an API-integrated weather dashboard
 - 📚 Building student-focused learning resources
 - 🎓 Completed **ADCA — Advanced Diploma in Computer Applications**
 
@@ -123,7 +140,7 @@ A visitor-facing assistant for documented profile, project, skill, and repositor
 ## 🧠 Skills & Technologies
 
 ### 💻 Development
-`C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
+`C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks` `Fetch API` `REST APIs`
 
 ### 🤖 AI & Productivity
 `AI Tools` `Prompt Engineering` `Microsoft Excel` `Microsoft Word` `Microsoft PowerPoint`
@@ -154,6 +171,7 @@ C Programming          ███████░░░  Building fundamentals
 JavaScript             ██████░░░░  Growing web development skills
 Git & GitHub            ███████░░░  Improving workflow
 Computer Networks       ██████░░░░  Strengthening fundamentals
+REST APIs               ██████░░░░  Building API integrations
 Core CS                 █████░░░░░  Learning step by step
 Practical AI            ██████░░░░  Exploring useful applications
 ```
@@ -164,8 +182,9 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ## 🔗 Project Hub
 
-| Project | Live | Source |
+| Project | Live / Open | Source |
 |---|---|---|
+| 🌦️ SkyCast Weather Dashboard | [Open](./projects/advanced-weather-app/) | [Source](./projects/advanced-weather-app/) |
 | 📚 Study Resource Manager | [Open](https://hanshit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
 | ⏱️ Student Productivity Dashboard | [Open](https://hanshit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
 | 🎓 C Student Record Manager | [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
@@ -179,10 +198,11 @@ Practical AI            ██████░░░░  Exploring useful applica
 - Student-focused tools
 - Open-source learning projects
 - Practical frontend experiments
+- API-integrated applications
 
 ## 💡 Ask Me About
 
-**Computer Science • Student Projects • Web Development Basics • AI Prompting • Git & GitHub • Learning Resources**
+**Computer Science • Student Projects • Web Development Basics • APIs • AI Prompting • Git & GitHub • Learning Resources**
 
 ---
 
