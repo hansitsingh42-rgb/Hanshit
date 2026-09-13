@@ -2,7 +2,9 @@ name: CodeQL Security Scan
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'profile-analytics/**'
   pull_request:
     branches: [main]
   schedule:
