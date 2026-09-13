@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="54" viewBox="0 0 220 54" role="img" aria-label="Live Preview button">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="218" height="52" rx="14" fill="url(#g)" stroke="#374151"/>
+  <circle cx="30" cy="27" r="13" fill="#0f172a" stroke="#64748b">
+    <animateTransform attributeName="transform" type="rotate" from="0 30 27" to="360 30 27" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M24 27h12M30 21v12" stroke="#e5e7eb" stroke-width="2" stroke-linecap="round"/>
+  <text x="53" y="33" fill="#f9fafb" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">LIVE PREVIEW</text>
+</svg>
