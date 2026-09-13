@@ -1,29 +1,95 @@
-# Hanshit Singh
+<div align="center">
 
-> Computer Science Student • Builder • Curious Learner
+# Hi, I'm Hanshit Singh 👋
 
-I’m a **Computer Science student** focused on building practical projects, learning modern technologies, and improving step by step.
+### `CSE Student` • `Builder` • `Tech Explorer`
 
-I enjoy turning ideas into working software and documenting what I learn along the way.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Learning+C+Programming+%F0%9F%8C%B1;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
+
+</div>
+
+---
 
 ## 👨‍💻 About Me
 
-- 🎓 Computer Science student
-- 💻 Interested in software, web development, AI, and practical technology
-- 🧠 Currently strengthening programming fundamentals and computer science concepts
-- 🚀 Building projects to learn by doing
-- 📚 Always learning something new
+I'm a Computer Science student focused on learning through practical projects. I use this GitHub to experiment, build useful ideas, document my learning, and improve step by step.
 
-## 🛠️ Skills & Technologies
+> **Learn → Build → Improve → Repeat.**
 
-**Languages**  
-`C` `JavaScript` `HTML` `CSS`
+---
 
-**Tools & Technologies**  
-`Git` `GitHub` `VS Code` `Jira` `Agile/Scrum` `Microsoft Office`
+## 🚀 Currently Working On
 
-**Core Concepts**  
-`Computer Networks` `DBMS` `Operating Systems` `Project Planning` `Risk Management`
+- 🌐 Practical web projects
+- 📚 A personal study-resource library
+- 🧩 Student-focused digital projects
+- 🔧 Improving my Git & GitHub workflow
+
+## 🌱 Currently Learning
+
+- C Programming
+- JavaScript
+- Web Development
+- Git & GitHub
+- Computer Networks
+
+## 💡 Ask Me About
+
+- Computer Science student projects
+- Web development basics
+- Git & GitHub
+- Learning resources
+
+## 🤝 Looking to Collaborate On
+
+- Beginner-friendly web projects
+- Student projects
+- Open-source projects
+- Learning-focused experiments
+
+---
+
+## 🛠️ Skills & Tools
+
+<p>
+<img src="https://img.shields.io/badge/C-Programming-555555?style=for-the-badge&logo=c&logoColor=white" alt="C" />
+<img src="https://img.shields.io/badge/JavaScript-Learning-555555?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
+<img src="https://img.shields.io/badge/Git-Tools-555555?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+<img src="https://img.shields.io/badge/GitHub-Workflow-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</p>
+
+---
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true" height="165" alt="GitHub statistics" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&hide_border=true&langs_count=6" height="165" alt="Top languages" />
+
+</div>
+
+---
+
+## 🔥 Contribution Streak
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=hansitsingh42-rgb&hide_border=true" alt="GitHub contribution streak" />
+
+</div>
+
+---
+
+## 📈 Contribution Graph
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&hide_border=true&area=true" alt="GitHub contribution graph" />
+
+</div>
+
+---
 
 ## 🎨 Project Brand Gallery
 
@@ -49,6 +115,8 @@ I enjoy turning ideas into working software and documenting what I learn along t
 <td align="center"></td>
 </tr>
 </table>
+
+---
 
 ## 🚀 Selected Work
 
@@ -122,6 +190,8 @@ An AI-focused personal assistant project exploring practical AI interactions and
 
 [Source](./Jems/)
 
+---
+
 ## 🧩 Project Branding Standard
 
 Every project in this repository follows the same professional presentation standard:
@@ -144,6 +214,26 @@ projects/<project-name>/
 
 > One repository. One visual system. Every project gets its own identity.
 
+---
+
+## 🧩 What You'll Find Here
+
+📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🚀 Future builds
+
+---
+
+## 🎯 My Goal
+
+To become a stronger developer by consistently learning, building real projects, and improving my problem-solving skills.
+
+---
+
+## ⚡ Fun Fact
+
+I enjoy turning things I learn into practical projects.
+
+---
+
 ## 📁 Project Hub
 
 | Project | Live Preview | Source |
@@ -154,19 +244,12 @@ projects/<project-name>/
 | 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./Jems/) |
 
-## 📈 What I’m Working On
-
-- Improving programming fundamentals
-- Building practical student-focused projects
-- Learning better software development practices
-- Exploring AI and modern web technologies
-
-## 📫 Connect
-
-The best way to explore my work is through the projects in this repository.
-
 ---
 
-<p align="center">
-  <b>Build • Learn • Improve</b>
-</p>
+<div align="center">
+
+### Thanks for visiting! ⭐
+
+<img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
+
+</div>
