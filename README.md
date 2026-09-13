@@ -228,8 +228,12 @@ Jems uses documented repository information as its source of truth and avoids in
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&hide_border=true&rank_icon=github" height="165" alt="GitHub statistics" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&hide_border=true" height="165" alt="Top languages" />
+<a href="https://github.com/hansitsingh42-rgb">
+<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&hide_border=true&rank_icon=github" height="165" alt="GitHub statistics — click to open GitHub profile" />
+</a>
+<a href="https://github.com/hansitsingh42-rgb">
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=hansitsingh42-rgb&layout=compact&hide_border=true&langs_count=6" height="165" alt="Top programming languages — click to open GitHub profile" />
+</a>
 
 </div>
 
