@@ -69,9 +69,51 @@ Strengthening C, JavaScript, Git/GitHub, Computer Networks, and core Computer Sc
 
 ---
 
+## 🎨 Project Brand Gallery
+
+> Every project gets its own **recognizable mini-logo + consistent visual identity** so the portfolio stays clean, professional, and easy to scan.
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/project-logos/skycast.svg" width="300" alt="SKH Cast+ project logo" />
+<br><sub><b>Weather Intelligence</b></sub>
+</td>
+<td align="center" width="50%">
+<img src="./assets/project-logos/study-resource-manager.svg" width="300" alt="Study Resource Manager project logo" />
+<br><sub><b>Student Learning Library</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/project-logos/productivity-dashboard.svg" width="300" alt="Student Productivity Dashboard project logo" />
+<br><sub><b>Productivity & Tracking</b></sub>
+</td>
+<td align="center" width="50%">
+<img src="./assets/project-logos/c-student-record.svg" width="300" alt="C Student Record Manager project logo" />
+<br><sub><b>C Programming Project</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/project-logos/jems-ai.svg" width="300" alt="Jems AI project logo" />
+<br><sub><b>Conversational Portfolio Assistant</b></sub>
+</td>
+<td align="center" width="50%"></td>
+</tr>
+</table>
+
+</div>
+
+---
+
 ## ⭐ Selected Work
 
-### 🌦️ SkyCast — Advanced Weather Dashboard
+### 🌦️ SKH Cast+ — Advanced Weather Dashboard
+<img src="./assets/project-logos/skycast.svg" width="360" alt="SKH Cast+ logo" />
+
 A responsive API-integrated weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
 
 **Highlights**  
@@ -84,6 +126,8 @@ A responsive API-integrated weather dashboard using Open-Meteo for live weather,
 ---
 
 ### 📚 Study Resource Manager
+<img src="./assets/project-logos/study-resource-manager.svg" width="360" alt="Study Resource Manager logo" />
+
 A browser-based student resource library designed to make study material easier to organize and find.
 
 **Highlights**  
@@ -96,6 +140,8 @@ A browser-based student resource library designed to make study material easier 
 ---
 
 ### ⏱️ Student Productivity Dashboard
+<img src="./assets/project-logos/productivity-dashboard.svg" width="360" alt="Student Productivity Dashboard logo" />
+
 A responsive dashboard for daily tasks, focused study sessions, time tracking, and progress monitoring.
 
 **Highlights**  
@@ -108,6 +154,8 @@ A responsive dashboard for daily tasks, focused study sessions, time tracking, a
 ---
 
 ### 🎓 C Student Record Manager
+<img src="./assets/project-logos/c-student-record.svg" width="360" alt="C Student Record Manager logo" />
+
 A console-based C project focused on managing student records through fundamental programming concepts.
 
 **Concepts:** `Structs` `Arrays` `Functions` `Search` `Validation`
@@ -117,6 +165,8 @@ A console-based C project focused on managing student records through fundamenta
 ---
 
 ### 🤖 Jems AI
+<img src="./assets/project-logos/jems-ai.svg" width="360" alt="Jems AI logo" />
+
 A visitor-facing assistant for documented profile, project, skill, and repository information.
 
 **Focus:** Clear answers from documented information rather than invented details.
@@ -184,11 +234,32 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 | Project | Live / Open | Source |
 |---|---|---|
-| 🌦️ SkyCast Weather Dashboard | [Open](./projects/advanced-weather-app/) | [Source](./projects/advanced-weather-app/) |
+| 🌦️ SKH Cast+ Weather Dashboard | [Open](./projects/advanced-weather-app/) | [Source](./projects/advanced-weather-app/) |
 | 📚 Study Resource Manager | [Open](https://hanshit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
 | ⏱️ Student Productivity Dashboard | [Open](https://hanshit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
 | 🎓 C Student Record Manager | [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hanshit.vercel.app/jems/) | — |
+
+---
+
+## 🧩 Project Branding Standard
+
+From now on, every new project added to this repository will follow the same **Project Identity System**:
+
+- **Dedicated logo:** one simple, recognizable SVG logo per project.
+- **Consistent visual language:** matching rounded-card proportions, typography, spacing and professional dark UI.
+- **README presentation:** logo + one-line purpose + highlights + stack + live/source links.
+- **Accessible assets:** meaningful filenames and descriptive `alt` text.
+- **Scalable structure:** new logos live in `assets/project-logos/` so the gallery stays organized.
+- **No random emoji-only branding:** emojis can support a title, but the actual project identity comes from its logo.
+
+**New project template:**
+
+`assets/project-logos/<project-name>.svg` → logo  
+`README.md` → gallery card + selected-work entry + Project Hub entry  
+`projects/<project-name>/` → project source and documentation
+
+> **One repository. One visual system. Every project gets its own identity.**
 
 ---
 
