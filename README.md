@@ -4,8 +4,9 @@
 
 ### `CSE Student` • `Student Developer` • `Builder`
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=700&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%A7%A0;Building+student-focused+tools+%E2%9C%A8" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=720&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Practicing+C+%26+JavaScript+%F0%9F%A7%A0;Building+student-focused+tools+%E2%9C%A8" alt="Typing animation" />
 
+<!-- The hero uses the supplied cyberpunk artwork as the actual artwork. The SVG only adds the requested animation layer. -->
 <img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-profile-animation.svg" width="900" alt="Hanshit Singh cyberpunk animated profile hero" />
 
 <p>
@@ -20,58 +21,70 @@
 
 ## 👨‍💻 About Me
 
-I'm a Polytechnic Computer Science student who learns through practical building. I use this profile as my public learning workspace — a place to document projects, experiment with new ideas, and improve step by step.
+I'm a Polytechnic Computer Science student who learns by building practical projects. This profile is my public learning workspace — a place to document projects, experiment with ideas, and improve step by step.
 
 > **Learn → Build → Improve → Repeat.**
 
-## 🚀 What I Build
+## 🚀 Currently Working On
 
-- 🌐 Practical web applications and student-focused tools
+- 🌐 Practical web projects and responsive student-focused tools
+- 📚 A personal study-resource library
+- 🤖 Exploring AI tools and prompt engineering
+- 🔧 Improving my Git & GitHub workflow
+- 🧠 Strengthening C, JavaScript and Computer Science fundamentals
+
+## 🛠️ What I Build
+
+- 🌐 Practical web applications
 - 📚 Study and productivity resources
 - 🤖 AI-powered experiments and prompt-based tools
 - 💻 Beginner-friendly Computer Science projects
 - 🧩 Small utilities that turn ideas into working products
 
-## 🛠️ Selected Work
-
-| Project | What I built | Stack · Status |
-|---|---|---|
-| 📚 **Study Resource Manager** | Searchable student library with subject/type filters, favorites and local storage | `HTML` `CSS` `JavaScript` · Active |
-| ⏱️ **Student Productivity Dashboard** | Tasks, focus timer, study tracking and progress statistics | `HTML` `CSS` `JavaScript` · Active |
-| 🎓 **C Student Record Manager** | Console application for adding, listing, searching and deleting student records | `C` · Learning Project |
-| 🤖 **Jems AI** | Visitor-facing assistant for documented profile and project information | `Web` `AI` · Live |
-
-### 🔗 Project Links
-
-- 📚 [Study Resource Manager](https://hanshit.vercel.app/projects/study-resource-manager/) · [Source](./projects/study-resource-manager/)
-- ⏱️ [Student Productivity Dashboard](https://hanshit.vercel.app/projects/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
-- 🎓 [C Student Record Manager — Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) · [Source](./projects/c-student-record-manager/)
-- 🤖 [Open Jems AI](https://hanshit.vercel.app/jems/)
-
----
-
-## ⭐ Project Highlights
+## ⭐ Featured Projects
 
 ### 📚 Study Resource Manager
-A browser-based resource library designed around a simple goal: make study material easier to organize and find.
+A browser-based student resource library for organizing and finding study material.
 
-**Features:** Search • Subject/Type Filters • Favorites • Add/Delete Resources • Dark/Light Mode • LocalStorage
+**Features:** Search • Subject/Type Filters • Favorites • Add/Delete Resources • Dark/Light Mode • LocalStorage  
+**Tech:** `HTML` `CSS` `JavaScript`
+
+👉 [Open Live Project](https://hanshit.vercel.app/projects/study-resource-manager/) · [View Source](./projects/study-resource-manager/)
 
 ### ⏱️ Student Productivity Dashboard
-A responsive dashboard for planning daily work and tracking study progress without unnecessary complexity.
+A responsive dashboard for managing daily tasks, tracking study time, using a focus timer, and monitoring progress.
 
-**Features:** Tasks • 25-Minute Focus Timer • Study-Time Tracking • Progress Stats • LocalStorage • Responsive UI
+**Features:** Tasks • 25-Minute Focus Timer • Study-Time Tracking • Progress Stats • LocalStorage • Responsive UI  
+**Tech:** `HTML` `CSS` `JavaScript`
+
+👉 [Open Live Project](https://hanshit.vercel.app/projects/student-productivity-dashboard/) · [View Source](./projects/student-productivity-dashboard/)
 
 ### 🎓 C Student Record Manager
-A beginner-friendly C project focused on programming fundamentals, structured data and input validation.
+A console-based C project for managing student records with add, list, search and delete operations.
 
 **Concepts:** `Structs` `Arrays` `Functions` `Search` `Validation`
 
+👉 [Open Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) · [View Source](./projects/c-student-record-manager/)
+
+### 🤖 Jems AI
+A visitor-facing assistant for documented profile, project and repository information.
+
+👉 [Open Jems AI](https://hanshit.vercel.app/jems/)
+
 ---
+
+## 🔗 Project Links
+
+| Project | Live | Source |
+|---|---|---|
+| 📚 Study Resource Manager | [Open](https://hanshit.vercel.app/projects/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
+| ⏱️ Student Productivity Dashboard | [Open](https://hanshit.vercel.app/projects/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
+| 🎓 C Student Record Manager | [Live Demo](https://hanshit.vercel.app/projects/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
+| 🤖 Jems AI | [Open](https://hanshit.vercel.app/jems/) | — |
 
 ## 🧠 Skills & Tools
 
-### 💻 Development
+### 💻 Development & Computer Science
 `C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
 
 ### 🤖 AI & Productivity
@@ -84,15 +97,11 @@ A beginner-friendly C project focused on programming fundamentals, structured da
 
 **ADCA — Advanced Diploma in Computer Applications** · `Completed`
 
----
-
 ## 🧊 3D Skills Visualization
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
 </div>
-
----
 
 ## 🌱 Currently Learning
 
@@ -114,15 +123,9 @@ A beginner-friendly C project focused on programming fundamentals, structured da
 
 Computer Science • Student Projects • Web Development Basics • AI Prompting • Git & GitHub • Learning Resources
 
-## 🎯 Current Focus
+## 🎯 My Goal
 
-> **Build useful projects, understand the fundamentals, and turn every project into a better version of the last one.**
-
-## ⚡ Fun Fact
-
-I enjoy turning what I learn into practical projects.
-
----
+> **Become a stronger developer by consistently learning, building practical projects, and improving problem-solving skills.**
 
 ## 🤖 Ask Jems AI
 
@@ -138,11 +141,9 @@ I enjoy turning what I learn into practical projects.
 
 </div>
 
-Jems is the repository's visitor-facing knowledge assistant. It uses documented repository information as its source of truth and avoids inventing information that is not documented.
+Jems uses documented repository information as its source of truth and avoids inventing information that is not documented.
 
 > **GitHub note:** README pages cannot run custom JavaScript directly, so the button opens the deployed Jems web chat.
-
----
 
 ## 📊 GitHub Activity
 
