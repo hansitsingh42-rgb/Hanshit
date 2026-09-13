@@ -104,7 +104,7 @@ A C-based student record management project focused on structured data handling 
 
 **Stack:** `C`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/live-demo/"><img src="./assets/live-preview-button.svg" width="220" alt="Open C Student Record Manager live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/"><img src="./assets/live-preview-button.svg" width="220" alt="Open C Student Record Manager live preview" /></a>
 
 [Source](./projects/c-student-record-manager/)
 
@@ -151,7 +151,7 @@ projects/<project-name>/
 | 🌦️ SKH Cast+ Weather Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) | [Source](./projects/advanced-weather-app/) |
 | 📚 Study Resource Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
 | 📊 Student Productivity Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
-| 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/live-demo/) | [Source](./projects/c-student-record-manager/) |
+| 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./Jems/) |
 
 ## 📈 What I’m Working On
