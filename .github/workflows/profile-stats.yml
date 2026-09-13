@@ -1,0 +1,65 @@
+name: Update profile analytics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile-analytics
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Generate GitHub analytics cards
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true
+          path: assets/github-stats.svg
+          token: ${{ github.token }}
+          git_push: true
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&hide_border=true&langs_count=6
+          path: assets/github-top-langs.svg
+          token: ${{ github.token }}
+          git_push: true
+
+      - name: Generate contribution streak card
+        uses: zients/github-readme-streak-stats@v2
+        with:
+          username: ${{ github.repository_owner }}
+          token: ${{ github.token }}
+          output_path: assets/github-streak.svg
+          disable_animations: true
+          hide_border: true
+          date_format: 'j M[ Y]'
+          commit: true
+
+      - name: Generate contribution graph
+        uses: maurodesouza/github-readme-activity-graph-action@v1
+        with:
+          username: ${{ github.repository_owner }}
+          options: 'theme=github&hide_border=true&area=true&custom_title=Contribution%20Activity'
+          output_path: assets/github-contribution-graph.svg
+          token: ${{ github.token }}
+
+      - name: Commit contribution graph
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/github-contribution-graph.svg
+          git diff --cached --quiet || git commit -m 'chore(profile): refresh contribution graph'
+          git push
