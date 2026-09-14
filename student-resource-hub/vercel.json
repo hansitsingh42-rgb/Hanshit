@@ -2,10 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "functions": {
-    "api/**/*.{js,ts}": {
-      "maxDuration": 60
-    }
-  }
+  "framework": "nextjs"
 }
