@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { errorResponse, requireAdminResponse } from "@/lib/admin-api";
+import { getAdminSession } from "@/lib/auth";
 import { validateResourceInput } from "@/lib/validation";
 
 export async function GET() {
   try {
+    const isAdmin = Boolean(await getAdminSession());
     const resources = await db.resource.findMany({
-      where: { isPublished: true },
+      where: isAdmin ? undefined : { isPublished: true },
       orderBy: { createdAt: "desc" },
       include: { chapter: { include: { subject: true } } },
     });
