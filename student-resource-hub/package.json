@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@prisma/client": "latest",
+    "bcryptjs": "latest",
     "next": "latest",
+    "next-auth": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",
+    "@types/bcryptjs": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
