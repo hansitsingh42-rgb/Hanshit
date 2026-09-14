@@ -17,126 +17,33 @@ type Resource = {
 };
 
 const resourceTypes = ["NOTES", "STUDY_GUIDE", "PPT", "VIDEO", "REFERENCE"] as const;
-
-function toSlug(value: string) {
-  return value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-}
-
-async function requestJson(url: string, options?: RequestInit) {
-  const response = await fetch(url, { ...options, headers: { "Content-Type": "application/json", ...(options?.headers || {}) } });
-  const data = await response.json();
-  if (!response.ok) throw new Error(data.error || "Request failed.");
-  return data;
-}
+function toSlug(value: string) { return value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+async function requestJson(url: string, options?: RequestInit) { const response = await fetch(url, { ...options, headers: { "Content-Type": "application/json", ...(options?.headers || {}) } }); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed."); return data; }
 
 export default function ResourceManager({ initialSubjects }: { initialSubjects: Subject[] }) {
-  const [subjects, setSubjects] = useState(initialSubjects);
-  const [resources, setResources] = useState<Resource[]>([]);
-  const [subjectName, setSubjectName] = useState("");
-  const [chapterSubjectId, setChapterSubjectId] = useState(initialSubjects[0]?.id || "");
-  const [chapterName, setChapterName] = useState("");
+  const [subjects, setSubjects] = useState(initialSubjects); const [resources, setResources] = useState<Resource[]>([]);
+  const [subjectName, setSubjectName] = useState(""); const [chapterSubjectId, setChapterSubjectId] = useState(initialSubjects[0]?.id || ""); const [chapterName, setChapterName] = useState("");
   const [resource, setResource] = useState({ title: "", description: "", type: "NOTES" as Resource["type"], chapterId: "", url: "", isPublished: false });
-  const [message, setMessage] = useState("");
-  const [busy, setBusy] = useState(false);
-
+  const [editingResourceId, setEditingResourceId] = useState<string | null>(null); const [message, setMessage] = useState(""); const [busy, setBusy] = useState(false);
   const chapters = useMemo(() => subjects.flatMap((subject) => subject.chapters.map((chapter) => ({ ...chapter, subjectId: subject.id }))), [subjects]);
   const selectedSubjectChapters = subjects.find((subject) => subject.id === chapterSubjectId)?.chapters || [];
-
-  async function refresh() {
-    const [subjectData, resourceData] = await Promise.all([requestJson("/api/subjects"), requestJson("/api/resources")]);
-    setSubjects(subjectData.subjects);
-    setResources(resourceData.resources);
-  }
-
+  async function refresh() { const [subjectData, resourceData] = await Promise.all([requestJson("/api/subjects"), requestJson("/api/resources")]); setSubjects(subjectData.subjects); setResources(resourceData.resources); }
   useEffect(() => { refresh().catch((error) => setMessage(error.message)); }, []);
-
-  async function createSubject(event: FormEvent) {
-    event.preventDefault(); setBusy(true); setMessage("");
-    try {
-      await requestJson("/api/subjects", { method: "POST", body: JSON.stringify({ name: subjectName, slug: toSlug(subjectName) }) });
-      setSubjectName(""); await refresh(); setMessage("Subject created.");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create subject."); }
-    finally { setBusy(false); }
-  }
-
-  async function createChapter(event: FormEvent) {
-    event.preventDefault(); setBusy(true); setMessage("");
-    try {
-      await requestJson("/api/chapters", { method: "POST", body: JSON.stringify({ subjectId: chapterSubjectId, name: chapterName, slug: toSlug(chapterName) }) });
-      setChapterName(""); await refresh(); setMessage("Chapter created.");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create chapter."); }
-    finally { setBusy(false); }
-  }
-
-  async function createResource(event: FormEvent) {
-    event.preventDefault(); setBusy(true); setMessage("");
-    try {
-      await requestJson("/api/resources", { method: "POST", body: JSON.stringify({ ...resource, slug: toSlug(resource.title), url: resource.url || null }) });
-      setResource({ title: "", description: "", type: "NOTES", chapterId: "", url: "", isPublished: false });
-      await refresh(); setMessage("Resource created.");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create resource."); }
-    finally { setBusy(false); }
-  }
-
-  async function deleteItem(url: string, label: string) {
-    if (!window.confirm(`Delete ${label}? This cannot be undone.`)) return;
-    setBusy(true); setMessage("");
-    try { await requestJson(url, { method: "DELETE" }); await refresh(); setMessage(`${label} deleted.`); }
-    catch (error) { setMessage(error instanceof Error ? error.message : "Unable to delete item."); }
-    finally { setBusy(false); }
-  }
-
-  async function togglePublished(item: Resource) {
-    setBusy(true); setMessage("");
-    try {
-      await requestJson(`/api/resources/${item.id}`, { method: "PATCH", body: JSON.stringify(item) });
-      await refresh(); setMessage(item.isPublished ? "Resource unpublished." : "Resource published.");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to update resource."); }
-    finally { setBusy(false); }
-  }
-
-  return (
-    <section className="admin-manager">
-      {message && <p className="form-message" role="status">{message}</p>}
-
-      <div className="admin-grid">
-        <form className="admin-panel" onSubmit={createSubject}>
-          <div><p className="eyebrow">1. Subject</p><h2>Add subject</h2></div>
-          <label>Name<input value={subjectName} onChange={(e) => setSubjectName(e.target.value)} placeholder="Computer" required maxLength={100} /></label>
-          <button disabled={busy} type="submit">Create subject</button>
-        </form>
-
-        <form className="admin-panel" onSubmit={createChapter}>
-          <div><p className="eyebrow">2. Chapter</p><h2>Add chapter</h2></div>
-          <label>Subject<select value={chapterSubjectId} onChange={(e) => setChapterSubjectId(e.target.value)} required><option value="">Select subject</option>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.name}</option>)}</select></label>
-          <label>Chapter name<input value={chapterName} onChange={(e) => setChapterName(e.target.value)} placeholder="Computer Networks" required maxLength={100} /></label>
-          <button disabled={busy || !chapterSubjectId} type="submit">Create chapter</button>
-        </form>
-      </div>
-
-      <form className="admin-panel resource-form" onSubmit={createResource}>
-        <div><p className="eyebrow">3. Resource</p><h2>Add learning resource</h2></div>
-        <div className="form-two-col">
-          <label>Title<input value={resource.title} onChange={(e) => setResource({ ...resource, title: e.target.value })} placeholder="PAN, LAN, MAN & WAN" required maxLength={120} /></label>
-          <label>Chapter<select value={resource.chapterId} onChange={(e) => setResource({ ...resource, chapterId: e.target.value })} required><option value="">Select chapter</option>{chapters.map((chapter) => <option key={chapter.id} value={chapter.id}>{chapter.subject?.name || "Subject"} — {chapter.name}</option>)}</select></label>
-          <label>Type<select value={resource.type} onChange={(e) => setResource({ ...resource, type: e.target.value as Resource["type"] })}>{resourceTypes.map((type) => <option key={type} value={type}>{type.replace("_", " ")}</option>)}</select></label>
-          <label>Resource URL<input type="url" value={resource.url} onChange={(e) => setResource({ ...resource, url: e.target.value })} placeholder="https://..." /></label>
-        </div>
-        <label>Description<textarea value={resource.description} onChange={(e) => setResource({ ...resource, description: e.target.value })} placeholder="Short description of what students will learn." required maxLength={500} rows={4} /></label>
-        <label className="checkbox-row"><input type="checkbox" checked={resource.isPublished} onChange={(e) => setResource({ ...resource, isPublished: e.target.checked })} /> Publish immediately</label>
-        <button disabled={busy} type="submit">Create resource</button>
-      </form>
-
-      <div className="admin-panel">
-        <div><p className="eyebrow">Manage</p><h2>Subjects & chapters</h2></div>
-        <div className="admin-list">{subjects.length === 0 ? <p>No subjects yet.</p> : subjects.map((subject) => <div className="admin-list-item" key={subject.id}><div><strong>{subject.name}</strong><small>{subject.slug} · {subject.chapters.length} chapter(s)</small></div><button type="button" onClick={() => deleteItem(`/api/subjects/${subject.id}`, "subject")} disabled={busy}>Delete</button></div>)}</div>
-        {selectedSubjectChapters.map((chapter) => <div className="admin-list-item nested" key={chapter.id}><div><strong>{chapter.name}</strong><small>{chapter.slug}</small></div><button type="button" onClick={() => deleteItem(`/api/chapters/${chapter.id}`, "chapter")} disabled={busy}>Delete</button></div>)}
-      </div>
-
-      <div className="admin-panel">
-        <div><p className="eyebrow">Manage</p><h2>Resources</h2></div>
-        <div className="admin-list">{resources.length === 0 ? <p>No resources yet.</p> : resources.map((item) => <div className="admin-list-item" key={item.id}><div><strong>{item.title}</strong><small>{item.chapter.subject.name} · {item.chapter.name} · {item.type} · {item.isPublished ? "Published" : "Draft"}</small></div><div className="admin-actions"><button type="button" onClick={() => togglePublished(item)} disabled={busy}>{item.isPublished ? "Unpublish" : "Publish"}</button><button type="button" onClick={() => deleteItem(`/api/resources/${item.id}`, "resource")} disabled={busy}>Delete</button></div></div>)}</div>
-      </div>
-    </section>
-  );
+  async function createSubject(event: FormEvent) { event.preventDefault(); setBusy(true); setMessage(""); try { await requestJson("/api/subjects", { method: "POST", body: JSON.stringify({ name: subjectName, slug: toSlug(subjectName) }) }); setSubjectName(""); await refresh(); setMessage("Subject created."); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create subject."); } finally { setBusy(false); } }
+  async function createChapter(event: FormEvent) { event.preventDefault(); setBusy(true); setMessage(""); try { await requestJson("/api/chapters", { method: "POST", body: JSON.stringify({ subjectId: chapterSubjectId, name: chapterName, slug: toSlug(chapterName) }) }); setChapterName(""); await refresh(); setMessage("Chapter created."); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create chapter."); } finally { setBusy(false); } }
+  async function saveResource(event: FormEvent) { event.preventDefault(); setBusy(true); setMessage(""); try { const payload = { ...resource, slug: toSlug(resource.title), url: resource.url || null }; if (editingResourceId) { await requestJson(`/api/resources/${editingResourceId}`, { method: "PATCH", body: JSON.stringify(payload) }); setMessage("Resource updated."); } else { await requestJson("/api/resources", { method: "POST", body: JSON.stringify(payload) }); setMessage("Resource created."); } setResource({ title: "", description: "", type: "NOTES", chapterId: "", url: "", isPublished: false }); setEditingResourceId(null); await refresh(); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to save resource."); } finally { setBusy(false); } }
+  function editResource(item: Resource) { setEditingResourceId(item.id); setResource({ title: item.title, description: item.description, type: item.type, chapterId: item.chapterId, url: item.url || "", isPublished: item.isPublished }); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function cancelEdit() { setEditingResourceId(null); setResource({ title: "", description: "", type: "NOTES", chapterId: "", url: "", isPublished: false }); }
+  async function deleteItem(url: string, label: string) { if (!window.confirm(`Delete ${label}? This cannot be undone.`)) return; setBusy(true); setMessage(""); try { await requestJson(url, { method: "DELETE" }); await refresh(); setMessage(`${label} deleted.`); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to delete item."); } finally { setBusy(false); } }
+  async function togglePublished(item: Resource) { setBusy(true); setMessage(""); try { await requestJson(`/api/resources/${item.id}`, { method: "PATCH", body: JSON.stringify({ title: item.title, slug: item.slug, description: item.description, type: item.type, chapterId: item.chapterId, url: item.url, isPublished: !item.isPublished }) }); await refresh(); setMessage(item.isPublished ? "Resource unpublished." : "Resource published."); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to update resource."); } finally { setBusy(false); } }
+  return <section className="admin-manager">
+    {message && <p className="form-message" role="status">{message}</p>}
+    <div className="admin-grid">
+      <form className="admin-panel" onSubmit={createSubject}><div><p className="eyebrow">1. Subject</p><h2>Add subject</h2></div><label>Name<input value={subjectName} onChange={(e) => setSubjectName(e.target.value)} placeholder="Computer" required maxLength={100} /></label><button disabled={busy} type="submit">Create subject</button></form>
+      <form className="admin-panel" onSubmit={createChapter}><div><p className="eyebrow">2. Chapter</p><h2>Add chapter</h2></div><label>Subject<select value={chapterSubjectId} onChange={(e) => setChapterSubjectId(e.target.value)} required><option value="">Select subject</option>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.name}</option>)}</select></label><label>Chapter name<input value={chapterName} onChange={(e) => setChapterName(e.target.value)} placeholder="Computer Networks" required maxLength={100} /></label><button disabled={busy || !chapterSubjectId} type="submit">Create chapter</button></form>
+    </div>
+    <form className="admin-panel resource-form" onSubmit={saveResource}><div><p className="eyebrow">3. Resource</p><h2>{editingResourceId ? "Edit learning resource" : "Add learning resource"}</h2></div><div className="form-two-col"><label>Title<input value={resource.title} onChange={(e) => setResource({ ...resource, title: e.target.value })} placeholder="PAN, LAN, MAN & WAN" required maxLength={120} /></label><label>Chapter<select value={resource.chapterId} onChange={(e) => setResource({ ...resource, chapterId: e.target.value })} required><option value="">Select chapter</option>{chapters.map((chapter) => <option key={chapter.id} value={chapter.id}>{chapter.subject?.name || "Subject"} — {chapter.name}</option>)}</select></label><label>Type<select value={resource.type} onChange={(e) => setResource({ ...resource, type: e.target.value as Resource["type"] })}>{resourceTypes.map((type) => <option key={type} value={type}>{type.replace("_", " ")}</option>)}</select></label><label>Resource URL<input type="url" value={resource.url} onChange={(e) => setResource({ ...resource, url: e.target.value })} placeholder="https://..." /></label></div><label>Description<textarea value={resource.description} onChange={(e) => setResource({ ...resource, description: e.target.value })} placeholder="Short description of what students will learn." required maxLength={500} rows={4} /></label><label className="checkbox-row"><input type="checkbox" checked={resource.isPublished} onChange={(e) => setResource({ ...resource, isPublished: e.target.checked })} /> Publish immediately</label><div className="admin-actions"><button disabled={busy} type="submit">{editingResourceId ? "Save changes" : "Create resource"}</button>{editingResourceId && <button disabled={busy} type="button" onClick={cancelEdit}>Cancel</button>}</div></form>
+    <div className="admin-panel"><div><p className="eyebrow">Manage</p><h2>Subjects & chapters</h2></div><div className="admin-list">{subjects.length === 0 ? <p>No subjects yet.</p> : subjects.map((subject) => <div className="admin-list-item" key={subject.id}><div><strong>{subject.name}</strong><small>{subject.slug} · {subject.chapters.length} chapter(s)</small></div><button type="button" onClick={() => deleteItem(`/api/subjects/${subject.id}`, "subject")} disabled={busy}>Delete</button></div>)}</div>{selectedSubjectChapters.map((chapter) => <div className="admin-list-item nested" key={chapter.id}><div><strong>{chapter.name}</strong><small>{chapter.slug}</small></div><button type="button" onClick={() => deleteItem(`/api/chapters/${chapter.id}`, "chapter")} disabled={busy}>Delete</button></div>)}</div>
+    <div className="admin-panel"><div><p className="eyebrow">Manage</p><h2>Resources</h2></div><div className="admin-list">{resources.length === 0 ? <p>No resources yet.</p> : resources.map((item) => <div className="admin-list-item" key={item.id}><div><strong>{item.title}</strong><small>{item.chapter.subject.name} · {item.chapter.name} · {item.type} · {item.isPublished ? "Published" : "Draft"}</small></div><div className="admin-actions"><button type="button" onClick={() => editResource(item)} disabled={busy}>Edit</button><button type="button" onClick={() => togglePublished(item)} disabled={busy}>{item.isPublished ? "Unpublish" : "Publish"}</button><button type="button" onClick={() => deleteItem(`/api/resources/${item.id}`, "resource")} disabled={busy}>Delete</button></div></div>)}</div></div>
+  </section>;
 }
