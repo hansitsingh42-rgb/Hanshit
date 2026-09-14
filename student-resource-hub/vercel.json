@@ -3,7 +3,19 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
+  "functions": {
+    "api/**/*.{js,ts}": {
+      "maxDuration": 60
+    }
+  },
   "env": {
-    "NEXT_PUBLIC_API_URL": "@NEXT_PUBLIC_API_URL"
+    "DATABASE_URL": "@DATABASE_URL",
+    "AUTH_SECRET": "@AUTH_SECRET",
+    "ADMIN_EMAIL": "@ADMIN_EMAIL",
+    "ADMIN_PASSWORD": "@ADMIN_PASSWORD"
+  },
+  "buildHook": {
+    "events": ["push"],
+    "branches": ["project/student-resource-hub"]
   }
 }
