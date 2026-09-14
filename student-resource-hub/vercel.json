@@ -1,0 +1,21 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "functions": {
+    "api/**/*.{js,ts}": {
+      "maxDuration": 60
+    }
+  },
+  "env": {
+    "DATABASE_URL": "@DATABASE_URL",
+    "AUTH_SECRET": "@AUTH_SECRET",
+    "ADMIN_EMAIL": "@ADMIN_EMAIL",
+    "ADMIN_PASSWORD": "@ADMIN_PASSWORD"
+  },
+  "buildHook": {
+    "events": ["push"],
+    "branches": ["project/student-resource-hub"]
+  }
+}
