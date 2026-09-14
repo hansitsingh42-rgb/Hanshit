@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ResourceType {
+  NOTES
+  STUDY_GUIDE
+  PPT
+  VIDEO
+  REFERENCE
+}
+
+model Subject {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  chapters  Chapter[]
+}
+
+model Chapter {
+  id        String     @id @default(cuid())
+  name      String
+  slug      String
+  subjectId String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  subject   Subject    @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  resources Resource[]
+
+  @@unique([subjectId, slug])
+  @@index([subjectId])
+}
+
+model Resource {
+  id          String       @id @default(cuid())
+  title       String
+  slug        String       @unique
+  description String
+  type        ResourceType
+  chapterId   String
+  url         String?
+  isPublished Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  chapter     Chapter      @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@index([chapterId])
+  @@index([type])
+  @@index([isPublished])
+}
