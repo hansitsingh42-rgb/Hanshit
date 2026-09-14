@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: student-resource-hub
+    runtime: node
+    plan: free
+    rootDir: student-resource-hub
+    buildCommand: npm install && npm run build
+    startCommand: npm run db:deploy && npm run db:seed && npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: AUTH_SECRET
+        sync: false
+      - key: AUTH_TRUST_HOST
+        value: "true"
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
