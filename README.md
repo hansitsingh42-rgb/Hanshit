@@ -144,10 +144,10 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 ```text
 C Programming           ███████░░░  Building fundamentals
 JavaScript              ██████░░░░  Growing web development skills
-Git & GitHub             ███████░░░  Improving workflow
-Computer Networks        ██████░░░░  Strengthening fundamentals
-Core CS                  █████░░░░░  Learning step by step
-Practical AI             ██████░░░░  Exploring useful applications
+Git & GitHub            ███████░░░  Improving workflow
+Computer Networks       ██████░░░░  Strengthening fundamentals
+Core CS                 █████░░░░░  Learning step by step
+Practical AI            ██████░░░░  Exploring useful applications
 ```
 
 > Progress matters more than pretending to know everything.
@@ -220,6 +220,16 @@ Practical AI             ██████░░░░  Exploring useful applic
 <td align="center">C Student Record Manager</td>
 <td align="center">Jems AI</td>
 <td align="center">Student Resource Hub</td>
+</tr>
+<tr>
+<td align="center"><img src="./assets/project-logos/student-academic-planner.svg" width="180" alt="Student Academic Planner logo" /></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Student Academic Planner</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </table>
 
@@ -315,6 +325,20 @@ A student-focused resource discovery interface organized around **Subject → Ch
 
 > The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
 
+### 📅 Student Academic Planner
+<img src="./assets/project-logos/student-academic-planner.svg" width="360" alt="Student Academic Planner logo" />
+
+A browser-based academic dashboard for organizing subjects, attendance, assignments, study sessions, notes and daily focus time.
+
+**Highlights**  
+`Subjects` `Attendance` `Assignments` `Study Sessions` `Notes` `Focus Timer` `Progress Tracking` `Responsive UI` `Dark/Light Mode` `LocalStorage`
+
+**Stack:** `HTML` `CSS` `JavaScript` `LocalStorage`
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Academic Planner live preview" /></a>
+
+[Source](./projects/student-academic-planner/)
+
 ---
 
 ## 🧩 Project Branding Standard
@@ -401,6 +425,7 @@ Jems uses documented repository information as its source of truth and avoids in
 | 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./jems/) |
 | 📘 Student Resource Hub | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) | [Source](./projects/student-resource-hub/) |
+| 📅 Student Academic Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) | [Source](./projects/student-academic-planner/) |
 
 ---
 
