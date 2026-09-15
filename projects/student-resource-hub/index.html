@@ -63,6 +63,11 @@
         <div><p class="eyebrow">LIBRARY</p><h2 id="resource-heading">Resources</h2></div>
         <span id="count" class="count" aria-live="polite">6 of 6</span>
       </div>
+      <div class="resource-search">
+        <label class="sr-only" for="resource-search">Search resources</label>
+        <input id="resource-search" type="search" placeholder="Search subject, chapter or topic…" autocomplete="off">
+        <button id="clear-search" class="secondary-button" type="button" hidden>Clear</button>
+      </div>
       <div id="filters" class="filters" aria-label="Filter by subject"></div>
       <div id="resource-grid" class="grid" aria-live="polite"></div>
       <div id="empty-state" class="empty-state glass-card" hidden><h3>Nothing found</h3><p>Try another search or reset the filters.</p><button id="reset-filters" class="secondary-button" type="button">Reset filters</button></div>
