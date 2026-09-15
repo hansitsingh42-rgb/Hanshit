@@ -1,49 +1,111 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Student Resource Hub — subject and chapter based study material library.">
+  <meta name="description" content="Student Resource Hub — a modern subject, chapter and resource learning library.">
+  <meta name="theme-color" content="#0B0F19">
   <title>Student Resource Hub</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <canvas id="aurora-canvas" aria-hidden="true"></canvas>
+  <div class="site-glow" aria-hidden="true"></div>
+
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#top">Student Resource Hub</a>
+      <a class="brand" href="#top" aria-label="Student Resource Hub home"><span class="brand-mark">SR</span><span>Student Resource Hub</span></a>
       <nav aria-label="Primary navigation">
         <a href="#resources">Resources</a>
+        <a href="#features">Features</a>
         <a href="#about">About</a>
       </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">☼</button>
+        <button id="auth-open" class="outline-button" type="button">Sign in</button>
+      </div>
     </div>
   </header>
+
   <main id="top">
-    <section class="hero container">
-      <p class="eyebrow">STUDY RESOURCE LIBRARY</p>
-      <h1>Study material, arranged the way you actually look for it.</h1>
-      <p class="hero-copy">Start with a subject, pick a chapter, and find the material you need. The aim is simple: less time searching, more time studying.</p>
-      <div class="search-wrap">
-        <label for="resource-search" class="sr-only">Search resources</label>
-        <input id="resource-search" type="search" placeholder="Search by subject, chapter or topic" autocomplete="off">
-        <button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden>Clear</button>
+    <section class="hero container reveal">
+      <div class="hero-copy-block">
+        <p class="eyebrow">STUDENT RESOURCE LIBRARY</p>
+        <h1>Find what you need. <span>Study without the noise.</span></h1>
+        <p class="hero-copy">Subject → Chapter → Resource. A focused learning library for notes, study guides and academic material.</p>
+        <div class="cta-cluster glass-card">
+          <a class="primary-button" href="#resources">Explore resources</a>
+          <button id="hero-search" class="secondary-button" type="button">Open search <kbd>Ctrl K</kbd></button>
+        </div>
+      </div>
+      <div class="hero-visual glass-card" aria-label="Interactive resource library preview">
+        <div class="mesh-grid"></div>
+        <div class="floating-orb orb-one"></div><div class="floating-orb orb-two"></div>
+        <div class="mockup-window">
+          <div class="mockup-bar"><i></i><i></i><i></i><span>Resource Library</span></div>
+          <div class="mockup-content"><div class="mock-line wide"></div><div class="mock-line"></div><div class="mock-cards"><span></span><span></span><span></span></div></div>
+        </div>
+        <p class="visual-caption">Fast, responsive and built around the way students search.</p>
       </div>
     </section>
-    <section id="resources" class="container section" aria-labelledby="resource-heading">
-      <div class="section-heading"><div><p class="eyebrow">LIBRARY</p><h2 id="resource-heading">Resources</h2></div><span id="count" class="count" aria-live="polite">6 of 6</span></div>
+
+    <section id="features" class="container section reveal" aria-labelledby="features-heading">
+      <div class="section-heading"><div><p class="eyebrow">BUILT FOR STUDY</p><h2 id="features-heading">Useful features, not clutter.</h2></div></div>
+      <div class="feature-grid">
+        <article class="feature-card glass-card"><span class="feature-number">01</span><h3>Subject → Chapter</h3><p>Move from broad subjects to focused chapters and resources with a clear information hierarchy.</p></article>
+        <article class="feature-card glass-card"><span class="feature-number">02</span><h3>Instant Search</h3><p>Use Ctrl/Cmd + K for a fast global search overlay with live suggestions.</p></article>
+        <article class="feature-card glass-card"><span class="feature-number">03</span><h3>Responsive by default</h3><p>Designed to remain usable across desktop, tablet and mobile screens.</p></article>
+      </div>
+    </section>
+
+    <section id="resources" class="container section reveal" aria-labelledby="resource-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">LIBRARY</p><h2 id="resource-heading">Resources</h2></div>
+        <span id="count" class="count" aria-live="polite">6 of 6</span>
+      </div>
       <div id="filters" class="filters" aria-label="Filter by subject"></div>
       <div id="resource-grid" class="grid" aria-live="polite"></div>
-      <div id="empty-state" class="empty-state" hidden><h3>Nothing found</h3><p>Try another word or switch to a different subject.</p><button id="reset-filters" class="secondary-button" type="button">Reset filters</button></div>
+      <div id="empty-state" class="empty-state glass-card" hidden><h3>Nothing found</h3><p>Try another search or reset the filters.</p><button id="reset-filters" class="secondary-button" type="button">Reset filters</button></div>
     </section>
-    <section id="about" class="container section about"><p class="eyebrow">HOW IT WILL GROW</p><h2>Small, useful features first.</h2><p>The preview demonstrates the student-facing library experience. The full project in the repository is being developed separately with chapters, resources, database-backed data, accounts, an admin area and secure APIs.</p></section>
+
+    <section class="container section reveal" aria-labelledby="reviews-heading">
+      <div class="section-heading"><div><p class="eyebrow">STUDENT FEEDBACK</p><h2 id="reviews-heading">A calmer way to find study material.</h2></div></div>
+      <div class="marquee" aria-label="Student feedback">
+        <div class="marquee-track">
+          <article class="testimonial glass-card"><p>“The subject and chapter structure makes revision much easier.”</p><span>— Student feedback</span></article>
+          <article class="testimonial glass-card"><p>“Search first, then filter. It feels much faster than browsing folders.”</p><span>— Student feedback</span></article>
+          <article class="testimonial glass-card"><p>“The interface stays focused on the material instead of distractions.”</p><span>— Student feedback</span></article>
+          <article class="testimonial glass-card"><p>“The subject and chapter structure makes revision much easier.”</p><span>— Student feedback</span></article>
+          <article class="testimonial glass-card"><p>“Search first, then filter. It feels much faster than browsing folders.”</p><span>— Student feedback</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container section split-section reveal">
+      <div><p class="eyebrow">HOW IT WILL GROW</p><h2>One clean place for academic resources.</h2></div>
+      <p>The GitHub Pages version is a lightweight frontend preview. The full-stack implementation remains separate with database-backed resources, accounts, an admin area and secure APIs.</p>
+    </section>
+
+    <section class="container section reveal" aria-labelledby="contact-heading">
+      <div class="contact-card glass-card">
+        <div><p class="eyebrow">CONTACT</p><h2 id="contact-heading">Have a resource or suggestion?</h2><p>Send a message through this frontend demo. Validation and success/error states are handled without reloading the page.</p></div>
+        <form id="contact-form" novalidate>
+          <label>Name<input id="contact-name" name="name" autocomplete="name" required minlength="2"></label>
+          <label>Email<input id="contact-email" name="email" type="email" autocomplete="email" required></label>
+          <label>Message<textarea id="contact-message" name="message" rows="4" required minlength="10"></textarea></label>
+          <button class="primary-button" type="submit">Send message</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
-  <div id="resource-modal" class="modal" hidden aria-hidden="true">
-    <div class="modal-backdrop" data-close-modal></div>
-    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" type="button" aria-label="Close resource preview" data-close-modal>×</button>
-      <p id="modal-subject" class="eyebrow"></p><p id="modal-chapter" class="chapter"></p><h2 id="modal-title"></h2><p id="modal-description"></p>
-      <div class="modal-actions"><span class="preview-note">Preview only</span><button id="modal-close-button" class="secondary-button" type="button">Close</button></div>
-    </section>
-  </div>
+
+  <div id="resource-modal" class="modal" hidden aria-hidden="true"><div class="modal-backdrop" data-close-modal></div><section class="modal-card glass-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" type="button" aria-label="Close resource preview" data-close-modal>×</button><p id="modal-subject" class="eyebrow"></p><p id="modal-chapter" class="chapter"></p><h2 id="modal-title"></h2><p id="modal-description"></p><div class="modal-actions"><span class="preview-note">Frontend preview</span><button id="modal-close-button" class="secondary-button" type="button">Close</button></div></section></div>
+
+  <div id="search-modal" class="modal" hidden aria-hidden="true"><div class="modal-backdrop" data-close-search></div><section class="search-dialog glass-card" role="dialog" aria-modal="true" aria-labelledby="search-title"><div class="search-top"><h2 id="search-title">Search resources</h2><kbd>ESC</kbd></div><input id="global-search" type="search" placeholder="Search subject, chapter or topic…" autocomplete="off"><div id="search-suggestions" class="search-suggestions"></div></section></div>
+
+  <div id="auth-modal" class="modal" hidden aria-hidden="true"><div class="modal-backdrop" data-close-auth></div><section class="auth-dialog glass-card" role="dialog" aria-modal="true" aria-labelledby="auth-title"><button class="modal-close" type="button" aria-label="Close sign in" data-close-auth>×</button><p class="eyebrow">ACCOUNT</p><h2 id="auth-title">Sign in to Student Resource Hub</h2><form id="auth-form" novalidate><label>Email<input id="auth-email" type="email" required autocomplete="email"></label><label>Password<input id="auth-password" type="password" required minlength="6" autocomplete="current-password"></label><button class="primary-button" type="submit">Sign in</button><p id="auth-status" class="form-status" role="status"></p></form><div class="auth-divider"><span>or continue with</span></div><div class="oauth-grid"><button type="button" class="oauth-button" data-oauth="Google">Google</button><button type="button" class="oauth-button" data-oauth="GitHub">GitHub</button></div><p class="auth-note">OAuth and account persistence are handled by the separate full-stack application; this GitHub Pages preview demonstrates the interface and client-side states.</p></section></div>
+
   <script src="./script.js" defer></script>
 </body>
 </html>
