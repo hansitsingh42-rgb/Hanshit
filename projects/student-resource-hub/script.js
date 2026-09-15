@@ -12,6 +12,12 @@ const filters=document.querySelector('#filters');
 const search=document.querySelector('#resource-search');
 const count=document.querySelector('#count');
 const empty=document.querySelector('#empty-state');
+const modal=document.querySelector('#resource-modal');
+const modalTitle=document.querySelector('#modal-title');
+const modalSubject=document.querySelector('#modal-subject');
+const modalChapter=document.querySelector('#modal-chapter');
+const modalDescription=document.querySelector('#modal-description');
+const modalCloseButton=document.querySelector('#modal-close-button');
 let selected='All';
 
 const subjects=['All',...new Set(resources.map(item=>item.subject))];
@@ -25,6 +31,27 @@ subjects.forEach(subject=>{
   filters.appendChild(button);
 });
 
+function openResource(item){
+  modalTitle.textContent=item.title;
+  modalSubject.textContent=item.subject;
+  modalChapter.textContent=item.chapter;
+  modalDescription.textContent=item.description;
+  modal.hidden=false;
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  modalCloseButton.focus();
+}
+
+function closeModal(){
+  modal.hidden=true;
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+
+document.querySelectorAll('[data-close-modal]').forEach(element=>element.addEventListener('click',closeModal));
+modalCloseButton.addEventListener('click',closeModal);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!modal.hidden)closeModal();});
+
 function render(){
   const term=search.value.trim().toLowerCase();
   const visible=resources.filter(item=>{
@@ -33,14 +60,18 @@ function render(){
     return subjectMatch&&(!term||text.includes(term));
   });
 
-  grid.innerHTML=visible.map(item=>`
+  grid.innerHTML=visible.map((item,index)=>`
     <article class="card">
       <div class="card-meta"><span class="tag">${item.subject}</span><span>${item.type}</span></div>
       <p class="chapter">${item.chapter}</p>
       <h3>${item.title}</h3>
       <p>${item.description}</p>
-      <div class="card-footer"><span>Resource coming next</span><button type="button" disabled>View</button></div>
+      <div class="card-footer"><span>Preview resource</span><button type="button" data-resource-index="${resources.indexOf(item)}">View</button></div>
     </article>`).join('');
+
+  grid.querySelectorAll('[data-resource-index]').forEach(button=>{
+    button.addEventListener('click',()=>openResource(resources[Number(button.dataset.resourceIndex)]));
+  });
 
   count.textContent=`${visible.length} of ${resources.length}`;
   empty.hidden=visible.length!==0;
