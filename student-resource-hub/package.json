@@ -13,21 +13,21 @@
   },
   "dependencies": {
     "@prisma/client": "6.19.0",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "bcryptjs": "latest",
     "next": "latest",
     "next-auth": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "typescript": "latest"
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",
     "@types/bcryptjs": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "prisma": "6.19.0",
-    "typescript": "latest"
+    "prisma": "6.19.0"
   }
 }
