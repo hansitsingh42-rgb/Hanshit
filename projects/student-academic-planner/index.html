@@ -25,7 +25,7 @@
         <p class="eyebrow">STUDENT ACADEMIC PLANNER</p>
         <h1>Plan smarter.<br><span>Study with direction.</span></h1>
         <p class="hero-copy">A focused academic dashboard for tracking subjects, attendance, assignments, study sessions and quick notes — stored locally in your browser.</p>
-        <div class="hero-actions"><a class="btn primary" href="#subjects">Open planner</a><button class="btn" id="resetDemo" type="button">Reset demo data</button></div>
+        <div class="hero-actions"><a class="btn primary" href="#subjects" data-slide="planner">Open planner</a><button class="btn" id="resetDemo" type="button">Reset demo data</button></div>
       </div>
       <div class="hero-orbit" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core"><strong id="overallPercent">0%</strong><small>Academic focus</small></div></div>
     </section>
@@ -66,6 +66,13 @@
       <div class="insight-grid"><div><b id="bestSubject">—</b><span>Strongest attendance</span></div><div><b id="nextDeadline">—</b><span>Next deadline</span></div><div><b id="focusHint">Start a session</b><span>Recommended action</span></div></div>
     </section>
   </main>
+
+  <div id="slideLayer" class="slide-layer" aria-hidden="true">
+    <section id="appSlide" class="app-slide" role="dialog" aria-modal="true" aria-labelledby="slideTitle">
+      <div class="slide-head"><div><p class="eyebrow">STUDENTOS</p><h2 id="slideTitle">Planner</h2></div><button id="closeSlide" class="close slide-close" type="button" aria-label="Close slide">×</button></div>
+      <div id="slideContent" class="slide-content"></div>
+    </section>
+  </div>
 
   <dialog id="subjectDialog"><form method="dialog" id="subjectForm"><div class="dialog-head"><h2>Add subject</h2><button value="cancel" class="close" aria-label="Close">×</button></div><label>Subject name<input id="subjectName" required maxlength="40" placeholder="e.g. Mathematics"></label><label>Attendance %<input id="subjectAttendance" type="number" min="0" max="100" value="75" required></label><menu><button value="cancel" class="btn">Cancel</button><button value="default" class="btn primary">Add subject</button></menu></form></dialog>
   <dialog id="assignmentDialog"><form method="dialog" id="assignmentForm"><div class="dialog-head"><h2>Add assignment</h2><button value="cancel" class="close" aria-label="Close">×</button></div><label>Task<input id="assignmentTitle" required maxlength="70" placeholder="e.g. Mechanics Chapter 2 notes"></label><label>Due date<input id="assignmentDate" type="date" required></label><menu><button value="cancel" class="btn">Cancel</button><button value="default" class="btn primary">Add task</button></menu></form></dialog>
