@@ -87,6 +87,8 @@ jobs:
           test -f _site/student-academic-planner/index.html
           test -f _site/student-academic-planner/style.css
           test -f _site/student-academic-planner/script.js
+          test -f _site/student-academic-planner/interactions.js
+          test -f _site/student-academic-planner/runtime-check.js
           test -f _site/student-resource-hub/index.html
           test -f _site/student-resource-hub/style.css
           test -f _site/student-resource-hub/script.js
