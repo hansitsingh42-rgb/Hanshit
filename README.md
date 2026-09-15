@@ -4,7 +4,7 @@
 
 ### `CSE Student` • `Builder` • `Tech Explorer`
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building+%F0%9F%9A%80;Exploring+Web+Development+%F0%9F%92%BB;Learning+C+Programming+%F0%9F%8C%B1;Growing+with+Git+%26+GitHub+%E2%9C%A8" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub" alt="Typing animation" />
 
 <p>
 <a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
@@ -18,7 +18,7 @@
 
 ## 👨‍💻 About Me
 
-I'm a Computer Science student learning by building small projects and trying out ideas. I use this GitHub to keep my work, practice new skills, and see how my projects improve over time.
+I'm a Computer Science student learning by building small projects and trying out ideas. I use this GitHub to keep my work, practise new skills, and improve my projects over time.
 
 Most of what you see here is part of my learning process. Some projects are experiments, while others are things I actually use or want to improve further.
 
@@ -55,8 +55,8 @@ Most of what you see here is part of my learning process. Some projects are expe
 **01 — Student-focused web tools**  
 Building simple browser-based tools around problems I come across while studying.
 
-**02 — Personal Study Resource Library**  
-Organizing useful learning material so it is easier to find and use.
+**02 — Student Resource Hub**  
+Building a structured academic resource experience around **Subject → Chapter → Resource**, with search, filters, previews and student-focused navigation.
 
 **03 — Jems AI**  
 Working on a small assistant that presents documented information about my profile, projects, and repository.
@@ -134,7 +134,7 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 ## 🧊 3D Skills Visualization
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
+<img src="./assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
 </div>
 
 ---
@@ -142,12 +142,12 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 ## 🌱 Learning Progress
 
 ```text
-C Programming          ███████░░░  Building fundamentals
-JavaScript             ██████░░░░  Growing web development skills
-Git & GitHub            ███████░░░  Improving workflow
-Computer Networks       ██████░░░░  Strengthening fundamentals
-Core CS                 █████░░░░░  Learning step by step
-Practical AI            ██████░░░░  Exploring useful applications
+C Programming           ███████░░░  Building fundamentals
+JavaScript              ██████░░░░  Growing web development skills
+Git & GitHub             ███████░░░  Improving workflow
+Computer Networks        ██████░░░░  Strengthening fundamentals
+Core CS                  █████░░░░░  Learning step by step
+Practical AI             ██████░░░░  Exploring useful applications
 ```
 
 > Progress matters more than pretending to know everything.
@@ -214,12 +214,12 @@ Practical AI            ██████░░░░  Exploring useful applica
 <tr>
 <td align="center"><img src="./assets/project-logos/c-student-record.svg" width="180" alt="C Student Record Manager logo" /></td>
 <td align="center"><img src="./assets/project-logos/jems-ai.svg" width="180" alt="Jems AI logo" /></td>
-<td align="center"></td>
+<td align="center"><img src="./assets/project-logos/student-resource-hub.svg" width="180" alt="Student Resource Hub logo" /></td>
 </tr>
 <tr>
 <td align="center">C Student Record Manager</td>
 <td align="center">Jems AI</td>
-<td align="center"></td>
+<td align="center">Student Resource Hub</td>
 </tr>
 </table>
 
@@ -299,6 +299,22 @@ A small AI-focused assistant project exploring practical AI interactions and a s
 
 [Source](./jems/)
 
+### 📘 Student Resource Hub
+<img src="./assets/project-logos/student-resource-hub.svg" width="360" alt="Student Resource Hub logo" />
+
+A student-focused resource discovery interface organized around **Subject → Chapter → Resource**, with search, filters, resource details, previews, bookmarks and responsive navigation.
+
+**Highlights**  
+`Subject → Chapter → Resource` `Search` `Filters` `Resource Preview` `Bookmarks` `Progress` `Dark/Light Mode` `Responsive UI` `Keyboard Search`
+
+**Stack:** `HTML` `CSS` `JavaScript` `LocalStorage` `Canvas`
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Resource Hub live preview" /></a>
+
+[Source](./projects/student-resource-hub/)
+
+> The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
+
 ---
 
 ## 🧩 Project Branding Standard
@@ -309,7 +325,7 @@ Every project in this repository follows the same presentation standard:
 - Consistent visual language
 - README presentation with logo, purpose, highlights, stack, and live/source links
 - Accessible assets with descriptive alt text
-- Shared animated **LIVE PREVIEW** button for deployed projects
+- Shared **LIVE PREVIEW** button for deployed projects
 - All project logos are stored in `assets/project-logos/`
 - New projects follow the same branding system
 
@@ -384,6 +400,7 @@ Jems uses documented repository information as its source of truth and avoids in
 | 📊 Student Productivity Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
 | 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./jems/) |
+| 📘 Student Resource Hub | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) | [Source](./projects/student-resource-hub/) |
 
 ---
 
