@@ -17,56 +17,33 @@
       </nav>
     </div>
   </header>
-
   <main id="top">
     <section class="hero container">
       <p class="eyebrow">STUDY RESOURCE LIBRARY</p>
       <h1>Study material, arranged the way you actually look for it.</h1>
       <p class="hero-copy">Start with a subject, pick a chapter, and find the material you need. The aim is simple: less time searching, more time studying.</p>
-      <label class="search-wrap" for="resource-search">
-        <span class="sr-only">Search resources</span>
+      <div class="search-wrap">
+        <label for="resource-search" class="sr-only">Search resources</label>
         <input id="resource-search" type="search" placeholder="Search by subject, chapter or topic" autocomplete="off">
-      </label>
-    </section>
-
-    <section id="resources" class="container section" aria-labelledby="resource-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">LIBRARY</p>
-          <h2 id="resource-heading">Resources</h2>
-        </div>
-        <span id="count" class="count" aria-live="polite">6 of 6</span>
+        <button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden>Clear</button>
       </div>
-
+    </section>
+    <section id="resources" class="container section" aria-labelledby="resource-heading">
+      <div class="section-heading"><div><p class="eyebrow">LIBRARY</p><h2 id="resource-heading">Resources</h2></div><span id="count" class="count" aria-live="polite">6 of 6</span></div>
       <div id="filters" class="filters" aria-label="Filter by subject"></div>
       <div id="resource-grid" class="grid" aria-live="polite"></div>
-      <div id="empty-state" class="empty-state" hidden>
-        <h3>Nothing found</h3>
-        <p>Try another word or switch to a different subject.</p>
-      </div>
+      <div id="empty-state" class="empty-state" hidden><h3>Nothing found</h3><p>Try another word or switch to a different subject.</p><button id="reset-filters" class="secondary-button" type="button">Reset filters</button></div>
     </section>
-
-    <section id="about" class="container section about">
-      <p class="eyebrow">HOW IT WILL GROW</p>
-      <h2>Small, useful features first.</h2>
-      <p>The preview demonstrates the student-facing library experience. The full project in the repository is being developed separately with chapters, resources, database-backed data, accounts, an admin area and secure APIs.</p>
-    </section>
+    <section id="about" class="container section about"><p class="eyebrow">HOW IT WILL GROW</p><h2>Small, useful features first.</h2><p>The preview demonstrates the student-facing library experience. The full project in the repository is being developed separately with chapters, resources, database-backed data, accounts, an admin area and secure APIs.</p></section>
   </main>
-
   <div id="resource-modal" class="modal" hidden aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
     <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" type="button" aria-label="Close resource preview" data-close-modal>×</button>
-      <p id="modal-subject" class="eyebrow"></p>
-      <p id="modal-chapter" class="chapter"></p>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <div class="modal-actions">
-        <button id="modal-close-button" class="secondary-button" type="button">Close</button>
-      </div>
+      <p id="modal-subject" class="eyebrow"></p><p id="modal-chapter" class="chapter"></p><h2 id="modal-title"></h2><p id="modal-description"></p>
+      <div class="modal-actions"><span class="preview-note">Preview only</span><button id="modal-close-button" class="secondary-button" type="button">Close</button></div>
     </section>
   </div>
-
   <script src="./script.js" defer></script>
 </body>
 </html>
