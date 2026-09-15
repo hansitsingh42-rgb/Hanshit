@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Student Resource Hub — subject and chapter based study material library.">
+  <title>Student Resource Hub</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top">Student Resource Hub</a>
+      <nav aria-label="Primary navigation">
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow">STUDY RESOURCE LIBRARY</p>
+      <h1>Study material, arranged the way you actually look for it.</h1>
+      <p class="hero-copy">Start with a subject, pick a chapter, and find the material you need. The aim is simple: less time searching, more time studying.</p>
+      <label class="search-wrap" for="resource-search">
+        <span class="sr-only">Search resources</span>
+        <input id="resource-search" type="search" placeholder="Search by subject, chapter or topic" autocomplete="off">
+      </label>
+    </section>
+
+    <section id="resources" class="container section" aria-labelledby="resource-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIBRARY</p>
+          <h2 id="resource-heading">Resources</h2>
+        </div>
+        <span id="count" class="count" aria-live="polite">6 of 6</span>
+      </div>
+
+      <div id="filters" class="filters" aria-label="Filter by subject"></div>
+      <div id="resource-grid" class="grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>Nothing found</h3>
+        <p>Try another word or switch to a different subject.</p>
+      </div>
+    </section>
+
+    <section id="about" class="container section about">
+      <p class="eyebrow">HOW IT WILL GROW</p>
+      <h2>Small, useful features first.</h2>
+      <p>The preview demonstrates the student-facing library experience. The full project in the repository is being developed separately with chapters, resources, database-backed data, accounts, an admin area and secure APIs.</p>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
