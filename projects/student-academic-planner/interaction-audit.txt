@@ -1,0 +1,1 @@
+Primary interactions are implemented in script.js. interactions.js is retained as a compatibility file to avoid duplicate event handlers.
