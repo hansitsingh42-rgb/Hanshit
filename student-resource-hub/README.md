@@ -1,6 +1,6 @@
 # Student Resource Hub
 
-A full-stack student resource library for organizing learning material by **Subject → Chapter → Resource**. The project is developed independently on the `project/student-resource-hub` branch so the existing `main` project remains unchanged.
+A full-stack student resource library for organizing learning material by **Subject → Chapter → Resource**. The project was developed independently and has now been merged into the main `Hanshit` repository alongside the other projects.
 
 ## Current foundation
 
@@ -97,7 +97,7 @@ student-resource-hub/
 ├── types/
 │   └── next-auth.d.ts
 ├── .env.example
-├── next.config.ts
+├── next.config.js
 ├── package.json
 └── README.md
 ```
@@ -174,7 +174,7 @@ npm run db:seed
 
 ## Development principle
 
-Existing `main` content is not modified by this project. Changes are developed independently first and should only be merged deliberately after testing.
+Changes were developed independently first and merged into `main` deliberately after the project foundation was reviewed. Future changes should continue to be tested before merging.
 
 ## License
 
