@@ -53,6 +53,20 @@
     </section>
   </main>
 
+  <div id="resource-modal" class="modal" hidden aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Close resource preview" data-close-modal>×</button>
+      <p id="modal-subject" class="eyebrow"></p>
+      <p id="modal-chapter" class="chapter"></p>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div class="modal-actions">
+        <button id="modal-close-button" class="secondary-button" type="button">Close</button>
+      </div>
+    </section>
+  </div>
+
   <script src="./script.js" defer></script>
 </body>
 </html>
