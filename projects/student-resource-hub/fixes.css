@@ -1,0 +1,19 @@
+/* Shared production polish layered over the main theme stylesheet. */
+.mobile-menu-toggle{display:none!important}
+.mobile-menu{display:none}
+.nav nav a[aria-current="page"]{color:var(--text);font-weight:800}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.site-footer{margin-top:30px;border-top:1px solid var(--border);background:color-mix(in srgb,var(--bg) 84%,transparent)}
+.footer-inner{min-height:120px;padding:28px 0;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-inner strong{font-size:15px}.footer-inner p{margin:5px 0 0;color:var(--muted);font-size:12px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px}.footer-links a{color:var(--muted);text-decoration:none;font-size:12px}.footer-links a:hover{color:var(--text)}
+.success{color:var(--cyan)!important}
+@media(max-width:640px){
+ .mobile-menu-toggle{display:grid!important;margin-left:0}
+ .nav-actions{margin-left:auto}.nav-actions .outline-button{display:inline-flex}
+ .mobile-menu{position:absolute;left:14px;right:14px;top:64px;padding:10px;border:1px solid var(--border);border-radius:16px;background:var(--surface-solid);box-shadow:var(--shadow);backdrop-filter:blur(18px);z-index:60}
+ .mobile-menu[hidden]{display:none}.mobile-menu:not([hidden]){display:grid;gap:4px}
+ .mobile-menu a{padding:11px 12px;border-radius:9px;color:var(--muted);text-decoration:none}.mobile-menu a:hover,.mobile-menu a[aria-current="page"]{background:var(--surface);color:var(--text)}
+ .footer-inner{align-items:flex-start;flex-direction:column}.footer-links{justify-content:flex-start;gap:12px}
+}
+@media(min-width:641px){.mobile-menu{display:none!important}}
