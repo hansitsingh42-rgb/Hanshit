@@ -15,6 +15,7 @@ on:
       - 'projects/study-resource-manager/**'
       - 'projects/c-student-record-manager/live-demo/**'
       - 'projects/advanced-weather-app/**'
+      - 'projects/student-resource-hub/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -40,7 +41,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
-      # Deployment trigger for the latest SKH Cast+ build.
+      # Build the portfolio site and publish each standalone student project.
       - name: Prepare site
         run: |
           rm -rf _site
@@ -51,6 +52,7 @@ jobs:
           mkdir -p _site/c-student-record-manager
           mkdir -p _site/jems
           mkdir -p _site/skycast
+          mkdir -p _site/student-resource-hub
 
           cp index.html style.css script.js _site/
           if [ -d assets ]; then cp -R assets _site/assets; fi
@@ -61,6 +63,7 @@ jobs:
           cp -R projects/c-student-record-manager/live-demo/. _site/c-student-record-manager/
           cp -R jems/. _site/jems/
           cp -R projects/advanced-weather-app/. _site/skycast/
+          cp -R projects/student-resource-hub/. _site/student-resource-hub/
 
           test -f _site/index.html
           test -f _site/style.css
@@ -78,6 +81,9 @@ jobs:
           test -f _site/skycast/index.html
           test -f _site/skycast/style.css
           test -f _site/skycast/script.js
+          test -f _site/student-resource-hub/index.html
+          test -f _site/student-resource-hub/style.css
+          test -f _site/student-resource-hub/script.js
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
