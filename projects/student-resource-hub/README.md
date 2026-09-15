@@ -1,24 +1,71 @@
 # Student Resource Hub
 
-A student-focused study resource library preview built for the Hanshit project portfolio.
+A modern, responsive academic resource discovery website built for students to browse study material through a simple **Subject → Chapter → Resource** flow.
 
-## Features
+## Overview
 
-- Subject filters
-- Search by subject, chapter or topic
-- Responsive desktop and mobile layout
-- Student-friendly resource cards
-- Empty search state
-- No external build tools or dependencies
+Student Resource Hub focuses on organized academic discovery rather than course selling. The static GitHub Pages version demonstrates the complete student-facing interface, interactions and visual experience, while the separate full-stack version provides the backend architecture for real data and authentication.
 
-## Preview
+## Key Features
 
-This folder is published with the repository's existing GitHub Pages workflow, alongside the other student projects.
+- Subject and chapter based resource discovery
+- Search and subject filtering
+- Resource detail pages
+- Preview interface
+- Save-for-later bookmarks
+- Recently viewed resources
+- Local study-progress state
+- Responsive multi-page navigation
+- Dark/light theme with persistence
+- Ctrl/Cmd + K instant search
+- Premium glassmorphism UI
+- Animated aurora and perspective grid background
+- Lightweight Canvas particle animation
+- Interactive 3D-style hero motion
+- Hover and micro-interaction effects
+- Reduced-motion accessibility support
+- Client-side authentication and contact validation
+- GitHub Pages deployment workflow
 
 ## Tech Stack
 
-HTML • CSS • JavaScript
+**Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
 
-## Full Project
+**Visuals:** CSS gradients, glassmorphism, HTML5 Canvas, CSS 3D perspective/transforms
 
-The full-stack implementation is maintained in [`/student-resource-hub`](../../student-resource-hub/), while this folder provides the lightweight GitHub Pages preview used for portfolio/demo checking.
+**State:** Browser LocalStorage
+
+**Deployment:** GitHub Pages + GitHub Actions
+
+## Project Structure
+
+```text
+student-resource-hub/
+├── index.html
+├── resources.html
+├── search.html
+├── resource.html
+├── features.html
+├── about.html
+├── auth.html
+├── contact.html
+├── style.css
+├── fixes.css
+├── script.js
+├── PROJECT.md
+└── README.md
+```
+
+## Static vs Full-Stack
+
+The GitHub Pages version is intentionally a static portfolio/demo experience. It does **not** claim real server-side authentication, OAuth, database persistence, file hosting or server-side contact submission.
+
+The separate full-stack Student Resource Hub is designed for those backend capabilities using a modern application architecture.
+
+## Live Preview
+
+Published through the repository's GitHub Pages workflow.
+
+## Purpose
+
+This project demonstrates practical frontend development, responsive UI/UX, browser-side state management, interaction design, accessibility awareness and deployment workflow knowledge.
