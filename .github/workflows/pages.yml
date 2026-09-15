@@ -15,6 +15,7 @@ on:
       - 'projects/study-resource-manager/**'
       - 'projects/c-student-record-manager/live-demo/**'
       - 'projects/advanced-weather-app/**'
+      - 'projects/student-academic-planner/**'
       - 'projects/student-resource-hub/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -52,6 +53,7 @@ jobs:
           mkdir -p _site/c-student-record-manager
           mkdir -p _site/jems
           mkdir -p _site/skycast
+          mkdir -p _site/student-academic-planner
           mkdir -p _site/student-resource-hub
 
           cp index.html style.css script.js _site/
@@ -63,6 +65,7 @@ jobs:
           cp -R projects/c-student-record-manager/live-demo/. _site/c-student-record-manager/
           cp -R jems/. _site/jems/
           cp -R projects/advanced-weather-app/. _site/skycast/
+          cp -R projects/student-academic-planner/. _site/student-academic-planner/
           cp -R projects/student-resource-hub/. _site/student-resource-hub/
 
           test -f _site/index.html
@@ -81,6 +84,9 @@ jobs:
           test -f _site/skycast/index.html
           test -f _site/skycast/style.css
           test -f _site/skycast/script.js
+          test -f _site/student-academic-planner/index.html
+          test -f _site/student-academic-planner/style.css
+          test -f _site/student-academic-planner/script.js
           test -f _site/student-resource-hub/index.html
           test -f _site/student-resource-hub/style.css
           test -f _site/student-resource-hub/script.js
