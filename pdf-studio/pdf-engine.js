@@ -1,0 +1,1 @@
+const PDF_ENGINE={ready:false,async create(){if(!window.PDFLib)throw new Error("PDF engine is not bundled yet.");return window.PDFLib.PDFDocument.create()},async merge(){throw new Error("PDF merge engine is not bundled yet.")},async load(){throw new Error("PDF parser is not bundled yet.")}};
