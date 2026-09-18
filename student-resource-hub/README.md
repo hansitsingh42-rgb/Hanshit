@@ -7,7 +7,7 @@ A full-stack student resource library for organizing learning material by **Subj
 - Next.js App Router foundation
 - Responsive professional UI
 - Subject and chapter based resource structure
-- Resource cards with search and subject filtering
+- Resource cards with search, subject, chapter and resource-type filtering
 - Accessible search field foundation
 - Skeleton loading screens with shimmer effect
 - Reduced-motion support
@@ -39,10 +39,12 @@ Subject
 ### Student side
 
 - Browse learning resources by subject and chapter
-- Search resources by title and description
+- Search resources by title, subject, chapter and description
 - Filter resources by subject
 - Responsive resource cards
-- Clear empty and loading states
+- Clear empty, loading and API-error states
+- Light/Dark Mode with saved theme preference
+- Direct resource actions with clear missing-link handling
 - Resource links ready for future PDF, video and other material
 
 ### Admin side
@@ -151,8 +153,10 @@ npm run db:seed
 
 - [x] Next.js project foundation
 - [x] Responsive resource-library UI
-- [x] Search and subject filtering foundation
+- [x] Search, subject, chapter and resource-type filtering
 - [x] Skeleton loading UI
+- [x] Light/Dark Mode with local persistence
+- [x] API loading, error and empty states
 - [x] Subject → Chapter → Resource database model
 - [x] Prisma migration
 - [x] Authentication foundation
