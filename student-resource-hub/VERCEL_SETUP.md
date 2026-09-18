@@ -115,9 +115,9 @@ npm run db:seed
 - Add AUTH_SECRET
 
 ### "Migrations pending"
-- Migrations run automatically on deploy
-- Check Vercel build logs for errors
-- Run manually: `npx prisma migrate deploy`
+- Apply the committed migration from a secure administration environment: `npm run db:deploy`
+- Check deployment/database logs for errors
+- If needed, run: `npx prisma migrate deploy`
 
 ---
 
@@ -143,8 +143,9 @@ Vercel will:
 - [ ] DATABASE_URL set in Vercel
 - [ ] AUTH_SECRET generated & set
 - [ ] Admin credentials configured
-- [ ] NEXTAUTH_URL matches deployment
-- [ ] Database migrations passed
+- [ ] NEXTAUTH_URL configured only if required by the Auth.js deployment setup
+- [ ] Database migration applied
+- [ ] Admin account seeded
 - [ ] Login works with admin account
 - [ ] Can view/create resources
 - [ ] No console errors
