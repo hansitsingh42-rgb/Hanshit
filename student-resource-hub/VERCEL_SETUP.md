@@ -64,7 +64,7 @@ openssl rand -hex 32
    | `AUTH_SECRET` | (from Step 2) |
    | `ADMIN_EMAIL` | `admin@example.com` |
    | `ADMIN_PASSWORD` | `YourStrongPassword123!` |
-   | `NEXTAUTH_URL` | `https://student-resource-hub.vercel.app` |
+   | `NEXTAUTH_URL` | Optional; only add it if your Auth.js deployment setup requires it |
 
 6. **Deploy!**
    - Click "Deploy"
