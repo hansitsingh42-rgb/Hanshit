@@ -1,165 +1,127 @@
 # Vercel Deployment Setup Guide
 
-## Quick Start (5 minutes)
+This guide describes the manual setup required to deploy the Student Resource Hub. The repository does not contain a Vercel deployment workflow, so GitHub pushes alone do not deploy this project unless Vercel Git integration has been configured for the repository.
 
-### Step 1: Create Free PostgreSQL Database
+## Quick Start
 
-**Option A: Neon.tech (Recommended)**
-1. Go to https://neon.tech
-2. Sign up with GitHub
-3. Create new project: `student-resource-hub`
-4. Copy connection string
-5. Append to URL: `?sslmode=require`
+### Step 1: Create a PostgreSQL Database
 
-**Option B: Railway.app**
-1. Go to https://railway.app
-2. Create new project
-3. Add PostgreSQL service
-4. Copy DATABASE_URL
+You can use a PostgreSQL provider such as Neon, Railway, or Supabase.
 
-**Option C: Supabase**
-1. Go to https://supabase.com
-2. Create new project
-3. Go to Settings → Database → Connection string
-4. Copy PostgreSQL URL
-
----
+After creating the database, copy its connection string for the `DATABASE_URL` environment variable. Keep database credentials private.
 
 ### Step 2: Generate AUTH_SECRET
+
+Generate a long random secret in a secure environment:
 
 ```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-Or use OpenSSL:
+Or:
+
 ```bash
 openssl rand -hex 32
 ```
 
----
+Do not commit the generated secret to GitHub.
 
-### Step 3: Deploy to Vercel
+### Step 3: Configure Vercel
 
-1. **Go to Vercel Dashboard**: https://vercel.com/dashboard
+If you choose to deploy with Vercel:
 
-2. **Click "Add New" → "Project"**
+1. Open the Vercel dashboard.
+2. Create or select a project connected to this repository.
+3. Set **Root Directory** to `student-resource-hub`.
+4. Use the Next.js framework settings.
+5. Configure the required environment variables.
 
-3. **Import Repository**
-   - Select: `hansitsingh42-rgb/Hanshit`
-   - Click "Import"
+Required environment variables:
 
-4. **Configure Project**
-   - **Framework**: Next.js ✓
-   - **Root Directory**: `student-resource-hub` ✓
-   - **Build Command**: `npm run build` ✓
-   - **Environment Variables**: See below
+| Variable | Value |
+|----------|-------|
+| `DATABASE_URL` | Your PostgreSQL connection string |
+| `AUTH_SECRET` | A long random secret |
+| `ADMIN_EMAIL` | The administrator email |
+| `ADMIN_PASSWORD` | A strong password of at least 12 characters |
 
-5. **Add Environment Variables**
-   
-   Click "Add Environment Variables" and enter:
-   
-   | Variable | Value |
-   |----------|-------|
-   | `DATABASE_URL` | `postgresql://...` (from Step 1) |
-   | `AUTH_SECRET` | (from Step 2) |
-   | `ADMIN_EMAIL` | `admin@example.com` |
-   | `ADMIN_PASSWORD` | `YourStrongPassword123!` |
-   | `NEXTAUTH_URL` | Optional; only add it if your Auth.js deployment setup requires it |
+`NEXTAUTH_URL` is not required by the repository's current Auth.js configuration. Only configure it if your chosen Auth.js deployment setup specifically requires it.
 
-6. **Deploy!**
-   - Click "Deploy"
-   - Wait 2-3 minutes
-   - ✅ Done!
+### Step 4: Deploy
 
----
+The repository does not currently define an automated Vercel deployment workflow. After connecting the repository to Vercel and configuring the project, use Vercel's deployment controls to create a deployment.
+
+If Vercel Git integration is enabled, Vercel can create deployments from the configured repository and branch according to the project's Vercel settings. Those settings are external to this repository.
 
 ## Post-Deployment
 
-### Access Your App
-```
-https://student-resource-hub.vercel.app
-```
+### Initialize the Database
 
-### Login
-```
-Email: admin@example.com
-Password: (from ADMIN_PASSWORD)
-```
+The repository contains a Prisma migration and a seed script. The standard Vercel build command does not automatically apply the migration or seed the admin account.
 
-### Initialize Database
-
-The repository contains a committed Prisma migration and a seed script. The standard Vercel build command does not automatically apply the migration or seed the admin account. Run these commands from a secure administration environment after the database and environment variables are configured:
+From a secure administration environment, after configuring the database and environment variables:
 
 ```bash
 npm run db:deploy
 npm run db:seed
 ```
 
----
+### Verify the Application
+
+Check that:
+
+- The homepage loads.
+- Published resources appear.
+- Subject, chapter, type, and search filters work.
+- Light/Dark Mode works.
+- Admin login works.
+- Authorized admin resource management works.
+- No unexpected browser console errors are present.
 
 ## Troubleshooting
 
-### "Build failed"
-- Check Node.js version: 18+ required
-- Check package.json for syntax errors
-- Check all dependencies are installed
+### Build failed
 
-### "Database connection error"
-- Verify DATABASE_URL is correct
-- Check firewall allows Vercel IPs
-- Test connection locally: `psql $DATABASE_URL`
+- Check the deployment build logs.
+- Confirm the Vercel project root is `student-resource-hub`.
+- Confirm all required environment variables are configured.
+- Check that dependencies install successfully.
 
-### "AUTH_SECRET not set"
-- Go to Vercel Dashboard
-- Project → Settings → Environment Variables
-- Add AUTH_SECRET
+### Database connection error
 
-### "Migrations pending"
-- Apply the committed migration from a secure administration environment: `npm run db:deploy`
-- Check deployment/database logs for errors
-- If needed, run: `npx prisma migrate deploy`
+- Verify `DATABASE_URL`.
+- Confirm the database is reachable from the deployment environment.
+- Check the deployment logs for the failing operation.
 
----
+### AUTH_SECRET not set
 
-## Update Deployments
+Configure `AUTH_SECRET` in the deployment environment and redeploy.
 
-Deployments happen automatically when you push to `project/student-resource-hub`:
+### Migrations pending
+
+Apply the committed migration from a secure administration environment:
 
 ```bash
-git push origin project/student-resource-hub
+npm run db:deploy
 ```
 
-Vercel will:
-1. Detect the push
-2. Build your project
-3. Run tests & migrations
-4. Deploy to production
-5. Send notification
-
----
+Do not expose database credentials in logs, commits, screenshots, or issue reports.
 
 ## Production Checklist
 
-- [ ] DATABASE_URL set in Vercel
-- [ ] AUTH_SECRET generated & set
-- [ ] Admin credentials configured
-- [ ] NEXTAUTH_URL configured only if required by the Auth.js deployment setup
+- [ ] `DATABASE_URL` configured
+- [ ] `AUTH_SECRET` configured
+- [ ] Admin email configured
+- [ ] Strong admin password configured
 - [ ] Database migration applied
 - [ ] Admin account seeded
-- [ ] Login works with admin account
-- [ ] Can view/create resources
-- [ ] No console errors
-- [ ] Performance acceptable
+- [ ] Admin login verified
+- [ ] Published resources verified
+- [ ] Search and filters verified
+- [ ] Light/Dark Mode verified
+- [ ] Browser console checked
+- [ ] Deployment logs checked
 
----
+## Support Documentation
 
-## Support
-
-- Vercel Docs: https://vercel.com/docs
-- Next.js Docs: https://nextjs.org/docs
-- Prisma Docs: https://prisma.io/docs
-- Database Support: See Neon/Railway/Supabase docs
-
----
-
-**🎉 Deployment complete!**
+Use the official documentation for the deployment platform, Next.js, and Prisma when troubleshooting platform-specific issues.
