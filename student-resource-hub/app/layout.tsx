@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "(() => { try { const saved = localStorage.getItem(\"student-resource-hub-theme\"); const theme = saved === \"dark\" || saved === \"light\" ? saved : window.matchMedia(\"(prefers-color-scheme: dark)\").matches ? \"dark\" : \"light\"; document.documentElement.dataset.theme = theme; } catch {} })();" }} />
+      </head>
       <body>{children}</body>
     </html>
   );
