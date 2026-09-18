@@ -38,14 +38,9 @@ ADMIN_EMAIL = admin@example.com
 ADMIN_PASSWORD = YourStrongPassword123!
 ```
 
-### 5. Setup GitHub Actions (Optional - for auto-deployment)
-In your GitHub repo → Settings → Secrets and variables → Actions:
+### 5. GitHub repository configuration
 
-```
-VERCEL_TOKEN = (from https://vercel.com/account/tokens)
-VERCEL_ORG_ID = (from Vercel dashboard)
-VERCEL_PROJECT_ID = (from Vercel project settings)
-```
+No Vercel deployment workflow is currently stored in this repository. If automated Vercel deployment is added later, document the exact workflow and required secrets here before enabling it.
 
 ## Deployment Process
 
@@ -59,12 +54,9 @@ npm run db:seed
 npm start
 ```
 
-### Option B: Automated (via GitHub Actions)
-Just push to `project/student-resource-hub` branch and GitHub Actions will:
-- Build the project
-- Run database migrations
-- Deploy to Vercel
-- Send notifications
+### Option B: Automated deployment
+
+Not currently configured in this repository. Use the Vercel project's Git integration after configuring the project root directory and environment variables.
 
 ## Post-Deployment
 
@@ -92,7 +84,7 @@ npm run build && npm start
 ## Troubleshooting
 
 - **Database connection fails**: Check DATABASE_URL format and firewall rules
-- **Build fails**: Check Node version compatibility (18+)
+- **Build fails**: Check the Node.js version required by the current package.json/Next.js version and inspect the deployment build logs.
 - **Auth issues**: Verify AUTH_SECRET is set
 - **Migrations error**: Run `npx prisma migrate deploy` manually
 
