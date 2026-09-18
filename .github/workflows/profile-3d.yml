@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-profile-3d
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -14,7 +19,9 @@ jobs:
     name: Generate GitHub profile 3D contribution visual
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate 3D contribution visual
         uses: yoshi389111/github-profile-3d-contrib@9e3f937195cf840d364388973f73e3c4b3753586
@@ -22,15 +29,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      - name: Commit and push generated visuals
+      - name: Commit and publish generated visuals
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git switch -c "profile-3d/$GITHUB_RUN_ID"
           git add -A .
-          if git commit -m "chore(profile): refresh 3D contribution visuals"; then
-            git push --set-upstream origin "profile-3d/$GITHUB_RUN_ID"
-          else
-            echo "No 3D contribution changes to publish."
+          if git diff --cached --quiet; then
+            echo 'No 3D contribution changes to publish.'
+            exit 0
           fi
-          echo "3D visuals generated and published to a dedicated branch. Open a pull request into main to publish them."
+
+          git commit -m 'chore(profile): refresh 3D contribution visuals'
+          git push --set-upstream origin "profile-3d/$GITHUB_RUN_ID"
+
+          gh pr create             --base main             --head "profile-3d/$GITHUB_RUN_ID"             --title 'chore(profile): refresh 3D contribution visuals'             --body 'Automated refresh of GitHub profile 3D contribution visuals.' ||             echo 'A pull request may already exist for this generated branch.'
