@@ -1,25 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-type Resource = {
+type ApiResource = {
+  id: string;
   title: string;
-  subject: string;
-  chapter: string;
-  type: "Notes" | "Study Guide";
   description: string;
+  type: "NOTES" | "STUDY_GUIDE" | "PPT" | "VIDEO" | "REFERENCE";
+  url: string | null;
+  chapter: { id: string; name: string; subject: { id: string; name: string } };
 };
 
-const resources: Resource[] = [
-  { title: "Computer Networks", subject: "Computer", chapter: "PAN, LAN, MAN & WAN", type: "Notes", description: "Network types explained with simple examples and comparisons." },
-  { title: "Functions & Arrays", subject: "Computer", chapter: "C Programming", type: "Notes", description: "A practical starting point for writing and understanding basic C programs." },
-  { title: "Laws of Force", subject: "Mechanics", chapter: "Force Systems", type: "Notes", description: "Core ideas, notation and the main laws used in first-year mechanics." },
-  { title: "Barriers to Communication", subject: "English", chapter: "Communication Skills", type: "Notes", description: "Short notes for revision, with everyday examples to make the topic clear." },
-  { title: "Introduction to AI", subject: "AI", chapter: "AI Fundamentals", type: "Study Guide", description: "Basic AI terminology and concepts before moving to advanced topics." },
-  { title: "Chemistry Fundamentals", subject: "Chemistry", chapter: "Engineering Chemistry", type: "Study Guide", description: "Organized first-year material for quick study and revision." },
-];
-
-const subjects = ["All", ...Array.from(new Set(resources.map((resource) => resource.subject)))];
+const typeLabel: Record<ApiResource["type"], string> = {
+  NOTES: "Notes",
+  STUDY_GUIDE: "Study Guide",
+  PPT: "PPT",
+  VIDEO: "Video",
+  REFERENCE: "Reference",
+};
 
 function SkeletonCard() {
   return (
@@ -34,16 +32,41 @@ function SkeletonCard() {
 }
 
 export default function Home() {
+  const [resources, setResources] = useState<ApiResource[]>([]);
   const [query, setQuery] = useState("");
   const [subject, setSubject] = useState("All");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/resources", { signal: controller.signal, cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Unable to load resources.");
+        const data = await response.json();
+        setResources(Array.isArray(data.resources) ? data.resources : []);
+      })
+      .catch((reason) => {
+        if (reason?.name !== "AbortError") setError("Resources could not be loaded right now.");
+      })
+      .finally(() => setLoading(false));
+    return () => controller.abort();
+  }, []);
+
+  const subjects = useMemo(
+    () => ["All", ...Array.from(new Set(resources.map((resource) => resource.chapter.subject.name)))],
+    [resources],
+  );
+
   const filteredResources = useMemo(() => {
     const term = query.trim().toLowerCase();
     return resources.filter((resource) => {
-      const matchesSubject = subject === "All" || resource.subject === subject;
-      const matchesSearch = !term || `${resource.title} ${resource.subject} ${resource.chapter} ${resource.description}`.toLowerCase().includes(term);
-      return matchesSubject && matchesSearch;
+      const subjectName = resource.chapter.subject.name;
+      const chapterName = resource.chapter.name;
+      return (subject === "All" || subjectName === subject) &&
+        (!term || `${resource.title} ${subjectName} ${chapterName} ${resource.description}`.toLowerCase().includes(term));
     });
-  }, [query, subject]);
+  }, [query, subject, resources]);
 
   return (
     <main>
@@ -69,51 +92,45 @@ export default function Home() {
 
       <section id="resources" className="container section" aria-labelledby="resource-heading">
         <div className="section-heading">
-          <div>
-            <p className="eyebrow">LIBRARY</p>
-            <h2 id="resource-heading">Resources</h2>
-          </div>
-          <span className="count">{filteredResources.length} of {resources.length}</span>
+          <div><p className="eyebrow">LIBRARY</p><h2 id="resource-heading">Resources</h2></div>
+          <span className="count">{loading ? "Loading resources…" : `${filteredResources.length} of ${resources.length}`}</span>
         </div>
 
         <div className="filters" aria-label="Filter by subject">
           {subjects.map((item) => (
-            <button key={item} type="button" className={subject === item ? "filter active" : "filter"} onClick={() => setSubject(item)} aria-pressed={subject === item}>
-              {item}
-            </button>
+            <button key={item} type="button" className={subject === item ? "filter active" : "filter"} onClick={() => setSubject(item)} aria-pressed={subject === item}>{item}</button>
           ))}
         </div>
 
-        <div className="grid" aria-live="polite">
-          {filteredResources.map((resource) => (
-            <article className="card" key={`${resource.subject}-${resource.chapter}`}>
-              <div className="card-meta">
-                <span className="tag">{resource.subject}</span>
-                <span>{resource.type}</span>
-              </div>
-              <p className="chapter">{resource.chapter}</p>
-              <h3>{resource.title}</h3>
-              <p>{resource.description}</p>
-              <div className="card-footer">
-                <span>Resource coming next</span>
-                <button type="button" disabled>View</button>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {filteredResources.length === 0 && (
-          <div className="empty-state">
-            <h3>Nothing found</h3>
-            <p>Try another word or switch to a different subject.</p>
-          </div>
+        {error ? (
+          <div className="empty-state" role="alert"><h3>Resources unavailable</h3><p>{error}</p></div>
+        ) : loading ? (
+          <div className="grid" aria-label="Loading resources">{Array.from({ length: 6 }, (_, index) => <SkeletonCard key={index} />)}</div>
+        ) : (
+          <>
+            <div className="grid" aria-live="polite">
+              {filteredResources.map((resource) => (
+                <article className="card" key={resource.id}>
+                  <div className="card-meta"><span className="tag">{resource.chapter.subject.name}</span><span>{typeLabel[resource.type]}</span></div>
+                  <p className="chapter">{resource.chapter.name}</p>
+                  <h3>{resource.title}</h3>
+                  <p>{resource.description}</p>
+                  <div className="card-footer">
+                    <span>{resource.url ? "Resource available" : "Resource details"}</span>
+                    {resource.url ? <a href={resource.url} target="_blank" rel="noreferrer" className="filter">Open</a> : <span className="count">No file linked</span>}
+                  </div>
+                </article>
+              ))}
+            </div>
+            {filteredResources.length === 0 && <div className="empty-state"><h3>No published resources yet</h3><p>Try another search or subject. Published resources added from the admin area will appear here automatically.</p></div>}
+          </>
         )}
       </section>
 
       <section id="about" className="container section about">
         <p className="eyebrow">HOW IT WILL GROW</p>
         <h2>Small, useful features first.</h2>
-        <p>The first version keeps the interface straightforward. The next layers will add real chapters and files, a database, accounts, an admin area and secure APIs without turning the site into a complicated dashboard.</p>
+        <p>The library now reads published resources from the full-stack API. Chapters, files and additional study material can be added through the admin area without changing the student-facing page.</p>
       </section>
     </main>
   );
