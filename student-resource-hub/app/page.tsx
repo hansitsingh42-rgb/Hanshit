@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import ThemeToggle from "./components/ThemeToggle";
 
 type ApiResource = {
   id: string;
@@ -72,7 +73,7 @@ export default function Home() {
     <main>
       <header className="header">
         <div className="container nav">
-          <a className="brand" href="#top">Student Resource Hub</a>
+          <a className="brand" href="#top">Student Resource Hub</a>\n          <div className="nav-actions">\n            <nav aria-label="Primary navigation">\n              <a href="#resources">Resources</a>\n              <a href="#about">About</a>\n            </nav>\n            <ThemeToggle />\n          </div>
           <nav aria-label="Primary navigation">
             <a href="#resources">Resources</a>
             <a href="#about">About</a>
