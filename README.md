@@ -2,7 +2,7 @@
 
 # Hi, I'm Hanshit Singh 👋
 
-### `CSE Student` • `Builder` • `Tech Explorer`
+### CSE Student | Builder | Learning through projects
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub" alt="Typing animation" />
 
@@ -18,9 +18,9 @@
 
 ## 👨‍💻 About Me
 
-I'm a Computer Science student learning by building small projects and trying out ideas. I use this GitHub to keep my work, practise new skills, and improve my projects over time.
+I'm a Computer Science student who learns best by making things. I use this repository to keep my projects, experiments, practice work, and the things I want to improve.
 
-Most of what you see here is part of my learning process. Some projects are experiments, while others are things I actually use or want to improve further.
+Some projects are simple experiments, and some are projects I keep coming back to. I don't expect everything here to be perfect — the point is to learn, build, test, and make the next version better.
 
 > **Learn → Build → Test → Improve → Repeat.**
 
@@ -41,12 +41,14 @@ Most of what you see here is part of my learning process. Some projects are expe
 
 ## 🚀 Currently Working On
 
-- 🌐 Practical web projects
-- 📚 A personal study-resource library
-- 🧩 Student-focused digital projects
-- 🔧 Improving my Git & GitHub workflow
+Right now, most of my time goes into:
+
+- 🌐 Building practical web projects
+- 📚 Improving a personal study-resource library
+- 🧩 Making small student-focused tools
+- 🔧 Getting more comfortable with Git and GitHub
 - 📖 Practising programming and core Computer Science concepts
-- 🛠️ Turning ideas into small working projects
+- 🛠️ Turning ideas into projects that actually work
 
 ---
 
@@ -343,7 +345,7 @@ A browser-based academic dashboard for organizing subjects, attendance, assignme
 
 ## 🧩 Project Branding Standard
 
-Every project in this repository follows the same presentation standard:
+I use the following presentation standard across the projects in this repository:
 
 - Dedicated SVG project logo
 - Consistent visual language
@@ -361,7 +363,7 @@ README.md → Brand Gallery + Selected Work + Project Hub
 projects/<project-name>/
 ```
 
-> One repository. One visual system. Every project gets its own identity.
+> The goal is to keep the repository easy to explore while still giving each project its own identity.
 
 ---
 
@@ -369,13 +371,13 @@ projects/<project-name>/
 
 📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🚀 Future builds
 
-This repository is part of my learning journey. I'll add projects, experiments, notes, and useful resources as I continue learning.
+This repository grows as I learn. I add projects, experiments, notes, and useful resources here as I go.
 
 ---
 
 ## 🎯 My Goal
 
-I want to become a stronger developer by learning consistently, building real projects, and improving my problem-solving skills.
+My goal is to become a stronger developer by learning consistently, building projects, and getting better at solving problems.
 
 **Learn → Build → Improve → Repeat.**
 
@@ -442,9 +444,7 @@ Jems uses documented repository information as its source of truth and avoids in
 
 ## ⚡ Fun Fact
 
-I enjoy turning things I learn into practical projects.
-
-I like taking something I'm learning and trying to turn it into a small working project.
+A lot of my learning starts with a simple question: can I turn this into something that actually works?
 
 ---
 
