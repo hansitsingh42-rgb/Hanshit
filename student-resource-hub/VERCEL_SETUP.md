@@ -88,15 +88,11 @@ Password: (from ADMIN_PASSWORD)
 
 ### Initialize Database
 
-The database will be initialized automatically on first deploy. If not:
+The repository contains a committed Prisma migration and a seed script. The standard Vercel build command does not automatically apply the migration or seed the admin account. Run these commands from a secure administration environment after the database and environment variables are configured:
 
 ```bash
-# Run migrations
-Vercel Dashboard → Functions → Logs
-
-# Or manually via terminal
-npx prisma migrate deploy
-npx prisma db seed
+npm run db:deploy
+npm run db:seed
 ```
 
 ---
