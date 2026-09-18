@@ -44,6 +44,9 @@ No Vercel deployment workflow is currently stored in this repository. If automat
 
 ## Deployment Process
 
+The repository now includes GitHub Actions checks that run linting and a production build for Student Resource Hub changes. A successful CI run confirms the project can build in the GitHub Actions environment; it does not replace verification of the live Vercel deployment.
+
+
 ### Option A: Manual Deployment (Recommended First Time)
 ```bash
 cd student-resource-hub

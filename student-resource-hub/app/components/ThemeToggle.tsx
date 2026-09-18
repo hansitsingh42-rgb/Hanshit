@@ -14,7 +14,7 @@ export default function ThemeToggle() {
       : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
     document.documentElement.dataset.theme = initial;
-    setTheme(initial);
+    queueMicrotask(() => setTheme(initial));
   }, []);
 
   function toggleTheme() {
