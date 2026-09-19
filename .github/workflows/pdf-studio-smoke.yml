@@ -74,10 +74,10 @@ jobs:
             await expect(await page.title() === 'PDF Studio', 'PDF Studio did not load');
             await expect(await page.locator('#page').isVisible(), 'Editor page is not visible');
 
-            await page.getByRole('button', { name: 'Add' }).click();
+            await page.locator('[data-action="add-page"]').click();
             await expect(await countPages() === 2, 'Add page failed');
 
-            await page.getByRole('button', { name: 'Duplicate' }).click();
+            await page.locator('[data-action="duplicate-page"]').click();
             await expect(await countPages() === 3, 'Duplicate page failed');
 
             await page.getByRole('button', { name: 'Templates & Presets' }).click();
