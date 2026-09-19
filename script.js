@@ -4,8 +4,8 @@ const toast=$('#toast');
 function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),2200)}
 $('#themeBtn').addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('hanshit-theme',document.body.classList.contains('dark')?'dark':'light')});
 if(localStorage.getItem('hanshit-theme')==='light')document.body.classList.remove('dark');
-$('#menuBtn').addEventListener('click',()=>$('#navMenu').classList.toggle('open'));
-$$('#navMenu a').forEach(a=>a.addEventListener('click',()=>$('#navMenu').classList.remove('open')));
+const menuBtn=$('#menuBtn');const navMenu=$('#navMenu');\nfunction closeNav(){navMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}\nmenuBtn.addEventListener('click',()=>{const open=navMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));if(open)navMenu.querySelector('a')?.focus()});
+$('#navMenu a').forEach(a=>a.addEventListener('click',closeNav));\ndocument.addEventListener('keydown',e=>{if(e.key==='Escape'&&navMenu.classList.contains('open')){closeNav();menuBtn.focus()}});
 function closeModal(){$('#projectModal').hidden=true;document.body.classList.remove('modal-open')}
 $('#closeModal').addEventListener('click',closeModal);$('#modalAction').addEventListener('click',closeModal);$('#projectModal').addEventListener('click',e=>{if(e.target.id==='projectModal')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#projectModal').hidden)closeModal()});
 const grid=$('#activityGrid');for(let i=0;i<364;i++){const cell=document.createElement('i');const wave=(i*17+i%11*7)%13;const level=wave>10?4:wave>7?3:wave>4?2:wave>2?1:0;cell.dataset.level=level;grid.appendChild(cell)}
