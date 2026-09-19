@@ -1,0 +1,131 @@
+name: PDF Studio browser smoke tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pdf-studio/**'
+      - '.github/workflows/pdf-studio-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install browser test dependencies
+        run: |
+          npm init -y
+          npm install --no-audit --no-fund playwright@1.55.0 pdf-lib@1.17.1
+          npx playwright install --with-deps chromium
+
+      - name: Start PDF Studio
+        run: |
+          python3 -m http.server 4173 --directory pdf-studio > /tmp/pdf-studio-server.log 2>&1 &
+          echo $! > /tmp/pdf-studio-server.pid
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/index.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pdf-studio-server.log
+          exit 1
+
+      - name: Run browser smoke tests
+        run: |
+          cat > /tmp/pdf-studio-smoke.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import { PDFDocument } from 'pdf-lib';
+          import fs from 'node:fs/promises';
+
+          const browser = await chromium.launch({ headless: true });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+          const errors = [];
+          page.on('pageerror', err => errors.push('pageerror: ' + err.message));
+          page.on('console', msg => {
+            if (msg.type() === 'error') errors.push('console: ' + msg.text());
+          });
+
+          async function expect(condition, message) {
+            if (!condition) throw new Error(message);
+          }
+
+          async function countPages() {
+            return await page.locator('#pages .page-thumb').count();
+          }
+
+          try {
+            await page.goto('http://127.0.0.1:4173/index.html', { waitUntil: 'networkidle' });
+            await expect(await page.title() === 'PDF Studio', 'PDF Studio did not load');
+            await expect(await page.locator('#page').isVisible(), 'Editor page is not visible');
+
+            await page.getByRole('button', { name: 'Add' }).click();
+            await expect(await countPages() === 2, 'Add page failed');
+
+            await page.getByRole('button', { name: 'Duplicate' }).click();
+            await expect(await countPages() === 3, 'Duplicate page failed');
+
+            await page.getByRole('button', { name: 'Templates & Presets' }).click();
+            await expect(await page.locator('#template-panel').isVisible(), 'Template panel did not open');
+            await page.locator('.template-card[data-template="assignment"]').click();
+            await page.getByRole('button', { name: 'New from selected template' }).click();
+            await expect(await countPages() === 1, 'Template application duplicated or failed');
+
+            await page.locator('#page').click();
+            await page.locator('#page').pressSequentially('SEARCHME');
+            await page.getByRole('button', { name: 'Search & Replace' }).click();
+            await page.locator('#search-input').fill('SEARCHME');
+            await page.locator('#replace-input').fill('REPLACED');
+            await page.getByRole('button', { name: 'Replace all' }).click();
+            await expect((await page.locator('#page').innerText()).includes('REPLACED'), 'Search/replace failed');
+
+            await page.getByRole('button', { name: 'Metadata' }).click();
+            await page.locator('#meta-author').fill('Smoke Test');
+            await page.getByRole('button', { name: 'Apply metadata' }).click();
+            await expect(await page.locator('#metadata-panel').isHidden(), 'Metadata panel did not close');
+
+            const exportDownload = page.waitForEvent('download');
+            await page.getByRole('button', { name: 'Export PDF' }).click();
+            const download = await exportDownload;
+            await expect(download.suggestedFilename().endsWith('.pdf'), 'PDF export did not create a PDF');
+
+            const pdf = await PDFDocument.create();
+            pdf.addPage([595, 842]).drawText('Imported PDF smoke test');
+            const fixture = await pdf.save();
+            await fs.writeFile('/tmp/smoke-fixture.pdf', fixture);
+
+            const chooser = page.waitForEvent('filechooser');
+            await page.getByRole('button', { name: 'Import PDF' }).click();
+            const fc = await chooser;
+            await fc.setFiles('/tmp/smoke-fixture.pdf');
+            await expect(await page.locator('#page').isHidden(), 'Imported PDF did not switch to PDF preview mode');
+            await page.locator('#pdf-render-layer canvas').waitFor({ state: 'visible', timeout: 15000 });
+            await page.locator('#real-thumbnails .real-thumb').first().waitFor({ state: 'visible', timeout: 15000 });
+
+            await page.getByRole('button', { name: 'Rotate page' }).click();
+            const importedExport = page.waitForEvent('download');
+            await page.getByRole('button', { name: 'Export PDF' }).click();
+            const importedDownload = await importedExport;
+            await expect(importedDownload.suggestedFilename().endsWith('.pdf'), 'Imported PDF export failed');
+
+            if (errors.length) throw new Error(errors.join('\n'));
+            console.log('PDF Studio smoke tests passed');
+          } finally {
+            await browser.close();
+          }
+          EOF
+          node /tmp/pdf-studio-smoke.mjs
+
+      - name: Show server log on failure
+        if: failure()
+        run: cat /tmp/pdf-studio-server.log || true
