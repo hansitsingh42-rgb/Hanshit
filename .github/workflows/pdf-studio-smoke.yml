@@ -1,6 +1,11 @@
 name: PDF Studio browser smoke tests
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'pdf-studio/**'
+      - '.github/workflows/pdf-studio-smoke.yml'
   push:
     branches: [main]
     paths:
