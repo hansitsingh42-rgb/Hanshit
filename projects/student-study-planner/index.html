@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Student Study Planner UX prototype by Hanshit Singh">
+<title>Student Study Planner — UX Prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="#">Study Planner</a>
+<nav aria-label="Primary navigation">
+<button class="nav active" data-screen="dashboard">Dashboard</button>
+<button class="nav" data-screen="planner">Planner</button>
+<button class="nav" data-screen="focus">Focus</button>
+</nav>
+<button class="theme" id="theme" aria-label="Toggle light and dark mode">◐</button>
+</header>
+<main>
+<section id="dashboard" class="screen active">
+<div class="hero"><div><p class="eyebrow">TODAY · STUDY PLAN</p><h1>Good study sessions start with a clear next step.</h1><p class="muted">Plan subjects, protect focus time, and keep your workload visible without adding friction.</p></div><div class="date-card"><strong id="date"></strong><span>Today</span></div></div>
+<div class="grid">
+<article class="card"><span class="label">NEXT UP</span><h2>Computer Networks</h2><p class="muted">PAN, LAN, MAN & WAN</p><button class="primary" data-screen="focus">Start focus</button></article>
+<article class="card"><span class="label">TODAY</span><div class="metric">3</div><p class="muted">planned sessions</p></article>
+<article class="card"><span class="label">PROGRESS</span><div class="metric">68%</div><p class="muted">weekly plan completed</p></article>
+</div>
+<div class="section-head"><h2>Today's plan</h2><span class="muted">3 sessions</span></div>
+<div class="timeline">
+<div><span class="time">09:00</span><article><b>Mathematics</b><small>Algebra practice · 45 min</small></article></div>
+<div><span class="time">11:00</span><article><b>Computer Science</b><small>Computer Networks · 60 min</small></article></div>
+<div><span class="time">17:00</span><article><b>English</b><small>Tenses revision · 30 min</small></article></div>
+</div>
+</section>
+<section id="planner" class="screen">
+<div class="section-head"><div><p class="eyebrow">WEEKLY PLANNER</p><h1>Build a realistic week.</h1></div></div>
+<div class="week">
+<article class="day "><b>Mon</b><span> </span><div class="task">Mathematics<small>45 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day today"><b>Tue</b><span>Today</span><div class="task">Networks<small>60 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day "><b>Wed</b><span> </span><div class="task">Mathematics<small>45 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day "><b>Thu</b><span> </span><div class="task">Networks<small>60 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day "><b>Fri</b><span> </span><div class="task">Mathematics<small>45 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day "><b>Sat</b><span> </span><div class="task">Networks<small>60 min</small></div><button class="add" aria-label="Add session">+</button></article><article class="day "><b>Sun</b><span> </span><div class="task">Mathematics<small>45 min</small></div><button class="add" aria-label="Add session">+</button></article>
+</div>
+</section>
+<section id="focus" class="screen">
+<div class="focus-wrap"><p class="eyebrow">FOCUS SESSION</p><h1>Computer Networks</h1><p class="muted">PAN, LAN, MAN & WAN</p><div class="timer" id="timer">25:00</div><div class="actions"><button class="primary" id="start">Start</button><button id="reset">Reset</button></div><p class="privacy">Demo data stays in your browser. No account or unnecessary personal data is required.</p></div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
