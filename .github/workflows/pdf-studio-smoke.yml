@@ -89,19 +89,21 @@ jobs:
 
             await page.locator('#page').click();
             await page.locator('#page').pressSequentially('SEARCHME');
-            await page.getByRole('button', { name: 'Search & Replace' }).click();
+            await page.locator('[data-action="search"]').click();
+            await page.locator('#search-panel').waitFor({ state: 'visible' });
             await page.locator('#search-input').fill('SEARCHME');
             await page.locator('#replace-input').fill('REPLACED');
             await page.getByRole('button', { name: 'Replace all' }).click();
             await expect((await page.locator('#page').innerText()).includes('REPLACED'), 'Search/replace failed');
 
-            await page.getByRole('button', { name: 'Metadata' }).click();
+            await page.locator('[data-action="metadata"]').click();
+            await page.locator('#metadata-panel').waitFor({ state: 'visible' });
             await page.locator('#meta-author').fill('Smoke Test');
             await page.getByRole('button', { name: 'Apply metadata' }).click();
             await expect(await page.locator('#metadata-panel').isHidden(), 'Metadata panel did not close');
 
             const exportDownload = page.waitForEvent('download');
-            await page.getByRole('button', { name: 'Export PDF' }).click();
+            await page.locator('[data-action="export"]').click();
             const download = await exportDownload;
             await expect(download.suggestedFilename().endsWith('.pdf'), 'PDF export did not create a PDF');
 
@@ -111,14 +113,14 @@ jobs:
             await fs.writeFile('/tmp/smoke-fixture.pdf', fixture);
 
             const chooser = page.waitForEvent('filechooser');
-            await page.getByRole('button', { name: 'Import PDF' }).click();
+            await page.locator('[data-action="import-pdf"]').click();
             const fc = await chooser;
             await fc.setFiles('/tmp/smoke-fixture.pdf');
             await expect(await page.locator('#page').isHidden(), 'Imported PDF did not switch to PDF preview mode');
             await page.locator('#pdf-render-layer canvas').waitFor({ state: 'visible', timeout: 15000 });
             await page.locator('#real-thumbnails .real-thumb').first().waitFor({ state: 'visible', timeout: 15000 });
 
-            await page.getByRole('button', { name: 'Rotate page' }).click();
+            await page.locator('[data-action="rotate-page"]').click();
             const importedExport = page.waitForEvent('download');
             await page.getByRole('button', { name: 'Export PDF' }).click();
             const importedDownload = await importedExport;
