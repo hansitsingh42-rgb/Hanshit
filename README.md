@@ -112,7 +112,7 @@ A UX case study currently being developed in Figma, covering:
 
 `Problem` → `Users & Context` → `Assumptions` → `Research Plan` → `Goals` → `Information Architecture` → `Core User Flow`
 
-<a href="https://www.figma.com/design/Oc854NFgEm0ovihPL5qfY8">View UX Foundation in Figma</a>
+<a href="https://www.figma.com/design/Oc854NFgEm0ovihPL5qfY8">View UX Foundation in Figma</a> • <a href="./docs/ui-ux/ecommerce-mobile-app-case-study.md">Read the Case Study</a>
 
 > This section represents my current design practice and documented work. Research assumptions are kept separate from validated findings.
 
