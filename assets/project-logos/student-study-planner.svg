@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Student Study Planner</title><desc id="desc">Minimal study planner logo with calendar and focus mark</desc>
+<rect width="640" height="360" rx="48" fill="#eef2ff"/>
+<rect x="118" y="72" width="300" height="238" rx="28" fill="#fff" stroke="#315bea" stroke-width="10"/>
+<path d="M118 132h300" stroke="#315bea" stroke-width="10"/>
+<path d="M170 52v54M366 52v54" stroke="#315bea" stroke-width="14" stroke-linecap="round"/>
+<circle cx="268" cy="214" r="54" fill="#315bea"/>
+<path d="M268 180v38l25 15" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="455" y="170" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#18202a">Study</text>
+<text x="455" y="215" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#315bea">Planner</text>
+<text x="455" y="252" font-family="Arial,sans-serif" font-size="18" fill="#687382">Plan • Focus • Improve</text>
+</svg>
