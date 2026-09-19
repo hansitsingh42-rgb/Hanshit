@@ -6,6 +6,11 @@ on:
     paths:
       - 'pdf-studio/**'
       - '.github/workflows/pdf-studio-smoke.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'pdf-studio/**'
+      - '.github/workflows/pdf-studio-smoke.yml'
   workflow_dispatch:
 
 permissions:
