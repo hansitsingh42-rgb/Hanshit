@@ -17,6 +17,7 @@ on:
       - 'projects/advanced-weather-app/**'
       - 'projects/student-academic-planner/**'
       - 'projects/student-resource-hub/**'
+      - 'pdf-studio/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -55,6 +56,7 @@ jobs:
           mkdir -p _site/skycast
           mkdir -p _site/student-academic-planner
           mkdir -p _site/student-resource-hub
+          mkdir -p _site/pdf-studio
 
           cp index.html style.css script.js _site/
           if [ -d assets ]; then cp -R assets _site/assets; fi
@@ -67,6 +69,7 @@ jobs:
           cp -R projects/advanced-weather-app/. _site/skycast/
           cp -R projects/student-academic-planner/. _site/student-academic-planner/
           cp -R projects/student-resource-hub/. _site/student-resource-hub/
+          cp -R pdf-studio/. _site/pdf-studio/
 
           test -f _site/index.html
           test -f _site/style.css
@@ -92,6 +95,10 @@ jobs:
           test -f _site/student-resource-hub/index.html
           test -f _site/student-resource-hub/style.css
           test -f _site/student-resource-hub/script.js
+          test -f _site/pdf-studio/index.html
+          test -f _site/pdf-studio/app.js
+          test -f _site/pdf-studio/pdf-engine.js
+          test -f _site/pdf-studio/styles.css
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
