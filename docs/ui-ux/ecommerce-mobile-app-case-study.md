@@ -85,12 +85,19 @@ Home
 
 ## Wireframes
 
-The Figma case study currently contains the first two wireframe directions:
+The case study now has three documented wireframe directions:
 
 - **WF-01 — Discover & Search**
 - **WF-02 — Product Detail**
+- **WF-03 — Cart & Checkout**
 
-The third checkout wireframe is planned as the next Figma iteration.
+### Repository previews
+
+![WF-01 — Discover & Search](./wireframes/wf-01-discover-search.svg)
+
+![WF-02 — Product Detail](./wireframes/wf-02-product-detail.svg)
+
+![WF-03 — Cart & Checkout](./wireframes/wf-03-cart-checkout.svg)
 
 ## Mobile UI Direction
 
@@ -115,6 +122,10 @@ The UI will use a small reusable foundation rather than one-off screens:
 - Navigation
 - Price / delivery information
 - Feedback and validation states
+
+## Component Foundation
+
+The reusable UI foundation is documented separately in [Mobile UI Component Foundation](./mobile-ui-component-foundation.md), including typography, spacing, touch-target, component-state, accessibility, and privacy rules.
 
 ## Accessibility & Privacy
 
