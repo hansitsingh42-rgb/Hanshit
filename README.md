@@ -4,7 +4,7 @@
 
 ### CSE Student | Builder | Learning through projects
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub;Practising+UI+UX+Design" alt="Typing animation" />
 
 <p>
 <a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
@@ -32,6 +32,7 @@ Some projects are simple experiments, and some are projects I keep coming back t
 |---|---|
 | 🎓 Education | Polytechnic Computer Science |
 | 🌐 Building | Web apps & student-focused tools |
+| 🎨 Design | UI/UX, information architecture & user flows |
 | 💻 Core | C • JavaScript • HTML • CSS |
 | 🤖 Exploring | AI tools & prompt engineering |
 | 🧰 Workflow | Git • GitHub • Jira • Agile/Scrum |
@@ -46,6 +47,7 @@ Right now, most of my time goes into:
 - 🌐 Building practical web projects
 - 📚 Improving a personal study-resource library
 - 🧩 Making small student-focused tools
+- 🎨 Practising UI/UX design and product thinking
 - 🔧 Getting more comfortable with Git and GitHub
 - 📖 Practising programming and core Computer Science concepts
 - 🛠️ Turning ideas into projects that actually work
@@ -75,6 +77,44 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 - 🤖 AI-related experiments
 - 💻 Beginner-friendly Computer Science projects
 - 🧩 Small utilities that help me learn by doing
+- 🎨 Interfaces designed with usability and accessibility in mind
+
+---
+
+## 🎨 UI/UX Design & Product Thinking
+
+I am actively developing my UI/UX skills by applying design thinking to real projects rather than treating design as only visual styling.
+
+### Design Practice
+
+- User problem definition
+- User and context mapping
+- Assumptions vs. validated findings
+- Research planning
+- Information architecture (IA)
+- User flows
+- Wireframing and interface structure
+- Responsive UI thinking
+- Accessibility-first considerations
+- Privacy-conscious UX
+- Usability testing planning
+- Design consistency and reusable patterns
+
+### Current Design Workflow
+
+`Problem → Users → Research Plan → Goals → IA → User Flow → Wireframe → UI → Prototype → Test → Improve`
+
+### Current Case Study
+
+**E-commerce Mobile App — UX Foundation**
+
+A UX case study currently being developed in Figma, covering:
+
+`Problem` → `Users & Context` → `Assumptions` → `Research Plan` → `Goals` → `Information Architecture` → `Core User Flow`
+
+<a href="https://www.figma.com/design/Oc854NFgEm0ovihPL5qfY8">View UX Foundation in Figma</a>
+
+> This section represents my current design practice and documented work. Research assumptions are kept separate from validated findings.
 
 ---
 
@@ -83,6 +123,9 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 - C Programming
 - JavaScript
 - Web Development
+- UI/UX Design
+- Information Architecture
+- User Flows & Wireframing
 - Git & GitHub
 - Computer Networks
 
@@ -90,6 +133,8 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 
 - Computer Science student projects
 - Web development basics
+- UI/UX fundamentals
+- Information architecture and user flows
 - Git & GitHub
 - Learning resources
 
@@ -99,6 +144,7 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 - Student projects
 - Open-source projects
 - Learning-focused experiments
+- UI/UX and product-design practice
 - Projects where I can learn while contributing
 
 ---
@@ -110,6 +156,7 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 <img src="https://img.shields.io/badge/JavaScript-Learning-555555?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
 <img src="https://img.shields.io/badge/Git-Tools-555555?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 <img src="https://img.shields.io/badge/GitHub-Workflow-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+<img src="https://img.shields.io/badge/Figma-UI%2FUX-555555?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
 </p>
 
 ---
@@ -119,6 +166,9 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 ### 💻 Development
 `C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
 
+### 🎨 UI/UX & Product Design
+`Figma` `UI Design` `UX Design` `Information Architecture` `User Flows` `Wireframing` `Prototyping` `Accessibility` `Usability Testing`
+
 ### 🤖 AI & Productivity
 `AI Tools` `Prompt Engineering` `Microsoft Excel` `Microsoft Word` `Microsoft PowerPoint`
 
@@ -127,7 +177,7 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,vscode" alt="Development skills" />
+<img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,figma,vscode" alt="Development and design skills" />
 
 </div>
 
@@ -148,6 +198,7 @@ C Programming           ███████░░░  Building fundamentals
 JavaScript              ██████░░░░  Growing web development skills
 Git & GitHub            ███████░░░  Improving workflow
 Computer Networks       ██████░░░░  Strengthening fundamentals
+UI/UX Design            █████░░░░░  Building design foundations
 Core CS                 █████░░░░░  Learning step by step
 Practical AI            ██████░░░░  Exploring useful applications
 ```
@@ -196,6 +247,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 - 🌐 Maintaining a personal developer portfolio
 - 🤖 Built a project-focused AI assistant — Jems AI
 - 📚 Building student-focused learning resources
+- 🎨 Building documented UI/UX case-study work in Figma
 - 🎓 Completed **ADCA — Advanced Diploma in Computer Applications**
 
 ---
@@ -377,9 +429,9 @@ This repository grows as I learn. I add projects, experiments, notes, and useful
 
 ## 🎯 My Goal
 
-My goal is to become a stronger developer by learning consistently, building projects, and getting better at solving problems.
+My goal is to become a stronger developer by learning projects, understanding user needs, designing usable interfaces, and improving through iteration.
 
-**Learn → Build → Improve → Repeat.**
+**Learn → Build → Test → Improve → Repeat.**
 
 For me, working on real projects is one of the best ways to understand what I'm learning.
 
