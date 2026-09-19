@@ -1,42 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="C Student Record Manager live browser demo.">
 <title>C Student Record Manager — Live Demo</title>
 <style>
-:root{font-family:Inter,system-ui,sans-serif;background:#0b1020;color:#eef2ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#18213f,#080b14 60%);min-height:100vh}.wrap{max-width:1000px;margin:auto;padding:32px 18px}.head{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.eyebrow{font-size:12px;letter-spacing:.14em;opacity:.65}.head h1{margin:6px 0;font-size:clamp(24px,5vw,40px)}.badge{padding:8px 12px;border:1px solid #34405f;border-radius:999px;font-size:12px}.grid{display:grid;grid-template-columns:1fr 1.4fr;gap:18px}.card{background:#11182b;border:1px solid #293552;border-radius:18px;padding:20px;box-shadow:0 12px 35px #0004}.form{display:grid;gap:12px}input{width:100%;padding:12px;border-radius:10px;border:1px solid #35415f;background:#0b1020;color:#fff}button{border:0;border-radius:10px;padding:11px 14px;cursor:pointer;font-weight:700;background:#dbe5ff;color:#0b1020}button.secondary{background:#202b46;color:#eef2ff}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #293552;font-size:14px}.empty{opacity:.55;text-align:center;padding:30px}.actions{display:flex;gap:8px;flex-wrap:wrap}.status{min-height:20px;font-size:13px;opacity:.8}@media(max-width:700px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}}
-</style></head>
-<body><main class="wrap"><header class="head"><div><div class="eyebrow">LIVE WEB DEMO / C PROJECT</div><h1>Student Record Manager</h1><p>Browser demonstration of the same core record-management workflow as the C console project.</p></div><span class="badge">C • Structures • CRUD</span></header>
-<section class="grid"><article class="card"><h2>Add Student</h2><form class="form" id="form"><input id="id" type="number" min="1" placeholder="Student ID" required><input id="name" placeholder="Student name" required><input id="course" placeholder="Course" required><input id="marks" type="number" min="0" max="100" placeholder="Marks (0–100)" required><button>Add Record</button><div class="status" id="status"></div></form></article>
-<article class="card"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><h2>Records</h2><div class="actions"><button class="secondary" id="clear">Clear All</button></div></div><div id="table"></div></article></section></main>
+:root{font-family:Inter,system-ui,sans-serif;background:#0b1020;color:#eef2ff}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#18213f,#080b14 60%);min-height:100vh}
+.wrap{max-width:1000px;margin:auto;padding:32px 18px}
+.head{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}
+.eyebrow{font-size:12px;letter-spacing:.14em;opacity:.65}
+.head h1{margin:6px 0;font-size:clamp(24px,5vw,40px)}
+.badge{padding:8px 12px;border:1px solid #34405f;border-radius:999px;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1.4fr;gap:18px}
+.card{background:#11182b;border:1px solid #293552;border-radius:18px;padding:20px;box-shadow:0 12px 35px #0004}
+.form{display:grid;gap:12px}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid #35415f;background:#0b1020;color:#fff}
+button{border:0;border-radius:10px;padding:11px 14px;cursor:pointer;font-weight:700;background:#dbe5ff;color:#0b1020}
+button.secondary{background:#202b46;color:#eef2ff}
+button:focus-visible,input:focus-visible{outline:2px solid #dbe5ff;outline-offset:2px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;min-width:480px}
+th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #293552;font-size:14px}
+.empty{opacity:.55;text-align:center;padding:30px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.status{min-height:20px;font-size:13px;opacity:.8}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.card{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="head">
+<div>
+<div class="eyebrow">LIVE WEB DEMO / C PROJECT</div>
+<h1>Student Record Manager</h1>
+<p>Browser demonstration of the same core record-management workflow as the C console project.</p>
+</div>
+<span class="badge">C • Structures • CRUD</span>
+</header>
+
+<section class="grid">
+<article class="card">
+<h2>Add Student</h2>
+<form class="form" id="form">
+<input id="id" type="number" min="1" placeholder="Student ID" aria-label="Student ID" required>
+<input id="name" type="text" maxlength="80" placeholder="Student name" aria-label="Student name" required>
+<input id="course" type="text" maxlength="80" placeholder="Course" aria-label="Course" required>
+<input id="marks" type="number" min="0" max="100" step="any" placeholder="Marks (0–100)" aria-label="Marks" required>
+<button type="submit">Add Record</button>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</form>
+</article>
+
+<article class="card">
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+<h2>Records</h2>
+<div class="actions"><button class="secondary" id="clear" type="button">Clear All</button></div>
+</div>
+<div id="table" class="table-wrap" aria-live="polite"></div>
+</article>
+</section>
+</main>
+
 <script>
-const key='c-student-record-demo';
-const $=id=>document.getElementById(id);
-let records=[];
-try{const stored=JSON.parse(localStorage.getItem(key)||'[]');records=Array.isArray(stored)?stored.filter(r=>r&&Number.isInteger(r.id)&&typeof r.name==='string'&&typeof r.course==='string'&&Number.isFinite(r.marks)):[]}catch{records=[]}
-function save(){try{localStorage.setItem(key,JSON.stringify(records))}catch{}render()}
-function render(){
-  const table=$('table');table.replaceChildren();
-  if(!records.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No records yet. Add a student to test the demo.';table.appendChild(empty);return}
-  const t=document.createElement('table'),thead=document.createElement('thead'),hr=document.createElement('tr');
-  ['ID','Name','Course','Marks',''].forEach(label=>{const th=document.createElement('th');th.textContent=label;hr.appendChild(th)});thead.appendChild(hr);t.appendChild(thead);
-  const tbody=document.createElement('tbody');
-  records.forEach(r=>{
-    const tr=document.createElement('tr');
-    [r.id,r.name,r.course,r.marks].forEach(value=>{const td=document.createElement('td');td.textContent=String(value);tr.appendChild(td)});
-    const td=document.createElement('td'),button=document.createElement('button');button.type='button';button.className='secondary';button.textContent='Delete';button.setAttribute('aria-label',`Delete student ${r.id}`);
-    button.addEventListener('click',()=>removeRecord(r.id));td.appendChild(button);tr.appendChild(td);tbody.appendChild(tr);
+(() => {
+  "use strict";
+
+  const STORAGE_KEY = "c-student-record-demo";
+  const byId = (id) => document.getElementById(id);
+  let records = [];
+
+  function loadRecords() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      records = Array.isArray(parsed)
+        ? parsed.filter((r) =>
+            r &&
+            Number.isInteger(r.id) &&
+            r.id > 0 &&
+            typeof r.name === "string" &&
+            typeof r.course === "string" &&
+            Number.isFinite(r.marks) &&
+            r.marks >= 0 &&
+            r.marks <= 100
+          )
+        : [];
+    } catch {
+      records = [];
+    }
+  }
+
+  function persist() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    } catch {
+      byId("status").textContent = "Record updated for this session; browser storage is unavailable.";
+    }
+    renderRecords();
+  }
+
+  function renderRecords() {
+    const container = byId("table");
+    container.replaceChildren();
+
+    if (records.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No records yet. Add a student to test the demo.";
+      container.appendChild(empty);
+      return;
+    }
+
+    const table = document.createElement("table");
+    table.setAttribute("aria-label", "Student records");
+
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+    ["ID", "Name", "Course", "Marks", "Actions"].forEach((label) => {
+      const th = document.createElement("th");
+      th.scope = "col";
+      th.textContent = label;
+      headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+
+    const tbody = document.createElement("tbody");
+
+    records.forEach((record) => {
+      const row = document.createElement("tr");
+
+      [record.id, record.name, record.course, record.marks].forEach((value) => {
+        const cell = document.createElement("td");
+        cell.textContent = String(value);
+        row.appendChild(cell);
+      });
+
+      const actionCell = document.createElement("td");
+      const deleteButton = document.createElement("button");
+      deleteButton.type = "button";
+      deleteButton.className = "secondary";
+      deleteButton.textContent = "Delete";
+      deleteButton.setAttribute("aria-label", "Delete student " + record.id);
+      deleteButton.addEventListener("click", () => removeRecord(record.id));
+      actionCell.appendChild(deleteButton);
+      row.appendChild(actionCell);
+
+      tbody.appendChild(row);
+    });
+
+    table.append(thead, tbody);
+    container.appendChild(table);
+  }
+
+  function removeRecord(id) {
+    records = records.filter((record) => record.id !== id);
+    persist();
+    byId("status").textContent = "Record deleted.";
+  }
+
+  byId("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const id = Number(byId("id").value);
+    const name = byId("name").value.trim();
+    const course = byId("course").value.trim();
+    const marks = Number(byId("marks").value);
+
+    if (!Number.isInteger(id) || id < 1 || !name || !course || !Number.isFinite(marks) || marks < 0 || marks > 100) {
+      byId("status").textContent = "Enter valid student details.";
+      return;
+    }
+
+    if (records.some((record) => record.id === id)) {
+      byId("status").textContent = "Student ID already exists.";
+      return;
+    }
+
+    records.push({ id, name, course, marks });
+    persist();
+    event.currentTarget.reset();
+    byId("status").textContent = "Record added successfully.";
   });
-  t.appendChild(tbody);table.appendChild(t)
-}
-function removeRecord(id){records=records.filter(r=>r.id!==id);save()}
-$('form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const id=Number($('id').value),name=$('name').value.trim(),course=$('course').value.trim(),marks=Number($('marks').value);
-  if(!Number.isInteger(id)||id<1||!name||!course||!Number.isFinite(marks)||marks<0||marks>100){$('status').textContent='Enter valid student details.';return}
-  if(records.some(r=>r.id===id)){$('status').textContent='Student ID already exists.';return}
-  records.push({id,name,course,marks});save();e.target.reset();$('status').textContent='Record added successfully.'
-});
-$('clear').addEventListener('click',()=>{if(records.length){records=[];save();$('status').textContent='All records cleared.'}});
-render();
-</script></body></html>
+
+  byId("clear").addEventListener("click", () => {
+    if (!records.length) {
+      byId("status").textContent = "There are no records to clear.";
+      return;
+    }
+    records = [];
+    persist();
+    byId("status").textContent = "All records cleared.";
+  });
+
+  loadRecords();
+  renderRecords();
+})();
+</script>
+</body>
+</html>
