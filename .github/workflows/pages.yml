@@ -16,6 +16,7 @@ on:
       - 'projects/c-student-record-manager/live-demo/**'
       - 'projects/advanced-weather-app/**'
       - 'projects/student-academic-planner/**'
+      - 'projects/student-study-planner/**'
       - 'projects/student-resource-hub/**'
       - 'pdf-studio/**'
       - '.github/workflows/pages.yml'
@@ -58,6 +59,7 @@ jobs:
           mkdir -p _site/jems
           mkdir -p _site/skycast
           mkdir -p _site/student-academic-planner
+          mkdir -p _site/student-study-planner
           mkdir -p _site/student-resource-hub
           mkdir -p _site/pdf-studio
 
@@ -71,6 +73,7 @@ jobs:
           cp -R jems/. _site/jems/
           cp -R projects/advanced-weather-app/. _site/skycast/
           cp -R projects/student-academic-planner/. _site/student-academic-planner/
+          cp -R projects/student-study-planner/. _site/student-study-planner/
           cp -R projects/student-resource-hub/. _site/student-resource-hub/
           cp -R pdf-studio/. _site/pdf-studio/
 
@@ -95,6 +98,9 @@ jobs:
           test -f _site/student-academic-planner/script.js
           test -f _site/student-academic-planner/interactions.js
           test -f _site/student-academic-planner/runtime-check.js
+          test -f _site/student-study-planner/index.html
+          test -f _site/student-study-planner/style.css
+          test -f _site/student-study-planner/script.js
           test -f _site/student-resource-hub/index.html
           test -f _site/student-resource-hub/style.css
           test -f _site/student-resource-hub/script.js
