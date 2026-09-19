@@ -43,23 +43,37 @@ function saveStudyTime() {
 }
 
 function render() {
-  list.innerHTML = '';
+  list.replaceChildren();
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     li.className = `task ${task.done ? 'done' : ''}`;
-    li.innerHTML = '<input type="checkbox" aria-label="Complete task"><label></label><button class="delete" aria-label="Delete task">×</button>';
-    li.querySelector('input').checked = task.done;
-    li.querySelector('label').textContent = task.text;
-    li.querySelector('input').onchange = () => {
-      tasks[index].done = !tasks[index].done;
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = task.done;
+    checkbox.setAttribute('aria-label', `Complete task: ${task.text}`);
+
+    const label = document.createElement('label');
+    label.textContent = task.text;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.type = 'button';
+    deleteButton.className = 'delete';
+    deleteButton.setAttribute('aria-label', `Delete task: ${task.text}`);
+    deleteButton.textContent = '×';
+
+    checkbox.onchange = () => {
+      tasks[index].done = checkbox.checked;
       save();
       render();
     };
-    li.querySelector('.delete').onclick = () => {
+    deleteButton.onclick = () => {
       tasks.splice(index, 1);
       save();
       render();
     };
+
+    li.append(checkbox, label, deleteButton);
     list.appendChild(li);
   });
 
