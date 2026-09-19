@@ -285,6 +285,16 @@ Practical AI            ██████░░░░  Exploring useful applica
 <td align="center"></td>
 <td align="center"></td>
 </tr>
+<tr>
+<td align="center"><img src="./assets/project-logos/student-study-planner.svg" width="180" alt="Student Study Planner logo" /></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Student Study Planner</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
 </table>
 
 ---
@@ -378,6 +388,23 @@ A student-focused resource discovery interface organized around **Subject → Ch
 [Source](./projects/student-resource-hub/)
 
 > The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
+
+### 📅 Student Study Planner — UX Prototype
+<img src="./assets/project-logos/student-study-planner.svg" width="360" alt="Student Study Planner logo" />
+
+A responsive study-planning prototype focused on making the next study action visible, organizing a weekly plan, and starting a distraction-free focus session.
+
+**Highlights**  
+`Dashboard` `Weekly Planner` `Focus Timer` `Light/Dark Mode` `Responsive UI` `Accessibility States` `Privacy-Conscious UX`
+
+**UX process**  
+`Problem` → `Users` → `Research Plan` → `Goals` → `IA` → `User Flow` → `Wireframe` → `UI` → `Prototype` → `Test` → `Improve`
+
+**Stack:** `HTML` `CSS` `JavaScript`
+
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/"><img src="./assets/live-preview-button.svg" width="220" alt="Open Student Study Planner live preview" /></a>
+
+[Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
 
 ### 📅 Student Academic Planner
 <img src="./assets/project-logos/student-academic-planner.svg" width="360" alt="Student Academic Planner logo" />
@@ -479,6 +506,7 @@ Jems uses documented repository information as its source of truth and avoids in
 | 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
 | 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./jems/) |
 | 📘 Student Resource Hub | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) | [Source](./projects/student-resource-hub/) |
+| 📅 Student Study Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) | [Source](./projects/student-study-planner/) |
 | 📅 Student Academic Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) | [Source](./projects/student-academic-planner/) |
 
 ---
