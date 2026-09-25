@@ -1,0 +1,40 @@
+name: Student Resource Hub CI
+
+on:
+  push:
+    paths:
+      - "student-resource-hub/**"
+      - ".github/workflows/student-resource-hub-ci.yml"
+  pull_request:
+    paths:
+      - "student-resource-hub/**"
+      - ".github/workflows/student-resource-hub-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: student-resource-hub
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: student-resource-hub/package.json
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Production build
+        run: npm run build

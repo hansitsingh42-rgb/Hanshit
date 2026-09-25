@@ -10,6 +10,8 @@ export async function requireAdminResponse() {
 }
 
 export function errorResponse(error: unknown, fallback = "Something went wrong.") {
-  const message = error instanceof Error ? error.message : fallback;
-  return NextResponse.json({ error: message }, { status: 400 });
+  if (error instanceof Error && error.name === "ValidationError") {
+    return NextResponse.json({ error: error.message }, { status: 400 });
+  }
+  return NextResponse.json({ error: fallback }, { status: 500 });
 }
