@@ -1,6 +1,7 @@
 "use strict";
 
-const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
+const { parseCookies, hashToken, getClient } = require("../../lib/auth");
+const { validCsrf } = require("../../lib/request-security");
 
 function idFromRequest(req) {
   const id = typeof req.query?.id === "string" ? req.query.id : "";
@@ -28,7 +29,7 @@ module.exports = async function handler(req, res) {
     res.setHeader("Allow", "GET, PATCH");
     return res.status(405).json({ error: "Method not allowed" });
   }
-  if (req.method === "PATCH" && !sameOriginRequest(req)) {
+  if (req.method === "PATCH" && !validCsrf(req)) {
     return res.status(403).json({ error: "Request validation failed." });
   }
 
