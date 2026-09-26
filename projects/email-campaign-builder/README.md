@@ -29,3 +29,7 @@ See SECURITY.md for the security requirements before backend integration.
 ## Local preview
 
 Open index.html in a browser, or serve this directory with any static HTTP server.
+
+## Security status
+
+The current project is a frontend prototype with a documented production security boundary. Real authentication, persistent campaign data, provider credentials, and email delivery require the backend controls documented in `SECURITY-CHECKLIST.md` and `DEPLOYMENT-CHECKLIST.md`.
