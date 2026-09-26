@@ -42,3 +42,7 @@ A minimal server-side boundary has been added with a non-sensitive health endpoi
 ## Stage 22
 
 Audience contacts are now persisted server-side with per-user ownership, normalized email addresses, consent timestamps, subscription states, segment membership, CSRF-protected writes, and authenticated contact listing. Unsubscribe status can be applied from the audience UI. Bulk import and provider delivery remain separate production-hardening steps.
+
+## Stage 23
+
+A server-side delivery queue foundation is now present. Scheduled campaigns can be prepared into idempotent per-contact queue jobs only when due, complete, owned by the authenticated user, and targeted at subscribed contacts. This stage does not send messages or expose provider credentials; a production worker and verified provider integration remain required.
