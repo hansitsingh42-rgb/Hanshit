@@ -8,6 +8,13 @@ if (!form || !message || !/^[0-9a-f-]{36}$/i.test(id || "")) {
   throw new Error("Invalid campaign id");
 }
 
+async function csrfToken() {
+  const response = await fetch("../api/auth/csrf", { credentials: "same-origin" });
+  if (!response.ok) throw new Error();
+  const data = await response.json();
+  return data.token;
+}
+
 async function load() {
   try {
     const response = await fetch("../api/campaigns/" + encodeURIComponent(id), { credentials: "same-origin" });
