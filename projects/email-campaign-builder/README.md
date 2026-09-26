@@ -33,3 +33,7 @@ Open index.html in a browser, or serve this directory with any static HTTP serve
 ## Security status
 
 The current project is a frontend prototype with a documented production security boundary. Real authentication, persistent campaign data, provider credentials, and email delivery require the backend controls documented in `SECURITY-CHECKLIST.md` and `DEPLOYMENT-CHECKLIST.md`.
+
+## Stage 10
+
+A minimal server-side boundary has been added with a non-sensitive health endpoint and documented authenticated API contracts. No unauthenticated campaign API or provider credential handling has been added.
