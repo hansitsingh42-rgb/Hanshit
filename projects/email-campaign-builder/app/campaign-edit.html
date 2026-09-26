@@ -8,7 +8,7 @@
 <label for="name">Campaign name</label><input id="name" name="name" type="text" maxlength="120" required>
 <label for="subject">Email subject</label><input id="subject" name="subject" type="text" maxlength="180" required>
 <label for="audience">Audience</label><select id="audience" name="audience" required><option value="">Loading audiences...</option></select>
-<label for="status">Status</label><select id="status" name="status"><option value="draft">Draft</option><option value="scheduled">Scheduled</option></select>
+<label for="status">Status</label><select id="status" name="status"><option value="draft">Draft</option><option value="scheduled">Scheduled</option><option value="cancelled">Cancelled</option></select><label for="scheduled-at">Schedule time</label><input id="scheduled-at" name="scheduledAt" type="datetime-local" disabled>
 <p id="edit-message" class="form-message" role="status" aria-live="polite"></p>
 <div class="form-actions"><a class="button button-secondary" href="./campaigns.html">Cancel</a><button class="button" type="submit">Save changes</button></div>
 </form></div></div></main><script src="./campaign-edit.js" defer></script></body></html>
