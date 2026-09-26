@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "email-campaign-builder-backend",
+  "version": "0.1.0",
+  "engines": { "node": ">=20" },
+  "scripts": { "check": "node --check api/auth/login.js && node --check api/auth/logout.js && node --check api/auth/session.js && node --check lib/auth.js" },
+  "dependencies": { "pg": "^8.16.3" }
+}
