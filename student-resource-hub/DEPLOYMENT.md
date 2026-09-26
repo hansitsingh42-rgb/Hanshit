@@ -50,9 +50,10 @@ cd student-resource-hub
 npm install
 npm run build
 npm run db:deploy
-npm run db:seed
 npm start
 ```
+
+> `db:seed` is intentionally a one-time initialization step. Do not run it automatically on every production restart because it updates the admin password from `ADMIN_PASSWORD`. Run it manually only when you intentionally need to initialize or reset the admin account.
 
 ### Option B: Automated deployment
 
