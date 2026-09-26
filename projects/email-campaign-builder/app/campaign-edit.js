@@ -17,6 +17,9 @@ async function csrfToken() {
 
 async function load() {
   try {
+    const csrfResponse = await fetch("../api/auth/csrf", { credentials: "same-origin" });
+    const csrfData = await csrfResponse.json().catch(() => ({}));
+    if (!csrfResponse.ok || typeof csrfData.token !== "string") throw new Error();
     const response = await fetch("../api/campaigns/" + encodeURIComponent(id), { credentials: "same-origin" });
     const data = await response.json().catch(() => ({}));
     if (response.status === 401) return (window.location.href = "./login.html");
@@ -40,7 +43,7 @@ form.addEventListener("submit", async (event) => {
     const response = await fetch("../api/campaigns/" + encodeURIComponent(id), {
       method: "PATCH",
       credentials: "same-origin",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfData.token },
       body: JSON.stringify({
         name: form.elements.name.value,
         subjectLine: form.elements.subject.value,
