@@ -1,12 +1,14 @@
 "use strict";
 
-const { parseCookies, hashToken, clearSessionCookie, getClient } = require("../../lib/auth");
+const { sameOriginRequest, parseCookies, hashToken, clearSessionCookie, getClient } = require("../../lib/auth");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
   }
+  if (!sameOriginRequest(req)) return res.status(403).json({ error: "Request origin rejected." });
+
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   let client;
   try {
