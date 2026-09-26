@@ -1,7 +1,7 @@
 "use strict";
 
 const crypto = require("node:crypto");
-const {
+const { sameOriginRequest,
   normalizeEmail, validEmail, hashToken, verifyPassword, randomToken,
   sessionCookie, getClient, SESSION_DAYS
 } = require("../../lib/auth");
@@ -15,6 +15,8 @@ module.exports = async function handler(req, res) {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
   }
+
+  if (!sameOriginRequest(req)) return res.status(403).json({ error: "Request origin rejected." });
 
   const email = normalizeEmail(req.body?.email);
   const password = typeof req.body?.password === "string" ? req.body.password : "";
