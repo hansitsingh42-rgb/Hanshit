@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="Create an email campaign"><link rel="stylesheet" href="../styles.css"><title>New Campaign — Email Campaign Builder</title></head>
+<body><main class="section"><div class="container narrow">
+<a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Email Builder</span></a>
+<div class="form-shell"><p class="eyebrow">Step 1 of campaign creation</p><h1 class="page-title">Create your campaign</h1><p class="hero-text">Define the campaign basics first. Sending and provider credentials are deliberately outside this frontend stage.</p>
+<form id="campaign-form" class="campaign-form" novalidate>
+<label for="name">Campaign name</label><input id="name" name="name" type="text" maxlength="100" autocomplete="off" required placeholder="e.g. Spring launch">
+<label for="subject">Email subject</label><input id="subject" name="subject" type="text" maxlength="150" required placeholder="e.g. Meet our latest update">
+<label for="audience">Audience</label><select id="audience" name="audience" required><option value="">Select an audience</option><option>Product subscribers</option><option>Newsletter subscribers</option><option>Trial users</option></select>
+<label for="schedule">Delivery</label><select id="schedule" name="schedule" required><option value="">Choose delivery</option><option>Save as draft</option><option>Schedule later</option></select>
+<p id="campaign-message" class="form-message" role="status" aria-live="polite"></p>
+<div class="form-actions"><a class="button button-secondary" href="./campaigns.html">Cancel</a><button class="button" type="submit">Continue to email content</button></div>
+</form></div></div></main><script src="./campaign-new.js" defer></script></body></html>
