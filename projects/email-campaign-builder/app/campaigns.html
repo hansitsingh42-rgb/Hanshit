@@ -2,8 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="Create and manage email campaigns"><link rel="stylesheet" href="../styles.css"><title>Campaigns — Email Campaign Builder</title></head>
 <body><main class="section"><div class="container">
 <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Email Builder</span></a>
-<div class="page-head"><div><p class="eyebrow">Campaign workspace</p><h1 class="page-title">Your campaigns</h1><p class="hero-text">Create, review, and organize email campaigns before connecting production delivery.</p></div><a class="button" href="./campaign-new.html">New campaign</a></div>
-<section aria-labelledby="campaign-list-title"><h2 id="campaign-list-title" class="sr-only">Campaign list</h2><div class="cards">
-<article class="card campaign-card"><div><span class="status">Draft</span><h3>Spring launch</h3><p>Product announcement · Updated today</p></div><a href="./campaign-new.html" class="button button-secondary button-small">Edit</a></article>
-<article class="card campaign-card"><div><span class="status status-muted">Planned</span><h3>Welcome series</h3><p>Onboarding campaign · Scheduled workflow</p></div><a href="./campaign-new.html" class="button button-secondary button-small">Review</a></article>
-</div></section></div></main></body></html>
+<div class="page-head"><div><p class="eyebrow">Campaign workspace</p><h1 class="page-title">Your campaigns</h1><p class="hero-text">Create, review, and organize email campaigns.</p></div><a class="button" href="./campaign-new.html">New campaign</a></div>
+<p id="campaign-message" class="form-message" role="status" aria-live="polite"></p>
+<section aria-labelledby="campaign-list-title"><h2 id="campaign-list-title" class="sr-only">Campaign list</h2><div id="campaign-list" class="cards"></div></section>
+</div></main><script src="./campaigns.js" defer></script></body></html>
