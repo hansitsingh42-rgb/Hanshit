@@ -46,3 +46,8 @@ Audience contacts are now persisted server-side with per-user ownership, normali
 ## Stage 23
 
 A server-side delivery queue foundation is now present. Scheduled campaigns can be prepared into idempotent per-contact queue jobs only when due, complete, owned by the authenticated user, and targeted at subscribed contacts. This stage does not send messages or expose provider credentials; a production worker and verified provider integration remain required.
+
+
+## Stage 24
+
+A server-only provider adapter boundary and atomic delivery-job claiming foundation are now present. Provider credentials remain outside browser code, and the current adapter deliberately refuses to send until a real provider configuration is added. The worker foundation increments attempts and claims eligible queued jobs transactionally; actual provider sending, webhook verification, retries, suppression handling, and replay protection remain production-gating work.
