@@ -2,6 +2,7 @@
 
 const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
+const { validCsrf } = require("../../lib/request-security");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -9,6 +10,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
   if (!sameOriginRequest(req)) return res.status(403).json({ error: "Request validation failed." });
+  if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
 
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies["__Host-ecb_session"];
