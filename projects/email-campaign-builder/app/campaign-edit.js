@@ -1,6 +1,6 @@
 (() => {
 "use strict";
-const form=document.querySelector("#edit-campaign-form"),message=document.querySelector("#edit-message"),id=new URLSearchParams(window.location.search).get("id");
+const form=document.querySelector("#edit-campaign-form"),message=document.querySelector("#edit-message"),scheduleInput=document.querySelector("#scheduled-at"),id=new URLSearchParams(window.location.search).get("id");
 if(!form||!message||!/^[0-9a-f-]{36}$/i.test(id||"")){if(message)message.textContent="Invalid campaign link.";throw new Error("Invalid campaign id");}
 async function csrfToken(){const r=await fetch("../api/auth/csrf",{credentials:"same-origin"});if(!r.ok)throw new Error();const d=await r.json();if(typeof d.token!=="string")throw new Error();return d.token;}
 async function loadAudiences(selected){
@@ -19,9 +19,11 @@ async function load(){
   if(!response.ok)throw new Error();
   const c=data.campaign;
   form.elements.name.value=c.name;form.elements.subject.value=c.subject_line;form.elements.status.value=c.status;
+  if(scheduleInput){scheduleInput.disabled=c.status!=="scheduled";if(c.scheduled_at)scheduleInput.value=new Date(c.scheduled_at).toISOString().slice(0,16);}
   await loadAudiences(c.audience);
  }catch{message.textContent="Campaign could not be loaded.";}
 }
+form.elements.status.addEventListener("change",()=>{if(scheduleInput)scheduleInput.disabled=form.elements.status.value!=="scheduled";});
 form.addEventListener("submit",async event=>{
  event.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}
  const button=form.querySelector("button");button.disabled=true;
@@ -31,6 +33,11 @@ form.addEventListener("submit",async event=>{
   const d=await response.json().catch(()=>({}));
   if(!response.ok){message.textContent=d.error||"Campaign could not be updated.";return;}
   const assign=await fetch("../api/campaigns/audience?id="+encodeURIComponent(id),{method:"PATCH",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({audienceId:form.elements.audience.value})});
+  if(assign.ok){
+    const lifecycle=await fetch("../api/campaigns/schedule?id="+encodeURIComponent(id),{method:"PATCH",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({status:form.elements.status.value,scheduledAt:scheduleInput?.value?new Date(scheduleInput.value).toISOString():null})});
+    const lifecycleData=await lifecycle.json().catch(()=>({}));
+    if(!lifecycle.ok){message.textContent=lifecycleData.error||"Campaign status could not be saved.";return;}
+  }
   const a=await assign.json().catch(()=>({}));
   if(!assign.ok){message.textContent=a.error||"Audience could not be attached.";return;}
   message.textContent="Campaign and audience saved.";
