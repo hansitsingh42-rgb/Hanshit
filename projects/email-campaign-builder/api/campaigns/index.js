@@ -26,7 +26,7 @@ module.exports = async function handler(req, res) {
     if (!userId) return res.status(401).json({ error: "Authentication required." });
 
     const result = await client.query(
-      "SELECT id,name,subject_line,audience,status,created_at,updated_at FROM campaigns WHERE user_id=$1 ORDER BY updated_at DESC LIMIT 100",
+      "SELECT id,name,subject_line,audience,status,scheduled_at,created_at,updated_at FROM campaigns WHERE user_id=$1 ORDER BY updated_at DESC LIMIT 100",
       [userId]
     );
     res.setHeader("Cache-Control", "no-store");
