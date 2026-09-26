@@ -1,0 +1,47 @@
+name: Student Resource Hub CI
+
+on:
+  push:
+    paths:
+      - "student-resource-hub/**"
+      - ".github/workflows/student-resource-hub-ci.yml"
+  pull_request:
+    paths:
+      - "student-resource-hub/**"
+      - ".github/workflows/student-resource-hub-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: student-resource-hub
+    env:
+      DATABASE_URL: "postgresql://ci:ci@localhost:5432/student_resource_hub"
+      AUTH_SECRET: "ci-only-auth-secret-with-more-than-32-characters"
+      ADMIN_EMAIL: "ci@example.com"
+      ADMIN_PASSWORD: "ci-only-password-12345"
+      AUTH_TRUST_HOST: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: student-resource-hub/package.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Production build
+        run: npm run build
