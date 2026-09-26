@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="Manage audiences and segmentation for email campaigns"><link rel="stylesheet" href="../styles.css"><title>Audience — Email Campaign Builder</title></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="Manage audiences, contacts and segmentation for email campaigns"><link rel="stylesheet" href="../styles.css"><title>Audience — Email Campaign Builder</title></head>
 <body><main class="section"><div class="container"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Email Builder</span></a>
-<div class="page-head"><div><p class="eyebrow">Step 3 of campaign setup</p><h1 class="page-title">Audience &amp; segmentation</h1><p class="hero-text">Define who should receive a campaign using clear audience groups and safe segmentation rules.</p></div><a class="button" href="./campaigns.html">Back to campaigns</a></div>
+<div class="page-head"><div><p class="eyebrow">Audience management</p><h1 class="page-title">Audience &amp; contacts</h1><p class="hero-text">Create safe audience segments and manage opted-in contacts without exposing data between accounts.</p></div><a class="button" href="./campaigns.html">Back to campaigns</a></div>
 <div class="audience-grid">
 <section class="form-shell"><h2>Create a segment</h2><form id="segment-form" class="campaign-form" novalidate>
 <label for="segment-name">Segment name</label><input id="segment-name" maxlength="80" required placeholder="e.g. Active trial users">
@@ -9,5 +9,14 @@
 <label for="condition">Condition</label><select id="condition" required><option value="">Choose a condition</option><option>Opened a campaign</option><option>Clicked a campaign link</option><option>Joined in the last 30 days</option><option>Has not engaged recently</option></select>
 <p id="segment-message" class="form-message" role="status" aria-live="polite"></p><button class="button" type="submit">Add segment</button>
 </form></section>
-<section class="form-shell"><h2>Available audiences</h2><div id="segments" class="segment-list"><article class="segment-item"><div><strong>Newsletter subscribers</strong><p>General opted-in newsletter audience</p></div><span class="status">Active</span></article><article class="segment-item"><div><strong>Trial users</strong><p>Users currently in a product trial</p></div><span class="status">Active</span></article></div></section>
-</div></div></main><script src="./audience.js" defer></script></body></html>
+<section class="form-shell"><h2>Add contact</h2><form id="contact-form" class="campaign-form" novalidate>
+<label for="contact-segment">Segment</label><select id="contact-segment" required><option value="">Choose a saved segment</option></select>
+<label for="contact-name">Name</label><input id="contact-name" maxlength="120" placeholder="Optional">
+<label for="contact-email">Email</label><input id="contact-email" type="email" maxlength="320" required autocomplete="email" placeholder="name@example.com">
+<label class="checkbox-row"><input id="contact-consent" type="checkbox" required> I confirm this contact has given permission to receive email.</label>
+<p id="contact-message" class="form-message" role="status" aria-live="polite"></p><button class="button" type="submit">Add contact</button>
+</form></section>
+</div>
+<section class="form-shell" style="margin-top:1.5rem"><div class="page-head"><div><h2>Saved contacts</h2><p class="hero-text">Only contacts belonging to your authenticated account are shown.</p></div><label for="contact-filter">Segment<select id="contact-filter"><option value="">All contacts</option></select></label></div>
+<div id="contacts" class="segment-list"></div><p id="contacts-message" class="form-message" role="status" aria-live="polite"></p></section>
+</div></main><script src="./audience.js" defer></script></body></html>
