@@ -15,8 +15,9 @@ The product purpose stays unchanged: build, automate, and understand email marke
 5. Audience and segmentation
 6. Automation workflows
 7. Campaign analytics
-8. Production email-provider integration
-9. Security hardening and deployment verification
+8. Audience contacts and consent controls
+9. Production email-provider integration
+10. Security hardening and deployment verification
 
 ## Stage 1
 
@@ -37,3 +38,7 @@ The current project is a frontend prototype with a documented production securit
 ## Stage 10
 
 A minimal server-side boundary has been added with a non-sensitive health endpoint and documented authenticated API contracts. No unauthenticated campaign API or provider credential handling has been added.
+
+## Stage 22
+
+Audience contacts are now persisted server-side with per-user ownership, normalized email addresses, consent timestamps, subscription states, segment membership, CSRF-protected writes, and authenticated contact listing. Unsubscribe status can be applied from the audience UI. Bulk import and provider delivery remain separate production-hardening steps.
