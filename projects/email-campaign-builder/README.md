@@ -59,3 +59,7 @@ Provider webhook security foundation is now present. Verified events require a s
 ## Stage 26
 
 Delivery processing now records claim timestamps and has a controlled retry/backoff and recovery boundary. Retries are capped at 10 attempts with increasing delays; exhausted jobs become failed instead of looping indefinitely. The provider remains intentionally unconfigured, so this stage does not send email.
+
+## Stage 27
+
+Delivery claiming is now bounded to 25 jobs per claim and uses PostgreSQL row locking with `SKIP LOCKED` to reduce concurrent-worker collisions. Stale processing jobs have a 15-minute recovery boundary and are re-queued with a controlled delay until the attempt cap is reached; exhausted jobs become failed. This is worker infrastructure only and does not send email by itself.
