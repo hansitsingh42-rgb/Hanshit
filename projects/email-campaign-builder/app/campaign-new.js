@@ -14,10 +14,13 @@ form.addEventListener("submit", async (event) => {
   const button = form.querySelector("button[type=submit]");
   button.disabled = true;
   try {
+    const csrfResponse = await fetch("../api/auth/csrf", { credentials: "same-origin" });
+    const csrfData = await csrfResponse.json().catch(() => ({}));
+    if (!csrfResponse.ok || typeof csrfData.token !== "string") throw new Error();
     const response = await fetch("../api/campaigns/create", {
       method: "POST",
       credentials: "same-origin",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfData.token },
       body: JSON.stringify({
         name: form.elements.name.value,
         subjectLine: form.elements.subject.value,
