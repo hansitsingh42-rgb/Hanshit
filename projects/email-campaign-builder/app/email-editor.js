@@ -12,6 +12,14 @@ const update=()=>{
   previewCta.textContent=cta.value.trim()||"Learn more";
 };
 
+async function csrfToken(){
+  const response=await fetch("../api/auth/csrf",{credentials:"same-origin"});
+  if(!response.ok)throw new Error();
+  const data=await response.json();
+  if(typeof data.token!=="string")throw new Error();
+  return data.token;
+}
+
 async function load(){
   if(!validId){message.textContent="Open the email editor from a campaign.";return;}
   try{
@@ -38,9 +46,10 @@ form.addEventListener("submit",async event=>{
   if(!validId){message.textContent="A valid campaign is required.";return;}
   const button=form.querySelector("button[type=submit]");button.disabled=true;
   try{
+    const token=await csrfToken();
     const response=await fetch("../api/campaigns/content?id="+encodeURIComponent(id),{
       method:"PATCH",credentials:"same-origin",
-      headers:{"Content-Type":"application/json"},
+      headers:{"Content-Type":"application/json","X-CSRF-Token":token},
       body:JSON.stringify({template:template.value,headline:headline.value,body:body.value,cta:cta.value})
     });
     const data=await response.json().catch(()=>({}));
