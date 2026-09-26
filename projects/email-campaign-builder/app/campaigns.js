@@ -23,7 +23,11 @@ function render(campaigns) {
     edit.className = "button button-secondary button-small";
     edit.href = "./campaign-edit.html?id=" + encodeURIComponent(campaign.id);
     edit.textContent = "Edit";
-    actions.append(edit);
+    const view = document.createElement("a");
+    view.className = "button button-small";
+    view.href = "./campaign-detail.html?id=" + encodeURIComponent(campaign.id);
+    view.textContent = "View";
+    actions.append(view, edit);
     article.append(info, actions);
     list.append(article);
   }
