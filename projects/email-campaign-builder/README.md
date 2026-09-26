@@ -55,3 +55,7 @@ A server-only provider adapter boundary and atomic delivery-job claiming foundat
 ## Stage 25
 
 Provider webhook security foundation is now present. Verified events require a server-side webhook secret, event identifier, HMAC verification, and replay protection. Delivery outcomes are applied transactionally; bounce events suppress contacts and unsubscribe events mark contacts unsubscribed. Invalid or replayed events do not mutate delivery state. A real provider must follow this adapter contract or use its own raw-body signature verifier before production use.
+
+## Stage 26
+
+Delivery processing now records claim timestamps and has a controlled retry/backoff and recovery boundary. Retries are capped at 10 attempts with increasing delays; exhausted jobs become failed instead of looping indefinitely. The provider remains intentionally unconfigured, so this stage does not send email.
