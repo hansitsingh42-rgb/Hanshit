@@ -5,7 +5,7 @@ services:
     plan: free
     rootDir: student-resource-hub
     buildCommand: npm install && npm run build
-    startCommand: npm run db:deploy && npm run db:seed && npm start
+    startCommand: npm run db:deploy && npm start
     healthCheckPath: /api/health
     autoDeployTrigger: commit
     envVars:
