@@ -13,7 +13,7 @@ module.exports=async function handler(req,res){
   const userId=session.rows[0]?.user_id;if(!userId)return res.status(401).json({error:"Authentication required."});
   await client.query("BEGIN");
   const result=await client.query(
-   "UPDATE delivery_jobs d SET status='processing',attempts=d.attempts+1,updated_at=NOW() FROM campaigns c WHERE d.campaign_id=c.id AND c.user_id=$1 AND d.status='queued' AND d.available_at<=NOW() AND d.attempts<10 RETURNING d.id",
+   "UPDATE delivery_jobs d SET status='processing',attempts=d.attempts+1,processing_started_at=NOW(),updated_at=NOW() FROM campaigns c WHERE d.campaign_id=c.id AND c.user_id=$1 AND d.status='queued' AND d.available_at<=NOW() AND d.attempts<10 RETURNING d.id",
    [userId]
   );
   await client.query("COMMIT");
