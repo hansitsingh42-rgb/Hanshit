@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
     if (!session.rows[0]) return res.status(401).json({ error: "Authentication required." });
 
     const result = await client.query(
-      "UPDATE campaigns SET name=$1,subject_line=$2,audience=$3,updated_at=NOW() WHERE id=$4 AND user_id=$5 RETURNING id,name,subject_line,audience,status,created_at,updated_at",
+      "UPDATE campaigns SET name=$1,subject_line=$2,audience=$3,updated_at=NOW() WHERE id=$4 AND user_id=$5 RETURNING id,name,subject_line,audience,status,scheduled_at,created_at,updated_at",
       [name, subjectLine, audience, id, session.rows[0].user_id]
     );
     if (!result.rows[0]) return res.status(404).json({ error: "Campaign not found." });
