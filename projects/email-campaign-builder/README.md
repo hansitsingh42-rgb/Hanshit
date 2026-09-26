@@ -51,3 +51,7 @@ A server-side delivery queue foundation is now present. Scheduled campaigns can 
 ## Stage 24
 
 A server-only provider adapter boundary and atomic delivery-job claiming foundation are now present. Provider credentials remain outside browser code, and the current adapter deliberately refuses to send until a real provider configuration is added. The worker foundation increments attempts and claims eligible queued jobs transactionally; actual provider sending, webhook verification, retries, suppression handling, and replay protection remain production-gating work.
+
+## Stage 25
+
+Provider webhook security foundation is now present. Verified events require a server-side webhook secret, event identifier, HMAC verification, and replay protection. Delivery outcomes are applied transactionally; bounce events suppress contacts and unsubscribe events mark contacts unsubscribed. Invalid or replayed events do not mutate delivery state. A real provider must follow this adapter contract or use its own raw-body signature verifier before production use.
