@@ -83,12 +83,19 @@ function clearSessionCookie() {
   return `__Host-ecb_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`;
 }
 
+function sameOriginRequest(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  const host = req.headers.host;
+  try { return new URL(origin).host === host; } catch { return false; }
+}
+
 async function getClient() {
   requireDatabase();
   return pool.connect();
 }
 
 module.exports = {
-  pool, normalizeEmail, validEmail, hashToken, hashPassword, verifyPassword,
+  pool, normalizeEmail, validEmail, hashToken, hashPassword, verifyPassword, sameOriginRequest,
   randomToken, parseCookies, sessionCookie, clearSessionCookie, getClient, SESSION_DAYS
 };
