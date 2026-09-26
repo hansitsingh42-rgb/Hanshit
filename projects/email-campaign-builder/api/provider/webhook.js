@@ -28,10 +28,10 @@ module.exports=async function handler(req,res){
   }else if(type==="failed"){
    result=await client.query("UPDATE delivery_jobs SET status=CASE WHEN attempts>=10 THEN 'failed' ELSE 'queued' END,available_at=CASE WHEN attempts>=10 THEN available_at ELSE NOW()+INTERVAL '5 minutes' END,last_error_code='PROVIDER_DELIVERY_FAILED',updated_at=NOW() WHERE id=$1 AND status='processing' RETURNING id",[jobId]);
   }else{
-   result=await client.query("UPDATE delivery_jobs SET status='failed',last_error_code='RECIPIENT_SUPPRESSION',updated_at=NOW() WHERE id=$1 AND status='processing' RETURNING contact_id",[jobId]);
+   result=await client.query("UPDATE delivery_jobs SET status='failed',last_error_code=$2,updated_at=NOW() WHERE id=$1 AND status='processing' RETURNING contact_id",[jobId,type==="bounced"?"RECIPIENT_BOUNCED":"RECIPIENT_UNSUBSCRIBED"]);
    if(result.rowCount===1){
     const contactId=result.rows[0].contact_id;
-    await client.query("UPDATE audience_contacts SET status='suppressed',updated_at=NOW() WHERE id=$1",[contactId]);
+    await client.query("UPDATE audience_contacts SET status=$2,updated_at=NOW() WHERE id=$1",[contactId,type==="bounced"?"suppressed":"unsubscribed"]);
    }
   }
   if(result.rowCount!==1){await client.query("ROLLBACK");return res.status(404).json({error:"Delivery job not found."});}
