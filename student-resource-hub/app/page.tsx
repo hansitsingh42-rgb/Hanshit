@@ -74,8 +74,12 @@ export default function Home() {
       : resources.filter((resource) => resource.chapter.subject.name === subject);
 
     return [
-      "All",
-      ...Array.from(new Map(scoped.map((resource) => [resource.chapter.id, resource.chapter.name])).values()).sort(),
+      { id: "All", name: "All" },
+      ...Array.from(
+        new Map(scoped.map((resource) => [resource.chapter.id, resource.chapter.name])).entries(),
+      )
+        .map(([id, name]) => ({ id, name }))
+        .sort((a, b) => a.name.localeCompare(b.name)),
     ];
   }, [resources, subject]);
 
@@ -86,7 +90,7 @@ export default function Home() {
       const subjectName = resource.chapter.subject.name;
       const chapterName = resource.chapter.name;
       const matchesSubject = subject === "All" || subjectName === subject;
-      const matchesChapter = chapter === "All" || chapterName === chapter;
+      const matchesChapter = chapter === "All" || resource.chapter.id === chapter;
       const matchesType = type === "All" || resource.type === type;
       const searchable = `${resource.title} ${subjectName} ${chapterName} ${resource.description}`.toLowerCase();
       return matchesSubject && matchesChapter && matchesType && (!term || searchable.includes(term));
@@ -167,7 +171,7 @@ export default function Home() {
           <label>
             Chapter
             <select value={chapter} onChange={(event) => setChapter(event.target.value)}>
-              {chapters.map((item) => <option key={item} value={item}>{item}</option>)}
+              {chapters.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
             </select>
           </label>
 
