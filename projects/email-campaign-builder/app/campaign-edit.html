@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="Edit an email campaign"><link rel="stylesheet" href="../styles.css"><title>Edit Campaign — Email Campaign Builder</title></head>
+<body><main class="section"><div class="container narrow">
+<a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Email Builder</span></a>
+<div class="form-shell"><p class="eyebrow">Campaign settings</p><h1 class="page-title">Edit campaign</h1>
+<form id="edit-campaign-form" class="campaign-form" novalidate>
+<label for="name">Campaign name</label><input id="name" name="name" type="text" maxlength="120" required>
+<label for="subject">Email subject</label><input id="subject" name="subject" type="text" maxlength="180" required>
+<label for="audience">Audience</label><input id="audience" name="audience" type="text" maxlength="120" required>
+<label for="status">Status</label><select id="status" name="status"><option value="draft">Draft</option><option value="scheduled">Scheduled</option></select>
+<p id="edit-message" class="form-message" role="status" aria-live="polite"></p>
+<div class="form-actions"><a class="button button-secondary" href="./campaigns.html">Cancel</a><button class="button" type="submit">Save changes</button></div>
+</form></div></div></main><script src="./campaign-edit.js" defer></script></body></html>
