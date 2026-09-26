@@ -21,7 +21,7 @@ function render(campaigns) {
     const actions = document.createElement("div");
     const edit = document.createElement("a");
     edit.className = "button button-secondary button-small";
-    edit.href = "./campaign-new.html";
+    edit.href = "./campaign-edit.html?id=" + encodeURIComponent(campaign.id);
     edit.textContent = "Edit";
     actions.append(edit);
     article.append(info, actions);
