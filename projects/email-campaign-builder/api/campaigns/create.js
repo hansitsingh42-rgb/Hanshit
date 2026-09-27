@@ -4,6 +4,7 @@ const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
 const { allow, clientKey } = require("../../lib/rate-limit");
+const { isPlainObject, boundedString } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -18,10 +19,10 @@ module.exports = async function handler(req, res) {
   const token = cookies["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
-  const data = req.body && typeof req.body === "object" ? req.body : {};
-  const name = typeof data.name === "string" ? data.name.trim().slice(0, 120) : "";
-  const subjectLine = typeof data.subjectLine === "string" ? data.subjectLine.trim().slice(0, 180) : "";
-  const audience = typeof data.audience === "string" ? data.audience.trim().slice(0, 120) : "";
+  const data = isPlainObject(req.body) ? req.body : {};
+  const name = boundedString(data.name, 120) || "";
+  const subjectLine = boundedString(data.subjectLine, 180) || "";
+  const audience = boundedString(data.audience, 120) || "";
   const status = data.status === "scheduled" ? "scheduled" : "draft";
   if (!name || !subjectLine || !audience) return res.status(400).json({ error: "Campaign fields are invalid." });
 
