@@ -17,6 +17,7 @@ The product purpose stays unchanged: **build, automate, and understand email mar
 - Server-only provider integration boundary
 - Signed provider webhook verification and replay protection
 - Security headers, CSP, CSRF, same-origin checks, ownership isolation, validation, and rate limits
+- Vercel scheduler configuration for delivery processing and stale-job recovery
 - Automated syntax/security checks through GitHub Actions
 
 ## Security status
@@ -39,6 +40,7 @@ The current provider adapter is fail-closed/non-sending until a real provider im
 - [x] Delivery queue and worker boundary
 - [x] Retry/recovery and idempotency controls
 - [x] Provider webhook security
+- [x] Protected Vercel delivery/recovery scheduler configuration
 - [x] Security tests and CI security workflow
 
 ### Remaining production gates
@@ -46,10 +48,11 @@ The current provider adapter is fail-closed/non-sending until a real provider im
 - [ ] Successful execution of the configured test suite in CI or a controlled environment
 - [ ] Genuine `package-lock.json` generated and committed
 - [ ] Shared rate limiting for multi-instance/serverless production
-- [ ] Trusted scheduler for delivery processing/recovery
 - [ ] Real provider adapter and sandbox delivery tests
 - [ ] PostgreSQL/provider integration tests
 - [ ] Final accessibility, responsive, and production error-response verification
+
+The scheduler configuration is now committed, but production still requires the deployment platform to be configured with the server-only `CRON_SECRET`.
 
 ## Local preview
 
