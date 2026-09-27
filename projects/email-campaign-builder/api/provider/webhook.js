@@ -1,4 +1,5 @@
-"use strict";
+module.exports=async function handler(req,res){
+ res.setHeader("Cache-Control","no-store");
 
 const { getClient } = require("../../lib/auth");
 const { verifyWebhook } = require("../../lib/webhook-security");
