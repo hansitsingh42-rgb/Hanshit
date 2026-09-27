@@ -26,3 +26,12 @@ This project is a security-first frontend foundation for an email campaign build
 - Validate email addresses, template content, campaign IDs, and pagination server-side.
 - Apply least-privilege database credentials and parameterized queries or ORM operations.
 - Add dependency auditing, secret scanning, and automated security checks to CI.
+
+## Provider configuration boundary
+
+- `EMAIL_PROVIDER` and `EMAIL_PROVIDER_API_KEY` are server-only environment values.
+- Provider configuration fails closed when the key is missing, too short, or accessed from browser code.
+- The frontend must never receive provider credentials.
+- A real provider adapter must support the delivery-job idempotency key and return a stable provider message ID for an accepted message.
+- Provider-specific authentication, request signing, rate limits, and response handling must be implemented inside the server adapter.
+- Do not log provider API keys, authorization headers, recipient lists, message bodies, or provider secrets.
