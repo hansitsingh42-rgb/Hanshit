@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "check": "node --check api/auth/login.js && node --check api/auth/logout.js && node --check api/auth/session.js && node --check lib/auth.js && node --check lib/email-provider.js && node --check api/delivery/prepare.js && node --check api/delivery/claim.js && node --check api/delivery/process.js && node --check api/delivery/recover.js && node --check api/delivery/index.js && node --check lib/webhook-security.js && node --check api/provider/webhook.js && node --check lib/delivery-retry.js && node --check lib/delivery-recovery.js && node --check lib/stale-job-recovery.js && node --check lib/delivery-worker.js && node --check lib/provider-http.js && node --check lib/request-security.js && node --check lib/input-validation.js",
+    "check": "node --check api/auth/login.js && node --check api/auth/logout.js && node --check api/auth/session.js && node --check lib/auth.js && node --check lib/email-provider.js && node --check api/delivery/prepare.js && node --check api/delivery/claim.js && node --check api/delivery/process.js && node --check api/delivery/recover.js && node --check api/delivery/index.js && node --check lib/webhook-security.js && node --check api/provider/webhook.js && node --check lib/delivery-retry.js && node --check lib/delivery-recovery.js && node --check lib/stale-job-recovery.js && node --check lib/delivery-worker.js && node --check lib/provider-http.js && node --check lib/request-security.js && node --check lib/input-validation.js && node --check lib/rate-limit.js",
     "test": "node test/security.test.js && node test/auth-security.test.js",
     "ci": "npm run check && npm test && npm audit --audit-level=high"
   },
