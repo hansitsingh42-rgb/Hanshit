@@ -6,6 +6,7 @@ const { isUuid, isPlainObject, boundedString } = require("../../lib/input-valida
 const { allow, clientKey } = require("../../lib/rate-limit");
 
 module.exports = async function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
   if (req.method !== "PATCH") {
     res.setHeader("Allow", "PATCH");
     return res.status(405).json({ error: "Method not allowed" });
