@@ -68,7 +68,11 @@ function parseCookies(header) {
   for (const part of String(header || "").split(";")) {
     const index = part.indexOf("=");
     if (index < 1) continue;
-    result[part.slice(0, index).trim()] = decodeURIComponent(part.slice(index + 1).trim());
+    try {
+      result[part.slice(0, index).trim()] = decodeURIComponent(part.slice(index + 1).trim());
+    } catch {
+      continue;
+    }
   }
   return result;
 }
