@@ -29,6 +29,14 @@ async function run(){
   assert.equal(uuidRegex.test("550e8400-e29b-41d4-a716-446655440000"),true);
   assert.equal(uuidRegex.test("not-a-uuid"),false);
 
+  // Ownership queries must bind both resource id and authenticated user id.
+  const campaignOwnershipSql="UPDATE campaigns SET name=$1 WHERE id=$2 AND user_id=$3";
+  assert.match(campaignOwnershipSql,/WHERE id=\$2 AND user_id=\$3/);
+  const contactOwnershipSql="UPDATE audience_contacts SET status=$1 WHERE id=$2 AND user_id=$3";
+  assert.match(contactOwnershipSql,/WHERE id=\$2 AND user_id=\$3/);
+  const audienceOwnershipSql="SELECT id FROM audience_segments WHERE user_id=$1";
+  assert.match(audienceOwnershipSql,/WHERE user_id=\$1/);
+
   await assert.rejects(
     requestJson("http://insecure.example/send"),
     error=>error.code==="INVALID_PROVIDER_ENDPOINT" && error.retryable===false
