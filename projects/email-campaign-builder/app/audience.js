@@ -59,7 +59,7 @@ form.addEventListener("submit",async event=>{
 contactForm.addEventListener("submit",async event=>{
  event.preventDefault();if(!contactForm.checkValidity()){contactMessage.textContent="Choose a segment, enter a valid email, and confirm permission.";contactForm.reportValidity();return;}
  const button=contactForm.querySelector("button");button.disabled=true;
- try{const token=await csrfToken();const response=await fetch("../api/contacts/create",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({segmentId:contactSegment.value,name:contactName.value,email:contactEmail.value})});const data=await response.json().catch(()=>({}));if(authRedirect(response))return;if(!response.ok){contactMessage.textContent=data.error||"Contact could not be saved.";return;}contactMessage.textContent="Contact added.";contactForm.reset();await loadContacts();}
+ try{const token=await csrfToken();const response=await fetch("../api/contacts/create",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({segmentId:contactSegment.value,name:contactName.value,email:contactEmail.value,consent:contactConsent.checked})});const data=await response.json().catch(()=>({}));if(authRedirect(response))return;if(!response.ok){contactMessage.textContent=data.error||"Contact could not be saved.";return;}contactMessage.textContent="Contact added.";contactForm.reset();await loadContacts();}
  catch{contactMessage.textContent="Contact service unavailable.";}
  finally{button.disabled=false;}
 });
