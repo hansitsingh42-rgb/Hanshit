@@ -16,4 +16,6 @@ async function requeueFailedJob(jobId, attempts, errorCode){
  }finally{client.release();}
 }
 
-module.exports={requeueFailedJob};
+async function failJob(jobId,errorCode){ const client=await getClient(); try{ await client.query("UPDATE delivery_jobs SET status='failed',processing_started_at=NULL,last_error_code=$2,updated_at=NOW() WHERE id=$1 AND status='processing'",[jobId,errorCode]); return {status:'failed'}; }finally{client.release();} }
+
+module.exports={requeueFailedJob,failJob};
