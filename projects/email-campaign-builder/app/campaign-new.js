@@ -20,7 +20,7 @@ form.addEventListener("submit",async event=>{
  try{
   const token=await csrfToken();
   const create=await fetch("../api/campaigns/create",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({
-   name:form.elements.name.value,subjectLine:form.elements.subject.value,audience:audience.options[audience.selectedIndex]?.text||"",status:form.elements.schedule.value==="Schedule later"?"scheduled":"draft"
+   name:form.elements.name.value,subjectLine:form.elements.subject.value,audience:audience.options[audience.selectedIndex]?.text||"",status:"draft"
   })});
   const created=await create.json().catch(()=>({}));
   if(!create.ok){message.textContent=created.error||"Campaign could not be created.";return;}
