@@ -1,6 +1,9 @@
 "use strict";
 
+const { requestJson } = require("./provider-http");
+
 const SUPPORTED_PROVIDER="configured-adapter";
+const MAX_PROVIDER_BODY=100000;
 
 class ProviderConfigurationError extends Error {
   constructor(){ super("Email provider is not configured."); this.code="PROVIDER_NOT_CONFIGURED"; }
@@ -18,13 +21,15 @@ function createIdempotencyKey(jobId){
 function requireServerConfig(){
   if(typeof window!=="undefined") throw new ProviderConfigurationError();
   const apiKey=process.env.EMAIL_PROVIDER_API_KEY;
+  const endpoint=process.env.EMAIL_PROVIDER_ENDPOINT;
   if(typeof apiKey!=="string" || apiKey.length<16) throw new ProviderConfigurationError();
-  return {apiKey};
+  if(typeof endpoint!=="string" || !/^https:\/\//i.test(endpoint)) throw new ProviderConfigurationError();
+  return {apiKey,endpoint};
 }
 
 function getProvider(){
   if(process.env.EMAIL_PROVIDER!==SUPPORTED_PROVIDER) throw new ProviderConfigurationError();
-  const {apiKey}=requireServerConfig();
+  const {apiKey,endpoint}=requireServerConfig();
 
   return {
     name:SUPPORTED_PROVIDER,
@@ -33,8 +38,34 @@ function getProvider(){
       if(!message.idempotencyKey) throw new TypeError("Missing provider idempotency key.");
       if(!message.to || !message.subject) throw new TypeError("Incomplete provider message.");
 
-      void apiKey;
-      throw new ProviderConfigurationError();
+      const payload=JSON.stringify({
+        to:message.to,
+        subject:message.subject,
+        body:message.body||"",
+        idempotencyKey:message.idempotencyKey
+      });
+      if(Buffer.byteLength(payload,"utf8")>MAX_PROVIDER_BODY) throw new ProviderResponseError();
+
+      const result=await requestJson(endpoint,{
+        method:"POST",
+        timeoutMs:8000,
+        headers:{
+          "Authorization":`Bearer ${apiKey}`,
+          "Content-Type":"application/json",
+          "Accept":"application/json",
+          "Idempotency-Key":message.idempotencyKey
+        },
+        body:payload
+      });
+
+      if(!result.data || typeof result.data!=="object"){
+        throw new ProviderResponseError();
+      }
+
+      return {
+        accepted:result.data.accepted===true,
+        providerMessageId:typeof result.data.messageId==="string" ? result.data.messageId : null
+      };
     }
   };
 }
