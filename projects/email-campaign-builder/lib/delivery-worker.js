@@ -2,6 +2,7 @@
 
 const { createIdempotencyKey, getProvider, validateSendResult } = require("./email-provider");
 const { getClient } = require("./auth");
+const { requeueFailedJob } = require("./delivery-recovery");
 
 async function processClaimedJob(jobId){
   if(!/^[0-9a-f-]{36}$/i.test(jobId)) throw new TypeError("Invalid delivery job id.");
@@ -60,6 +61,9 @@ async function processClaimedJob(jobId){
     return {status:result.accepted ? "sent" : "failed",providerMessageId:result.providerMessageId};
   }catch(error){
     try{await client.query("ROLLBACK");}catch{}
+    if(error?.retryable && error?.code){
+      try{return await requeueFailedJob(jobId, row?.attempts || 1, error.code);}catch{}
+    }
     throw error;
   }finally{
     client.release();
