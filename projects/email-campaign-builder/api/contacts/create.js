@@ -3,6 +3,7 @@
 const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
