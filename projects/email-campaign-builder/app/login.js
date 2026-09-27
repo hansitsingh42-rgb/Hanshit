@@ -29,7 +29,7 @@ form?.addEventListener("submit", async (event) => {
 
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
-      message.textContent = data.error || "Sign-in failed. Please try again.";
+      message.textContent = typeof data.error === "string" ? data.error : "Sign-in failed. Please try again.";
       return;
     }
 
