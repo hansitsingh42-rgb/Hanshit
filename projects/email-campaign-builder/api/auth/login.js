@@ -28,7 +28,10 @@ module.exports = async function handler(req, res) {
   let client;
   try {
     client = await getClient();
-    const keyHash = hashToken(email + "|" + (req.headers["x-forwarded-for"] || "unknown"));
+    const trustProxy = process.env.TRUST_PROXY === "true";
+    const forwarded = trustProxy ? String(req.headers["x-forwarded-for"] || "").split(",")[0].trim() : "";
+    const clientAddress = forwarded || String(req.socket?.remoteAddress || "unknown");
+    const keyHash = hashToken(email + "|" + clientAddress);
     const attempt = await client.query("SELECT attempts, window_started_at, blocked_until FROM login_attempts WHERE key_hash=$1", [keyHash]);
     const row = attempt.rows[0];
     const now = Date.now();
