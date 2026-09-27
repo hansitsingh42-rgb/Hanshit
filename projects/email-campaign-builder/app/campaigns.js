@@ -2,10 +2,13 @@
 "use strict";
 const list = document.querySelector("#campaign-list");
 const message = document.querySelector("#campaign-message");
+const UUID_PATTERN=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const isValidUuid=value=>typeof value==="string"&&UUID_PATTERN.test(value);
 
 function render(campaigns) {
   list.replaceChildren();
   for (const campaign of campaigns) {
+    if (!campaign || !isValidUuid(campaign.id) || typeof campaign.name !== "string" || typeof campaign.subject_line !== "string" || typeof campaign.audience !== "string") continue;
     const article = document.createElement("article");
     article.className = "card campaign-card";
     const info = document.createElement("div");
