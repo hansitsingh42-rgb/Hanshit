@@ -62,7 +62,11 @@ async function processClaimedJob(jobId){
   }catch(error){
     try{await client.query("ROLLBACK");}catch{}
     if(error?.retryable && error?.code){
-      try{return await requeueFailedJob(jobId, row?.attempts || 1, error.code);}catch{}
+      try{
+        return await requeueFailedJob(jobId, row?.attempts || 1, error.code);
+      }catch{
+        throw error;
+      }
     }
     throw error;
   }finally{
