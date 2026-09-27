@@ -1,10 +1,11 @@
 (() => {
 "use strict";
+const UUID_PATTERN=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;const isValidUuid=value=>typeof value==="string"&&UUID_PATTERN.test(value);
 const form=document.querySelector("#email-editor-form"),template=document.querySelector("#template"),headline=document.querySelector("#headline"),body=document.querySelector("#body"),cta=document.querySelector("#cta"),previewHeadline=document.querySelector("#preview-headline"),previewBody=document.querySelector("#preview-body"),previewCta=document.querySelector("#preview-cta"),message=document.querySelector("#editor-message");
 if(!form||!template||!headline||!body||!cta||!previewHeadline||!previewBody||!previewCta||!message)return;
 
 const id=new URLSearchParams(window.location.search).get("id");
-const validId=/^[0-9a-f-]{36}$/i.test(id||"");
+const validId=isValidUuid(id);
 
 const update=()=>{
   previewHeadline.textContent=headline.value.trim()||"Your headline appears here";
