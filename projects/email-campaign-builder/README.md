@@ -75,3 +75,7 @@ Provider configuration is now explicitly server-only and fail-closed. The adapte
 ## Stage 30
 
 The provider adapter now has a dedicated HTTPS request boundary with bounded timeouts, redirect rejection, controlled JSON parsing, and classification of retryable HTTP/network failures. Provider credentials remain server-only and are sent only through the authorization header. The adapter sends the delivery-job idempotency key through both the provider payload and the Idempotency-Key header. No provider-specific endpoint is enabled by default.
+
+## Stage 31
+
+Retryable provider failures are now connected to the delivery recovery boundary. Timeouts, network failures, HTTP 408/425/429, and 5xx responses can be classified as retryable and routed back to the existing bounded backoff system. The retry cap remains enforced by the delivery-retry module, while non-retryable provider configuration/response errors are not silently retried.
