@@ -1,12 +1,11 @@
 "use strict";
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
-const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-
+const { isUuid } = require("../../lib/input-validation");
 module.exports=async function handler(req,res){
  if(req.method!=="GET"){res.setHeader("Allow","GET");return res.status(405).json({error:"Method not allowed"});}
  const campaignId=typeof req.query?.campaignId==="string"?req.query.campaignId.trim():"";
- if(!uuid.test(campaignId))return res.status(400).json({error:"Campaign id is invalid."});
+ if(!isUuid(campaignId))return res.status(400).json({error:"Campaign id is invalid."});
  const token=parseCookies(req.headers.cookie)["__Host-ecb_session"];if(!token)return res.status(401).json({error:"Authentication required."});
  let client;
  try{
