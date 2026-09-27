@@ -1,5 +1,7 @@
 "use strict";
 
+const MAX_RESPONSE_BYTES=100000;
+
 class ProviderHttpError extends Error {
   constructor(message,code="PROVIDER_HTTP_ERROR",retryable=false){
     super(message);
@@ -27,6 +29,9 @@ async function requestJson(url,options={}){
     });
 
     const text=await response.text();
+    if(Buffer.byteLength(text,"utf8")>MAX_RESPONSE_BYTES){
+      throw new ProviderHttpError("Provider response is too large.","PROVIDER_RESPONSE_TOO_LARGE",false);
+    }
     let data=null;
     if(text){
       try{data=JSON.parse(text);}catch{throw new ProviderHttpError("Invalid provider response.","INVALID_PROVIDER_RESPONSE",false);}
