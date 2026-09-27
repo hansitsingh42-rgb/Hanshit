@@ -59,7 +59,7 @@ async function run(){
     error=>error.code==="INVALID_PROVIDER_ENDPOINT" && error.retryable===false
   );
 
-  assert.match(integrityMigration,/campaigns_status_chk/);
+  assert.match(integrityMigration,/campaigns_status_chk/);\n  assert.match(integrityMigration,/automation_workflows_campaign_user_uq/);
   assert.match(integrityMigration,/CHECK \(status IN \('draft','scheduled','cancelled'\)\)/);
   assert.match(integrityMigration,/login_attempts_nonnegative_chk/);
   assert.match(integrityMigration,/sessions_expiry_after_creation_chk/);
