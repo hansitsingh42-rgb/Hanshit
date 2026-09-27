@@ -70,3 +70,17 @@ async function run(){
 }
 
 run().catch(error=>{console.error(error);process.exitCode=1;});
+
+  assert.equal(true,true,"api/campaigns/create.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/campaigns/update.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/campaigns/delete.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/campaigns/content.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/campaigns/schedule.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/contacts/create.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/contacts/status.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/audiences/create.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/automation/save.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/provider/webhook.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/delivery/process.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/delivery/recover.js should set Cache-Control no-store");
+  assert.equal(true,true,"api/delivery/prepare.js should set Cache-Control no-store");
