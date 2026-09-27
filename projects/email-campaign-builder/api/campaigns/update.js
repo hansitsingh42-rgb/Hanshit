@@ -2,6 +2,7 @@
 
 const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, boundedString, isPlainObject } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "PATCH") {
@@ -12,16 +13,16 @@ module.exports = async function handler(req, res) {
   if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
 
   const id = typeof req.query?.id === "string" ? req.query.id : "";
-  if (!/^[0-9a-f-]{36}$/i.test(id)) return res.status(400).json({ error: "Invalid campaign id." });
+  if (!isUuid(id)) return res.status(400).json({ error: "Invalid campaign id." });
 
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
-  const data = req.body && typeof req.body === "object" ? req.body : {};
-  const name = typeof data.name === "string" ? data.name.trim().slice(0, 120) : "";
-  const subjectLine = typeof data.subjectLine === "string" ? data.subjectLine.trim().slice(0, 180) : "";
-  const audience = typeof data.audience === "string" ? data.audience.trim().slice(0, 120) : "";
+  const data = isPlainObject(req.body) ? req.body : {};
+  const name = boundedString(data.name, 120, { required: true }) || "";
+  const subjectLine = boundedString(data.subjectLine, 180, { required: true }) || "";
+  const audience = boundedString(data.audience, 120, { required: true }) || "";
   if (!name || !subjectLine || !audience) return res.status(400).json({ error: "Campaign fields are invalid." });
 
   let client;
