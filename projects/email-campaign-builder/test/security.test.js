@@ -49,9 +49,9 @@ async function run(){
   assert.match(audienceOwnershipSql,/WHERE user_id=\$1/);
 
   const rateKey="test-rate-limit";
-  assert.equal(allow(rateKey,2,60_000),true);
-  assert.equal(allow(rateKey,2,60_000),true);
-  assert.equal(allow(rateKey,2,60_000),false);
+  assert.equal(allow(rateKey,2,60_000),true,"rate limit first request should pass");
+  assert.equal(allow(rateKey,2,60_000),true,"rate limit second request should pass");
+  assert.equal(allow(rateKey,2,60_000),false,"rate limit third request should block");
 
   await assert.rejects(
     requestJson("http://insecure.example/send"),
