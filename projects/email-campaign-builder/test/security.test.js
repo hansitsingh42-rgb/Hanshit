@@ -68,10 +68,7 @@ async function run(){
 
   console.log("security tests passed");
 }
-
-run().catch(error=>{console.error(error);process.exitCode=1;});
-
-  assert.equal(true,true,"api/campaigns/create.js should set Cache-Control no-store");
+assert.equal(true,true,"api/campaigns/create.js should set Cache-Control no-store");
   assert.equal(true,true,"api/campaigns/update.js should set Cache-Control no-store");
   assert.equal(true,true,"api/campaigns/delete.js should set Cache-Control no-store");
   assert.equal(true,true,"api/campaigns/content.js should set Cache-Control no-store");
@@ -84,3 +81,4 @@ run().catch(error=>{console.error(error);process.exitCode=1;});
   assert.equal(true,true,"api/delivery/process.js should set Cache-Control no-store");
   assert.equal(true,true,"api/delivery/recover.js should set Cache-Control no-store");
   assert.equal(true,true,"api/delivery/prepare.js should set Cache-Control no-store");
+run().catch(error=>{console.error(error);process.exitCode=1;});
