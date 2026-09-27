@@ -33,3 +33,7 @@ CREATE INDEX IF NOT EXISTS campaigns_user_status_idx
 
 CREATE INDEX IF NOT EXISTS audience_segment_contacts_segment_idx
   ON audience_segment_contacts(segment_id, contact_id);
+
+-- Stage 68: enforce one automation workflow per campaign/user.
+CREATE UNIQUE INDEX IF NOT EXISTS automation_workflows_campaign_user_uq
+  ON automation_workflows(campaign_id, user_id);
