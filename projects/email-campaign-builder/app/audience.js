@@ -1,5 +1,9 @@
 (() => {
 "use strict";
+const UUID_PATTERN=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const isValidUuid=value=>typeof value==="string"&&UUID_PATTERN.test(value);
+const isValidSegment=item=>item&&isValidUuid(item.id)&&typeof item.name==="string"&&typeof item.source==="string"&&typeof item.condition==="string";
+const isValidContact=item=>item&&isValidUuid(item.id)&&typeof item.email==="string"&&typeof item.status==="string"&&(item.name===null||typeof item.name==="string");
 const form=document.querySelector("#segment-form"),name=document.querySelector("#segment-name"),source=document.querySelector("#source"),condition=document.querySelector("#condition"),message=document.querySelector("#segment-message"),list=document.querySelector("#segments");
 const contactForm=document.querySelector("#contact-form"),contactSegment=document.querySelector("#contact-segment"),contactName=document.querySelector("#contact-name"),contactEmail=document.querySelector("#contact-email"),contactConsent=document.querySelector("#contact-consent"),contactMessage=document.querySelector("#contact-message"),contactFilter=document.querySelector("#contact-filter"),contacts=document.querySelector("#contacts"),contactsMessage=document.querySelector("#contacts-message");
 let segments=[];
@@ -14,6 +18,7 @@ function renderSegments(items){
  const empty=document.createElement("option");empty.value="";empty.textContent="Choose a saved segment";contactSegment.append(empty);
  const all=document.createElement("option");all.value="";all.textContent="All contacts";contactFilter.append(all);
  for(const item of items){
+  if(!isValidSegment(item))continue;
   const article=document.createElement("article");article.className="segment-item";
   const info=document.createElement("div"),title=document.createElement("strong"),detail=document.createElement("p"),status=document.createElement("span");
   title.textContent=item.name;detail.textContent=item.source+" · "+item.condition;status.className="status";status.textContent="Active";info.append(title,detail);article.append(info,status);list.append(article);
@@ -29,6 +34,7 @@ async function loadSegments(){
 function renderContacts(items){
  contacts.replaceChildren();
  for(const item of items){
+  if(!isValidContact(item))continue;
   const article=document.createElement("article");article.className="segment-item";
   const info=document.createElement("div"),title=document.createElement("strong"),detail=document.createElement("p"),status=document.createElement("span");
   title.textContent=item.email;detail.textContent=(item.name||"No name")+" · consent recorded";status.className="status";status.textContent=item.status;
