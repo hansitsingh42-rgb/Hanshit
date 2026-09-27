@@ -7,7 +7,9 @@ module.exports = async function handler(req, res) {
     res.setHeader("Allow", "GET");
     return res.status(405).json({ error: "Method not allowed" });
   }
-  const token = parseCookies(req.headers.cookie).__Host_ecb_session || parseCookies(req.headers.cookie)["__Host-ecb_session"];
+  res.setHeader("Cache-Control", "no-store");
+  const cookies = parseCookies(req.headers.cookie);
+  const token = cookies["__Host-ecb_session"];
   if (!token) return res.status(401).json({ authenticated: false });
 
   let client;
@@ -18,7 +20,6 @@ module.exports = async function handler(req, res) {
       [hashToken(token)]
     );
     if (!result.rows[0]) return res.status(401).json({ authenticated: false });
-    res.setHeader("Cache-Control", "no-store");
     return res.status(200).json({ authenticated: true, user: { id: result.rows[0].id, email: result.rows[0].email } });
   } catch {
     return res.status(503).json({ error: "Authentication service unavailable." });
