@@ -1,6 +1,3 @@
-module.exports=async function handler(req,res){
-  res.setHeader("Cache-Control","no-store");
-
 const crypto=require("node:crypto");
 const { recoverStaleJobs }=require("../../lib/stale-job-recovery");
 
