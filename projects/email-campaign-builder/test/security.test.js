@@ -5,6 +5,7 @@ const crypto=require("node:crypto");
 const {canonicalize,verifyWebhook}=require("../lib/webhook-security");
 const {nextRetryDelayMinutes,retryable,MAX_ATTEMPTS}=require("../lib/delivery-retry");
 const {requestJson}=require("../lib/provider-http");
+const {allow}=require("../lib/rate-limit");
 
 async function run(){
   assert.equal(canonicalize({b:2,a:1}),"{"a":1,"b":2}");
@@ -36,6 +37,11 @@ async function run(){
   assert.match(contactOwnershipSql,/WHERE id=\$2 AND user_id=\$3/);
   const audienceOwnershipSql="SELECT id FROM audience_segments WHERE user_id=$1";
   assert.match(audienceOwnershipSql,/WHERE user_id=\$1/);
+
+  const rateKey="test-rate-limit";
+  assert.equal(allow(rateKey,2,60_000),true);
+  assert.equal(allow(rateKey,2,60_000),true);
+  assert.equal(allow(rateKey,2,60_000),false);
 
   await assert.rejects(
     requestJson("http://insecure.example/send"),
