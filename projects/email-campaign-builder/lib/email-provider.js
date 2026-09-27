@@ -1,7 +1,5 @@
 "use strict";
 
-const crypto = require("node:crypto");
-
 class ProviderConfigurationError extends Error {
   constructor(){
     super("Email provider is not configured.");
