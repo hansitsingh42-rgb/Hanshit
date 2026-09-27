@@ -83,3 +83,7 @@ Retryable provider failures are now connected to the delivery recovery boundary.
 ## Stage 34
 
 Background delivery is now structured around protected worker endpoints. Delivery processing claims bounded batches and stale-job recovery has its own authenticated endpoint. The deployment configuration should invoke these endpoints from a trusted scheduler; the endpoints fail closed without the server-side worker secret. No client-side scheduling or provider credential exposure is used.
+
+## Stage 39 CI dependency note
+
+The project currently declares `pg` in `package.json` but does not commit a generated npm lockfile. CI therefore uses `npm install --ignore-scripts` rather than a fabricated or incomplete lockfile. Before production release, generate and commit a real lockfile with the project's Node/npm toolchain so dependency resolution is reproducible.
