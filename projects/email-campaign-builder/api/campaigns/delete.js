@@ -2,6 +2,7 @@
 
 const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "DELETE") {
@@ -12,7 +13,7 @@ module.exports = async function handler(req, res) {
   if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
 
   const id = typeof req.query?.id === "string" ? req.query.id : "";
-  if (!/^[0-9a-f-]{36}$/i.test(id)) return res.status(400).json({ error: "Invalid campaign id." });
+  if (!isUuid(id)) return res.status(400).json({ error: "Invalid campaign id." });
 
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies["__Host-ecb_session"];
