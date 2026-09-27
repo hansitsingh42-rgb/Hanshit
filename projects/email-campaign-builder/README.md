@@ -67,3 +67,7 @@ Delivery claiming is now bounded to 25 jobs per claim and uses PostgreSQL row lo
 ## Stage 28
 
 A provider-neutral delivery adapter contract is now defined with a deterministic server-side idempotency key per delivery job. Claimed jobs can load campaign content and recipient state server-side, refuse delivery when a contact is no longer subscribed, and pass the idempotency key to the provider adapter. Accepted provider results must include a provider message ID before a job can be marked sent. The configured adapter remains intentionally non-sending until a real provider implementation and server-side credentials are added.
+
+## Stage 29
+
+Provider configuration is now explicitly server-only and fail-closed. The adapter requires an approved provider name and a server-side API key before it can be constructed, rejects browser execution, and keeps credentials out of returned objects. The adapter contract also requires a delivery-job idempotency key and a provider message ID for accepted sends. The current adapter still intentionally performs no external send until a real provider implementation is added.
