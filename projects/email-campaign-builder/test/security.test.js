@@ -6,6 +6,7 @@ const {canonicalize,verifyWebhook}=require("../lib/webhook-security");
 const {nextRetryDelayMinutes,retryable,MAX_ATTEMPTS}=require("../lib/delivery-retry");
 const {requestJson}=require("../lib/provider-http");
 const {allow}=require("../lib/rate-limit");
+const {isUuid,isPlainObject,boundedString}=require("../lib/input-validation");
 
 async function run(){
   assert.equal(canonicalize({b:2,a:1}),"{"a":1,"b":2}");
@@ -29,6 +30,15 @@ async function run(){
   const uuidRegex=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   assert.equal(uuidRegex.test("550e8400-e29b-41d4-a716-446655440000"),true);
   assert.equal(uuidRegex.test("not-a-uuid"),false);
+
+  // Shared input-validation regression coverage.
+  assert.equal(isUuid("550e8400-e29b-41d4-a716-446655440000"),true);
+  assert.equal(isUuid("not-a-uuid"),false);
+  assert.equal(isPlainObject({steps:[]}),true);
+  assert.equal(isPlainObject([]),false);
+  assert.equal(boundedString(" campaign ",20),"campaign");
+  assert.equal(boundedString("x".repeat(21),20),null);
+  assert.equal(boundedString("",20,{required:true}),null);
 
   // Ownership queries must bind both resource id and authenticated user id.
   const campaignOwnershipSql="UPDATE campaigns SET name=$1 WHERE id=$2 AND user_id=$3";
