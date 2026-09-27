@@ -1,7 +1,7 @@
 "use strict";
 
 const crypto=require("node:crypto");
-const { getClient, hashToken, parseCookies }=require("../../lib/auth");
+const { getClient }=require("../../lib/auth");
 const { processClaimedJob }=require("../../lib/delivery-worker");
 const { requeueFailedJob, failJob }=require("../../lib/delivery-recovery");
 
@@ -46,7 +46,7 @@ module.exports=async function handler(req,res){
         results.push(await processClaimedJob(id));
       }catch(error){
         const code=typeof error?.code==="string" && /^[A-Z0-9_]{1,80}$/.test(error.code) ? error.code : "DELIVERY_WORKER_ERROR";
-        if(error?.retryable) results.push(await requeueFailedJob(id,1,code));
+        if(error?.retryable) results.push(await requeueFailedJob(id,2,code));
         else results.push(await failJob(id,code));
       }
     }
