@@ -1,6 +1,7 @@
 "use strict";
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
+const { isUuid } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "GET") {
@@ -12,8 +13,7 @@ module.exports = async function handler(req, res) {
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
   const segmentId = typeof req.query?.segmentId === "string" ? req.query.segmentId.trim() : "";
-  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  if (segmentId && !uuid.test(segmentId)) return res.status(400).json({ error: "Audience segment is invalid." });
+  if (segmentId && !isUuid(segmentId)) return res.status(400).json({ error: "Audience segment is invalid." });
 
   let client;
   try {
