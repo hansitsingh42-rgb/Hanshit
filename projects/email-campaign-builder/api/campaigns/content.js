@@ -2,10 +2,11 @@
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
 
 function idFromRequest(req) {
   const id = typeof req.query?.id === "string" ? req.query.id : "";
-  return /^[0-9a-f-]{36}$/i.test(id) ? id : null;
+  return isUuid(id) ? id : null;
 }
 
 function text(value, max) {
