@@ -7,6 +7,7 @@ const { boundedString, isPlainObject } = require("../../lib/input-validation");
 const { allow, clientKey } = require("../../lib/rate-limit");
 
 module.exports = async function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
