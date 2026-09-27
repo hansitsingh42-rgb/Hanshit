@@ -87,3 +87,16 @@ Background delivery is now structured around protected worker endpoints. Deliver
 ## Stage 39 CI dependency note
 
 The project currently declares `pg` in `package.json` but does not commit a generated npm lockfile. CI therefore uses `npm install --ignore-scripts` rather than a fabricated or incomplete lockfile. Before production release, generate and commit a real lockfile with the project's Node/npm toolchain so dependency resolution is reproducible.
+
+## Stage 40 frontend/backend integration audit
+
+- [x] Login uses the backend authentication endpoint with same-origin credentials.
+- [x] Dashboard now performs a session check before remaining in the application shell.
+- [x] Campaign list redirects unauthenticated users to login.
+- [x] Campaign creation/editing requests use CSRF tokens for state-changing operations.
+- [x] Email content saves use authenticated, CSRF-protected backend requests.
+- [x] Audience and contact mutations use authenticated, CSRF-protected requests.
+- [x] Automation loading/saving uses the authenticated backend workflow APIs.
+- [x] New campaigns remain drafts until a valid future schedule is explicitly saved.
+
+The browser still never receives provider credentials, and the frontend does not send email directly.
