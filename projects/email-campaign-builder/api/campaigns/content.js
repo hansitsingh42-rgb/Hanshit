@@ -10,8 +10,8 @@ function idFromRequest(req) {
   return isUuid(id) ? id : null;
 }
 
-function text(value, max) {
-  return typeof value === "string" ? value.trim().slice(0, max) : "";
+function text(value, max, required = false) {
+  return boundedString(value, max, { required }) || "";
 }
 
 async function authenticatedUser(client, req) {
@@ -52,10 +52,10 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ content: result.rows[0] });
     }
 
-    const data = req.body && typeof req.body === "object" ? req.body : {};
-    const template = text(data.template, 80);
-    const headline = text(data.headline, 120);
-    const bodyText = text(data.body, 3000);
+    const data = isPlainObject(req.body) ? req.body : {};
+    const template = text(data.template, 80, true);
+    const headline = text(data.headline, 120, true);
+    const bodyText = text(data.body, 3000, true);
     const ctaText = text(data.cta, 40);
     if (!template || !headline || !bodyText) {
       return res.status(400).json({ error: "Email content is invalid." });
