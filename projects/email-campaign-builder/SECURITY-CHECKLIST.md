@@ -45,3 +45,14 @@
 Before production, run dependency auditing, secret scanning, static checks, build checks, security-header checks, authentication tests, authorization tests, webhook verification tests, and browser smoke tests.
 
 The frontend-only project is intentionally not marked production-ready until the unchecked backend controls exist.
+
+## Stage 35 verification scope
+
+- [x] Backend JavaScript syntax checks include authentication, campaign mutations, provider webhooks, delivery processing/recovery, provider HTTP, CSRF helpers, and worker modules.
+- [x] Delivery worker requires a server-side secret and rejects unauthenticated requests.
+- [x] Provider credentials remain server-only.
+- [x] Delivery jobs use bounded claiming, idempotency keys, retry limits, and stale-job recovery.
+- [x] Provider webhook events use signature verification and replay protection.
+- [x] Permanent provider/worker errors are not treated as successful delivery.
+
+Automated syntax checks verify parsing only; a production launch still requires integration tests against a controlled database and provider sandbox, plus dependency/security scanning.
