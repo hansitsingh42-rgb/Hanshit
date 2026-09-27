@@ -10,7 +10,7 @@ async function loadAudiences(selected){
  if(r.status===401){window.location.href="./login.html";return;}
  if(!r.ok)throw new Error();
  const select=form.elements.audience;select.replaceChildren(new Option("Select a saved audience",""));
- for(const item of (Array.isArray(d.audiences)?d.audiences:[])){const o=new Option(item.name,item.id);o.dataset.name=item.name;select.append(o);}
+ for(const item of (Array.isArray(d.audiences)?d.audiences:[])){if(!isValidUuid(item?.id)||typeof item?.name!=="string")continue;const o=new Option(item.name,item.id);o.dataset.name=item.name;select.append(o);}
  if(selected){for(const o of select.options)if(o.text===selected){select.value=o.value;break;}}
 }
 async function load(){
@@ -20,6 +20,7 @@ async function load(){
   if(response.status===401)return(window.location.href="./login.html");
   if(!response.ok)throw new Error();
   const c=data.campaign;
+  if(!c||!isValidUuid(c.id)||typeof c.name!=="string"||typeof c.subject_line!=="string"||typeof c.status!=="string")throw new Error();
   form.elements.name.value=c.name;form.elements.subject.value=c.subject_line;form.elements.status.value=c.status;
   if(scheduleInput){scheduleInput.disabled=c.status!=="scheduled";if(c.scheduled_at)scheduleInput.value=new Date(c.scheduled_at).toISOString().slice(0,16);}
   await loadAudiences(c.audience);
@@ -34,6 +35,7 @@ form.addEventListener("submit",async event=>{
   const response=await fetch("../api/campaigns/"+encodeURIComponent(id),{method:"PATCH",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({name:form.elements.name.value,subjectLine:form.elements.subject.value,audience:form.elements.audience.options[form.elements.audience.selectedIndex]?.text||"",status:form.elements.status.value})});
   const d=await response.json().catch(()=>({}));
   if(!response.ok){message.textContent=d.error||"Campaign could not be updated.";return;}
+  if(d.campaign&&!isValidUuid(d.campaign.id)){message.textContent="Campaign service returned an invalid response.";return;}
   const assign=await fetch("../api/campaigns/audience?id="+encodeURIComponent(id),{method:"PATCH",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({audienceId:form.elements.audience.value})});
   if(assign.ok){
     const lifecycle=await fetch("../api/campaigns/schedule?id="+encodeURIComponent(id),{method:"PATCH",credentials:"same-origin",headers:{"Content-Type":"application/json","X-CSRF-Token":token},body:JSON.stringify({status:form.elements.status.value,scheduledAt:scheduleInput?.value?new Date(scheduleInput.value).toISOString():null})});
