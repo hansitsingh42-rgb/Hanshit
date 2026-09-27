@@ -3,10 +3,11 @@ const crypto=require("node:crypto");
 const {parseCookies,hashToken,getClient}=require("../../lib/auth");
 const {validCsrf}=require("../../lib/request-security");
 const {isUuid,isPlainObject}=require("../../lib/input-validation");
+const { allow, clientKey } = require("../../lib/rate-limit");
 const uuid=()=>crypto.randomUUID();
 module.exports=async function(req,res){
  if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
- if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
+ if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."}); if(!allow(clientKey(req, "automation-save"), 30, 60 * 60 * 1000))return res.status(429).json({error:"Too many automation save requests."});
  const campaignId=typeof req.query?.campaignId==="string"?req.query.campaignId:"";
  if(!isUuid(campaignId))return res.status(400).json({error:"Invalid campaign id."});
  const data=isPlainObject(req.body)?req.body:{};const raw=Array.isArray(data.steps)?data.steps:[];
