@@ -1,6 +1,3 @@
-module.exports=async function handler(req,res){
- res.setHeader("Cache-Control","no-store");
-
 const { getClient } = require("../../lib/auth");
 const { verifyWebhook } = require("../../lib/webhook-security");
 const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
@@ -8,6 +5,7 @@ const { isUuid, isPlainObject, boundedString } = require("../../lib/input-valida
 const eventIdPattern=/^[A-Za-z0-9._:-]{1,200}$/;
 
 module.exports=async function handler(req,res){
+ res.setHeader("Cache-Control","no-store");
  if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
  const secret=process.env.EMAIL_PROVIDER_WEBHOOK_SECRET;
  const eventId=String(req.headers["x-provider-event-id"]||"").trim();
