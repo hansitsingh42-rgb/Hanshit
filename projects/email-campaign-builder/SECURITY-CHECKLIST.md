@@ -67,3 +67,7 @@ Automated syntax checks verify parsing only; a production launch still requires 
 - [x] `npm test` command added for the security unit suite
 
 These tests are deterministic unit checks and do not send email or require real provider credentials. Database/provider sandbox integration remains a separate pre-production step.
+
+### Stage 42 — validation security tests
+
+The security test suite also covers representative email and UUID validation boundaries, alongside webhook HMAC/replay primitives, retry limits/backoff, and rejection of insecure provider endpoints.
