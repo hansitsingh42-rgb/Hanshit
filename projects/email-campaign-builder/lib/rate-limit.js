@@ -32,7 +32,8 @@ function allow(key,limit,windowMs){
 }
 
 function clientKey(req,prefix){
-  const forwarded=String(req.headers["x-forwarded-for"]||"").split(",")[0].trim();
+  const trustProxy=process.env.TRUST_PROXY==="true";
+  const forwarded=trustProxy ? String(req.headers["x-forwarded-for"]||"").split(",")[0].trim() : "";
   const ip=forwarded || String(req.socket?.remoteAddress||"unknown");
   return prefix+":"+ip;
 }
