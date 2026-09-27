@@ -14,6 +14,15 @@ This project is a security-first frontend foundation for an email campaign build
 - Reduced-motion preferences are respected.
 - Login UI explicitly does not transmit credentials until a backend authentication service exists.
 
+## Backend security controls implemented
+
+- Authentication uses server-side sessions with hashed session tokens and scrypt password hashing.
+- Cookie-authenticated state changes use CSRF and same-origin validation.
+- Campaign, audience, contact, automation, and delivery APIs enforce authentication and tenant ownership.
+- Delivery processing uses protected worker authentication, idempotency, retries, stale-job recovery, and signed webhook verification.
+- Server-side provider credentials and worker secrets remain environment-only.
+- Automated syntax/security tests and high-severity dependency auditing are configured in CI.
+
 ## Before production backend integration
 
 - Keep provider credentials server-side.
