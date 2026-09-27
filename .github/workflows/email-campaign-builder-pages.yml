@@ -1,0 +1,54 @@
+name: Email Campaign Builder Pages Preview
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "projects/email-campaign-builder/**"
+      - ".github/workflows/email-campaign-builder-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: email-campaign-builder-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare static preview
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp -R projects/email-campaign-builder/. _site/
+          rm -rf _site/api _site/db _site/lib _site/test
+          rm -f _site/.env.example _site/package.json _site/package-lock.json
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
