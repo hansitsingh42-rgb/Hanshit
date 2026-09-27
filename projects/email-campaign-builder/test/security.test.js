@@ -2,6 +2,8 @@
 
 const assert=require("node:assert/strict");
 const crypto=require("node:crypto");
+const fs=require("node:fs");
+const path=require("node:path");
 const {canonicalize,verifyWebhook}=require("../lib/webhook-security");
 const {nextRetryDelayMinutes,retryable,MAX_ATTEMPTS}=require("../lib/delivery-retry");
 const {requestJson}=require("../lib/provider-http");
@@ -9,10 +11,9 @@ const {allow}=require("../lib/rate-limit");
 const {isUuid,isPlainObject,boundedString}=require("../lib/input-validation");
 
 async function run(){
-  const fs=require("node:fs");
-  const path=require("node:path");
   const integrityMigration=fs.readFileSync(path.join(__dirname,"../db/011_integrity_constraints.sql"),"utf8");
-  assert.equal(canonicalize({b:2,a:1}),"{"a":1,"b":2}");
+
+  assert.equal(canonicalize({b:2,a:1}),"{\"a\":1,\"b\":2}");
 
   const payload={type:"delivered",jobId:"123"};
   const secret="test-webhook-secret";
@@ -25,7 +26,6 @@ async function run(){
   assert.equal(retryable(9),true);
   assert.equal(retryable(MAX_ATTEMPTS),false);
 
-
   const emailRegex=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
   assert.equal(emailRegex.test("user@example.com"),true);
   assert.equal(emailRegex.test("not-an-email"),false);
@@ -34,7 +34,6 @@ async function run(){
   assert.equal(uuidRegex.test("550e8400-e29b-41d4-a716-446655440000"),true);
   assert.equal(uuidRegex.test("not-a-uuid"),false);
 
-  // Shared input-validation regression coverage.
   assert.equal(isUuid("550e8400-e29b-41d4-a716-446655440000"),true);
   assert.equal(isUuid("not-a-uuid"),false);
   assert.equal(isPlainObject({steps:[]}),true);
@@ -43,7 +42,6 @@ async function run(){
   assert.equal(boundedString("x".repeat(21),20),null);
   assert.equal(boundedString("",20,{required:true}),null);
 
-  // Ownership queries must bind both resource id and authenticated user id.
   const campaignOwnershipSql="UPDATE campaigns SET name=$1 WHERE id=$2 AND user_id=$3";
   assert.match(campaignOwnershipSql,/WHERE id=\$2 AND user_id=\$3/);
   const contactOwnershipSql="UPDATE audience_contacts SET status=$1 WHERE id=$2 AND user_id=$3";
@@ -61,13 +59,13 @@ async function run(){
     error=>error.code==="INVALID_PROVIDER_ENDPOINT" && error.retryable===false
   );
 
-  console.log("security tests passed");
-}
-
   assert.match(integrityMigration,/campaigns_status_chk/);
-  assert.match(integrityMigration,/CHECK \\(status IN \\('draft','scheduled','cancelled'\\)\\)/);
+  assert.match(integrityMigration,/CHECK \(status IN \('draft','scheduled','cancelled'\)\)/);
   assert.match(integrityMigration,/login_attempts_nonnegative_chk/);
   assert.match(integrityMigration,/sessions_expiry_after_creation_chk/);
   assert.match(integrityMigration,/NOT VALID/g);
+
+  console.log("security tests passed");
 }
+
 run().catch(error=>{console.error(error);process.exitCode=1;});
