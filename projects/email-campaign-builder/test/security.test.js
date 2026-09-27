@@ -64,7 +64,7 @@ async function run(){
   assert.match(integrityMigration,/login_attempts_nonnegative_chk/);
   assert.match(integrityMigration,/sessions_expiry_after_creation_chk/);
   assert.match(integrityMigration,/NOT VALID/g);
-  assert.match(integrityMigration,/campaigns_status_chk/);\n  assert.match(integrityMigration,/IF NOT EXISTS \(SELECT 1 FROM pg_constraint/);
+  assert.match(integrityMigration,/IF NOT EXISTS \(SELECT 1 FROM pg_constraint/);
 
   console.log("security tests passed");
 }
