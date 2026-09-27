@@ -2,18 +2,19 @@
 const crypto=require("node:crypto");
 const {parseCookies,hashToken,getClient}=require("../../lib/auth");
 const {validCsrf}=require("../../lib/request-security");
+const {isUuid,isPlainObject}=require("../../lib/input-validation");
 const uuid=()=>crypto.randomUUID();
 module.exports=async function(req,res){
  if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
  if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
  const campaignId=typeof req.query?.campaignId==="string"?req.query.campaignId:"";
- if(!/^[0-9a-f-]{36}$/i.test(campaignId))return res.status(400).json({error:"Invalid campaign id."});
- const data=req.body&&typeof req.body==="object"?req.body:{};const raw=Array.isArray(data.steps)?data.steps:[];
+ if(!isUuid(campaignId))return res.status(400).json({error:"Invalid campaign id."});
+ const data=isPlainObject(req.body)?req.body:{};const raw=Array.isArray(data.steps)?data.steps:[];
  if(raw.length<1||raw.length>100)return res.status(400).json({error:"Workflow steps are invalid."});
  const allowedTriggers=new Set(["New subscriber","Audience segment added","Campaign engagement"]);
  const allowedDelays=new Set(["Immediately","1 day","3 days","7 days"]);
  const allowedActions=new Set(["Send campaign email","Wait for engagement","Move to another segment"]);
- const steps=raw.map((s,i)=>({order:i+1,trigger:typeof s.trigger==="string"?s.trigger:"",delay:typeof s.delay==="string"?s.delay:"",action:typeof s.action==="string"?s.action:""}));
+ const steps=raw.map((s,i)=>({order:i+1,trigger:typeof s==="object"&&s!==null&&!Array.isArray(s)&&typeof s.trigger==="string"?s.trigger.trim():"",delay:typeof s==="object"&&s!==null&&!Array.isArray(s)&&typeof s.delay==="string"?s.delay.trim():"",action:typeof s==="object"&&s!==null&&!Array.isArray(s)&&typeof s.action==="string"?s.action.trim():""}));
  if(steps.some(s=>!allowedTriggers.has(s.trigger)||!allowedDelays.has(s.delay)||!allowedActions.has(s.action)))return res.status(400).json({error:"Workflow steps are invalid."});
  const token=parseCookies(req.headers.cookie)["__Host-ecb_session"];if(!token)return res.status(401).json({error:"Authentication required."});
  let client;try{client=await getClient();const s=await client.query("SELECT user_id FROM sessions WHERE token_hash=$1 AND expires_at>NOW() LIMIT 1",[hashToken(token)]);const uid=s.rows[0]?.user_id;if(!uid)return res.status(401).json({error:"Authentication required."});
