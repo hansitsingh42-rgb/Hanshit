@@ -3,10 +3,11 @@
 const { createIdempotencyKey, getProvider, validateSendResult } = require("./email-provider");
 const { getClient } = require("./auth");
 const { requeueFailedJob } = require("./delivery-recovery");
+const { isUuid } = require("./input-validation");
 
 async function processClaimedJob(jobId){
   let attemptCount=1;
-  if(!/^[0-9a-f-]{36}$/i.test(jobId)) throw new TypeError("Invalid delivery job id.");
+  if(!isUuid(jobId)) throw new TypeError("Invalid delivery job id.");
 
   const client=await getClient();
   try{
