@@ -18,6 +18,7 @@ function authorized(req){
 }
 
 module.exports=async function handler(req,res){
+  res.setHeader("Cache-Control","no-store");
   if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
   if(!authorized(req)) return res.status(401).json({error:"Unauthorized."});
   try{return res.status(200).json(await recoverStaleJobs(25));}
