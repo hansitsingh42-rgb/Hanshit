@@ -4,6 +4,7 @@ const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
 const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
+const { allow, clientKey } = require("../../lib/rate-limit");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -11,6 +12,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
   if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
+  if (!allow(clientKey(req, "contact-create"), 50, 60 * 60 * 1000)) return res.status(429).json({ error: "Too many contact creation requests." });
 
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
