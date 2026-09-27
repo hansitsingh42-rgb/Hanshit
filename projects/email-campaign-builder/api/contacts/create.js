@@ -17,14 +17,14 @@ module.exports = async function handler(req, res) {
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
-  const data = req.body && typeof req.body === "object" ? req.body : {};
+  const data = isPlainObject(req.body) ? req.body : {};
   const email = typeof data.email === "string" ? data.email.trim().toLowerCase() : "";
-  const name = typeof data.name === "string" ? data.name.trim().slice(0, 120) : "";
+  const name = boundedString(data.name, 120) || "";
   const consent = data.consent === true;
   const segmentId = typeof data.segmentId === "string" ? data.segmentId.trim() : "";
-  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  if (!emailOk || email.length > 320 || !segmentId || !uuid.test(segmentId) || !consent) {
+  if (!emailOk || email.length > 320 || !segmentId || !isUuid(segmentId) || !consent) {
     return res.status(400).json({ error: "Contact details are invalid." });
   }
 
