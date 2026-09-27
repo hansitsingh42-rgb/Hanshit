@@ -16,3 +16,7 @@ This repository currently contains a safe frontend boundary only. It does not co
 ## Current state
 
 Provider status is intentionally shown as **Not connected**. No credentials are requested by the frontend and no production email is sent.
+
+## Stage 32 delivery-state hardening
+
+Provider responses are now fail-closed: an accepted response requires a bounded provider message ID, while malformed or ambiguous responses are rejected. Webhook transitions also clear stale processing timestamps when a delivery becomes sent, queued, or failed. This prevents ambiguous provider responses from being treated as successful delivery and keeps delivery state consistent for recovery.
