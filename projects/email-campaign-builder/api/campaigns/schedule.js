@@ -2,19 +2,20 @@
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
 
 module.exports = async function handler(req,res){
   if(req.method!=="PATCH"){res.setHeader("Allow","PATCH");return res.status(405).json({error:"Method not allowed"});}
   if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
   const id=typeof req.query?.id==="string"?req.query.id:"";
-  if(!/^[0-9a-f-]{36}$/i.test(id))return res.status(400).json({error:"Invalid campaign id."});
-  const data=req.body&&typeof req.body==="object"?req.body:{};
-  const status=typeof data.status==="string"?data.status:"";
+  if(!isUuid(id))return res.status(400).json({error:"Invalid campaign id."});
+  const data=isPlainObject(req.body)?req.body:{};
+  const status=boundedString(data.status,20)||"";
   const allowed=new Set(["draft","scheduled","cancelled"]);
   if(!allowed.has(status))return res.status(400).json({error:"Invalid campaign status."});
   let scheduledAt=null;
   if(status==="scheduled"){
-    if(typeof data.scheduledAt!=="string"||!data.scheduledAt.trim())return res.status(400).json({error:"A schedule time is required."});
+    if(typeof data.scheduledAt!=="string"||data.scheduledAt.trim().length>64||!data.scheduledAt.trim())return res.status(400).json({error:"A schedule time is required."});
     const parsed=new Date(data.scheduledAt);
     if(Number.isNaN(parsed.getTime())||parsed.getTime()<=Date.now())return res.status(400).json({error:"Schedule time must be in the future."});
     if(parsed.getTime()>Date.now()+90*24*60*60*1000)return res.status(400).json({error:"Schedule time is too far in the future."});
