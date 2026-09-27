@@ -5,6 +5,7 @@ const { getClient } = require("./auth");
 const { requeueFailedJob } = require("./delivery-recovery");
 
 async function processClaimedJob(jobId){
+  let attemptCount=1;
   if(!/^[0-9a-f-]{36}$/i.test(jobId)) throw new TypeError("Invalid delivery job id.");
 
   const client=await getClient();
@@ -17,6 +18,7 @@ async function processClaimedJob(jobId){
     );
 
     const row=job.rows[0];
+    attemptCount=Number(row?.attempts || 1);
     if(!row) throw new Error("Delivery job not found.");
     if(row.status!=="processing") throw new Error("Delivery job is not claimed.");
 
@@ -63,7 +65,7 @@ async function processClaimedJob(jobId){
     try{await client.query("ROLLBACK");}catch{}
     if(error?.retryable && error?.code){
       try{
-        return await requeueFailedJob(jobId, row?.attempts || 1, error.code);
+        return await requeueFailedJob(jobId, attemptCount, error.code);
       }catch{
         throw error;
       }
