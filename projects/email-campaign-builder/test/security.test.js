@@ -52,3 +52,12 @@ async function run(){
 }
 
 run().catch(error=>{console.error(error);process.exitCode=1;});
+const integrityMigration = require("node:fs").readFileSync(
+  require("node:path").join(__dirname, "../db/011_integrity_constraints.sql"),
+  "utf8"
+);
+assert.match(integrityMigration, /campaigns_status_chk/);
+assert.match(integrityMigration, /CHECK \(status IN \('draft','scheduled','cancelled'\)\)/);
+assert.match(integrityMigration, /login_attempts_nonnegative_chk/);
+assert.match(integrityMigration, /sessions_expiry_after_creation_chk/);
+assert.match(integrityMigration, /NOT VALID/g);
