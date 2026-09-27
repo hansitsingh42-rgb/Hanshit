@@ -71,3 +71,7 @@ A provider-neutral delivery adapter contract is now defined with a deterministic
 ## Stage 29
 
 Provider configuration is now explicitly server-only and fail-closed. The adapter requires an approved provider name and a server-side API key before it can be constructed, rejects browser execution, and keeps credentials out of returned objects. The adapter contract also requires a delivery-job idempotency key and a provider message ID for accepted sends. The current adapter still intentionally performs no external send until a real provider implementation is added.
+
+## Stage 30
+
+The provider adapter now has a dedicated HTTPS request boundary with bounded timeouts, redirect rejection, controlled JSON parsing, and classification of retryable HTTP/network failures. Provider credentials remain server-only and are sent only through the authorization header. The adapter sends the delivery-job idempotency key through both the provider payload and the Idempotency-Key header. No provider-specific endpoint is enabled by default.
