@@ -5,6 +5,7 @@ const { validCsrf } = require("../../lib/request-security");
 const { isUuid } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
   if (req.method !== "DELETE") {
     res.setHeader("Allow", "DELETE");
     return res.status(405).json({ error: "Method not allowed" });
