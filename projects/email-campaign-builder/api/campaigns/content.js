@@ -3,6 +3,7 @@
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
 const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
+const { allow, clientKey } = require("../../lib/rate-limit");
 
 function idFromRequest(req) {
   const id = typeof req.query?.id === "string" ? req.query.id : "";
@@ -33,6 +34,7 @@ module.exports = async function handler(req, res) {
   if (req.method === "PATCH" && !validCsrf(req)) {
     return res.status(403).json({ error: "Request validation failed." });
   }
+  if (req.method === "PATCH" && !allow(clientKey(req, "campaign-content-update"), 60, 60 * 60 * 1000)) return res.status(429).json({ error: "Too many content update requests." });
 
   let client;
   try {
