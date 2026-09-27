@@ -1,4 +1,5 @@
 "use strict";
+ res.setHeader("Cache-Control","no-store");
 const crypto=require("node:crypto");
 const {parseCookies,hashToken,getClient}=require("../../lib/auth");
 const {validCsrf}=require("../../lib/request-security");
