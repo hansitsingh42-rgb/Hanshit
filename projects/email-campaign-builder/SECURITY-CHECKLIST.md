@@ -56,3 +56,14 @@ The frontend-only project is intentionally not marked production-ready until the
 - [x] Permanent provider/worker errors are not treated as successful delivery.
 
 Automated syntax checks verify parsing only; a production launch still requires integration tests against a controlled database and provider sandbox, plus dependency/security scanning.
+
+## Stage 36 automated tests
+
+- [x] Webhook canonicalization and HMAC verification test
+- [x] Invalid webhook signature rejection test
+- [x] Retry/backoff boundary tests
+- [x] Maximum-attempts boundary test
+- [x] Insecure provider endpoint rejection test
+- [x] `npm test` command added for the security unit suite
+
+These tests are deterministic unit checks and do not send email or require real provider credentials. Database/provider sandbox integration remains a separate pre-production step.
