@@ -10,7 +10,10 @@ class ProviderConfigurationError extends Error {
 }
 
 class ProviderResponseError extends Error {
-  constructor(){ super("Email provider returned an invalid response."); this.code="PROVIDER_INVALID_RESPONSE"; }
+  constructor(code="PROVIDER_INVALID_RESPONSE"){
+    super("Email provider returned an invalid response.");
+    this.code=code;
+  }
 }
 
 function createIdempotencyKey(jobId){
@@ -62,10 +65,13 @@ function getProvider(){
         throw new ProviderResponseError();
       }
 
-      return {
-        accepted:result.data.accepted===true,
-        providerMessageId:typeof result.data.messageId==="string" ? result.data.messageId : null
-      };
+      const accepted=result.data.accepted===true;
+      const rejected=result.data.accepted===false;
+      if(!accepted && !rejected) throw new ProviderResponseError("PROVIDER_INVALID_RESPONSE");
+      const providerMessageId=typeof result.data.messageId==="string" ? result.data.messageId.trim() : "";
+      if(accepted && !providerMessageId) throw new ProviderResponseError("PROVIDER_MESSAGE_ID_MISSING");
+      if(providerMessageId.length>200) throw new ProviderResponseError("PROVIDER_MESSAGE_ID_INVALID");
+      return {accepted,providerMessageId:providerMessageId||null};
     }
   };
 }
