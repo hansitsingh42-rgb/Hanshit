@@ -3,6 +3,7 @@
 const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient, sameOriginRequest } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { allow, clientKey } = require("../../lib/rate-limit");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -11,6 +12,7 @@ module.exports = async function handler(req, res) {
   }
   if (!sameOriginRequest(req)) return res.status(403).json({ error: "Request validation failed." });
   if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
+  if (!allow(clientKey(req, "campaign-create"), 20, 60 * 60 * 1000)) return res.status(429).json({ error: "Too many requests." });
 
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies["__Host-ecb_session"];
