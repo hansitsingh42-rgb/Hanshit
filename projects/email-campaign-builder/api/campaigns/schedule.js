@@ -3,10 +3,12 @@
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
 const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
+const { allow, clientKey } = require("../../lib/rate-limit");
 
 module.exports = async function handler(req,res){
   if(req.method!=="PATCH"){res.setHeader("Allow","PATCH");return res.status(405).json({error:"Method not allowed"});}
   if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
+  if(!allow(clientKey(req, "campaign-schedule"), 30, 60 * 60 * 1000))return res.status(429).json({error:"Too many scheduling requests."});
   const id=typeof req.query?.id==="string"?req.query.id:"";
   if(!isUuid(id))return res.status(400).json({error:"Invalid campaign id."});
   const data=isPlainObject(req.body)?req.body:{};
