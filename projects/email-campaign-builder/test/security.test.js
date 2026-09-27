@@ -26,7 +26,7 @@ async function run(){
   assert.equal(retryable(9),true);
   assert.equal(retryable(MAX_ATTEMPTS),false);
 
-  const emailRegex=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   assert.equal(emailRegex.test("user@example.com"),true);
   assert.equal(emailRegex.test("not-an-email"),false);
 
@@ -59,26 +59,40 @@ async function run(){
     error=>error.code==="INVALID_PROVIDER_ENDPOINT" && error.retryable===false
   );
 
-  assert.match(integrityMigration,/campaigns_status_chk/);\n  assert.match(integrityMigration,/automation_workflows_campaign_user_uq/);
+  assert.match(integrityMigration,/campaigns_status_chk/);
+  assert.match(integrityMigration,/automation_workflows_campaign_user_uq/);
   assert.match(integrityMigration,/CHECK \(status IN \('draft','scheduled','cancelled'\)\)/);
   assert.match(integrityMigration,/login_attempts_nonnegative_chk/);
   assert.match(integrityMigration,/sessions_expiry_after_creation_chk/);
   assert.match(integrityMigration,/NOT VALID/g);
   assert.match(integrityMigration,/IF NOT EXISTS \(SELECT 1 FROM pg_constraint/);
 
-assert.equal(true,true,"api/campaigns/create.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/campaigns/update.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/campaigns/delete.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/campaigns/content.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/campaigns/schedule.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/contacts/create.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/contacts/status.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/audiences/create.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/automation/save.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/provider/webhook.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/delivery/process.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/delivery/recover.js should set Cache-Control no-store");
-  assert.equal(true,true,"api/delivery/prepare.js should set Cache-Control no-store");
+  const source0=fs.readFileSync(path.join(__dirname,"../api/campaigns/create.js"),"utf8");
+  assert.match(source0,/Cache-Control.*no-store/);
+  const source1=fs.readFileSync(path.join(__dirname,"../api/campaigns/update.js"),"utf8");
+  assert.match(source1,/Cache-Control.*no-store/);
+  const source2=fs.readFileSync(path.join(__dirname,"../api/campaigns/delete.js"),"utf8");
+  assert.match(source2,/Cache-Control.*no-store/);
+  const source3=fs.readFileSync(path.join(__dirname,"../api/campaigns/content.js"),"utf8");
+  assert.match(source3,/Cache-Control.*no-store/);
+  const source4=fs.readFileSync(path.join(__dirname,"../api/campaigns/schedule.js"),"utf8");
+  assert.match(source4,/Cache-Control.*no-store/);
+  const source5=fs.readFileSync(path.join(__dirname,"../api/contacts/create.js"),"utf8");
+  assert.match(source5,/Cache-Control.*no-store/);
+  const source6=fs.readFileSync(path.join(__dirname,"../api/contacts/status.js"),"utf8");
+  assert.match(source6,/Cache-Control.*no-store/);
+  const source7=fs.readFileSync(path.join(__dirname,"../api/audiences/create.js"),"utf8");
+  assert.match(source7,/Cache-Control.*no-store/);
+  const source8=fs.readFileSync(path.join(__dirname,"../api/automation/save.js"),"utf8");
+  assert.match(source8,/Cache-Control.*no-store/);
+  const source9=fs.readFileSync(path.join(__dirname,"../api/provider/webhook.js"),"utf8");
+  assert.match(source9,/Cache-Control.*no-store/);
+  const source10=fs.readFileSync(path.join(__dirname,"../api/delivery/process.js"),"utf8");
+  assert.match(source10,/Cache-Control.*no-store/);
+  const source11=fs.readFileSync(path.join(__dirname,"../api/delivery/recover.js"),"utf8");
+  assert.match(source11,/Cache-Control.*no-store/);
+  const source12=fs.readFileSync(path.join(__dirname,"../api/delivery/prepare.js"),"utf8");
+  assert.match(source12,/Cache-Control.*no-store/);
   console.log("security tests passed");
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
