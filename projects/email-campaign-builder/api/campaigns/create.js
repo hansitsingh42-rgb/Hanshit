@@ -23,8 +23,8 @@ module.exports = async function handler(req, res) {
   const name = boundedString(data.name, 120) || "";
   const subjectLine = boundedString(data.subjectLine, 180) || "";
   const audience = boundedString(data.audience, 120) || "";
-  const status = data.status === "scheduled" ? "scheduled" : "draft";
-  if (!name || !subjectLine || !audience) return res.status(400).json({ error: "Campaign fields are invalid." });
+  const status = data.status === undefined ? "draft" : data.status;
+  if (!name || !subjectLine || !audience || status !== "draft") return res.status(400).json({ error: "Campaign fields are invalid." });
 
   let client;
   try {
