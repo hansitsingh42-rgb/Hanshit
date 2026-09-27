@@ -30,10 +30,12 @@ async function load(){
     if(response.status===404)return;
     if(!response.ok)throw new Error();
     if(data.content){
-      template.value=data.content.template||"";
-      headline.value=data.content.headline||"";
-      body.value=data.content.body_text||"";
-      cta.value=data.content.cta_text||"";
+      const content=data.content;
+      if(typeof content!=="object"||Array.isArray(content)||typeof content.template!=="string"||typeof content.headline!=="string"||typeof content.body_text!=="string"||typeof content.cta_text!=="string")throw new Error();
+      template.value=content.template;
+      headline.value=content.headline;
+      body.value=content.body_text;
+      cta.value=content.cta_text;
       update();
     }
   }catch{message.textContent="Email content could not be loaded.";}
