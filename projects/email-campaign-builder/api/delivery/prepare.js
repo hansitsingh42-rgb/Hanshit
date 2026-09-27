@@ -1,12 +1,10 @@
-module.exports=async function handler(req,res){
- res.setHeader("Cache-Control","no-store");
-
 const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
 const { isUuid } = require("../../lib/input-validation");
 
 module.exports=async function handler(req,res){
+ res.setHeader("Cache-Control","no-store");
  if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
  if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
  const campaignId=typeof req.query?.campaignId==="string"?req.query.campaignId.trim():"";
