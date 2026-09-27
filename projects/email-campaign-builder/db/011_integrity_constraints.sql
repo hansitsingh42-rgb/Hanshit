@@ -1,3 +1,8 @@
+-- Stage 63: authentication/session database hardening.
+-- Stage 48 integrity constraints remain below.
+CREATE INDEX IF NOT EXISTS sessions_token_expires_idx ON sessions(token_hash, expires_at);
+CREATE INDEX IF NOT EXISTS login_attempts_blocked_until_idx ON login_attempts(blocked_until) WHERE blocked_until IS NOT NULL;
+
 -- Stage 48: database integrity hardening.
 -- Constraints are added NOT VALID so existing deployments are not blocked by
 -- legacy rows; new and updated rows are enforced immediately.
