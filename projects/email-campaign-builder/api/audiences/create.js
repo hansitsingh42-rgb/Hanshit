@@ -3,6 +3,7 @@
 const crypto = require("node:crypto");
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { boundedString, isPlainObject } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -14,10 +15,10 @@ module.exports = async function handler(req, res) {
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
-  const data = req.body && typeof req.body === "object" ? req.body : {};
-  const name = typeof data.name === "string" ? data.name.trim().slice(0, 80) : "";
-  const source = typeof data.source === "string" ? data.source.trim().slice(0, 80) : "";
-  const condition = typeof data.condition === "string" ? data.condition.trim().slice(0, 120) : "";
+  const data = isPlainObject(req.body) ? req.body : {};
+  const name = boundedString(data.name, 80, { required: true }) || "";
+  const source = boundedString(data.source, 80, { required: true }) || "";
+  const condition = boundedString(data.condition, 120, { required: true }) || "";
   if (!name || !source || !condition) return res.status(400).json({ error: "Audience fields are invalid." });
 
   let client;
