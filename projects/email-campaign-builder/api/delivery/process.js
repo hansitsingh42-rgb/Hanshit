@@ -46,8 +46,14 @@ module.exports=async function handler(req,res){
         results.push(await processClaimedJob(id));
       }catch(error){
         const code=typeof error?.code==="string" && /^[A-Z0-9_]{1,80}$/.test(error.code) ? error.code : "DELIVERY_WORKER_ERROR";
-        if(error?.retryable) results.push(await requeueFailedJob(id,2,code));
-        else results.push(await failJob(id,code));
+        if(error?.retryable){
+          const db=await getClient();
+          try{
+            const attempt=await db.query("SELECT attempts FROM delivery_jobs WHERE id=$1 LIMIT 1",[id]);
+            const attempts=Number(attempt.rows[0]?.attempts||1);
+            results.push(await requeueFailedJob(id,attempts,code));
+          }finally{db.release();}
+        }else results.push(await failJob(id,code));
       }
     }
     return res.status(200).json({processed:results.length,results});
