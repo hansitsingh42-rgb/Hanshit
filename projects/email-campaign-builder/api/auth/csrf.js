@@ -4,6 +4,7 @@ const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { issueCsrf } = require("../../lib/request-security");
 
 module.exports = async function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
   if (req.method !== "GET") {
     res.setHeader("Allow", "GET");
     return res.status(405).json({ error: "Method not allowed" });
@@ -23,7 +24,6 @@ module.exports = async function handler(req, res) {
     if (!result.rows[0]) return res.status(401).json({ error: "Authentication required." });
 
     const token = issueCsrf(res);
-    res.setHeader("Cache-Control", "no-store");
     return res.status(200).json({ token });
   } catch {
     return res.status(503).json({ error: "Security service unavailable." });
