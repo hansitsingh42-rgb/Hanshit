@@ -2,6 +2,7 @@
 
 const { getClient } = require("../../lib/auth");
 const { verifyWebhook } = require("../../lib/webhook-security");
+const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
 
 const eventIdPattern=/^[A-Za-z0-9._:-]{1,200}$/;
 
@@ -13,9 +14,9 @@ module.exports=async function handler(req,res){
  const payload=req.body;
  if(!payload||typeof payload!=="object"||Array.isArray(payload))return res.status(400).json({error:"Webhook payload is invalid."});
  if(!verifyWebhook(payload,req.headers["x-provider-signature"],secret))return res.status(401).json({error:"Webhook authentication failed."});
- const type=typeof payload.type==="string"?payload.type.trim():"";
- const jobId=typeof payload.jobId==="string"?payload.jobId.trim():"";
- if(!jobId||!["delivered","failed","bounced","unsubscribed"].includes(type))return res.status(400).json({error:"Webhook event is invalid."});
+ const type=boundedString(payload.type,32)||"";
+ const jobId=boundedString(payload.jobId,64)||"";
+ if(!isUuid(jobId)||!["delivered","failed","bounced","unsubscribed"].includes(type))return res.status(400).json({error:"Webhook event is invalid."});
  let client;
  try{
   client=await getClient();
