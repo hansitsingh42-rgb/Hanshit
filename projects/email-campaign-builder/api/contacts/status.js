@@ -2,6 +2,7 @@
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, isPlainObject, boundedString } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "PATCH") {
@@ -14,11 +15,10 @@ module.exports = async function handler(req, res) {
   if (!token) return res.status(401).json({ error: "Authentication required." });
 
   const id = typeof req.query?.id === "string" ? req.query.id.trim() : "";
-  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  if (!uuid.test(id)) return res.status(400).json({ error: "Contact is invalid." });
+  if (!isUuid(id)) return res.status(400).json({ error: "Contact is invalid." });
 
-  const data = req.body && typeof req.body === "object" ? req.body : {};
-  const status = typeof data.status === "string" ? data.status.trim() : "";
+  const data = isPlainObject(req.body) ? req.body : {};
+  const status = boundedString(data.status, 20) || "";
   if (!["subscribed","unsubscribed","suppressed"].includes(status)) {
     return res.status(400).json({ error: "Contact status is invalid." });
   }
