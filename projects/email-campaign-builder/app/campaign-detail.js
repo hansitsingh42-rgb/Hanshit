@@ -1,6 +1,7 @@
 (() => {"use strict";
+const UUID_PATTERN=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;const isValidUuid=value=>typeof value==="string"&&UUID_PATTERN.test(value);
 const id=new URLSearchParams(window.location.search).get("id");
-const valid=/^[0-9a-f-]{36}$/i.test(id||"");
+const valid=isValidUuid(id);
 const title=document.querySelector("#campaign-title"),subject=document.querySelector("#campaign-subject"),status=document.querySelector("#campaign-status"),updated=document.querySelector("#campaign-updated"),audience=document.querySelector("#audience-name"),audienceMeta=document.querySelector("#audience-meta"),template=document.querySelector("#content-template"),summary=document.querySelector("#content-summary"),edit=document.querySelector("#edit-link"),content=document.querySelector("#content-link"),message=document.querySelector("#detail-message"),deleteButton=document.querySelector("#delete-campaign");
 if(!valid){message.textContent="Invalid campaign link.";deleteButton.disabled=true;return;}
 edit.href="./campaign-edit.html?id="+encodeURIComponent(id);content.href="./email-editor.html?id="+encodeURIComponent(id);
