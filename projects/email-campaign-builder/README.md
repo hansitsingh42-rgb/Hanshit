@@ -79,3 +79,7 @@ The provider adapter now has a dedicated HTTPS request boundary with bounded tim
 ## Stage 31
 
 Retryable provider failures are now connected to the delivery recovery boundary. Timeouts, network failures, HTTP 408/425/429, and 5xx responses can be classified as retryable and routed back to the existing bounded backoff system. The retry cap remains enforced by the delivery-retry module, while non-retryable provider configuration/response errors are not silently retried.
+
+## Stage 34
+
+Background delivery is now structured around protected worker endpoints. Delivery processing claims bounded batches and stale-job recovery has its own authenticated endpoint. The deployment configuration should invoke these endpoints from a trusted scheduler; the endpoints fail closed without the server-side worker secret. No client-side scheduling or provider credential exposure is used.
