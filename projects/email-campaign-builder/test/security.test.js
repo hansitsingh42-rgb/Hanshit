@@ -9,6 +9,9 @@ const {allow}=require("../lib/rate-limit");
 const {isUuid,isPlainObject,boundedString}=require("../lib/input-validation");
 
 async function run(){
+  const fs=require("node:fs");
+  const path=require("node:path");
+  const integrityMigration=fs.readFileSync(path.join(__dirname,"../db/011_integrity_constraints.sql"),"utf8");
   assert.equal(canonicalize({b:2,a:1}),"{"a":1,"b":2}");
 
   const payload={type:"delivered",jobId:"123"};
@@ -61,13 +64,10 @@ async function run(){
   console.log("security tests passed");
 }
 
+  assert.match(integrityMigration,/campaigns_status_chk/);
+  assert.match(integrityMigration,/CHECK \\(status IN \\('draft','scheduled','cancelled'\\)\\)/);
+  assert.match(integrityMigration,/login_attempts_nonnegative_chk/);
+  assert.match(integrityMigration,/sessions_expiry_after_creation_chk/);
+  assert.match(integrityMigration,/NOT VALID/g);
+}
 run().catch(error=>{console.error(error);process.exitCode=1;});
-const integrityMigration = require("node:fs").readFileSync(
-  require("node:path").join(__dirname, "../db/011_integrity_constraints.sql"),
-  "utf8"
-);
-assert.match(integrityMigration, /campaigns_status_chk/);
-assert.match(integrityMigration, /CHECK \(status IN \('draft','scheduled','cancelled'\)\)/);
-assert.match(integrityMigration, /login_attempts_nonnegative_chk/);
-assert.match(integrityMigration, /sessions_expiry_after_creation_chk/);
-assert.match(integrityMigration, /NOT VALID/g);
