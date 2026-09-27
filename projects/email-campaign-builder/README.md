@@ -63,3 +63,7 @@ Delivery processing now records claim timestamps and has a controlled retry/back
 ## Stage 27
 
 Delivery claiming is now bounded to 25 jobs per claim and uses PostgreSQL row locking with `SKIP LOCKED` to reduce concurrent-worker collisions. Stale processing jobs have a 15-minute recovery boundary and are re-queued with a controlled delay until the attempt cap is reached; exhausted jobs become failed. This is worker infrastructure only and does not send email by itself.
+
+## Stage 28
+
+A provider-neutral delivery adapter contract is now defined with a deterministic server-side idempotency key per delivery job. Claimed jobs can load campaign content and recipient state server-side, refuse delivery when a contact is no longer subscribed, and pass the idempotency key to the provider adapter. Accepted provider results must include a provider message ID before a job can be marked sent. The configured adapter remains intentionally non-sending until a real provider implementation and server-side credentials are added.
