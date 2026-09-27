@@ -4,6 +4,8 @@ const crypto=require("node:crypto");
 
 const buckets=new Map();
 const MAX_BUCKETS=5000;
+// This limiter is intentionally process-local. Production multi-instance/serverless deployments
+// must replace it with a shared atomic store (for example Redis) before relying on it for abuse control.
 
 function keyHash(value){
   return crypto.createHash("sha256").update(String(value||"")).digest("hex");
