@@ -1,6 +1,3 @@
-ALTER TABLE campaigns
-  ADD COLUMN IF NOT EXISTS sender_email VARCHAR(320);
-
 ALTER TABLE delivery_jobs
   ADD COLUMN IF NOT EXISTS provider_idempotency_key VARCHAR(200);
 
