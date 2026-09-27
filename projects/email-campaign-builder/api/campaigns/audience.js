@@ -2,14 +2,16 @@
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { validCsrf } = require("../../lib/request-security");
+const { isUuid, isPlainObject } = require("../../lib/input-validation");
 
 module.exports = async function handler(req, res) {
   if (req.method !== "PATCH") { res.setHeader("Allow", "PATCH"); return res.status(405).json({ error: "Method not allowed" }); }
   if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
   const id = typeof req.query?.id === "string" ? req.query.id : "";
-  if (!/^[0-9a-f-]{36}$/i.test(id)) return res.status(400).json({ error: "Invalid campaign id." });
-  const audienceId = typeof req.body?.audienceId === "string" ? req.body.audienceId : "";
-  if (!/^[0-9a-f-]{36}$/i.test(audienceId)) return res.status(400).json({ error: "Invalid audience id." });
+  if (!isUuid(id)) return res.status(400).json({ error: "Invalid campaign id." });
+  const data = isPlainObject(req.body) ? req.body : {};
+  const audienceId = typeof data.audienceId === "string" ? data.audienceId.trim() : "";
+  if (!isUuid(audienceId)) return res.status(400).json({ error: "Invalid audience id." });
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   if (!token) return res.status(401).json({ error: "Authentication required." });
   let client;
