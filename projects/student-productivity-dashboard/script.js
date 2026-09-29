@@ -121,11 +121,16 @@ function stopTimer() {
     clearInterval(timerId);
     timerId = null;
   }
+  $('#startBtn').textContent = 'Start';
+  $('#startBtn').setAttribute('aria-pressed', 'false');
 }
 
 function startTimer() {
   if (timerId !== null) return;
   if (remaining <= 0) remaining = SESSION_SECONDS;
+
+  $('#startBtn').textContent = 'Pause';
+  $('#startBtn').setAttribute('aria-pressed', 'true');
 
   timerId = setInterval(() => {
     remaining -= 1;
