@@ -367,6 +367,15 @@ A responsive weather dashboard using Open-Meteo for live weather, location searc
 
 [Source](./projects/advanced-weather-app/)
 
+
+### Contribution
+Architecture and interface implementation, responsive UI, core browser interactions, and validation where applicable.
+
+### What I Learned
+Working with live APIs, asynchronous data, geolocation flows, responsive states, and client-side persistence.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### 📚 Study Resource Manager
 
 **Role:** Developer  ·  **Status:** Deployed learning project
@@ -383,6 +392,15 @@ A student-focused resource library for organizing study material, notes, files a
 
 [Source](./projects/study-resource-manager/)
 
+
+### Contribution
+Interface structure, resource organization, search/filter interactions, and client-side state handling.
+
+### What I Learned
+Designing a resource workflow that stays understandable while supporting search, categories, favorites, and responsive layouts.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### 📊 Student Productivity Dashboard
 
 **Role:** Developer  ·  **Status:** Deployed learning project
@@ -399,6 +417,15 @@ A productivity dashboard for tracking habits, progress and daily performance thr
 
 [Source](./projects/student-productivity-dashboard/)
 
+
+### Contribution
+Dashboard structure, tracking interactions, visual progress presentation, and browser-side persistence.
+
+### What I Learned
+Turning productivity requirements into a focused dashboard with clear states and simple interactions.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### 💻 C Student Record Manager
 
 **Role:** C Programmer / Developer  ·  **Status:** Learning project
@@ -415,6 +442,15 @@ A C-based student record management project for practising structured data handl
 
 [Source](./projects/c-student-record-manager/)
 
+
+### Contribution
+Core C implementation, record structures, file handling, CRUD operations, search, and input validation.
+
+### What I Learned
+Practising structured data, functions, arrays, structs, file handling, and defensive input handling in C.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### 🤖 Jems AI
 
 **Role:** Developer  ·  **Status:** Experimental project
@@ -433,6 +469,15 @@ A small AI-focused assistant project exploring practical AI interactions and a s
 
 [Source](./jems/)
 
+
+### Contribution
+Interface implementation, documented profile/project data flow, and student-focused interaction design.
+
+### What I Learned
+Keeping an assistant grounded in documented information and separating known data from unsupported claims.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### 📘 Student Resource Hub
 
 **Role:** Developer / UI implementer  ·  **Status:** Active build
@@ -451,6 +496,15 @@ A student-focused resource discovery interface organized around **Subject → Ch
 
 > The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
 
+
+### Contribution
+Information architecture, responsive interface implementation, resource discovery flows, and UX/security considerations.
+
+### What I Learned
+Connecting a Subject → Chapter → Resource model with search, filters, previews, bookmarks, and a full-stack direction.
+
+### Evidence
+`Live Preview` · `Source Code` · `Security`
 ### 📅 Student Study Planner — UX Prototype
 
 **Role:** UI/UX practitioner / Developer  ·  **Status:** UX prototype
@@ -470,6 +524,15 @@ A responsive study-planning prototype focused on making the next study action vi
 
 [Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
 
+
+### Contribution
+UX structure, interaction states, responsive UI implementation, and accessibility/privacy considerations.
+
+### What I Learned
+Documenting a design process from problem framing through flow, prototype, testing, and iteration.
+
+### Evidence
+`Live Preview` · `Source Code` · `UX Case Study` · `Security`
 ### 📅 Student Academic Planner
 
 **Role:** Developer  ·  **Status:** Deployed learning project
@@ -488,6 +551,15 @@ A browser-based academic dashboard for organizing subjects, attendance, assignme
 
 
 
+
+### Contribution
+Academic dashboard structure, browser interactions, study/attendance tracking, and local persistence.
+
+### What I Learned
+Organizing multiple student workflows into a single dashboard while keeping the interface practical and responsive.
+
+### Evidence
+`Live Preview` · `Source Code`
 ### Contribution
 Academic dashboard structure, browser interactions, study/attendance tracking, and local persistence.
 
