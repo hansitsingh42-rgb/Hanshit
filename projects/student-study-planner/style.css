@@ -57,7 +57,8 @@ button,a{touch-action:manipulation}
 .dark .brand{color:#edf2f7}
 .dark .task{background:#20283a}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-\n
+
+
 /* Template integration: Cloudlight-inspired soft cloud workspace layer.
    Existing planner interactions, accessibility states and local-only behavior remain unchanged. */
 body{background:radial-gradient(circle at 18% 0%,rgba(49,91,234,.1),transparent 28%),radial-gradient(circle at 85% 20%,rgba(120,180,255,.12),transparent 30%),linear-gradient(180deg,#f9fbff,#edf3fa)}
@@ -66,4 +67,4 @@ body{background:radial-gradient(circle at 18% 0%,rgba(49,91,234,.1),transparent 
 .card:hover,.day:hover{transform:translateY(-3px);transition:transform .22s ease,box-shadow .22s ease}
 .primary{box-shadow:0 10px 22px rgba(49,91,234,.18)}
 @media(prefers-reduced-motion:reduce){.card:hover,.day:hover{transform:none;transition:none}}
-\n
+
