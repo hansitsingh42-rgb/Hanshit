@@ -1,20 +1,21 @@
 <div align="center">
 
-# Hi, I'm Hanshit Singh 👋
+# Hi, I'm Hanshit Singh
 
-### CSE Student | Builder | Learning through projects
+### CSE Student | Developer | Learning by Building
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub;Practising+UI+UX+Design" alt="Typing animation" />
+<img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="100%" />
 
 <p>
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/">🌐 Portfolio</a> •
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">🤖 Jems AI</a> •
-<a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Main Repository</a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
+<a href="https://github.com/hansitsingh42-rgb/Hanshit">Repository</a>
 </p>
 
 </div>
 
 ---
+
 
 ## 👨‍💻 About Me
 
@@ -23,6 +24,55 @@ I'm a Computer Science student who learns best by making things. I use this repo
 Some projects are simple experiments, and some are projects I keep coming back to. I don't expect everything here to be perfect — the point is to learn, build, test, and make the next version better.
 
 > **Learn → Build → Test → Improve → Repeat.**
+
+---
+
+## 🧭 Current Build
+
+**Student Resource Hub** is the main full-stack learning project I am improving around a simple **Subject → Chapter → Resource** structure. Current work includes resource discovery, responsive navigation, authentication, validation, testing, and security hardening.
+
+### What I am improving
+
+- Better project structure and maintainability
+- Responsive and accessible interfaces
+- Validation, error handling, and secure defaults
+- CI checks, dependency auditing, and CodeQL coverage
+- Clear documentation and project evidence
+
+---
+
+## 🧩 How I Build
+
+`Understand → Plan → Design → Build → Test → Secure → Document → Improve`
+
+I use this workflow to turn learning topics into practical projects. The goal is not to present every project as production software; project status and limitations are documented where they matter.
+
+---
+
+## 🔐 Security-First Development
+
+Security is part of the build process, not an afterthought.
+
+- Keep credentials and secrets out of source control
+- Use environment variables and CI secrets for sensitive configuration
+- Validate untrusted input and handle errors safely
+- Apply secure HTTP headers where the application supports them
+- Review dependencies with automated auditing and Dependabot
+- Use CodeQL and CI checks to catch issues early
+- Document project-specific security considerations
+- Prefer least-privilege GitHub Actions permissions
+
+Repository-level security guidance is documented in [SECURITY.md](./SECURITY.md).
+
+---
+
+## 🧪 Testing & Quality Evidence
+
+For projects where it applies, I document more than the final UI:
+
+`Lint → Build → Dependency Audit → Security Checks → Browser/UX Checks → Documentation`
+
+This makes the repository easier to inspect and helps separate **what is built**, **what is tested**, and **what is still being improved**.
 
 ---
 
@@ -302,6 +352,8 @@ Practical AI            ██████░░░░  Exploring useful applica
 ## 🚀 Selected Work
 
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
+
+**Role:** Developer  ·  **Status:** Deployed learning project
 <img src="./assets/project-logos/skycast.svg" width="360" alt="SKH Cast+ logo" />
 
 A responsive weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
@@ -316,6 +368,8 @@ A responsive weather dashboard using Open-Meteo for live weather, location searc
 [Source](./projects/advanced-weather-app/)
 
 ### 📚 Study Resource Manager
+
+**Role:** Developer  ·  **Status:** Deployed learning project
 <img src="./assets/project-logos/study-resource-manager.svg" width="360" alt="Study Resource Manager logo" />
 
 A student-focused resource library for organizing study material, notes, files and useful learning resources.
@@ -330,6 +384,8 @@ A student-focused resource library for organizing study material, notes, files a
 [Source](./projects/study-resource-manager/)
 
 ### 📊 Student Productivity Dashboard
+
+**Role:** Developer  ·  **Status:** Deployed learning project
 <img src="./assets/project-logos/productivity-dashboard.svg" width="360" alt="Student Productivity Dashboard logo" />
 
 A productivity dashboard for tracking habits, progress and daily performance through simple visual insights.
@@ -344,6 +400,8 @@ A productivity dashboard for tracking habits, progress and daily performance thr
 [Source](./projects/student-productivity-dashboard/)
 
 ### 💻 C Student Record Manager
+
+**Role:** C Programmer / Developer  ·  **Status:** Learning project
 <img src="./assets/project-logos/c-student-record.svg" width="360" alt="C Student Record Manager logo" />
 
 A C-based student record management project for practising structured data handling and core programming fundamentals.
@@ -358,6 +416,8 @@ A C-based student record management project for practising structured data handl
 [Source](./projects/c-student-record-manager/)
 
 ### 🤖 Jems AI
+
+**Role:** Developer  ·  **Status:** Experimental project
 <img src="./assets/project-logos/jems-ai.svg" width="360" alt="Jems AI logo" />
 
 A small AI-focused assistant project exploring practical AI interactions and a student-oriented experience.
@@ -374,6 +434,8 @@ A small AI-focused assistant project exploring practical AI interactions and a s
 [Source](./jems/)
 
 ### 📘 Student Resource Hub
+
+**Role:** Developer / UI implementer  ·  **Status:** Active build
 <img src="./assets/project-logos/student-resource-hub.svg" width="360" alt="Student Resource Hub logo" />
 
 A student-focused resource discovery interface organized around **Subject → Chapter → Resource**, with search, filters, resource details, previews, bookmarks and responsive navigation.
@@ -390,6 +452,8 @@ A student-focused resource discovery interface organized around **Subject → Ch
 > The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
 
 ### 📅 Student Study Planner — UX Prototype
+
+**Role:** UI/UX practitioner / Developer  ·  **Status:** UX prototype
 <img src="./assets/project-logos/student-study-planner.svg" width="360" alt="Student Study Planner logo" />
 
 A responsive study-planning prototype focused on making the next study action visible, organizing a weekly plan, and starting a distraction-free focus session.
@@ -407,6 +471,8 @@ A responsive study-planning prototype focused on making the next study action vi
 [Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
 
 ### 📅 Student Academic Planner
+
+**Role:** Developer  ·  **Status:** Deployed learning project
 <img src="./assets/project-logos/student-academic-planner.svg" width="360" alt="Student Academic Planner logo" />
 
 A browser-based academic dashboard for organizing subjects, attendance, assignments, study sessions, notes and daily focus time.
