@@ -1,0 +1,99 @@
+name: Portfolio Validation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'script.js'
+      - 'assets/**'
+      - 'jems/**'
+      - 'projects/**'
+      - 'pdf-studio/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          check-latest: true
+
+      - name: Validate required portfolio entrypoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            index.html
+            style.css
+            script.js
+            assets/profile-card.css
+            assets/profile-card.js
+            jems/index.html
+            projects/advanced-weather-app/index.html
+            projects/study-resource-manager/index.html
+            projects/student-productivity-dashboard/index.html
+            projects/student-academic-planner/index.html
+            projects/student-study-planner/index.html
+            projects/student-resource-hub/index.html
+            projects/c-student-record-manager/live-demo/index.html
+            pdf-studio/index.html
+          )
+          for file in "${required[@]}"; do
+            test -f "$file"
+          done
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(
+            find . -type f -name '*.js' \
+              -not -path './.git/*' \
+              -not -path './node_modules/*' \
+              -not -path './student-resource-hub/node_modules/*' \
+              | sort
+          )
+          test "${#files[@]}" -gt 0
+          for file in "${files[@]}"; do
+            node --check "$file"
+          done
+
+      - name: Check for accidental literal newline escapes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIn --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.next '\\\\n' .; then
+            echo "Found literal \\n sequences in repository text."
+            exit 1
+          fi
+
+      - name: Validate GitHub Pages source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .github/workflows/pages.yml
+          grep -q "actions/checkout@v6" .github/workflows/pages.yml
+          grep -q "actions/configure-pages@v5" .github/workflows/pages.yml
+          grep -q "actions/upload-pages-artifact@v4" .github/workflows/pages.yml
+          grep -q "actions/deploy-pages@v4" .github/workflows/pages.yml
