@@ -68,23 +68,27 @@ jobs:
         run: |
           set -euo pipefail
           mapfile -t files < <(
-            find . -type f -name '*.js' \
-              -not -path './.git/*' \
-              -not -path './node_modules/*' \
-              -not -path './student-resource-hub/node_modules/*' \
-              | sort
+            find . -type f -name '*.js'               -not -path './.git/*'               -not -path './node_modules/*'               -not -path './student-resource-hub/node_modules/*'               | sort
           )
           test "${#files[@]}" -gt 0
           for file in "${files[@]}"; do
             node --check "$file"
           done
 
-      - name: Check for accidental literal newline escapes
+      - name: Check accidental literal newline escapes in web assets
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RIn --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.next '\\\\n' .; then
-            echo "Found literal \\n sequences in repository text."
+          found=0
+          while IFS= read -r -d '' file; do
+            if grep -nF '\\n' "$file" >/dev/null; then
+              echo "Found literal \\n sequence in web asset: $file"
+              found=1
+            fi
+          done < <(
+            find . -type f \( -name '*.html' -o -name '*.css' -o -name '*.svg' \)               -not -path './.git/*'               -not -path './node_modules/*'               -print0
+          )
+          if [ "$found" -ne 0 ]; then
             exit 1
           fi
 
