@@ -21,9 +21,6 @@
       .small{fill:#c9d1d9;font-size:16px}
       .accent{fill:#79c0ff}
       .dim{fill:#8b949e}
-      .scan{animation:sweep 8s linear infinite}
-      @keyframes sweep{0%{transform:translateY(-180px)}100%{transform:translateY(520px)}}
-      @media (prefers-reduced-motion:reduce){.scan{animation:none;display:none}}
     </style>
     <clipPath id="card"><rect x="12" y="12" width="1156" height="536" rx="18"/></clipPath>
   </defs>
@@ -72,6 +69,6 @@
     <text x="554" y="458" class="mono label">QUALITY</text>
     <text x="554" y="485" class="mono small">Build → Test → Secure → Document</text>
 
-    <rect class="scan" x="28" y="-170" width="1124" height="2" fill="#58a6ff" opacity=".35"/>
+    <rect x="28" y="326" width="1124" height="2" fill="#58a6ff" opacity=".22"/>
   </g>
 </svg>
