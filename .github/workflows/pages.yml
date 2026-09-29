@@ -21,6 +21,7 @@ on:
       - 'pdf-studio/**'
       - 'projects/**'
       - 'README.md'
+      - '.nojekyll'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
