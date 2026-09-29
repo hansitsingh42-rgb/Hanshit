@@ -14,6 +14,7 @@ export default function ThemeToggle() {
       : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
     document.documentElement.dataset.theme = initial;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initial);
   }, []);
 
