@@ -57,3 +57,19 @@ button,a{touch-action:manipulation}
 .dark .brand{color:#edf2f7}
 .dark .task{background:#20283a}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+
+/* Template integration: Cloudlight-inspired soft cloud workspace layer.
+   Existing planner interactions, accessibility states and local-only behavior remain unchanged. */
+body{background:radial-gradient(circle at 18% 0%,rgba(49,91,234,.1),transparent 28%),radial-gradient(circle at 85% 20%,rgba(120,180,255,.12),transparent 30%),linear-gradient(180deg,#f9fbff,#edf3fa)}
+.topbar{box-shadow:0 8px 30px rgba(25,55,95,.06)}
+.card,.date-card,.day,.timeline article,.focus-wrap{box-shadow:0 14px 40px rgba(25,55,95,.08);border-color:rgba(130,150,175,.35)}
+.card:hover,.day:hover{transform:translateY(-3px);transition:transform .22s ease,box-shadow .22s ease}
+.primary{box-shadow:0 10px 22px rgba(49,91,234,.18)}
+@media(prefers-reduced-motion:reduce){.card:hover,.day:hover{transform:none;transition:none}}
+
+/* UI system v2 — study workspace */
+:root{--ui-bg:#f6f8fb;--ui-surface:#fff;--ui-border:#e2e8f0;--ui-text:#172033;--ui-muted:#64748b;--ui-accent:#2563eb;--ui-radius:14px}
+body{background:var(--ui-bg);color:var(--ui-text)}.topbar{background:rgba(255,255,255,.94);border-bottom:1px solid var(--ui-border);box-shadow:0 4px 14px rgba(15,23,42,.04)}.screen{max-width:1180px;margin:auto;padding:28px 20px}.hero{padding:20px 0 18px}.date-card,.card{background:#fff;border:1px solid var(--ui-border);border-radius:var(--ui-radius);box-shadow:0 6px 18px rgba(15,23,42,.05)}.date-card{padding:16px}.grid{gap:16px}.card{padding:18px}.section-head{display:flex;align-items:center;justify-content:space-between}.timeline{border-left:2px solid #dbe3ef;padding-left:18px}.task{background:#fff;border:1px solid var(--ui-border);border-radius:12px;padding:12px}.primary{border-radius:10px}.week .day{border:1px solid var(--ui-border);border-radius:10px;background:#fff}.task.add{border-style:dashed}.theme,.nav,.primary{border-radius:10px}button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.2);outline-offset:2px}
+@media(max-width:700px){.screen{padding:20px 14px}.grid{grid-template-columns:1fr}.card{padding:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
