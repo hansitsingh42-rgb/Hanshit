@@ -17,6 +17,8 @@ export default function ResourceManager({ initialSubjects }: { initialSubjects: 
   const [message, setMessage] = useState(""); const [busy, setBusy] = useState(false);
   const chapters = useMemo(() => subjects.flatMap((subject) => subject.chapters.map((chapter) => ({ ...chapter, subjectId: subject.id }))), [subjects]);
   async function refresh() { const [subjectData, resourceData] = await Promise.all([requestJson("/api/subjects"), requestJson("/api/resources")]); setSubjects(subjectData.subjects); setResources(resourceData.resources); }
+  // The initial fetch intentionally hydrates client state from server data; the React Hooks rule flags this valid synchronization pattern.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { refresh().catch((error) => setMessage(error.message)); }, []);
   async function createSubject(event: FormEvent) { event.preventDefault(); setBusy(true); setMessage(""); try { await requestJson("/api/subjects", { method: "POST", body: JSON.stringify({ name: subjectName, slug: toSlug(subjectName) }) }); setSubjectName(""); await refresh(); setMessage("Subject created."); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create subject."); } finally { setBusy(false); } }
   async function createChapter(event: FormEvent) { event.preventDefault(); setBusy(true); setMessage(""); try { await requestJson("/api/chapters", { method: "POST", body: JSON.stringify({ subjectId: chapterSubjectId, name: chapterName, slug: toSlug(chapterName) }) }); setChapterName(""); await refresh(); setMessage("Chapter created."); } catch (error) { setMessage(error instanceof Error ? error.message : "Unable to create chapter."); } finally { setBusy(false); } }
