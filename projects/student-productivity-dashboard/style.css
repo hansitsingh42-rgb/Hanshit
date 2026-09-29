@@ -12,3 +12,12 @@ body{background:radial-gradient(circle at 90% 0%,rgba(34,211,238,.13),transparen
 .subject:last-child{border-bottom:0}
 @media(max-width:700px){.stats{grid-template-columns:1fr}}
 
+/* UI system v2 — focused student dashboard */
+:root{--ui-bg:#f5f7fa;--ui-surface:#fff;--ui-border:#e2e8f0;--ui-text:#172033;--ui-muted:#64748b;--ui-accent:#0f766e;--ui-radius:14px}
+body{background:var(--ui-bg);color:var(--ui-text)}.app{max-width:1180px;margin:auto;padding:22px}.topbar{background:#fff;border:1px solid var(--ui-border);border-radius:16px;padding:12px 16px}
+.stats{gap:12px}.card{background:#fff;border:1px solid var(--ui-border);border-radius:var(--ui-radius);box-shadow:0 6px 18px rgba(15,23,42,.05)}.stat{padding:18px}.grid{gap:16px}.tasks,.timer-card,.subjects{padding:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.badge{border:1px solid var(--ui-border);border-radius:999px;padding:4px 9px;font-size:.75rem;font-weight:700}
+.task-form input{border:1px solid var(--ui-border);border-radius:10px;min-height:42px}.primary{background:var(--ui-accent);border-radius:10px}.secondary,.icon-btn,.text-btn{border-radius:10px}
+button:focus-visible,input:focus-visible{outline:3px solid rgba(15,118,110,.2);outline-offset:2px}.bar{border-radius:999px;overflow:hidden}
+@media(max-width:700px){.app{padding:14px}.stats{grid-template-columns:1fr 1fr}.tasks,.timer-card,.subjects{padding:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
