@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     rootDir: student-resource-hub
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --ignore-scripts && npx prisma generate && npm run build
     startCommand: npm run db:deploy && npm start
     healthCheckPath: /api/health
     autoDeployTrigger: commit
