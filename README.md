@@ -487,7 +487,7 @@ Jems uses documented repository information as its source of truth and avoids in
 <div align="center">
 
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
 </a>
 
 **Scan to open my portfolio.**
