@@ -22,13 +22,15 @@ jobs:
         working-directory: student-resource-hub
     env:
       DATABASE_URL: "postgresql://ci:ci@localhost:5432/student_resource_hub"
-      AUTH_SECRET: "ci-only-auth-secret-with-more-than-32-characters"
-      ADMIN_EMAIL: "ci@example.com"
-      ADMIN_PASSWORD: "ci-only-password-12345"
+      AUTH_SECRET: "ci-local-validation-secret-change-me-please"
+      ADMIN_EMAIL: "ci@example.invalid"
+      ADMIN_PASSWORD: "ci-local-only-validation-password"
       AUTH_TRUST_HOST: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -38,7 +40,10 @@ jobs:
           cache-dependency-path: student-resource-hub/package.json
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --ignore-scripts
+
+      - name: Generate Prisma client
+        run: npx prisma generate
 
       - name: Lint
         run: npm run lint
