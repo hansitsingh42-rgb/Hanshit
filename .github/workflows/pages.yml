@@ -19,6 +19,8 @@ on:
       - 'projects/student-study-planner/**'
       - 'projects/student-resource-hub/**'
       - 'pdf-studio/**'
+      - 'projects/**'
+      - 'README.md'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
