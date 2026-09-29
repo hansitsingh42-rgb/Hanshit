@@ -28,7 +28,6 @@
     "@types/bcryptjs": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "@types/bcryptjs": "latest",
     "prisma": "6.19.0"
   },
   "overrides": {
