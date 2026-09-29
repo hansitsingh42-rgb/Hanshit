@@ -15,3 +15,17 @@ button,.search-bar,.saved-place,.hour,.day,.insight{transition:transform .2s eas
 button:hover,.saved-place:hover,.hour:hover,.day:hover,.insight:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.35)}
 @media(prefers-reduced-motion:reduce){button,.search-bar,.saved-place,.hour,.day,.insight{transition:none}}
 
+/* UI system v2 — product dashboard refinement */
+:root{--ui-bg:#f6f8fb;--ui-surface:#fff;--ui-border:#e3e8ef;--ui-text:#18212f;--ui-muted:#687386;--ui-accent:#2563eb;--ui-radius:14px}
+body{background:var(--ui-bg);color:var(--ui-text)}
+.app-shell{max-width:1180px;margin:auto;padding:24px}
+.topbar{background:rgba(255,255,255,.92);border:1px solid var(--ui-border);border-radius:16px;padding:12px 16px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.hero{padding:36px 0 22px}.hero .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.75rem;font-weight:700;color:var(--ui-accent)}
+.search-bar{background:var(--ui-surface);border:1px solid var(--ui-border);border-radius:12px;box-shadow:0 4px 16px rgba(15,23,42,.05)}
+.card{background:var(--ui-surface);border:1px solid var(--ui-border);border-radius:var(--ui-radius);box-shadow:0 6px 18px rgba(15,23,42,.05)}
+.current-card{padding:24px}.metric-grid{gap:12px}.metric-grid .card{padding:16px}
+button,.ghost-btn,.location-btn,.favorite{border-radius:10px;transition:transform .15s ease,box-shadow .15s ease}
+button:focus-visible,.ghost-btn:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);outline-offset:2px}
+button:hover,.ghost-btn:hover{transform:translateY(-1px)}
+.section-heading{margin-bottom:12px}@media(max-width:700px){.app-shell{padding:14px}.hero{padding-top:24px}.current-card{padding:18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
