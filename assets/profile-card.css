@@ -1,8 +1,8 @@
 /* ProfileCard-inspired identity component — original implementation for Hanshit.dev */
-.profile-card-shell{position:relative;width:min(100%,290px);margin:0 auto 18px;perspective:900px}
+.profile-card-shell{position:relative;width:min(100%,290px);margin:0 auto 18px;isolation:isolate;perspective:900px}
 .profile-card-glow{position:absolute;inset:8%;border-radius:28px;background:radial-gradient(circle at var(--pc-x,50%) var(--pc-y,50%),rgba(103,176,255,.5),transparent 58%);filter:blur(24px);opacity:0;transition:opacity .25s ease;pointer-events:none}
 .profile-card-shell:hover .profile-card-glow,.profile-card-shell:focus-within .profile-card-glow{opacity:.9}
-.profile-card{position:relative;overflow:hidden;min-height:330px;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:linear-gradient(145deg,rgba(28,35,55,.98),rgba(8,12,22,.98));box-shadow:0 22px 55px rgba(0,0,0,.3);transform:rotateX(var(--pc-ry,0deg)) rotateY(var(--pc-rx,0deg));transition:transform .18s ease,box-shadow .25s ease;will-change:transform}
+.profile-card{position:relative;z-index:1;overflow:hidden;min-height:330px;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:linear-gradient(145deg,rgba(28,35,55,.98),rgba(8,12,22,.98));box-shadow:0 22px 55px rgba(0,0,0,.3);transform:rotateX(var(--pc-ry,0deg)) rotateY(var(--pc-rx,0deg));transition:transform .18s ease,box-shadow .25s ease;will-change:transform}
 .profile-card:hover{box-shadow:0 28px 70px rgba(0,0,0,.42)}
 .profile-card-shine{position:absolute;inset:0;background:radial-gradient(circle at var(--pc-x,50%) var(--pc-y,50%),rgba(255,255,255,.24),transparent 35%);mix-blend-mode:screen;pointer-events:none;z-index:2}
 .profile-card-image{display:block;width:100%;height:255px;object-fit:cover;object-position:center top;filter:saturate(.95) contrast(1.02)}
@@ -10,3 +10,13 @@
 .profile-card-content strong{display:block;color:#fff;font-size:15px;line-height:1.2}.profile-card-content span{display:block;margin-top:4px;color:rgba(255,255,255,.68);font-size:11px}.profile-card-content a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 10px;font-size:11px;white-space:nowrap}.profile-card-content a:hover,.profile-card-content a:focus-visible{border-color:rgba(255,255,255,.55);outline:2px solid rgba(120,190,255,.65);outline-offset:2px}
 @media (max-width:700px){.profile-card-shell{max-width:250px}.profile-card{min-height:300px}.profile-card-image{height:225px}}
 @media (prefers-reduced-motion:reduce){.profile-card{transition:none}.profile-card-glow{transition:none}}
+
+
+/* Keyboard/focus treatment for the interactive GitHub action. */
+.profile-card:focus-within {
+  box-shadow: 0 0 0 2px var(--accent), 0 28px 70px rgba(0,0,0,.42);
+}
+.profile-card-image {
+  user-select: none;
+  -webkit-user-drag: none;
+}
