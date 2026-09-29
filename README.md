@@ -8,6 +8,10 @@
 
 <img src="https://www.gitskins.com/api/section/hero?username=hansitsingh42-rgb&theme=github-dark&style=aura" alt="Hanshit Singh animated GitSkins developer profile" width="100%" />
 
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/318280419?v=4" alt="Hanshit Singh GitHub profile photo" width="140" height="140" style="border-radius:50%;" />
+</p>
+
 <p>
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
