@@ -10,7 +10,7 @@
   <main class="app">
     <header class="topbar">
       <div><p class="eyebrow">STUDENT PRODUCTIVITY</p><h1>Focus Dashboard</h1><p class="muted">Plan your day. Track your progress. Keep improving.</p></div>
-      <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">☾</button>
     </header>
 
     <section class="stats">
@@ -21,15 +21,15 @@
 
     <section class="grid">
       <article class="card tasks">
-        <div class="section-head"><h2>Today's Tasks</h2><button id="clearBtn" class="text-btn">Clear done</button></div>
-        <form id="taskForm" class="task-form"><input id="taskInput" placeholder="Add a task..." maxlength="100" required><button>Add</button></form>
+        <div class="section-head"><h2>Today's Tasks</h2><button id="clearBtn" class="text-btn" type="button">Clear done</button></div>
+        <form id="taskForm" class="task-form"><input id="taskInput" placeholder="Add a task..." maxlength="100" required aria-label="New task"><button type="submit">Add</button></form>
         <ul id="taskList"></ul>
       </article>
 
       <article class="card timer-card">
         <div class="section-head"><h2>Focus Timer</h2><span class="badge">25 min</span></div>
         <div id="timer">25:00</div>
-        <div class="timer-actions"><button id="startBtn">Start</button><button id="resetBtn" class="secondary">Reset</button></div>
+        <div class="timer-actions"><button id="startBtn" type="button" aria-pressed="false">Start</button><button id="resetBtn" class="secondary" type="button">Reset</button></div>
         <p class="muted center">Use focused sessions with short breaks.</p>
       </article>
 
