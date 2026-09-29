@@ -29,6 +29,11 @@ th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #293552;font-size
 .status{min-height:20px;font-size:13px;opacity:.8}
 @media(max-width:700px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.card{padding:16px}}
 </style>
+<style>
+/* UI system v2 — developer tool surface */
+:root{--ui-bg:#f6f8fb;--ui-surface:#fff;--ui-border:#dfe5ec;--ui-text:#172033;--ui-muted:#64748b;--ui-accent:#4f46e5}
+body{background:var(--ui-bg);color:var(--ui-text)}.wrap{max-width:1080px;margin:auto;padding:24px}.card{background:#fff;border:1px solid var(--ui-border);border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.06)}button{border-radius:10px}.badge{border-radius:999px;border:1px solid var(--ui-border)}input,select,textarea{border:1px solid var(--ui-border);border-radius:10px}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(79,70,229,.2);outline-offset:2px}@media(max-width:700px){.wrap{padding:14px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style>
 </head>
 <body>
 <main class="wrap">
@@ -213,4 +218,4 @@ body{background:radial-gradient(circle at 15% 15%,rgba(99,102,241,.3),transparen
 button{background:linear-gradient(135deg,#e0e7ff,#bae6fd)}
 button.secondary{background:rgba(30,41,70,.8)}
 @media(prefers-reduced-motion:reduce){.wrap:before{display:none}}
-undefined
+
