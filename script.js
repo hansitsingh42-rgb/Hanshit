@@ -2,8 +2,10 @@ const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 const toast=$('#toast');
 function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),2200)}
-$('#themeBtn').addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('hanshit-theme',document.body.classList.contains('dark')?'dark':'light')});
-if(localStorage.getItem('hanshit-theme')==='light')document.body.classList.remove('dark');
+function readThemePreference(){try{return window.localStorage.getItem('hanshit-theme')}catch{return null}}
+function saveThemePreference(theme){try{window.localStorage.setItem('hanshit-theme',theme)}catch{}}
+$('#themeBtn').addEventListener('click',()=>{document.body.classList.toggle('dark');saveThemePreference(document.body.classList.contains('dark')?'dark':'light')});
+if(readThemePreference()==='light')document.body.classList.remove('dark');
 const menuBtn=$('#menuBtn');const navMenu=$('#navMenu');
 function closeNav(){navMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}
 menuBtn.addEventListener('click',()=>{const open=navMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));if(open)navMenu.querySelector('a')?.focus()});
