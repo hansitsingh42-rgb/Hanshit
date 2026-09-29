@@ -6,6 +6,8 @@
 
 <img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="100%" />
 
+<img src="https://www.gitskins.com/api/section/hero?username=hansitsingh42-rgb&theme=github-dark&style=aura" alt="Hanshit Singh animated GitSkins developer profile" width="100%" />
+
 <p>
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
