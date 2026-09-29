@@ -7,8 +7,8 @@
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=650&lines=Learning+by+building;Exploring+Web+Development;Learning+C+Programming;Growing+with+Git+%26+GitHub;Practising+UI+UX+Design" alt="Typing animation" />
 
 <p>
-<a href="https://hanshit.vercel.app/">🌐 Portfolio</a> •
-<a href="https://hanshit.vercel.app/jems/">🤖 Jems AI</a> •
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/">🌐 Portfolio</a> •
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">🤖 Jems AI</a> •
 <a href="https://github.com/hansitsingh42-rgb/Hanshit">📦 Main Repository</a>
 </p>
 
@@ -472,7 +472,7 @@ For me, working on real projects is one of the best ways to understand what I'm 
 
 **Explore my documented profile, projects, skills and repository.**
 
-<a href="https://hanshit.vercel.app/jems/">
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">
 <img src="https://img.shields.io/badge/%F0%9F%A4%96%20ASK%20JEMS%20AI-OPEN%20JEMS-555555?style=for-the-badge&labelColor=111111" alt="Ask Jems AI" />
 </a>
 
@@ -486,7 +486,7 @@ Jems uses documented repository information as its source of truth and avoids in
 
 <div align="center">
 
-<a href="https://hanshit.vercel.app/">
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhanshit.vercel.app%2F" width="220" alt="QR code to Hanshit Singh portfolio" />
 </a>
 
