@@ -54,6 +54,9 @@ function render() {
     checkbox.setAttribute('aria-label', `Complete task: ${task.text}`);
 
     const label = document.createElement('label');
+    const taskId = `task-${index}-${Math.random().toString(36).slice(2, 8)}`;
+    checkbox.id = taskId;
+    label.htmlFor = taskId;
     label.textContent = task.text;
 
     const deleteButton = document.createElement('button');
@@ -149,6 +152,7 @@ $('#themeBtn').onclick = () => {
   document.body.classList.toggle('light');
   const theme = document.body.classList.contains('light') ? 'light' : 'dark';
   $('#themeBtn').textContent = theme === 'light' ? '☀' : '☾';
+  $('#themeBtn').setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
   try {
     localStorage.setItem('theme', theme);
   } catch {
@@ -160,6 +164,7 @@ try {
   if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light');
     $('#themeBtn').textContent = '☀';
+    $('#themeBtn').setAttribute('aria-label', 'Switch to dark theme');
   }
 } catch {
   // Use the default dark theme when storage is unavailable.
