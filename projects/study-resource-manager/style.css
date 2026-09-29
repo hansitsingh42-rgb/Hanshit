@@ -15,3 +15,15 @@ body{background:radial-gradient(circle at 85% 0%,rgba(99,102,241,.14),transparen
 .grid .card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(15,23,42,.1);border-color:#c7d2fe}
 @media(prefers-reduced-motion:reduce){.grid .card{transition:none}}
 
+/* UI system v2 — SaaS resource library */
+:root{--ui-bg:#f7f8fa;--ui-surface:#fff;--ui-border:#e5e7eb;--ui-text:#171a21;--ui-muted:#6b7280;--ui-accent:#4f46e5;--ui-radius:14px}
+body{background:var(--ui-bg);color:var(--ui-text)}.topbar{background:rgba(255,255,255,.94);border-bottom:1px solid var(--ui-border);backdrop-filter:blur(12px)}
+.container{max-width:1160px}.hero{padding:44px 0 26px}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ui-accent)}
+.stats{gap:12px}.stats>*{background:var(--ui-surface);border:1px solid var(--ui-border);border-radius:var(--ui-radius);padding:16px;box-shadow:0 5px 16px rgba(17,24,39,.04)}
+.toolbar{background:var(--ui-surface);border:1px solid var(--ui-border);border-radius:14px;padding:10px;box-shadow:0 5px 16px rgba(17,24,39,.04)}
+.toolbar input,.toolbar select{border:1px solid var(--ui-border);border-radius:10px;background:#fff;min-height:40px}
+.grid{gap:16px}.grid>*{border:1px solid var(--ui-border);border-radius:14px;background:#fff;box-shadow:0 6px 18px rgba(17,24,39,.05);transition:transform .15s ease,box-shadow .15s ease}
+.grid>*:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(17,24,39,.08)}
+button,.primary,.secondary,.icon-btn{border-radius:10px}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(79,70,229,.2);outline-offset:2px}
+@media(max-width:720px){.hero{padding-top:28px}.toolbar{display:grid;gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
