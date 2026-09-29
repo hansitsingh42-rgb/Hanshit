@@ -549,8 +549,14 @@ A browser-based academic dashboard for organizing subjects, attendance, assignme
 
 [Source](./projects/student-academic-planner/)
 
+### Contribution
+Academic dashboard structure, browser interactions, study/attendance tracking, and local persistence.
 
+### What I Learned
+Organizing multiple student workflows into a single dashboard while keeping the interface practical and responsive.
 
+### Evidence
+`Live Preview` · `Source Code`
 
 ### Contribution
 Academic dashboard structure, browser interactions, study/attendance tracking, and local persistence.
