@@ -75,3 +75,15 @@ body .ghost-btn,
 body .favorite{background:var(--page-surface-2);border-color:var(--page-border)}
 body .location-btn{background:rgba(99,179,255,.12)}
 body.light .location-btn{background:#edf6ff}
+
+
+/* Final UI reliability layer */
+body{overflow-x:hidden}
+body.light{--bg:#f5f8fc;--surface:#fff;--surface2:#edf3f8;--text:#172033;--muted:#64748b;--accent:#2563eb;--border:rgba(23,32,51,.12);--shadow:0 18px 44px rgba(25,55,95,.10);background:#f5f8fc}
+body.light .topbar{background:rgba(255,255,255,.94)}
+body.light .card,body.light .search-bar,body.light .hour,body.light .day,body.light .insight,body.light .suggestions{background:#fff;color:var(--text);border-color:var(--border)}
+body.light .search-bar input{color:var(--text)}
+body.light .location-btn{background:#eef5ff;color:#2563eb;border-color:#cfe0ff}
+body.light .suggestion:hover,body.light .suggestion:focus-visible{background:#f1f5f9}
+@media(max-width:850px){.metric-grid{grid-template-columns:1fr 1fr}.hero{gap:24px}}
+@media(max-width:520px){.top-actions{gap:6px}.ghost-btn,.favorite{min-height:40px;padding:8px 10px}.current-main{align-items:flex-start;flex-wrap:wrap}.temperature{font-size:3.5rem}.metric-grid{grid-template-columns:1fr}.daily-grid{grid-template-columns:repeat(2,1fr)}.insight-grid{grid-template-columns:1fr}.search-bar{flex-wrap:wrap}.search-bar button{width:100%}}
