@@ -43,3 +43,22 @@ student-record-manager.exe
 ## Current limitation
 
 Records are stored in memory while the program is running. File-based permanent storage can be added as a future improvement.
+
+## Engineering Evidence
+
+**Architecture:** Menu-driven C program → validated input → in-memory record array → CRUD operations.
+
+**Validation:** Input handling validates IDs, menu choices and marks. Repository CI also validates JavaScript/HTML files used by the wider portfolio.
+
+**Security / robustness:** The program avoids credentials and uses bounded in-memory capacity. Input validation is part of the implementation; persistent file storage is intentionally not claimed.
+
+**Live demo:** The repository also contains a browser demo under `live-demo/`.
+
+## Verification Checklist
+
+- Add record
+- List records
+- Search by ID
+- Delete record
+- Invalid input handling
+- GCC/MinGW compilation path
