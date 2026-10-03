@@ -281,7 +281,7 @@ A C-based record-management project focused on structured data, CRUD operations 
 - Structs and bounded arrays for record management
 - Input validation and controlled string handling
 - Search and CRUD workflows
-- File-handling practice with explicit data boundaries
+- Explicitly bounded in-memory data handling
 
 **Stack:** `C`
 
