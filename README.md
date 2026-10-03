@@ -488,208 +488,144 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ## 🚀 Selected Work
 
-> Role → Status → Visual identity → Highlights → Stack → Evidence → Learning
+> Selected projects are presented as engineering evidence: **problem → implementation → engineering decisions → verification → demo/source**.
 
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
 
-**Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/skycast.svg" width="210" alt="SKH Cast+ logo" />
+**Developer · Deployed learning project**
 
-A responsive weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
+A responsive weather dashboard built around live weather data, location search, geolocation, hourly forecasts and 7-day forecasts.
 
-**Highlights**  
-`Live API` `Geolocation` `City Search` `Hourly Forecast` `7-Day Forecast` `Favorites` `°C/°F` `Dark/Light Mode` `Smart Insights`
+**Engineering**
+- Open-Meteo API integration with asynchronous request handling
+- Geolocation and city-search flows
+- Abortable requests and client-side preference persistence
+- Responsive UI with unit/theme preferences and defensive storage handling
 
 **Stack:** `HTML` `CSS` `JavaScript` `Fetch API` `LocalStorage`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/skycast/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) · [Source](./projects/advanced-weather-app/) · [Project README](./projects/advanced-weather-app/README.md)
 
-[Source](./projects/advanced-weather-app/)
+**Learning:** Working with external APIs, async state, geolocation, cancellation and resilient browser-side storage.
 
-### Contribution
-Architecture and interface implementation, responsive UI, core browser interactions, and validation where applicable.
-
-### What I Learned
-Working with live APIs, asynchronous data, geolocation flows, responsive states, and client-side persistence.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) · [Source](./projects/advanced-weather-app/)
 ### 📚 Study Resource Manager
 
-**Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/study-resource-manager.svg" width="210" alt="Study Resource Manager logo" />
+**Developer · Deployed learning project**
 
-A student-focused resource library for organizing study material, notes, files and useful learning resources.
+A student resource library for organizing study material with search, filtering, categories and favorites.
 
-**Highlights**  
-`Resource Library` `Search` `Categories` `Responsive UI` `Student Friendly` `Filters` `Favorites` `Add/Delete` `Dark/Light Mode` `LocalStorage`
+**Engineering**
+- Safe DOM rendering and validated resource input
+- URL validation before external navigation
+- LocalStorage persistence with failure handling
+- Stable resource interactions and responsive states
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) · [Source](./projects/study-resource-manager/) · [Project README](./projects/study-resource-manager/README.md)
 
-[Source](./projects/study-resource-manager/)
+**Learning:** Designing a practical browser data workflow while keeping input and navigation boundaries explicit.
 
-### Contribution
-Interface structure, resource organization, search/filter interactions, and client-side state handling.
-
-### What I Learned
-Designing a resource workflow that stays understandable while supporting search, categories, favorites, and responsive layouts.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) · [Source](./projects/study-resource-manager/)
 ### 📊 Student Productivity Dashboard
 
-**Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/productivity-dashboard.svg" width="210" alt="Student Productivity Dashboard logo" />
+**Developer · Deployed learning project**
 
-A productivity dashboard for tracking habits, progress and daily performance through simple visual insights.
+A browser-based productivity dashboard for tasks, focus sessions, progress tracking and daily study activity.
 
-**Highlights**  
-`Habit Tracking` `Charts` `Progress` `Daily Tracking` `Responsive UI` `Tasks` `25-Minute Focus Timer` `Study Tracking` `Progress Stats` `LocalStorage`
+**Engineering**
+- Persistent client-side state with defensive LocalStorage handling
+- Input length validation before persistence
+- Stable accessibility IDs for task controls
+- Clear state-driven UI interactions
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/) · [Project README](./projects/student-productivity-dashboard/README.md)
 
-[Source](./projects/student-productivity-dashboard/)
+**Learning:** Turning stateful productivity requirements into predictable browser interactions.
 
-### Contribution
-Dashboard structure, tracking interactions, visual progress presentation, and browser-side persistence.
-
-### What I Learned
-Turning productivity requirements into a focused dashboard with clear states and simple interactions.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
 ### 💻 C Student Record Manager
 
-**Role:** C Programmer / Developer  ·  **Status:** Learning project
-<img src="./assets/project-logos/c-student-record.svg" width="210" alt="C Student Record Manager logo" />
+**C Programmer / Developer · Learning project**
 
-A C-based student record management project for practising structured data handling and core programming fundamentals.
+A C-based record-management project focused on structured data, CRUD operations and defensive input handling.
 
-**Highlights**  
-`C Programming` `File Handling` `Records` `CRUD Operations` `Structs` `Arrays` `Functions` `Search` `Validation`
+**Engineering**
+- Structs and bounded arrays for record management
+- Input validation and controlled string handling
+- Search and CRUD workflows
+- File-handling practice with explicit data boundaries
 
 **Stack:** `C`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) · [Source](./projects/c-student-record-manager/) · [Project README](./projects/c-student-record-manager/README.md)
 
-[Source](./projects/c-student-record-manager/)
+**Learning:** Building reliable fundamentals around data structures, functions, validation and file handling in C.
 
-### Contribution
-Core C implementation, record structures, file handling, CRUD operations, search, and input validation.
-
-### What I Learned
-Practising structured data, functions, arrays, structs, file handling, and defensive input handling in C.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) · [Source](./projects/c-student-record-manager/)
 ### 🤖 Jems AI
 
-**Role:** Developer  ·  **Status:** Experimental project
-<img src="./assets/project-logos/jems-ai.svg" width="210" alt="Jems AI logo" />
+**Developer · Experimental project**
 
-A small AI-focused assistant project exploring practical AI interactions and a student-oriented experience.
+A small AI-focused assistant exploring grounded interaction with documented profile, project and repository information.
 
-**Highlights**  
-`AI Assistant` `Interactive UI` `Student Focused` `Local Storage`
-
-**Focus:** Clear answers from documented profile, project, skill, and repository information rather than invented details.
+**Engineering**
+- Documented data as the intended source of truth
+- Clear separation between known information and unsupported claims
+- Student-focused interaction flow
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/jems/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Source](./jems/)
 
-[Source](./jems/)
+**Learning:** Designing assistant experiences around grounded information instead of presenting unsupported output as fact.
 
-### Contribution
-Interface implementation, documented profile/project data flow, and student-focused interaction design.
-
-### What I Learned
-Keeping an assistant grounded in documented information and separating known data from unsupported claims.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Source](./jems/)
 ### 📘 Student Resource Hub
 
-**Role:** Developer / UI implementer  ·  **Status:** Active build
-<img src="./assets/project-logos/student-resource-hub.svg" width="210" alt="Student Resource Hub logo" />
+**Developer / UI implementer · Active build**
 
-A student-focused resource discovery interface organized around **Subject → Chapter → Resource**, with search, filters, resource details, previews, bookmarks and responsive navigation.
+A resource-discovery system organized around **Subject → Chapter → Resource**, with search, filters, previews, bookmarks and responsive navigation.
 
-**Highlights**  
-`Subject → Chapter → Resource` `Search` `Filters` `Resource Preview` `Bookmarks` `Progress` `Dark/Light Mode` `Responsive UI` `Keyboard Search`
+**Engineering**
+- Clear information architecture for academic resources
+- Responsive discovery and navigation flows
+- Static GitHub Pages preview separated from the full-stack application
+- Validation, authentication and security work documented at the application level
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage` `Canvas`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/)
+**Evidence:** [Static Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) · [Static Source](./projects/student-resource-hub/) · [Full-stack App](./student-resource-hub/)
 
-[Source](./projects/student-resource-hub/)
-
-> The GitHub Pages version is the static preview/catalog. The separate `student-resource-hub/` application contains the full-stack implementation.
-
-### Contribution
-Information architecture, responsive interface implementation, resource discovery flows, and UX/security considerations.
-
-### What I Learned
-Connecting a Subject → Chapter → Resource model with search, filters, previews, bookmarks, and a full-stack direction.
-
-### Evidence
-[Static Preview](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) · [Source](./projects/student-resource-hub/) · [Full-stack App](./student-resource-hub/)
 ### 📅 Student Study Planner — UX Prototype
 
-**Role:** UI/UX practitioner / Developer  ·  **Status:** UX prototype
-<img src="./assets/project-logos/student-study-planner.svg" width="210" alt="Student Study Planner logo" />
+**UI/UX practitioner / Developer · UX prototype**
 
-A responsive study-planning prototype focused on making the next study action visible, organizing a weekly plan, and starting a distraction-free focus session.
+A study-planning prototype focused on weekly planning, visible next actions and distraction-free focus sessions.
 
-**Highlights**  
-`Dashboard` `Weekly Planner` `Focus Timer` `Light/Dark Mode` `Responsive UI` `Accessibility States` `Privacy-Conscious UX`
-
-**UX process**  
-`Problem` → `Users` → `Research Plan` → `Goals` → `IA` → `User Flow` → `Wireframe` → `UI` → `Prototype` → `Test` → `Improve`
+**Engineering & UX**
+- Problem → research plan → IA → user flow → wireframe → UI → prototype → test → improve
+- Responsive interaction states
+- Accessibility and privacy-conscious UX considerations
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) · [Source](./projects/student-study-planner/) · [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) · [Security](./projects/student-study-planner/SECURITY.md)
 
-[Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
-
-### Contribution
-UX structure, interaction states, responsive UI implementation, and accessibility/privacy considerations.
-
-### What I Learned
-Documenting a design process from problem framing through flow, prototype, testing, and iteration.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) · [Source](./projects/student-study-planner/) · [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) · [Security](./projects/student-study-planner/SECURITY.md)
 ### 📅 Student Academic Planner
 
-**Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/student-academic-planner.svg" width="210" alt="Student Academic Planner logo" />
+**Developer · Deployed learning project**
 
-A browser-based academic dashboard for organizing subjects, attendance, assignments, study sessions, notes and daily focus time.
+A browser-based academic dashboard for subjects, attendance, assignments, study sessions, notes and focus time.
 
-**Highlights**  
-`Subjects` `Attendance` `Assignments` `Study Sessions` `Notes` `Focus Timer` `Progress Tracking` `Responsive UI` `Dark/Light Mode` `LocalStorage`
+**Engineering**
+- Multiple student workflows represented as clear browser states
+- Local persistence with responsive UI
+- Attendance, assignment and study-session interactions
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage`
 
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/)
+**Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) · [Source](./projects/student-academic-planner/)
 
-[Source](./projects/student-academic-planner/)
-
-### Contribution
-Academic dashboard structure, browser interactions, study/attendance tracking, and local persistence.
-
-### What I Learned
-Organizing multiple student workflows into a single dashboard while keeping the interface practical and responsive.
-
-### Evidence
-[Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) · [Source](./projects/student-academic-planner/)
-
+> **Selection principle:** projects remain visible because they document the learning path. Claims are kept proportional to what is actually implemented and verified.
 ---
 
 ## 🧩 Project Branding Standard
