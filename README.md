@@ -8,6 +8,8 @@
 
 <img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="100%" />
 
+<img src="./assets/readme-developer-system.svg" alt="Layered developer, coder, UX/UI and security component system" width="100%" />
+
 <details open>
 <summary><strong>◈ Developer Component System</strong> — interactive-style README components</summary>
 
@@ -109,6 +111,8 @@ Validate → Review
 
 ## 👨‍💻 About Me
 
+> **PROFILE COMPONENT** · Learn by building · Practical development · Continuous improvement
+
 I'm a Computer Science student who learns best by making things. I use this repository to keep my projects, experiments, practice work, and the things I want to improve.
 
 Some projects are simple experiments, and some are projects I keep coming back to. I don't expect everything here to be perfect — the point is to learn, build, test, and make the next version better.
@@ -118,6 +122,8 @@ Some projects are simple experiments, and some are projects I keep coming back t
 ---
 
 ## 🧭 Current Build
+
+> **PRODUCT COMPONENT** · Current build → architecture → UX → validation → security
 
 **Student Resource Hub** is the main full-stack learning project I am improving around a simple **Subject → Chapter → Resource** structure. Current work includes resource discovery, responsive navigation, authentication, validation, testing, and security hardening.
 
@@ -133,6 +139,8 @@ Some projects are simple experiments, and some are projects I keep coming back t
 
 ## 🧩 How I Build
 
+> **ENGINEERING PIPELINE** · Understand → Plan → Design → Build → Test → Secure → Document → Improve
+
 `Understand → Plan → Design → Build → Test → Secure → Document → Improve`
 
 I use this workflow to turn learning topics into practical projects. The goal is not to present every project as production software; project status and limitations are documented where they matter.
@@ -140,6 +148,8 @@ I use this workflow to turn learning topics into practical projects. The goal is
 ---
 
 ## 🔐 Security-First Development
+
+> **SECURITY COMPONENT** · Protect secrets → Validate input → Audit dependencies → Scan code → Least privilege
 
 Security is part of the build process, not an afterthought.
 
@@ -158,6 +168,8 @@ Repository-level security guidance is documented in [SECURITY.md](./SECURITY.md)
 
 ## 🧪 Testing & Quality Evidence
 
+> **QUALITY GATE** · Lint → Build → Audit → Security → Browser/UX → Documentation
+
 For projects where it applies, I document more than the final UI:
 
 `Lint → Build → Dependency Audit → Security Checks → Browser/UX Checks → Documentation`
@@ -167,6 +179,8 @@ This makes the repository easier to inspect and helps separate **what is built**
 ---
 
 ## ⚡ Developer Snapshot
+
+> **DEVELOPER CARD** · Core skills · workflow · design · AI · direction
 
 | Focus | Current Direction |
 |---|---|
@@ -222,6 +236,8 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 ---
 
 ## 🎨 UI/UX Design & Product Thinking
+
+> **UX COMPONENT** · Problem → Research → IA → Flow → Wireframe → UI → Prototype → Test → Improve
 
 I am actively developing my UI/UX skills by applying design thinking to real projects rather than treating design as only visual styling.
 
@@ -291,6 +307,8 @@ A UX case study currently being developed in Figma, covering:
 
 ## 🛠️ Skills & Tools
 
+> **TOOLKIT COMPONENT** · Development · Version control · Product design · Collaboration
+
 <p>
 <img src="https://img.shields.io/badge/C-Programming-555555?style=for-the-badge&logo=c&logoColor=white" alt="C" />
 <img src="https://img.shields.io/badge/JavaScript-Learning-555555?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
@@ -302,6 +320,8 @@ A UX case study currently being developed in Figma, covering:
 ---
 
 ## 🧠 Skills & Technologies
+
+> **SKILL MATRIX** · Code + UX + AI + workflow, organized as reusable capability groups
 
 ### 💻 Development
 `C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
@@ -324,6 +344,8 @@ A UX case study currently being developed in Figma, covering:
 ---
 
 ## 🧊 3D Skills Visualization
+
+> **3D VISUAL COMPONENT** · Spatial skill map for the existing capability data
 
 <div align="center">
 <img src="./assets/3d-skills-visual.svg" width="900" alt="3D-style skills visualization" />
@@ -348,6 +370,8 @@ Practical AI            ██████░░░░  Exploring useful applica
 ---
 
 ## 📊 GitHub Analytics
+
+> **DATA COMPONENT** · Repository activity and language signals
 
 <div align="center">
 
@@ -393,6 +417,8 @@ Practical AI            ██████░░░░  Exploring useful applica
 ---
 
 ## 🎨 Project Brand Gallery
+
+> **BRAND SYSTEM COMPONENT** · Every project gets its own visual identity while keeping one portfolio language
 
 <table>
 <tr>
@@ -440,6 +466,8 @@ Practical AI            ██████░░░░  Exploring useful applica
 ---
 
 ## 🚀 Selected Work
+
+> **PROJECT CARD SYSTEM** · Role → Status → Visual identity → Highlights → Stack → Evidence → Learning
 
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
 
@@ -645,6 +673,8 @@ Organizing multiple student workflows into a single dashboard while keeping the 
 
 ## 🧩 Project Branding Standard
 
+> **DESIGN SYSTEM COMPONENT** · Logo → layout → evidence → accessibility → repeatable project template
+
 I use the following presentation standard across the projects in this repository:
 
 - Dedicated SVG project logo
@@ -687,6 +717,8 @@ For me, working on real projects is one of the best ways to understand what I'm 
 
 ## 🤖 Ask Jems AI
 
+> **AI COMPONENT** · Documented data → grounded interaction → clear source of truth
+
 <div align="center">
 
 ### `JEMS` • `Hanshit Assistant`
@@ -718,6 +750,8 @@ Jems uses documented repository information as its source of truth and avoids in
 ---
 
 ## 📁 Project Hub
+
+> **PROJECT INDEX COMPONENT** · Live preview ↔ source ↔ project identity
 
 | Project | Live Preview | Source |
 |---|---|---|
@@ -760,3 +794,24 @@ A lot of my learning starts with a simple question: can I turn this into somethi
 </div>
 
 ⭐ If you find something useful here, feel free to explore the repository.
+
+
+<details>
+<summary><strong>◈ Visual System Notes</strong> — how the repository presentation is structured</summary>
+
+| Layer | Component pattern | Purpose |
+|---|---|---|
+| Identity | Hero + profile + layered system visual | Establish developer identity |
+| Engineering | Pipeline + skill matrix + evidence gates | Show how work is built and reviewed |
+| UX/UI | Process stepper + structured cards | Show product-thinking and usability practice |
+| Projects | Brand gallery + project cards + evidence | Make each project easy to inspect |
+| Security | Security checklist + quality gate | Surface secure-development habits |
+| Data | Analytics + progress blocks | Present measurable repository signals |
+| 3D / Visual | Existing 3D SVG assets + depth-based diagrams | Add visual hierarchy without hiding the content |
+| Navigation | Live preview + source + project hub | Keep every important destination discoverable |
+
+> **Implementation rule:** existing README content is preserved. The component layer is added around the ready-made information instead of replacing it.
+
+> **GitHub rendering note:** GitHub README rendering does not execute inline SVG animation/scripts, so the visual system uses GitHub-compatible SVG/Markdown/HTML presentation rather than pretending unsupported animation is live.
+
+</details>
