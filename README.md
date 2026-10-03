@@ -287,7 +287,7 @@ A C-based record-management project focused on structured data, CRUD operations 
 
 **Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) · [Source](./projects/c-student-record-manager/) · [Project README](./projects/c-student-record-manager/README.md)
 
-**Learning:** Building reliable fundamentals around data structures, functions, validation and file handling in C.
+**Learning:** Building reliable fundamentals around data structures, functions, validation and bounded in-memory record handling in C.
 
 ### 🤖 Jems AI
 
@@ -305,6 +305,26 @@ A small AI-focused assistant exploring grounded interaction with documented prof
 **Evidence:** [Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Source](./jems/)
 
 **Learning:** Designing assistant experiences around grounded information instead of presenting unsupported output as fact.
+
+### 📧 Email Campaign Builder
+
+**Developer · Security-focused full-stack project**
+
+A campaign-management project with a responsive product UI and a server-side foundation for authentication, campaign workflows, audience management, delivery controls and provider isolation.
+
+**Engineering**
+- Server-side authentication/session boundary
+- Campaign, audience and automation workflows
+- Input validation, CSRF/same-origin protections and rate limits
+- Delivery idempotency, bounded retries and stale-job recovery
+- Server-only provider credentials and signed webhook verification
+- Static GitHub Pages preview separated from backend code
+
+**Stack:** `JavaScript` `Node.js` `PostgreSQL` `GitHub Actions`
+
+**Evidence:** [Live Preview](https://hansitsingh42-rgb.github.io/Hanshit/email-campaign-builder/) · [Source](./projects/email-campaign-builder/) · [Project README](./projects/email-campaign-builder/README.md) · [Security Audit](./projects/email-campaign-builder/SECURITY-AUDIT.md)
+
+**Status:** Security-hardened backend foundation; real production email delivery remains intentionally gated.
 
 ### 📘 Student Resource Hub
 
