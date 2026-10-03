@@ -25,6 +25,7 @@ function applyTheme(theme,persist=true){
   document.body.classList.toggle('light',light);
   themeBtn.textContent=light?'☾':'☼';
   themeBtn.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
+    themeBtn.setAttribute('aria-pressed',String(light));
   if(persist){try{localStorage.setItem(THEME_KEY,light?'light':'dark')}catch{}}
 }
 let savedTheme='dark';
@@ -112,7 +113,7 @@ input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventD
 document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>send(b.dataset.q)));
 clearBtn.addEventListener('click',()=>{if(!history.length)return;if(!confirm('Clear the Jems conversation from this browser?'))return;try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.length=0;messages.replaceChildren();add(`All clear. 👋 Fresh conversation from here. Bolo, kya explore karna hai?`,'bot');persist()});
 function applyTheme(){const light=document.body.classList.contains('light');themeBtn.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');themeBtn.setAttribute('aria-pressed',String(light));}
-themeBtn.addEventListener('click',()=>{document.body.classList.toggle('light');try{localStorage.setItem(THEME_KEY,document.body.classList.contains('light')?'light':'dark')}catch(e){}applyTheme();});
+
 try{if(localStorage.getItem(THEME_KEY)==='light')document.body.classList.add('light')}catch(e){}applyTheme();
 exportBtn.addEventListener('click',()=>exportChat(false));jsonBtn.addEventListener('click',()=>exportChat(true));
 copyBtn.addEventListener('click',async()=>{const bots=history.filter(m=>m.type==='bot'),last=bots[bots.length-1];if(!last)return;try{await navigator.clipboard.writeText(safeString(last.text));copyBtn.textContent='Copied ✓';setTimeout(()=>copyBtn.textContent='Copy last answer',1200)}catch(e){copyBtn.textContent='Copy unavailable';setTimeout(()=>copyBtn.textContent='Copy last answer',1200)}});
