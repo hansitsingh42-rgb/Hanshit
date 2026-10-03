@@ -20,6 +20,17 @@ const MAX_INPUT=1000;
 const MAX_HISTORY=60;
 const STORAGE_KEY='jems-history';
 const THEME_KEY='jems-theme';
+function applyTheme(theme,persist=true){
+  const light=theme==='light';
+  document.body.classList.toggle('light',light);
+  themeBtn.textContent=light?'☾':'☼';
+  themeBtn.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
+  if(persist){try{localStorage.setItem(THEME_KEY,light?'light':'dark')}catch{}}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem(THEME_KEY)||'dark'}catch{}
+applyTheme(savedTheme,false);
+themeBtn.addEventListener('click',()=>applyTheme(document.body.classList.contains('light')?'dark':'light'));
 
 const facts={
 who:`Hanshit is a Polytechnic Computer Science student and student developer. This repository is his project portfolio and learning workspace. His documented approach is: Learn → Build → Improve → Repeat.`,
