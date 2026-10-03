@@ -34,6 +34,19 @@ th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #293552;font-size
 :root{--ui-bg:#f6f8fb;--ui-surface:#fff;--ui-border:#dfe5ec;--ui-text:#172033;--ui-muted:#64748b;--ui-accent:#4f46e5}
 body{background:var(--ui-bg);color:var(--ui-text)}.wrap{max-width:1080px;margin:auto;padding:24px}.card{background:#fff;border:1px solid var(--ui-border);border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.06)}button{border-radius:10px}.badge{border-radius:999px;border:1px solid var(--ui-border)}input,select,textarea{border:1px solid var(--ui-border);border-radius:10px}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(79,70,229,.2);outline-offset:2px}@media(max-width:700px){.wrap{padding:14px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 </style>
+
+<style>
+/* Theme reliability fix: keep the live C demo readable after the later UI-system layer. */
+:root{--page-bg:#0b1020;--page-surface:#11182b;--page-input:#0b1020;--page-border:#293552;--page-text:#eef2ff;--page-muted:#aeb7c7;--page-button:#dbe5ff;--page-button-text:#0b1020}
+body{background:radial-gradient(circle at top,#18213f,#080b14 60%);color:var(--page-text)}
+.card{background:var(--page-surface);border-color:var(--page-border);color:var(--page-text)}
+input{background:var(--page-input);color:var(--page-text);border-color:#35415f}
+th,td{border-bottom-color:var(--page-border);color:var(--page-text)}
+.badge{border-color:#34405f;color:var(--page-text)}
+button{background:var(--page-button);color:var(--page-button-text)}
+button.secondary{background:#202b46;color:var(--page-text)}
+.empty,.status{color:var(--page-muted)}
+</style>
 </head>
 <body>
 <main class="wrap">
