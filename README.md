@@ -103,6 +103,30 @@ Validate → Review
 
 ---
 
+## ⚙️ Engineering at a Glance
+
+> **BUILD SYSTEM** · Learn deeply → build practically → verify honestly → improve continuously
+
+| Layer | What this repository demonstrates |
+|---|---|
+| **Engineering** | C, JavaScript, HTML/CSS, browser APIs, data handling and practical web applications |
+| **Projects** | Student tools, productivity systems, weather intelligence, AI experiments and academic resources |
+| **Quality** | Input validation, error handling, accessibility, secure defaults, CI checks and CodeQL |
+| **Workflow** | Git, GitHub, focused commits, documentation, review checklists and reproducible verification |
+| **Product thinking** | Clear user problems, information architecture, responsive UI and usability considerations |
+
+### Featured Build Evidence
+
+- **SKH Cast+** — API integration, geolocation, async requests, cancellation, local storage and responsive weather UI
+- **Study Resource Manager** — filtering, favorites, persistence, URL validation and safe DOM rendering
+- **Student Productivity Dashboard** — task state, persistent study time, timer logic and accessible controls
+- **C Student Record Manager** — C CRUD workflow, bounded input handling and validation
+- **Student Resource Hub** — structured academic resources with a clear Subject → Chapter → Resource model
+
+> **Principle:** existing projects are learning evidence. I document limitations instead of presenting unfinished work as production-ready.
+
+---
+
 ## 👨‍💻 About Me
 
 > **PROFILE COMPONENT** · Learn by building · Practical development · Continuous improvement
