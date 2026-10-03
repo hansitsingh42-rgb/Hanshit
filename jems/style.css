@@ -18,3 +18,37 @@ body{background-color:#090b10;background-image:linear-gradient(rgba(148,163,184,
 body{background:var(--ui-bg);color:var(--ui-text)}.app{max-width:1080px;margin:auto;background:#fff;border:1px solid var(--ui-border);border-radius:18px;box-shadow:0 12px 36px rgba(16,24,40,.08);overflow:hidden}.top{border-bottom:1px solid var(--ui-border);padding:12px 16px;background:rgba(255,255,255,.94)}.hero{padding:28px 28px 14px}.capabilities{display:grid;gap:10px}.chat{margin:0 20px 20px;border:1px solid var(--ui-border);border-radius:14px;overflow:hidden;background:#fbfcfe}.toolbar{border-bottom:1px solid var(--ui-border);padding:10px 12px}.messages{padding:18px}.messages>*{border-radius:14px}.suggestions button,.quick-actions button{border:1px solid var(--ui-border);border-radius:999px;background:#fff}.searchbox,.chat textarea,.chat input{border:1px solid var(--ui-border);border-radius:12px;background:#fff}.actions button,.back{border-radius:10px}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(79,70,229,.2);outline-offset:2px}
 @media(max-width:720px){.app{border-radius:0;border-left:0;border-right:0}.hero{padding:22px 16px 12px}.chat{margin:0 10px 10px}.messages{padding:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* Theme reliability fix: keep Jems controls readable and interactive in both themes. */
+body{
+  --page-bg:#080b11;
+  --page-surface:#0f131b;
+  --page-surface-2:#151a22;
+  --page-text:#f5f7fb;
+  --page-muted:#8993a5;
+  --page-border:#303744;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body.light{
+  --page-bg:#f5f7fa;
+  --page-surface:#ffffff;
+  --page-surface-2:#f1f3f6;
+  --page-text:#161a22;
+  --page-muted:#667085;
+  --page-border:#d7dce4;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body .chat,
+body dialog{background:var(--page-surface);border-color:var(--page-border);color:var(--page-text)}
+body .chat textarea,
+body .searchbox{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
+body .suggestions button,
+body .actions>button,
+body .footer-tools button,
+body .quick-actions button,
+body .footer-row button{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
+body .status,
+body .brand span,
+body .back{color:var(--page-muted)}
