@@ -58,7 +58,7 @@ jobs:
           rm -rf _site
           mkdir -p _site/student-productivity-dashboard _site/study-resource-manager _site/visitor-analytics _site/demo
           mkdir -p _site/c-student-record-manager _site/jems _site/skycast _site/student-academic-planner
-          mkdir -p _site/student-study-planner _site/student-resource-hub _site/pdf-studio
+          mkdir -p _site/student-study-planner _site/student-resource-hub _site/pdf-studio _site/email-campaign-builder
 
           cp index.html style.css script.js _site/
           if [ -d assets ]; then cp -R assets _site/assets; fi
@@ -73,13 +73,16 @@ jobs:
           cp -R projects/student-study-planner/. _site/student-study-planner/
           cp -R projects/student-resource-hub/. _site/student-resource-hub/
           cp -R pdf-studio/. _site/pdf-studio/
+          cp -R projects/email-campaign-builder/. _site/email-campaign-builder/
+          rm -rf _site/email-campaign-builder/api _site/email-campaign-builder/db _site/email-campaign-builder/lib _site/email-campaign-builder/test
+          rm -f _site/email-campaign-builder/.env.example _site/email-campaign-builder/package.json _site/email-campaign-builder/package-lock.json
 
           test -f _site/index.html
           test -f _site/style.css
           test -f _site/script.js
           test -f _site/assets/contributions.js
           test -f _site/assets/contributions.css
-          for f in             _site/student-productivity-dashboard/index.html             _site/study-resource-manager/index.html             _site/visitor-analytics/index.html             _site/demo/index.html             _site/c-student-record-manager/index.html             _site/jems/index.html _site/jems/style.css _site/jems/script.js             _site/skycast/index.html _site/skycast/style.css _site/skycast/script.js             _site/student-academic-planner/index.html _site/student-academic-planner/style.css             _site/student-academic-planner/script.js _site/student-academic-planner/interactions.js             _site/student-academic-planner/runtime-check.js             _site/student-study-planner/index.html _site/student-study-planner/style.css             _site/student-study-planner/script.js             _site/student-resource-hub/index.html _site/student-resource-hub/style.css             _site/student-resource-hub/script.js             _site/pdf-studio/index.html _site/pdf-studio/app.js             _site/pdf-studio/pdf-engine.js _site/pdf-studio/styles.css; do
+          for f in             _site/student-productivity-dashboard/index.html             _site/study-resource-manager/index.html             _site/visitor-analytics/index.html             _site/demo/index.html             _site/c-student-record-manager/index.html             _site/jems/index.html _site/jems/style.css _site/jems/script.js             _site/skycast/index.html _site/skycast/style.css _site/skycast/script.js             _site/student-academic-planner/index.html _site/student-academic-planner/style.css             _site/student-academic-planner/script.js _site/student-academic-planner/interactions.js             _site/student-academic-planner/runtime-check.js             _site/student-study-planner/index.html _site/student-study-planner/style.css             _site/student-study-planner/script.js             _site/student-resource-hub/index.html _site/student-resource-hub/style.css             _site/student-resource-hub/script.js             _site/pdf-studio/index.html _site/pdf-studio/app.js             _site/pdf-studio/pdf-engine.js _site/pdf-studio/styles.css             _site/email-campaign-builder/index.html; do
             test -f "$f"
           done
 
