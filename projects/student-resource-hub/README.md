@@ -69,3 +69,23 @@ Published through the repository's GitHub Pages workflow.
 ## Purpose
 
 This project demonstrates practical frontend development, responsive UI/UX, browser-side state management, interaction design, accessibility awareness and deployment workflow knowledge.
+
+## Engineering Evidence
+
+**Architecture:** Multi-page static frontend → client-side JavaScript → LocalStorage/browser state → rendered academic resource experience.
+
+**Validation:** Repository CI checks JavaScript syntax and parses tracked HTML documents. GitHub Pages deployment also validates required project files before publishing.
+
+**Security boundary:** The static version does not provide real server-side authentication, database access or secret-bearing backend operations. Client-side validation is therefore treated as UX validation, not as a server security boundary.
+
+**Accessibility / UX:** Reduced-motion support, keyboard-friendly interactions and visible UI states are documented as part of the prototype.
+
+## Verification Checklist
+
+- Subject → chapter → resource navigation
+- Search/filter interactions
+- LocalStorage state
+- Theme persistence
+- Responsive navigation
+- Reduced-motion behavior
+- Deployment path validation
