@@ -16,6 +16,10 @@
 </div>
 
 
+
+
+**Live Preview Viewer:** [Open all browser-based project previews](https://hansitsingh42-rgb.github.io/Hanshit/demo/)
+
 > **Start here:** Featured Builds → Engineering → Security & Quality → Current Learning → Jems AI. Expand the sections below for the complete project record and visual evidence.
 
 ---
