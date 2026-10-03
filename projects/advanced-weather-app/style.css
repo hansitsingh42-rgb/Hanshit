@@ -29,3 +29,49 @@ button:focus-visible,.ghost-btn:focus-visible,input:focus-visible{outline:3px so
 button:hover,.ghost-btn:hover{transform:translateY(-1px)}
 .section-heading{margin-bottom:12px}@media(max-width:700px){.app-shell{padding:14px}.hero{padding-top:24px}.current-card{padding:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+/* Theme reliability fix: later UI-system rules must respect the selected theme. */
+body{
+  --page-bg:#07101f;
+  --page-surface:#0d192b;
+  --page-surface-2:#12223a;
+  --page-text:#eef5ff;
+  --page-muted:#91a3bd;
+  --page-border:rgba(255,255,255,.09);
+  background:radial-gradient(circle at 20% 0%,#17345b 0,transparent 35%),var(--page-bg);
+  color:var(--page-text);
+}
+body.light{
+  --page-bg:#f4f8fd;
+  --page-surface:#ffffff;
+  --page-surface-2:#edf4fc;
+  --page-text:#102033;
+  --page-muted:#60728a;
+  --page-border:rgba(16,32,51,.1);
+  background:radial-gradient(circle at 20% 0%,#dceeff 0,transparent 38%),var(--page-bg);
+  color:var(--page-text);
+}
+body .topbar{background:rgba(9,18,32,.92);border-color:var(--page-border)}
+body.light .topbar{background:rgba(255,255,255,.92)}
+body .brand,
+body .search-bar input,
+body .suggestion,
+body .card,
+body .ghost-btn,
+body .favorite{color:var(--page-text)}
+body .card,
+body .suggestions{background:var(--page-surface);border-color:var(--page-border)}
+body .search-bar{background:var(--page-surface);border-color:var(--page-border)}
+body .metric-grid div,
+body .sun-times div,
+body .hour,
+body .day,
+body .insight,
+body .saved-place{background:var(--page-surface-2);border-color:var(--page-border)}
+body .muted,
+body footer,
+body .hour small,
+body .day small{color:var(--page-muted)}
+body .ghost-btn,
+body .favorite{background:var(--page-surface-2);border-color:var(--page-border)}
+body .location-btn{background:rgba(99,179,255,.12)}
+body.light .location-btn{background:#edf6ff}
