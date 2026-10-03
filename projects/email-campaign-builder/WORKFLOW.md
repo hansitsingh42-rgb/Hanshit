@@ -1,25 +1,29 @@
 # Product workflow
 
-The project purpose remains an email campaign builder.
+The project purpose remains an email campaign builder, with the frontend experience and server-side foundation developed as separate boundaries.
 
 ## Current sequence
 
-1. Landing page
-2. Authentication/application shell
-3. Campaign creation
-4. Email content/editor
-5. Audience and segmentation
-6. Automation
-7. Analytics
-8. Provider integration
-9. Security/deployment audit
+1. Landing page and product shell
+2. Authentication
+3. Campaign creation and editing
+4. Audience and segmentation
+5. Automation
+6. Analytics and campaign state
+7. Delivery preparation/processing boundary
+8. Provider webhook handling
+9. Security and deployment verification
 
-## Campaign creation boundary
+## Architecture boundary
 
-The frontend validates basic fields for usability only. It does not send email, store campaign data, authenticate users, or contact an email provider.
+The browser handles presentation and user interaction. Server-side API modules handle authentication, authorization, validation, persistence, delivery controls and provider integration.
 
-When a backend is added, every campaign operation must be authorized server-side and validated again on the server. Campaign ownership must be checked before read/update/delete operations.
+The frontend does not receive provider credentials and does not send email directly.
 
-## Stage 12 status
+## Current status
 
-Campaign persistence is the next backend implementation boundary. The existing frontend workflow remains unchanged. Campaign data must be stored per authenticated user, with server-side ownership checks on every read, update, and delete operation.
+Campaign persistence, authenticated workflows, delivery controls and security primitives are implemented in the repository. Real provider delivery remains intentionally disabled until production gates are verified in a controlled environment.
+
+## Verification rule
+
+A feature is considered complete only when the affected code, automated checks, security implications, and deployment path have been reviewed together.
