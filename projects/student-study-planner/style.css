@@ -112,3 +112,14 @@ body .task small,
 body .privacy,
 body .state-copy{color:var(--page-muted)}
 body .add{border-color:var(--page-line);color:var(--page-muted)}
+
+
+/* Final UI reliability layer */
+body{overflow-x:hidden}
+body.dark{--page-bg:#0d1117;--page-surface:#151a22;--page-line:#2b3440;--page-text:#edf2f7;--page-muted:#9aa6b5;--page-soft:#20283a;background:#0d1117;color:#edf2f7}
+body:not(.dark){background:#f6f8fb;color:#172033}
+body .topbar{border-color:var(--page-line);color:var(--page-text)}
+body .date-card,body .card,body .day,body .timeline article,body .focus-wrap,body .state-banner{background:var(--page-surface);color:var(--page-text);border-color:var(--page-line)}
+body .task{background:var(--page-soft);color:var(--page-text);border-color:var(--page-line)}
+@media(max-width:700px){.topbar{flex-wrap:wrap;height:auto;min-height:68px;padding:10px 14px}.nav{display:flex;overflow-x:auto;max-width:100%;white-space:nowrap}.hero{gap:18px}.day{min-height:190px}}
+@media(max-width:500px){.week{grid-template-columns:1fr}.timer{font-size:3.5rem}.focus-wrap{padding:38px 18px}}
