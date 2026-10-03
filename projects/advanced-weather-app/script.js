@@ -1,7 +1,7 @@
 const API = 'https://api.open-meteo.com/v1/forecast';
 const GEO = 'https://geocoding-api.open-meteo.com/v1/search';
 const $ = (id) => document.getElementById(id);
-let unit = localStorage.getItem('skycast-unit') || 'C';
+let unit = (() => { try { const value = localStorage.getItem('skycast-unit'); return value === 'F' ? 'F' : 'C'; } catch { return 'C'; } })();
 let currentPlace = null;
 let debounceTimer;
 let searchController = null;
@@ -36,6 +36,6 @@ document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))$('su
 $('locationBtn').addEventListener('click',()=>{if(!navigator.geolocation){setStatus('Geolocation is not supported by this browser.',true);return}setStatus('Requesting your location…');navigator.geolocation.getCurrentPosition(pos=>loadWeather({name:'Your Location',country:'',latitude:pos.coords.latitude,longitude:pos.coords.longitude}),error=>{const message=error.code===1?'Location permission was denied. Search for a city instead.':error.code===3?'Location request timed out. Try again or search for a city.':'Location access was unavailable. Search for a city instead.';setStatus(message,true)},{enableHighAccuracy:true,timeout:10000,maximumAge:300000})});
 $('favoriteBtn').addEventListener('click',()=>{if(!currentPlace)return;const list=getFavorites(),i=list.findIndex(p=>p.latitude===currentPlace.latitude&&p.longitude===currentPlace.longitude);if(i>=0)list.splice(i,1);else list.unshift({name:currentPlace.name,country:currentPlace.country,latitude:currentPlace.latitude,longitude:currentPlace.longitude});saveFavorites(list);updateFavoriteButton()});
 $('unitToggle').addEventListener('click',()=>{unit=unit==='C'?'F':'C';try{localStorage.setItem('skycast-unit',unit)}catch{}$('unitToggle').textContent=`°${unit}`;if(currentPlace)loadWeather(currentPlace)});
-$('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('light');const light=document.body.classList.contains('light');localStorage.setItem('skycast-theme',light?'light':'dark');$('themeToggle').textContent=light?'☀':'☾';$('themeToggle').setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode')});
-if(localStorage.getItem('skycast-theme')==='light'){document.body.classList.add('light');$('themeToggle').textContent='☀';$('themeToggle').setAttribute('aria-label','Switch to dark mode')}else $('themeToggle').setAttribute('aria-label','Switch to light mode');
+$('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('light');const light=document.body.classList.contains('light');try{localStorage.setItem('skycast-theme',light?'light':'dark')}catch{}$('themeToggle').textContent=light?'☀':'☾';$('themeToggle').setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode')});
+try { if(localStorage.getItem('skycast-theme')==='light'){document.body.classList.add('light');$('themeToggle').textContent='☀';$('themeToggle').setAttribute('aria-label','Switch to dark mode')}else $('themeToggle').setAttribute('aria-label','Switch to light mode'); } catch { $('themeToggle').setAttribute('aria-label','Switch to light mode'); }
 $('unitToggle').textContent=`°${unit}`;renderFavorites();loadWeather({name:'New Delhi',country:'India',latitude:28.6139,longitude:77.2090});
