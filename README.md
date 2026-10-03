@@ -88,7 +88,7 @@ Validate → Review
 
 `Live Preview` · `Source` · `Security` · `UX Case Study` · `Documentation`
 
-**Engineering Quality** — [Security Policy](./SECURITY.md) · [Engineering Baseline](./docs/ENGINEERING.md) · CodeQL · CI quality checks
+**Engineering Quality** — [Security Policy](./SECURITY.md) · [Engineering Baseline](./docs/ENGINEERING.md) · CodeQL · CI quality checks · [Repository Architecture](./docs/REPOSITORY_ARCHITECTURE.md) · Dependency Review
 
 > Existing project details remain below. This component layer is an additional presentation system, not a replacement.
 
