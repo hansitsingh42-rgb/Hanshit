@@ -502,7 +502,7 @@ A responsive weather dashboard using Open-Meteo for live weather, location searc
 
 **Stack:** `HTML` `CSS` `JavaScript` `Fetch API` `LocalStorage`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/skycast/"><img src="./assets/live-preview-button.svg" width="150" alt="Open SKH Cast+ live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/skycast/)
 
 [Source](./projects/advanced-weather-app/)
 
@@ -526,7 +526,7 @@ A student-focused resource library for organizing study material, notes, files a
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Study Resource Manager live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/)
 
 [Source](./projects/study-resource-manager/)
 
@@ -550,7 +550,7 @@ A productivity dashboard for tracking habits, progress and daily performance thr
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Productivity Dashboard live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/)
 
 [Source](./projects/student-productivity-dashboard/)
 
@@ -574,7 +574,7 @@ A C-based student record management project for practising structured data handl
 
 **Stack:** `C`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/"><img src="./assets/live-preview-button.svg" width="150" alt="Open C Student Record Manager live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/)
 
 [Source](./projects/c-student-record-manager/)
 
@@ -600,7 +600,7 @@ A small AI-focused assistant project exploring practical AI interactions and a s
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Jems AI live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/jems/)
 
 [Source](./jems/)
 
@@ -624,7 +624,7 @@ A student-focused resource discovery interface organized around **Subject → Ch
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage` `Canvas`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Resource Hub live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/)
 
 [Source](./projects/student-resource-hub/)
 
@@ -653,7 +653,7 @@ A responsive study-planning prototype focused on making the next study action vi
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Study Planner live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/)
 
 [Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
 
@@ -677,7 +677,7 @@ A browser-based academic dashboard for organizing subjects, attendance, assignme
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Academic Planner live preview" /></a>
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/)
 
 [Source](./projects/student-academic-planner/)
 
