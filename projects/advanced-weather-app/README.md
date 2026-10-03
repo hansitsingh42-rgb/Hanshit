@@ -64,3 +64,6 @@ The goal is to demonstrate a practical API-integrated frontend with live data, r
 - Theme persistence
 - API error handling
 - Responsive layout
+
+
+> **Live Preview:** [Open SKH Cast+](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=skycast)
