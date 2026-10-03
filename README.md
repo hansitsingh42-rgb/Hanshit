@@ -200,7 +200,7 @@ A UX case study currently being developed in Figma, covering:
 
 ## 🏆 Milestones
 
-- 🎓 Studying Polytechnic Computer Science
+- 🎓 Studying Computer Science
 - 💻 Building and deploying practical web projects
 - 🌐 Maintaining a personal developer portfolio
 - 🤖 Built a project-focused AI assistant — Jems AI
