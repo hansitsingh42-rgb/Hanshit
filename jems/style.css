@@ -52,3 +52,14 @@ body .footer-row button{background:var(--page-surface);color:var(--page-text);bo
 body .status,
 body .brand span,
 body .back{color:var(--page-muted)}
+
+
+/* Final UI reliability layer */
+body{overflow-x:hidden}
+body.light{background:#f5f7fa;color:#161a22}
+body:not(.light){background:#080b11;color:#f5f7fb}
+body.light .app{background:#fff}
+body .chat,body dialog{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
+body .chat form button{background:var(--page-text);color:var(--page-bg);border:1px solid var(--page-border)}
+body.light .chat form button{background:#161a22;color:#fff}
+@media(max-width:600px){.app{width:min(100% - 14px,1000px)}.chat form{flex-direction:column}.chat form button{min-height:44px;padding:10px 14px}.hero{padding-top:24px}.messages{max-height:55vh}.msg-wrap{max-width:96%}}
