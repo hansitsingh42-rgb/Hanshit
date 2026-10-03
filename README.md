@@ -130,41 +130,23 @@ Validate → Review
 
 ## 👨‍💻 About Me
 
-> Learn by building · Practical development · Continuous improvement
+I’m Hanshit Singh, a CSE student developer building practical software projects while learning computer science, web development, C/JavaScript, Git/GitHub, AI experiments, and engineering fundamentals.
 
-I'm a Computer Science student who learns best by making things. I use this repository to keep my projects, experiments, practice work, and the things I want to improve.
-
-Some projects are simple experiments, and some are projects I keep coming back to. I don't expect everything here to be perfect — the point is to learn, build, test, and make the next version better.
-
-> **Learn → Build → Test → Improve → Repeat.**
-
----
+My portfolio focuses on **working projects, source code, engineering evidence, security-conscious development, and continuous learning** rather than decorative claims.
 
 ## 🧭 Current Build
 
-> Current build → architecture → UX → validation → security
+**Focus:** turning student projects into maintainable, testable, documented software.
 
-**Student Resource Hub** is the main full-stack learning project I am improving around a simple **Subject → Chapter → Resource** structure. Current work includes resource discovery, responsive navigation, authentication, validation, testing, and security hardening.
-
-### What I am improving
-
-- Better project structure and maintainability
-- Responsive and accessible interfaces
-- Validation, error handling, and secure defaults
-- CI checks, dependency auditing, and CodeQL coverage
-- Clear documentation and project evidence
-
----
+- Build small features with clear scope and reusable structure.
+- Validate input, browser behavior, and project paths before calling work complete.
+- Keep security boundaries explicit, especially for client-side applications.
+- Document architecture, limitations, verification, and next steps.
+- Preserve useful existing functionality while improving quality.
 
 ## 🧩 How I Build
 
-> Understand → Plan → Design → Build → Test → Secure → Document → Improve
-
-`Understand → Plan → Design → Build → Test → Secure → Document → Improve`
-
-I use this workflow to turn learning topics into practical projects. The goal is not to present every project as production software; project status and limitations are documented where they matter.
-
----
+`Problem → Scope → Design → Implement → Validate → Secure → Document → Deploy → Improve`
 
 ## 🔐 Security-First Development
 
@@ -274,7 +256,9 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-## 🧊 3D Skills Visualization
+<details>
+<summary>🧊 3D Skills Visualization</summary>
+
 
 > **3D VISUAL COMPONENT** · Spatial skill map for the existing capability data
 
@@ -284,7 +268,8 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-## 📊 GitHub Analytics
+<details>
+<summary>📊 GitHub Analytics</summary>
 
 > Repository activity and language signals
 
@@ -296,6 +281,8 @@ A UX case study currently being developed in Figma, covering:
 > These analytics cards are self-hosted in the repository, so the profile does not depend on a third-party image endpoint.
 
 ---
+
+</details>
 
 ## 🏆 Milestones
 
@@ -471,7 +458,6 @@ A browser-based academic dashboard for subjects, attendance, assignments, study 
 Jems uses documented repository information as its source of truth and avoids inventing information that is not documented.
 
 ---
-
 
 
 ---
