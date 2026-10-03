@@ -126,7 +126,11 @@ function stopTimer() {
 }
 
 function startTimer() {
-  if (timerId !== null) return;
+  if (timerId !== null) {
+    stopTimer();
+    return;
+  }
+
   if (remaining <= 0) remaining = SESSION_SECONDS;
 
   $('#startBtn').textContent = 'Pause';
