@@ -183,3 +183,6 @@ Changes were developed independently first and merged into `main` deliberately a
 ## License
 
 This project is currently maintained as a personal learning and portfolio project. Licensing can be added when the project is ready for public reuse.
+
+
+> **Live Preview:** [Open Student Resource Hub — Full Stack](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=student-resource-hub)
