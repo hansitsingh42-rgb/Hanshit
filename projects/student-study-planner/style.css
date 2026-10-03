@@ -73,3 +73,42 @@ body{background:radial-gradient(circle at 18% 0%,rgba(49,91,234,.1),transparent 
 body{background:var(--ui-bg);color:var(--ui-text)}.topbar{background:rgba(255,255,255,.94);border-bottom:1px solid var(--ui-border);box-shadow:0 4px 14px rgba(15,23,42,.04)}.screen{max-width:1180px;margin:auto;padding:28px 20px}.hero{padding:20px 0 18px}.date-card,.card{background:#fff;border:1px solid var(--ui-border);border-radius:var(--ui-radius);box-shadow:0 6px 18px rgba(15,23,42,.05)}.date-card{padding:16px}.grid{gap:16px}.card{padding:18px}.section-head{display:flex;align-items:center;justify-content:space-between}.timeline{border-left:2px solid #dbe3ef;padding-left:18px}.task{background:#fff;border:1px solid var(--ui-border);border-radius:12px;padding:12px}.primary{border-radius:10px}.week .day{border:1px solid var(--ui-border);border-radius:10px;background:#fff}.task.add{border-style:dashed}.theme,.nav,.primary{border-radius:10px}button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.2);outline-offset:2px}
 @media(max-width:700px){.screen{padding:20px 14px}.grid{grid-template-columns:1fr}.card{padding:15px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+/* Theme reliability fix: preserve dark mode after later light UI overrides. */
+body{
+  --page-bg:#f6f8fb;
+  --page-surface:#ffffff;
+  --page-line:#e2e8f0;
+  --page-text:#172033;
+  --page-muted:#64748b;
+  --page-soft:#eef2ff;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body.dark{
+  --page-bg:#0d1117;
+  --page-surface:#151a22;
+  --page-line:#2b3440;
+  --page-text:#edf2f7;
+  --page-muted:#9aa6b5;
+  --page-soft:#20283a;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body .topbar{background:rgba(255,255,255,.94);border-color:var(--page-line)}
+body.dark .topbar{background:rgba(13,17,23,.94)}
+body .date-card,
+body .card,
+body .day,
+body .timeline article,
+body .focus-wrap,
+body .state-banner{background:var(--page-surface);border-color:var(--page-line);color:var(--page-text)}
+body .task{background:var(--page-soft);border-color:var(--page-line);color:var(--page-text)}
+body .nav,
+body .theme{color:var(--page-muted);border-color:var(--page-line)}
+body .muted,
+body .date-card span,
+body .timeline small,
+body .task small,
+body .privacy,
+body .state-copy{color:var(--page-muted)}
+body .add{border-color:var(--page-line);color:var(--page-muted)}
