@@ -42,3 +42,25 @@ The goal is to demonstrate a practical API-integrated frontend with live data, r
 
 - Open-Meteo Forecast API: https://open-meteo.com/en/docs
 - Open-Meteo Geocoding API: https://open-meteo.com/en/docs/geocoding-api
+
+## Engineering Evidence
+
+**Architecture:** Search/geolocation → Open-Meteo geocoding → coordinates → forecast API → client-side weather model → responsive UI.
+
+**Validation:** Repository CI checks JavaScript syntax and parses tracked HTML documents. The project README documents the HTTPS requirement for browser geolocation.
+
+**Security boundary:** No private API credential is required for the selected Open-Meteo endpoints. Future credentialed providers must use deployment secrets rather than client-side source code.
+
+**Live preview:** `/skycast/` when published through the repository's GitHub Pages deployment.
+
+## Verification Checklist
+
+- City/postal-code search
+- Location suggestions
+- Browser geolocation
+- Current/hourly/daily forecast rendering
+- Unit switching
+- Favorites persistence
+- Theme persistence
+- API error handling
+- Responsive layout
