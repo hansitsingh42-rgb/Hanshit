@@ -23,10 +23,19 @@ document.querySelectorAll("[data-screen]").forEach(b=>b.addEventListener("click"
 document.getElementById("date").textContent=new Intl.DateTimeFormat("en-IN",{day:"numeric",month:"short",year:"numeric"}).format(new Date());
 
 const theme=document.getElementById("theme");
-theme.addEventListener("click",()=>{
-  const dark=document.body.classList.toggle("dark");
+const THEME_KEY="student-study-planner-theme";
+function applyTheme(dark, persist=true){
+  document.body.classList.toggle("dark",dark);
   theme.setAttribute("aria-pressed",String(dark));
   theme.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
+  theme.textContent=dark?"☀":"◐";
+  if(persist){try{localStorage.setItem(THEME_KEY,dark?"dark":"light")}catch{}}
+}
+let savedTheme="light";
+try{savedTheme=localStorage.getItem(THEME_KEY)||"light"}catch{}
+applyTheme(savedTheme==="dark",false);
+theme.addEventListener("click",()=>{
+  applyTheme(!document.body.classList.contains("dark"));
 });
 
 let seconds=1500;
