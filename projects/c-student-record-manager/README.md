@@ -62,3 +62,6 @@ Records are stored in memory while the program is running. File-based permanent 
 - Delete record
 - Invalid input handling
 - GCC/MinGW compilation path
+
+
+> **Live Preview:** [Open C Student Record Manager](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=c-student-record-manager)
