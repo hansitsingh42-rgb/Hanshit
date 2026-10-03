@@ -23,6 +23,9 @@ on:
       - 'README.md'
       - '.nojekyll'
       - '.github/workflows/pages.yml'
+      - '.github/workflows/quality.yml'
+      - '.github/workflows/codeql.yml'
+      - '.github/workflows/dependency-review.yml'
   workflow_dispatch:
 
 permissions:
