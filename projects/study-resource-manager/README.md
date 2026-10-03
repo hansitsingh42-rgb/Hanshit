@@ -53,3 +53,6 @@ Resources are stored locally in the browser. This version does not upload files 
 - Theme persistence
 - LocalStorage persistence
 - JavaScript syntax validation
+
+
+> **Live Preview:** [Open Study Resource Manager](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=study-resource-manager)
