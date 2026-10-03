@@ -25,3 +25,23 @@ Open `index.html` in a browser. No build tools or dependencies are required.
 ## Project goal
 
 Practice frontend development, DOM manipulation, browser storage, responsive UI design and basic productivity-app logic.
+
+## Engineering Evidence
+
+**Architecture:** UI → task/timer state → browser LocalStorage → rendered dashboard.
+
+**Validation:** Repository CI performs JavaScript syntax and HTML parsing checks across the project.
+
+**Security:** The project is client-side only and does not require server credentials. User data remains in browser storage.
+
+**Live preview:** `/student-productivity-dashboard/` when published through the repository's GitHub Pages deployment.
+
+## Verification Checklist
+
+- Task create/complete/delete flows
+- Completion percentage calculation
+- Focus timer reset flow
+- Study-time persistence
+- Theme persistence
+- Responsive layout
+- JavaScript syntax validation
