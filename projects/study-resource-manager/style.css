@@ -60,3 +60,16 @@ body .badge{background:color-mix(in srgb,var(--page-border) 70%,transparent);col
 body .secondary,
 body .icon-btn{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
 body .primary{background:var(--page-text);color:var(--page-bg)}
+
+
+/* Final UI reliability layer */
+body{background:#f5f7fb;color:#171a21;overflow-x:hidden}
+body.dark{background:#101114;color:#f4f5f7}
+body .topbar,body .stats article,body .card{background:var(--surface);color:var(--text);border-color:var(--border)}
+body .topbar{position:sticky;top:0}
+body input,body select{background:var(--input-bg);color:var(--text);border-color:var(--border)}
+body .primary{background:var(--primary-bg);color:var(--primary-text);border-color:var(--primary-border)}
+body .secondary,body .icon-btn{background:var(--surface);color:var(--text);border-color:var(--border)}
+body.dark .badge{background:#292c32;color:#f4f5f7}
+@media(max-width:750px){.toolbar{grid-template-columns:1fr 1fr}.section-head{align-items:flex-start;flex-direction:column}.library-controls{flex-direction:column;align-items:stretch}}
+@media(max-width:480px){.toolbar{grid-template-columns:1fr}.container{padding:28px 14px}.stats,.grid{grid-template-columns:1fr}.card-actions{flex-direction:column}.hero h1{font-size:clamp(2.2rem,13vw,3.5rem)}}
