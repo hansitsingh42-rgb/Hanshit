@@ -9,8 +9,8 @@
 
 <img src="./assets/readme-developer-system.svg" alt="Layered developer, coder, UX/UI and security component system" width="62%" />
 
-<details open>
-<summary><strong>◈ Developer Component System</strong> — interactive-style README components</summary>
+<details>
+<summary><strong>Developer Component System</strong> — optional visual/structure reference</summary>
 
 <div align="center">
 <table>
@@ -95,17 +95,18 @@ Validate → Review
 </details>
 
 <p>
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
-<a href="https://github.com/hansitsingh42-rgb/Hanshit">Repository</a>
+[Portfolio](https://hansitsingh42-rgb.github.io/Hanshit/) · [Jems AI](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Repository](https://github.com/hansitsingh42-rgb/Hanshit)
 </p>
 </div>
+
+
+> **Start here:** Featured Builds → Engineering → Security & Quality → Selected Work → GitHub evidence.
 
 ---
 
 ## ⚙️ Engineering at a Glance
 
-> **BUILD SYSTEM** · Learn deeply → build practically → verify honestly → improve continuously
+> Learn deeply → build practically → verify honestly → improve continuously
 
 | Layer | What this repository demonstrates |
 |---|---|
@@ -129,7 +130,7 @@ Validate → Review
 
 ## 👨‍💻 About Me
 
-> **PROFILE COMPONENT** · Learn by building · Practical development · Continuous improvement
+> Learn by building · Practical development · Continuous improvement
 
 I'm a Computer Science student who learns best by making things. I use this repository to keep my projects, experiments, practice work, and the things I want to improve.
 
@@ -141,7 +142,7 @@ Some projects are simple experiments, and some are projects I keep coming back t
 
 ## 🧭 Current Build
 
-> **PRODUCT COMPONENT** · Current build → architecture → UX → validation → security
+> Current build → architecture → UX → validation → security
 
 **Student Resource Hub** is the main full-stack learning project I am improving around a simple **Subject → Chapter → Resource** structure. Current work includes resource discovery, responsive navigation, authentication, validation, testing, and security hardening.
 
@@ -157,7 +158,7 @@ Some projects are simple experiments, and some are projects I keep coming back t
 
 ## 🧩 How I Build
 
-> **ENGINEERING PIPELINE** · Understand → Plan → Design → Build → Test → Secure → Document → Improve
+> Understand → Plan → Design → Build → Test → Secure → Document → Improve
 
 `Understand → Plan → Design → Build → Test → Secure → Document → Improve`
 
@@ -167,7 +168,7 @@ I use this workflow to turn learning topics into practical projects. The goal is
 
 ## 🔐 Security-First Development
 
-> **SECURITY COMPONENT** · Protect secrets → Validate input → Audit dependencies → Scan code → Least privilege
+> Protect secrets → Validate input → Audit dependencies → Scan code → Least privilege
 
 Security is part of the build process, not an afterthought.
 
@@ -186,7 +187,7 @@ Repository-level security guidance is documented in [SECURITY.md](./SECURITY.md)
 
 ## 🧪 Testing & Quality Evidence
 
-> **QUALITY GATE** · Lint → Build → Audit → Security → Browser/UX → Documentation
+> Lint → Build → Audit → Security → Browser/UX → Documentation
 
 For projects where it applies, I document more than the final UI:
 
@@ -198,7 +199,7 @@ This makes the repository easier to inspect and helps separate **what is built**
 
 ## ⚡ Developer Snapshot
 
-> **DEVELOPER CARD** · Core skills · workflow · design · AI · direction
+> Core skills · workflow · design · AI · direction
 
 | Focus | Current Direction |
 |---|---|
@@ -255,7 +256,7 @@ Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer
 
 ## 🎨 UI/UX Design & Product Thinking
 
-> **UX COMPONENT** · Problem → Research → IA → Flow → Wireframe → UI → Prototype → Test → Improve
+> Problem → Research → IA → Flow → Wireframe → UI → Prototype → Test → Improve
 
 I am actively developing my UI/UX skills by applying design thinking to real projects rather than treating design as only visual styling.
 
@@ -325,7 +326,7 @@ A UX case study currently being developed in Figma, covering:
 
 ## 🛠️ Skills & Tools
 
-> **TOOLKIT COMPONENT** · Development · Version control · Product design · Collaboration
+> Development · Version control · Product design · Collaboration
 
 <p>
 <img src="https://img.shields.io/badge/C-Programming-555555?style=for-the-badge&logo=c&logoColor=white" alt="C" />
@@ -339,7 +340,10 @@ A UX case study currently being developed in Figma, covering:
 
 ## 🧠 Skills & Technologies
 
-> **SKILL MATRIX** · Code + UX + AI + workflow, organized as reusable capability groups
+<details>
+<summary>Full skill matrix</summary>
+
+> Code + UX + AI + workflow, organized as reusable capability groups
 
 ### 💻 Development
 `C` `JavaScript` `HTML` `CSS` `Git` `GitHub` `Computer Networks`
@@ -357,6 +361,8 @@ A UX case study currently being developed in Figma, covering:
 <img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,figma,vscode" alt="Development and design skills" />
 </div>
 
+</details>
+
 ---
 
 ## 🧊 3D Skills Visualization
@@ -371,6 +377,9 @@ A UX case study currently being developed in Figma, covering:
 
 ## 🌱 Learning Progress
 
+<details>
+<summary>View progress details</summary>
+
 ```text
 C Programming           ███████░░░  Building fundamentals
 JavaScript              ██████░░░░  Growing web development skills
@@ -383,11 +392,13 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 > Progress matters more than pretending to know everything.
 
+</details>
+
 ---
 
 ## 📊 GitHub Analytics
 
-> **DATA COMPONENT** · Repository activity and language signals
+> Repository activity and language signals
 
 <div align="center">
 <img src="./assets/github-stats.svg" height="125" alt="GitHub statistics" />
@@ -428,7 +439,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ## 🎨 Project Brand Gallery
 
-> **BRAND SYSTEM COMPONENT** · Every project gets its own visual identity while keeping one portfolio language
+> Every project gets its own visual identity while keeping one portfolio language
 
 <table>
 <tr>
@@ -477,7 +488,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ## 🚀 Selected Work
 
-> **PROJECT CARD SYSTEM** · Role → Status → Visual identity → Highlights → Stack → Evidence → Learning
+> Role → Status → Visual identity → Highlights → Stack → Evidence → Learning
 
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
 
@@ -683,7 +694,7 @@ Organizing multiple student workflows into a single dashboard while keeping the 
 
 ## 🧩 Project Branding Standard
 
-> **DESIGN SYSTEM COMPONENT** · Logo → layout → evidence → accessibility → repeatable project template
+> Logo → layout → evidence → accessibility → repeatable project template
 
 I use the following presentation standard across the projects in this repository:
 
@@ -719,15 +730,13 @@ This repository grows as I learn. I add projects, experiments, notes, and useful
 
 My goal is to become a stronger developer by learning projects, understanding user needs, designing usable interfaces, and improving through iteration.
 
-**Learn → Build → Test → Improve → Repeat.**
-
 For me, working on real projects is one of the best ways to understand what I'm learning.
 
 ---
 
 ## 🤖 Ask Jems AI
 
-> **AI COMPONENT** · Documented data → grounded interaction → clear source of truth
+> Documented data → grounded interaction → clear source of truth
 
 <div align="center">
 ### `JEMS` • `Hanshit Assistant`
@@ -757,7 +766,7 @@ Jems uses documented repository information as its source of truth and avoids in
 
 ## 📁 Project Hub
 
-> **PROJECT INDEX COMPONENT** · Live preview ↔ source ↔ project identity
+> Live preview ↔ source ↔ project identity
 
 | Project | Live Preview | Source |
 |---|---|---|
@@ -771,13 +780,6 @@ Jems uses documented repository information as its source of truth and avoids in
 | 📅 Student Academic Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) | [Source](./projects/student-academic-planner/) |
 
 ---
-
-## 📊 GitHub Activity
-
-<div align="center">
-<img src="./assets/github-stats.svg" height="125" alt="GitHub statistics activity" />
-<img src="./assets/github-top-langs.svg" height="125" alt="Top languages activity" />
-</div>
 
 ---
 
