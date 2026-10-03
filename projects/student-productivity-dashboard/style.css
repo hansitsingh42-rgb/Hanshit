@@ -72,3 +72,13 @@ body.light .topbar,
 body.light .card{
   box-shadow:0 6px 18px rgba(15,23,42,.05);
 }
+
+
+/* Final UI reliability layer */
+body{background:#070b14;color:#e8eef8;overflow-x:hidden}
+body.light{background:#f5f7fa;color:#172033}
+body .topbar,body .card{background:var(--surface);border-color:var(--border);color:var(--text)}
+body .icon-btn,body .secondary,body .text-btn{background:var(--surface-soft);color:var(--text);border-color:var(--border)}
+body.light .icon-btn,body.light .secondary,body.light .text-btn{background:#fff}
+@media(max-width:700px){.task-form{flex-direction:column}.task-form button{width:100%}.topbar{align-items:center}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.stats{grid-template-columns:1fr}.app{padding:14px}.card{padding:16px}.timer-actions{flex-wrap:wrap}.timer-actions button{width:100%}}
