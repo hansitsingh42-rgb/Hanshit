@@ -21,3 +21,54 @@ body{background:var(--ui-bg);color:var(--ui-text)}.app{max-width:1180px;margin:a
 button:focus-visible,input:focus-visible{outline:3px solid rgba(15,118,110,.2);outline-offset:2px}.bar{border-radius:999px;overflow:hidden}
 @media(max-width:700px){.app{padding:14px}.stats{grid-template-columns:1fr 1fr}.tasks,.timer-card,.subjects{padding:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* Theme fix: keep both modes visually complete after the UI system overrides. */
+body{
+  --page-bg:#070b14;
+  --surface:#0f172a;
+  --surface-soft:#0b1220;
+  --border:#24324a;
+  --text:#e8eef8;
+  --muted:#8c99ad;
+  --input-text:#e8eef8;
+  background:var(--page-bg);
+  color:var(--text);
+}
+body.light{
+  --page-bg:#f5f7fa;
+  --surface:#ffffff;
+  --surface-soft:#f7f9fc;
+  --border:#d9e0ea;
+  --text:#172033;
+  --muted:#64748b;
+  --input-text:#172033;
+  background:var(--page-bg);
+  color:var(--text);
+}
+body .topbar,
+body .card{
+  background:var(--surface);
+  border-color:var(--border);
+  color:var(--text);
+}
+body .muted,
+body .stat span,
+body footer{color:var(--muted)}
+body .icon-btn,
+body .secondary,
+body .text-btn{
+  border-color:var(--border);
+  color:var(--text);
+}
+body .task-form input{
+  background:var(--surface-soft);
+  border-color:var(--border);
+  color:var(--input-text);
+}
+body .task{border-bottom-color:var(--border)}
+body .delete{color:var(--muted)}
+body .bar{background:var(--surface-soft)}
+body.light .topbar,
+body.light .card{
+  box-shadow:0 6px 18px rgba(15,23,42,.05);
+}
