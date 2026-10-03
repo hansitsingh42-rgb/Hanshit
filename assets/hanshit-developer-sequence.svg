@@ -1,0 +1,84 @@
+<svg width="1200" height="330" viewBox="0 0 1200 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Hanshit Developer learning sequence</title>
+  <desc id="desc">Animated circular developer identity showing Hanshit Developer, CSE Student, Building Projects, and Learning by Building.</desc>
+  <defs>
+    <linearGradient id="g" x1="110" y1="40" x2="1080" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset=".48" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title{font:700 28px Arial,sans-serif;fill:#F8FAFC}
+      .sub{font:500 17px Arial,sans-serif;fill:#AAB7CC}
+      .node{font:700 15px Arial,sans-serif;fill:#EAF2FF}
+      .line{stroke:url(#g);stroke-width:2;stroke-linecap:round}
+      @media (prefers-color-scheme:light){
+        .title{fill:#172033}.sub{fill:#64748B}.node{fill:#1E293B}
+      }
+    </style>
+  </defs>
+
+  <rect x="8" y="8" width="1184" height="314" rx="28" fill="#0B1020" stroke="#24324A"/>
+  <circle cx="166" cy="165" r="98" fill="#101A30" stroke="url(#g)" stroke-width="2" opacity=".95"/>
+  <circle cx="166" cy="165" r="76" fill="none" stroke="#31405F" stroke-dasharray="3 9" opacity=".9">
+    <animateTransform attributeName="transform" type="rotate" from="0 166 165" to="360 166 165" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="166" cy="165" r="54" fill="#111C33" stroke="url(#g)" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="r" values="54;57;54" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="166" y="174" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#F8FAFC">H</text>
+
+  <g>
+    <circle cx="166" cy="70" r="5" fill="#7C3AED"/>
+    <circle cx="249" cy="118" r="5" fill="#2563EB"/>
+    <circle cx="248" cy="214" r="5" fill="#06B6D4"/>
+    <circle cx="166" cy="260" r="5" fill="#7C3AED"/>
+    <circle cx="83" cy="214" r="5" fill="#2563EB"/>
+    <circle cx="83" cy="118" r="5" fill="#06B6D4"/>
+  </g>
+
+  <g transform="translate(300 58)">
+    <text class="title" x="0" y="0">Hanshit Developer</text>
+    <text class="sub" x="0" y="31">A simple build sequence — shown as a living identity card.</text>
+
+    <g transform="translate(0 72)">
+      <rect x="0" y="0" width="188" height="70" rx="18" fill="#111A2C" stroke="#2A3A59"/>
+      <circle cx="25" cy="35" r="9" fill="#7C3AED"/>
+      <text class="node" x="45" y="30">CSE Student</text>
+      <text class="sub" x="45" y="50" font-size="13">Learn the fundamentals</text>
+
+      <line class="line" x1="188" y1="35" x2="214" y2="35">
+        <animate attributeName="stroke-dasharray" values="0 30;30 0;0 30" dur="3.6s" repeatCount="indefinite"/>
+      </line>
+
+      <rect x="214" y="0" width="205" height="70" rx="18" fill="#111A2C" stroke="#2A3A59"/>
+      <circle cx="239" cy="35" r="9" fill="#2563EB"/>
+      <text class="node" x="259" y="30">Building Projects</text>
+      <text class="sub" x="259" y="50" font-size="13">Turn ideas into working code</text>
+
+      <line class="line" x1="419" y1="35" x2="445" y2="35">
+        <animate attributeName="stroke-dasharray" values="0 30;30 0;0 30" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
+      </line>
+
+      <rect x="445" y="0" width="205" height="70" rx="18" fill="#111A2C" stroke="#2A3A59"/>
+      <circle cx="470" cy="35" r="9" fill="#06B6D4"/>
+      <text class="node" x="490" y="30">Learning by Building</text>
+      <text class="sub" x="490" y="50" font-size="13">Test, improve, repeat</text>
+    </g>
+
+    <g transform="translate(0 176)">
+      <path d="M10 0H650" stroke="#24324A" stroke-width="1"/>
+      <circle cx="10" cy="0" r="4" fill="#7C3AED"/>
+      <circle cx="225" cy="0" r="4" fill="#2563EB"/>
+      <circle cx="440" cy="0" r="4" fill="#06B6D4"/>
+      <circle cx="650" cy="0" r="4" fill="#7C3AED"/>
+      <circle cx="10" cy="0" r="8" fill="none" stroke="#7C3AED" opacity=".35">
+        <animate attributeName="cx" values="10;225;440;650;10" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>
