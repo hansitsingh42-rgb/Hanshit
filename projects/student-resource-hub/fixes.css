@@ -18,3 +18,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opa
 @keyframes auroraShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@keyframes gridDrift{from{background-position:0 0}to{background-position:64px 64px}}@keyframes orbFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(20px,18px,0) scale(1.06)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}body::before,body::after,.hero::before,.hero::after{animation:none}.card,.progress-card,.primary-button,.secondary-button,.filter,.icon-button{transition:none}.hero-mockup img,.mockup img,.product-mockup img{transition:none}}
 @media (max-width:700px){body::after{background-size:44px 44px;opacity:.14}#aurora-canvas{opacity:.45}.hero::before,.hero::after{width:260px;height:260px}.mobile-menu{right:.5rem;left:.5rem;min-width:0}}
+
+
+/* Reliable local resource artwork */
+.resource-visual{width:100%;aspect-ratio:16/9;display:block;object-fit:cover;border-radius:14px;margin:-2px 0 18px;border:1px solid rgba(255,255,255,.1);background:#eef2f7}.card:has(.resource-visual){overflow:hidden}.card:has(.resource-visual) .resource-visual{margin-left:0;margin-right:0;width:100%}
+@media(max-width:640px){.resource-visual{border-radius:12px;margin-bottom:14px}}
