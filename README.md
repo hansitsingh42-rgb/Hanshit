@@ -1,20 +1,18 @@
 <div align="center">
-
 # Hi, I'm Hanshit Singh
 
 ### CSE Student | Developer | Learning by Building
 
-<img src="./assets/hanshit-developer-sequence.svg" alt="Hanshit Developer — CSE Student — Building Projects — Learning by Building" width="78%" />
+<img src="./assets/hanshit-developer-sequence.svg" alt="Hanshit Developer — CSE Student — Building Projects — Learning by Building" width="62%" />
 
-<img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="72%" />
+<img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="58%" />
 
-<img src="./assets/readme-developer-system.svg" alt="Layered developer, coder, UX/UI and security component system" width="100%" />
+<img src="./assets/readme-developer-system.svg" alt="Layered developer, coder, UX/UI and security component system" width="62%" />
 
 <details open>
 <summary><strong>◈ Developer Component System</strong> — interactive-style README components</summary>
 
 <div align="center">
-
 <table>
 <tr>
 <td align="center" width="25%">
@@ -51,14 +49,13 @@ Validate → Review
 </td>
 </tr>
 </table>
-
 </div>
 
-### 01 — Build Pipeline
+#### 01 — Build Pipeline
 
 `Understand` → `Plan` → `Design` → `Build` → `Test` → `Secure` → `Document` → `Improve`
 
-### 02 — Skill Matrix
+#### 02 — Skill Matrix
 
 | Core Development | Product & UX | Workflow | AI & Productivity |
 |---|---|---|---|
@@ -66,7 +63,7 @@ Validate → Review
 | `HTML` `CSS` | `IA` `User Flows` | `Jira` `Agile/Scrum` | `Prompt Engineering` |
 | `Computer Networks` | `Wireframing` `Accessibility` | `Testing` `CI` | `Excel` `PowerPoint` |
 
-### 03 — Project Component Cards
+#### 03 — Project Component Cards
 
 <table>
 <tr>
@@ -81,15 +78,13 @@ Validate → Review
 </tr>
 </table>
 
-### 04 — 3D / Visual Layer
+#### 04 — 3D / Visual Layer
 
 <div align="center">
-
-<img src="./assets/3d-skills-visual.svg" width="680" alt="3D-style skills visualization" />
-
+<img src="./assets/3d-skills-visual.svg" width="560" alt="3D-style skills visualization" />
 </div>
 
-### 05 — Evidence Layer
+#### 05 — Evidence Layer
 
 `Live Preview` · `Source` · `Security` · `UX Case Study` · `Documentation`
 
@@ -97,17 +92,14 @@ Validate → Review
 
 </details>
 
-
 <p>
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
 <a href="https://github.com/hansitsingh42-rgb/Hanshit">Repository</a>
 </p>
-
 </div>
 
 ---
-
 
 ## 👨‍💻 About Me
 
@@ -336,9 +328,7 @@ A UX case study currently being developed in Figma, covering:
 `Jira` `Agile/Scrum` `Project Planning` `Risk Management`
 
 <div align="center">
-
 <img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,figma,vscode" alt="Development and design skills" />
-
 </div>
 
 ---
@@ -348,7 +338,7 @@ A UX case study currently being developed in Figma, covering:
 > **3D VISUAL COMPONENT** · Spatial skill map for the existing capability data
 
 <div align="center">
-<img src="./assets/3d-skills-visual.svg" width="680" alt="3D-style skills visualization" />
+<img src="./assets/3d-skills-visual.svg" width="560" alt="3D-style skills visualization" />
 </div>
 
 ---
@@ -374,10 +364,8 @@ Practical AI            ██████░░░░  Exploring useful applica
 > **DATA COMPONENT** · Repository activity and language signals
 
 <div align="center">
-
-<img src="./assets/github-stats.svg" height="165" alt="GitHub statistics" />
-<img src="./assets/github-top-langs.svg" height="165" alt="Top languages" />
-
+<img src="./assets/github-stats.svg" height="125" alt="GitHub statistics" />
+<img src="./assets/github-top-langs.svg" height="125" alt="Top languages" />
 </div>
 
 > These analytics cards are self-hosted in the repository, so the profile does not depend on a third-party image endpoint.
@@ -387,9 +375,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 ## 🔥 Contribution Streak
 
 <div align="center">
-
 <img src="./assets/github-streak.svg" alt="GitHub contribution streak" />
-
 </div>
 
 ---
@@ -397,9 +383,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 ## 📈 Contribution Graph
 
 <div align="center">
-
 <img src="./assets/github-contribution-graph.svg" alt="GitHub contribution graph" />
-
 </div>
 
 ---
@@ -422,9 +406,9 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 <table>
 <tr>
-<td align="center"><img src="./assets/project-logos/skycast.svg" width="180" alt="SKH Cast+ logo" /></td>
-<td align="center"><img src="./assets/project-logos/study-resource-manager.svg" width="180" alt="Study Resource Manager logo" /></td>
-<td align="center"><img src="./assets/project-logos/productivity-dashboard.svg" width="180" alt="Student Productivity Dashboard logo" /></td>
+<td align="center"><img src="./assets/project-logos/skycast.svg" width="150" alt="SKH Cast+ logo" /></td>
+<td align="center"><img src="./assets/project-logos/study-resource-manager.svg" width="150" alt="Study Resource Manager logo" /></td>
+<td align="center"><img src="./assets/project-logos/productivity-dashboard.svg" width="150" alt="Student Productivity Dashboard logo" /></td>
 </tr>
 <tr>
 <td align="center">SKH Cast+</td>
@@ -432,9 +416,9 @@ Practical AI            ██████░░░░  Exploring useful applica
 <td align="center">Student Productivity Dashboard</td>
 </tr>
 <tr>
-<td align="center"><img src="./assets/project-logos/c-student-record.svg" width="180" alt="C Student Record Manager logo" /></td>
-<td align="center"><img src="./assets/project-logos/jems-ai.svg" width="180" alt="Jems AI logo" /></td>
-<td align="center"><img src="./assets/project-logos/student-resource-hub.svg" width="180" alt="Student Resource Hub logo" /></td>
+<td align="center"><img src="./assets/project-logos/c-student-record.svg" width="150" alt="C Student Record Manager logo" /></td>
+<td align="center"><img src="./assets/project-logos/jems-ai.svg" width="150" alt="Jems AI logo" /></td>
+<td align="center"><img src="./assets/project-logos/student-resource-hub.svg" width="150" alt="Student Resource Hub logo" /></td>
 </tr>
 <tr>
 <td align="center">C Student Record Manager</td>
@@ -442,7 +426,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 <td align="center">Student Resource Hub</td>
 </tr>
 <tr>
-<td align="center"><img src="./assets/project-logos/student-academic-planner.svg" width="180" alt="Student Academic Planner logo" /></td>
+<td align="center"><img src="./assets/project-logos/student-academic-planner.svg" width="150" alt="Student Academic Planner logo" /></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -452,7 +436,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 <td align="center"></td>
 </tr>
 <tr>
-<td align="center"><img src="./assets/project-logos/student-study-planner.svg" width="180" alt="Student Study Planner logo" /></td>
+<td align="center"><img src="./assets/project-logos/student-study-planner.svg" width="150" alt="Student Study Planner logo" /></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -472,7 +456,7 @@ Practical AI            ██████░░░░  Exploring useful applica
 ### 🌦️ SKH Cast+ — Advanced Weather Dashboard
 
 **Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/skycast.svg" width="260" alt="SKH Cast+ logo" />
+<img src="./assets/project-logos/skycast.svg" width="210" alt="SKH Cast+ logo" />
 
 A responsive weather dashboard using Open-Meteo for live weather, location search, hourly data and 7-day forecasts.
 
@@ -481,7 +465,7 @@ A responsive weather dashboard using Open-Meteo for live weather, location searc
 
 **Stack:** `HTML` `CSS` `JavaScript` `Fetch API` `LocalStorage`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/skycast/"><img src="./assets/live-preview-button.svg" width="180" alt="Open SKH Cast+ live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/skycast/"><img src="./assets/live-preview-button.svg" width="150" alt="Open SKH Cast+ live preview" /></a>
 
 [Source](./projects/advanced-weather-app/)
 
@@ -496,7 +480,7 @@ Working with live APIs, asynchronous data, geolocation flows, responsive states,
 ### 📚 Study Resource Manager
 
 **Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/study-resource-manager.svg" width="260" alt="Study Resource Manager logo" />
+<img src="./assets/project-logos/study-resource-manager.svg" width="210" alt="Study Resource Manager logo" />
 
 A student-focused resource library for organizing study material, notes, files and useful learning resources.
 
@@ -505,7 +489,7 @@ A student-focused resource library for organizing study material, notes, files a
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Study Resource Manager live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Study Resource Manager live preview" /></a>
 
 [Source](./projects/study-resource-manager/)
 
@@ -520,7 +504,7 @@ Designing a resource workflow that stays understandable while supporting search,
 ### 📊 Student Productivity Dashboard
 
 **Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/productivity-dashboard.svg" width="260" alt="Student Productivity Dashboard logo" />
+<img src="./assets/project-logos/productivity-dashboard.svg" width="210" alt="Student Productivity Dashboard logo" />
 
 A productivity dashboard for tracking habits, progress and daily performance through simple visual insights.
 
@@ -529,7 +513,7 @@ A productivity dashboard for tracking habits, progress and daily performance thr
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Student Productivity Dashboard live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Productivity Dashboard live preview" /></a>
 
 [Source](./projects/student-productivity-dashboard/)
 
@@ -544,7 +528,7 @@ Turning productivity requirements into a focused dashboard with clear states and
 ### 💻 C Student Record Manager
 
 **Role:** C Programmer / Developer  ·  **Status:** Learning project
-<img src="./assets/project-logos/c-student-record.svg" width="260" alt="C Student Record Manager logo" />
+<img src="./assets/project-logos/c-student-record.svg" width="210" alt="C Student Record Manager logo" />
 
 A C-based student record management project for practising structured data handling and core programming fundamentals.
 
@@ -553,7 +537,7 @@ A C-based student record management project for practising structured data handl
 
 **Stack:** `C`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/"><img src="./assets/live-preview-button.svg" width="180" alt="Open C Student Record Manager live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/"><img src="./assets/live-preview-button.svg" width="150" alt="Open C Student Record Manager live preview" /></a>
 
 [Source](./projects/c-student-record-manager/)
 
@@ -568,7 +552,7 @@ Practising structured data, functions, arrays, structs, file handling, and defen
 ### 🤖 Jems AI
 
 **Role:** Developer  ·  **Status:** Experimental project
-<img src="./assets/project-logos/jems-ai.svg" width="260" alt="Jems AI logo" />
+<img src="./assets/project-logos/jems-ai.svg" width="210" alt="Jems AI logo" />
 
 A small AI-focused assistant project exploring practical AI interactions and a student-oriented experience.
 
@@ -579,7 +563,7 @@ A small AI-focused assistant project exploring practical AI interactions and a s
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Jems AI live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Jems AI live preview" /></a>
 
 [Source](./jems/)
 
@@ -594,7 +578,7 @@ Keeping an assistant grounded in documented information and separating known dat
 ### 📘 Student Resource Hub
 
 **Role:** Developer / UI implementer  ·  **Status:** Active build
-<img src="./assets/project-logos/student-resource-hub.svg" width="260" alt="Student Resource Hub logo" />
+<img src="./assets/project-logos/student-resource-hub.svg" width="210" alt="Student Resource Hub logo" />
 
 A student-focused resource discovery interface organized around **Subject → Chapter → Resource**, with search, filters, resource details, previews, bookmarks and responsive navigation.
 
@@ -603,7 +587,7 @@ A student-focused resource discovery interface organized around **Subject → Ch
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage` `Canvas`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Student Resource Hub live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Resource Hub live preview" /></a>
 
 [Source](./projects/student-resource-hub/)
 
@@ -620,7 +604,7 @@ Connecting a Subject → Chapter → Resource model with search, filters, previe
 ### 📅 Student Study Planner — UX Prototype
 
 **Role:** UI/UX practitioner / Developer  ·  **Status:** UX prototype
-<img src="./assets/project-logos/student-study-planner.svg" width="260" alt="Student Study Planner logo" />
+<img src="./assets/project-logos/student-study-planner.svg" width="210" alt="Student Study Planner logo" />
 
 A responsive study-planning prototype focused on making the next study action visible, organizing a weekly plan, and starting a distraction-free focus session.
 
@@ -632,7 +616,7 @@ A responsive study-planning prototype focused on making the next study action vi
 
 **Stack:** `HTML` `CSS` `JavaScript`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Student Study Planner live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Study Planner live preview" /></a>
 
 [Source](./projects/student-study-planner/) • [UX Case Study](./docs/ui-ux/student-study-planner-case-study.md) • [Security](./projects/student-study-planner/SECURITY.md)
 
@@ -647,7 +631,7 @@ Documenting a design process from problem framing through flow, prototype, testi
 ### 📅 Student Academic Planner
 
 **Role:** Developer  ·  **Status:** Deployed learning project
-<img src="./assets/project-logos/student-academic-planner.svg" width="260" alt="Student Academic Planner logo" />
+<img src="./assets/project-logos/student-academic-planner.svg" width="210" alt="Student Academic Planner logo" />
 
 A browser-based academic dashboard for organizing subjects, attendance, assignments, study sessions, notes and daily focus time.
 
@@ -656,7 +640,7 @@ A browser-based academic dashboard for organizing subjects, attendance, assignme
 
 **Stack:** `HTML` `CSS` `JavaScript` `LocalStorage`
 
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/"><img src="./assets/live-preview-button.svg" width="180" alt="Open Student Academic Planner live preview" /></a>
+<a href="https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/"><img src="./assets/live-preview-button.svg" width="150" alt="Open Student Academic Planner live preview" /></a>
 
 [Source](./projects/student-academic-planner/)
 
@@ -720,7 +704,6 @@ For me, working on real projects is one of the best ways to understand what I'm 
 > **AI COMPONENT** · Documented data → grounded interaction → clear source of truth
 
 <div align="center">
-
 ### `JEMS` • `Hanshit Assistant`
 
 **Explore my documented profile, projects, skills and repository.**
@@ -728,7 +711,6 @@ For me, working on real projects is one of the best ways to understand what I'm 
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">
 <img src="https://img.shields.io/badge/%F0%9F%A4%96%20ASK%20JEMS%20AI-OPEN%20JEMS-555555?style=for-the-badge&labelColor=111111" alt="Ask Jems AI" />
 </a>
-
 </div>
 
 Jems uses documented repository information as its source of truth and avoids inventing information that is not documented.
@@ -738,13 +720,11 @@ Jems uses documented repository information as its source of truth and avoids in
 ## 📱 Portfolio QR
 
 <div align="center">
-
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2F" width="170" alt="QR code to Hanshit Singh portfolio" />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2F" width="140" alt="QR code to Hanshit Singh portfolio" />
 </a>
 
 **Scan to open my portfolio.**
-
 </div>
 
 ---
@@ -769,10 +749,8 @@ Jems uses documented repository information as its source of truth and avoids in
 ## 📊 GitHub Activity
 
 <div align="center">
-
-<img src="./assets/github-stats.svg" height="165" alt="GitHub statistics activity" />
-<img src="./assets/github-top-langs.svg" height="165" alt="Top languages activity" />
-
+<img src="./assets/github-stats.svg" height="125" alt="GitHub statistics activity" />
+<img src="./assets/github-top-langs.svg" height="125" alt="Top languages activity" />
 </div>
 
 ---
@@ -784,17 +762,14 @@ A lot of my learning starts with a simple question: can I turn this into somethi
 ---
 
 <div align="center">
-
 ### Thanks for visiting! ⭐
 
 **Built with curiosity, consistency, and a lot of learning.**
 
 <img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
-
 </div>
 
 ⭐ If you find something useful here, feel free to explore the repository.
-
 
 <details>
 <summary><strong>◈ Visual System Notes</strong> — how the repository presentation is structured</summary>
