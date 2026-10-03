@@ -1,0 +1,77 @@
+name: Repository Quality Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Validate repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Check required portfolio files
+        run: |
+          set -eu
+          for f in README.md SECURITY.md CONTRIBUTING.md index.html style.css script.js; do
+            test -f "$f"
+          done
+      - name: Reject tracked environment files
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            base="${file##*/}"
+            case "$base" in
+              .env.example|.env.sample) ;;
+              .env|.env.*)
+                echo "Tracked environment file detected: $file"
+                exit 1
+                ;;
+            esac
+          done < <(git ls-files -z)
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find . -type f -name '*.js' -not -path './.git/*' -print0)
+      - name: Parse HTML documents
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Parser(HTMLParser):
+              pass
+          files = [p for p in Path(".").rglob("*.html") if ".git" not in p.parts]
+          if not files:
+              raise SystemExit("No HTML files found")
+          for path in files:
+              parser = Parser()
+              parser.feed(path.read_text(encoding="utf-8", errors="strict"))
+              parser.close()
+              print(f"validated: {path}")
+          PY
+      - name: Check for accidental literal newline escapes in JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RFn --include='*.js' --exclude-dir=.git '\\n' .; then
+            echo "Literal \\n sequence found in JavaScript source."
+            exit 1
+          fi
