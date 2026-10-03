@@ -63,8 +63,8 @@ body .primary{background:var(--page-text);color:var(--page-bg)}
 
 
 /* Final UI reliability layer */
-body{background:#f5f7fb;color:#171a21;overflow-x:hidden}
-body.dark{background:#101114;color:#f4f5f7}
+body{--page-bg:#f5f7fb;--page-surface:#fff;--page-border:#e5e7eb;--page-text:#171a21;--page-muted:#6b7280;--page-input:#fff;--page-primary-bg:#171a21;--page-primary-text:#fff;--page-primary-border:#171a21;background:var(--page-bg);color:var(--page-text);overflow-x:hidden}
+body.dark{--page-bg:#101114;--page-surface:#17191d;--page-border:#2c2f35;--page-text:#f4f5f7;--page-muted:#a7aab1;--page-input:#17191d;--page-primary-bg:#f4f5f7;--page-primary-text:#101114;--page-primary-border:#f4f5f7;background:var(--page-bg);color:var(--page-text)}
 body .topbar,body .stats article,body .card{background:var(--surface);color:var(--text);border-color:var(--border)}
 body .topbar{position:sticky;top:0}
 body input,body select{background:var(--input-bg);color:var(--text);border-color:var(--border)}
