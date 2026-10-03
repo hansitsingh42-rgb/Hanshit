@@ -8,6 +8,94 @@
 
 <img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="100%" />
 
+<details open>
+<summary><strong>◈ Developer Component System</strong> — interactive-style README components</summary>
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="25%">
+
+### ◉ Identity
+**Hanshit Developer**
+
+CSE Student
+
+</td>
+<td align="center" width="25%">
+
+### ◈ Build
+**Building Projects**
+
+Ideas → Code
+
+</td>
+<td align="center" width="25%">
+
+### ◇ Learn
+**Learning by Building**
+
+Test → Improve
+
+</td>
+<td align="center" width="25%">
+
+### ◎ Secure
+**Security First**
+
+Validate → Review
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### 01 — Build Pipeline
+
+`Understand` → `Plan` → `Design` → `Build` → `Test` → `Secure` → `Document` → `Improve`
+
+### 02 — Skill Matrix
+
+| Core Development | Product & UX | Workflow | AI & Productivity |
+|---|---|---|---|
+| `C` `JavaScript` | `Figma` `UI/UX` | `Git` `GitHub` | `AI Tools` |
+| `HTML` `CSS` | `IA` `User Flows` | `Jira` `Agile/Scrum` | `Prompt Engineering` |
+| `Computer Networks` | `Wireframing` `Accessibility` | `Testing` `CI` | `Excel` `PowerPoint` |
+
+### 03 — Project Component Cards
+
+<table>
+<tr>
+<td><strong>🌦️ SKH Cast+</strong><br/>Live weather · API · Geolocation</td>
+<td><strong>📚 Study Resource Manager</strong><br/>Search · Filters · Favorites</td>
+<td><strong>📊 Productivity Dashboard</strong><br/>Tasks · Timer · Progress</td>
+</tr>
+<tr>
+<td><strong>💻 C Student Record Manager</strong><br/>C · CRUD · File Handling</td>
+<td><strong>🤖 Jems AI</strong><br/>Assistant · Documented Data</td>
+<td><strong>📘 Student Resource Hub</strong><br/>Subject → Chapter → Resource</td>
+</tr>
+</table>
+
+### 04 — 3D / Visual Layer
+
+<div align="center">
+
+<img src="./assets/3d-skills-visual.svg" width="850" alt="3D-style skills visualization" />
+
+</div>
+
+### 05 — Evidence Layer
+
+`Live Preview` · `Source` · `Security` · `UX Case Study` · `Documentation`
+
+> Existing project details remain below. This component layer is an additional presentation system, not a replacement.
+
+</details>
+
+
 <p>
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/">Portfolio</a> •
 <a href="https://hansitsingh42-rgb.github.io/Hanshit/jems/">Jems AI</a> •
