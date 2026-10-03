@@ -11,28 +11,28 @@
 
 ## Authentication
 - [x] Login UI does not transmit credentials before backend authentication exists
-- [ ] Production authentication endpoint
-- [ ] Password hashing
-- [ ] Secure HttpOnly SameSite session cookies
-- [ ] Session rotation and revocation
-- [ ] CSRF protection where cookie-authenticated state changes are used
-- [ ] Login and session rate limiting
-- [ ] Generic production authentication errors
+- [x] Production authentication endpoint implementation
+- [x] Password hashing
+- [x] Secure HttpOnly SameSite session cookies
+- [x] Session rotation and revocation
+- [x] CSRF protection where cookie-authenticated state changes are used
+- [x] Login and session rate limiting
+- [x] Generic production authentication errors
 
 ## Campaign and audience authorization
-- [ ] Server-side validation for every campaign field
-- [ ] Campaign ownership checks on every read/write operation
+- [x] Server-side validation for every campaign field
+- [x] Campaign ownership checks on every read/write operation
 - [ ] Tenant isolation
 - [ ] Audience consent/opt-in enforcement
 - [ ] Suppression and unsubscribe enforcement
 
 ## Email delivery
-- [ ] Provider credentials stored in server-side secrets
+- [x] Provider credentials stored in server-side secrets
 - [ ] Sender-domain verification
-- [ ] Idempotent sending jobs
-- [ ] Provider webhook signature verification
+- [x] Idempotent sending jobs
+- [x] Provider webhook signature verification
 - [ ] Rate limits and provider quotas
-- [ ] Retry and bounce handling
+- [x] Retry and stale-job handling; bounce/provider integration remains a production gate
 
 ## Privacy and observability
 - [ ] Data retention policy
@@ -44,7 +44,7 @@
 ## Deployment verification
 Before production, run dependency auditing, secret scanning, static checks, build checks, security-header checks, authentication tests, authorization tests, webhook verification tests, and browser smoke tests.
 
-The frontend-only project is intentionally not marked production-ready until the unchecked backend controls exist.
+The backend security foundation is implemented, but production email delivery remains intentionally gated until controlled database/provider integration, final operational controls, and end-to-end verification are complete.
 
 ## Stage 35 verification scope
 
