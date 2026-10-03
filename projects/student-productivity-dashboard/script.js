@@ -8,8 +8,8 @@ function readTasks() {
   try {
     const stored = JSON.parse(localStorage.getItem('studentTasks') || '[]');
     return Array.isArray(stored)
-      ? stored.filter((task) => task && typeof task.text === 'string').map((task) => ({
-          text: task.text,
+      ? stored.filter((task) => task && typeof task.text === 'string' && task.text.trim().length > 0 && task.text.length <= 100).map((task) => ({
+          text: task.text.trim(),
           done: Boolean(task.done)
         }))
       : [];
@@ -54,7 +54,7 @@ function render() {
     checkbox.setAttribute('aria-label', `Complete task: ${task.text}`);
 
     const label = document.createElement('label');
-    const taskId = `task-${index}-${Math.random().toString(36).slice(2, 8)}`;
+    const taskId = `task-${index}`;
     checkbox.id = taskId;
     label.htmlFor = taskId;
     label.textContent = task.text;
@@ -90,6 +90,7 @@ $('#taskForm').onsubmit = (event) => {
   const input = $('#taskInput');
   const text = input.value.trim();
   if (!text) return;
+  if (text.length > 100) return;
   tasks.push({ text, done: false });
   input.value = '';
   save();
