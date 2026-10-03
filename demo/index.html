@@ -1,68 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Hanshit Singh project demo hub with QR codes for live projects.">
-<title>Hanshit | Project Demo Hub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hanshit project live preview viewer with direct previews and QR sharing.">
+<title>Hanshit | Live Preview Viewer</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b0d12;color:#f4f6fb;line-height:1.5}a{color:inherit}.wrap{width:min(1100px,92%);margin:auto}.top{padding:28px 0 10px;display:flex;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:1.15rem;text-decoration:none}.muted,.back,.hero p,.card p,.hint{color:#aeb6c8}.back:focus-visible,.brand:focus-visible,.btn:focus-visible{outline:2px solid #f4f6fb;outline-offset:3px}.hero{padding:54px 0 34px}.eyebrow{font-size:.75rem;letter-spacing:.14em;color:#8e96a8;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.05;margin:10px 0 14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;padding:20px 0 48px}.card{background:#121620;border:1px solid #252b38;border-radius:20px;padding:24px;display:flex;flex-direction:column;min-height:410px}.num{font-size:.75rem;color:#7f899d}.card h2{margin:8px 0}.qr{width:190px;height:190px;background:#fff;border-radius:12px;padding:10px;margin:auto auto 20px;display:grid;place-items:center}.qr img,.qr canvas{max-width:100%;height:auto}.qr-fallback{color:#111;text-align:center;font-size:.8rem;padding:18px}.actions{display:flex;gap:10px}.btn{min-height:44px;display:flex;align-items:center;justify-content:center;flex:1;text-align:center;text-decoration:none;border:1px solid #303747;border-radius:10px;padding:10px 12px;font-weight:700;font-size:.9rem;background:transparent;color:#f4f6fb;cursor:pointer}.btn.primary{background:#f4f6fb;color:#0b0d12}.hint{font-size:.8rem;margin-top:12px;text-align:center}.foot{border-top:1px solid #202632;padding:24px 0 36px;color:#737d91;font-size:.85rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:600px){.hero{padding-top:35px}.card{min-height:390px}.qr{width:175px;height:175px}}
+:root{color-scheme:dark;--bg:#0b0d12;--panel:#121620;--panel2:#171c26;--line:#27303d;--text:#f4f6fb;--muted:#9da9bb;--accent:#6ea8fe}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#17305c 0,transparent 34%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}button,a{font:inherit}.wrap{width:min(1240px,94%);margin:auto}.top{padding:24px 0 10px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:800;text-decoration:none}.back,.muted{color:var(--muted)}.hero{padding:38px 0 22px}.eyebrow{font-size:.74rem;letter-spacing:.14em;color:#8fa2bd;font-weight:800}.hero h1{font-size:clamp(2.2rem,5vw,4.5rem);line-height:1.02;margin:9px 0 12px}.hero p{max-width:780px;color:var(--muted)}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.select,.btn{min-height:44px;border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:var(--panel);color:var(--text);text-decoration:none;font-weight:700;cursor:pointer}.select{min-width:270px}.btn.primary{background:var(--text);color:var(--bg)}.viewer{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#070a0f;margin:16px 0 28px}.viewer-head{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:15px 16px;border-bottom:1px solid var(--line);background:var(--panel)}.viewer-head h2{margin:0;font-size:1rem}.viewer-head small{color:var(--muted)}.frame-wrap{background:#0a0f18;min-height:620px}.frame-wrap iframe{display:block;width:100%;height:720px;border:0;background:#fff}.viewer-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;padding:8px 0 50px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;min-height:220px}.card h3{margin:7px 0 6px;font-size:1rem}.card p{color:var(--muted);font-size:.82rem;margin:0 0 12px}.status{font-size:.68rem;color:#9eb7d7;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding:12px 0}.tag{border:1px solid var(--line);border-radius:7px;padding:3px 7px;font-size:.66rem;color:#b9c3d1;background:var(--panel2)}.actions{display:flex;gap:8px}.actions .btn{flex:1;font-size:.8rem;min-height:40px}.qr-modal[hidden]{display:none}.qr-modal{position:fixed;inset:0;background:rgba(0,0,0,.76);display:grid;place-items:center;padding:18px;z-index:50}.qr-box{width:min(430px,100%);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}.qr-box h3{margin:0 0 6px}.qr-box p{color:var(--muted);font-size:.8rem}.qr{width:220px;height:220px;margin:14px auto;background:#fff;border-radius:12px;padding:10px;display:grid;place-items:center}.qr img,.qr canvas{max-width:100%;height:auto}.close{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:8px;padding:8px 11px;cursor:pointer}.notice{padding:12px 14px;border:1px solid #3a4658;border-radius:10px;background:#0f141d;color:#b8c4d4;font-size:.78rem;margin:10px 0 20px}.foot{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}@media(max-width:700px){.frame-wrap iframe{height:620px}.viewer-head,.viewer-foot{align-items:flex-start;flex-direction:column}.select{width:100%}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top"><a class="brand" href="../">Hanshit<span class="muted">.dev</span></a><a class="back" href="../">← Portfolio</a></header>
 <main>
-<section class="hero"><div class="eyebrow">PROJECT DEMO HUB</div><h1>Scan. Open. Explore.</h1><p>A professional sharing page for all three projects. Scan a QR code to open each live demo on a phone or laptop.</p></section>
-<section class="grid" aria-label="Project QR codes">
-<article class="card"><span class="num">01 / LIVE</span><h2>Study Resource Manager</h2><p>Organize study resources by subject and type in a responsive browser-based library.</p><div class="qr" id="qr-study" role="img" aria-label="QR code for Study Resource Manager"></div><div class="actions"><a class="btn primary" href="../study-resource-manager/" target="_blank" rel="noopener">Open Live ↗</a><button class="btn print-qr" type="button" data-qr="qr-study" data-title="Study Resource Manager">Print QR</button></div><div class="hint">Scan with any phone camera</div></article>
-<article class="card"><span class="num">02 / LIVE</span><h2>Student Productivity Dashboard</h2><p>Track tasks, focus sessions, study time, subject progress and productivity.</p><div class="qr" id="qr-productivity" role="img" aria-label="QR code for Student Productivity Dashboard"></div><div class="actions"><a class="btn primary" href="../student-productivity-dashboard/" target="_blank" rel="noopener">Open Live ↗</a><button class="btn print-qr" type="button" data-qr="qr-productivity" data-title="Student Productivity Dashboard">Print QR</button></div><div class="hint">Scan with any phone camera</div></article>
-<article class="card"><span class="num">03 / LIVE</span><h2>C Student Record Manager</h2><p>Interactive browser demo of the C project's add, list and delete record workflow.</p><div class="qr" id="qr-c" role="img" aria-label="QR code for C Student Record Manager"></div><div class="actions"><a class="btn primary" href="../c-student-record-manager/" target="_blank" rel="noopener">Open Live ↗</a><button class="btn print-qr" type="button" data-qr="qr-c" data-title="C Student Record Manager">Print QR</button></div><div class="hint">Browser demo + original C source in repository</div></article>
+<section class="hero">
+<div class="eyebrow">LIVE PREVIEW VIEWER</div>
+<h1>Open. Preview. Explore.</h1>
+<p>One place for the repository's browser-based projects. Pick a project to load its GitHub Pages preview, open it in a new tab, or generate a QR code for phone sharing.</p>
+<div class="notice">The full-stack Student Resource Hub source is kept in the repository as an application project; this viewer shows its deployable static project preview. Backend-only functionality requires its configured hosting environment.</div>
+<div class="toolbar">
+<label>
+<span class="eyebrow" style="display:block;margin-bottom:5px">PROJECT</span>
+<select id="projectSelect" class="select" aria-label="Choose a project">
+<option value="skycast">SKH Cast+ — Advanced Weather Dashboard</option>
+<option value="study-resource-manager">Study Resource Manager</option>
+<option value="student-productivity-dashboard">Student Productivity Dashboard</option>
+<option value="c-student-record-manager">C Student Record Manager</option>
+<option value="jems">Jems AI</option>
+<option value="student-academic-planner">Student Academic Planner</option>
+<option value="student-study-planner">Student Study Planner</option>
+<option value="student-resource-hub">Student Resource Hub — Static Preview</option>
+<option value="email-campaign-builder">Email Campaign Builder — Static Preview</option>
+<option value="pdf-studio">PDF Studio</option>
+</select>
+</label>
+<div style="display:flex;align-items:flex-end;gap:8px">
+<a id="openLive" class="btn primary" href="../skycast/" target="_blank" rel="noopener noreferrer">Open Live ↗</a>
+<button id="showQr" class="btn" type="button">QR Code</button>
+</div>
+</div>
+</section>
+
+<section class="viewer" aria-label="Live project preview">
+<div class="viewer-head">
+<div><h2 id="viewerTitle">SKH Cast+ — Advanced Weather Dashboard</h2><small id="viewerMeta">Live GitHub Pages preview</small></div>
+<span class="status" id="viewerStatus">LIVE PREVIEW</span>
+</div>
+<div class="frame-wrap">
+<iframe id="previewFrame" title="Selected project live preview" src="../skycast/" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+<div class="viewer-foot">
+<span id="viewerUrl">../skycast/</span>
+<span>Use “Open Live” if a project blocks embedding.</span>
+</div>
+</section>
+
+<section class="grid" aria-label="All project live previews">
+<article class="card" data-project="skycast"><span class="status">01 / live</span><h3>SKH Cast+</h3><p>Weather dashboard with search, geolocation, forecast data and resilient browser state.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="study-resource-manager"><span class="status">02 / live</span><h3>Study Resource Manager</h3><p>Searchable student resource library with filtering, favorites and safe DOM handling.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="student-productivity-dashboard"><span class="status">03 / live</span><h3>Student Productivity Dashboard</h3><p>Tasks, focus sessions, study time and progress tracking in the browser.</p><div class="tags"><span class="tag">Web</span><span class="tag">LocalStorage</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="c-student-record-manager"><span class="status">04 / live</span><h3>C Student Record Manager</h3><p>Browser demo for the C record-management workflow, paired with original C source.</p><div class="tags"><span class="tag">C</span><span class="tag">Web Demo</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="jems"><span class="status">05 / live</span><h3>Jems AI</h3><p>Grounded student assistant experience using documented repository information.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">AI UI</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="student-academic-planner"><span class="status">06 / live</span><h3>Student Academic Planner</h3><p>Academic dashboard for subjects, attendance, assignments and study sessions.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">LocalStorage</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="student-study-planner"><span class="status">07 / live</span><h3>Student Study Planner</h3><p>Study-planning prototype focused on weekly planning and visible next actions.</p><div class="tags"><span class="tag">UI/UX</span><span class="tag">JavaScript</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="student-resource-hub"><span class="status">08 / live</span><h3>Student Resource Hub</h3><p>Static resource-discovery experience organized around Subject → Chapter → Resource.</p><div class="tags"><span class="tag">Web</span><span class="tag">Canvas</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="email-campaign-builder"><span class="status">09 / live</span><h3>Email Campaign Builder</h3><p>Static product preview separated from its server-side authentication and delivery foundation.</p><div class="tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
+<article class="card" data-project="pdf-studio"><span class="status">10 / live</span><h3>PDF Studio</h3><p>Browser-based PDF workspace with document and page-management workflows.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">pdf-lib</span></div><div class="actions"><button class="btn primary choose" type="button">Preview</button><button class="btn qr-btn" type="button">QR</button></div></article>
 </section>
 </main>
-<footer class="foot"><span>© <span id="year"></span> Hanshit Singh</span><span>Polytechnic CSE • Learning by Building</span></footer>
+<footer class="foot"><span>© <span id="year"></span> Hanshit Singh</span><span>Live Preview Viewer • Built from the repository project map</span></footer>
 </div>
+
+<div class="qr-modal" id="qrModal" hidden>
+<div class="qr-box" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+<h3 id="qrTitle">Project QR Code</h3><p id="qrDescription">Scan to open the selected live preview.</p>
+<div class="qr" id="qrBox"></div>
+<button class="close" id="closeQr" type="button">Close</button>
+</div>
+</div>
+
 <script src="vendor/qrcode.min.js" defer></script>
 <script>
 (function(){
 "use strict";
-const root=window.location.origin+window.location.pathname.replace(/\/demo\/?$/,"/");
-const urls={study:root+"study-resource-manager/",productivity:root+"student-productivity-dashboard/",c:root+"c-student-record-manager/"};
+const base=window.location.origin+window.location.pathname.replace(/\/demo\/?$/,"/");
+const projects={
+  "skycast":{title:"SKH Cast+ — Advanced Weather Dashboard",path:"skycast/",meta:"Live GitHub Pages preview"},
+  "study-resource-manager":{title:"Study Resource Manager",path:"study-resource-manager/",meta:"Live GitHub Pages preview"},
+  "student-productivity-dashboard":{title:"Student Productivity Dashboard",path:"student-productivity-dashboard/",meta:"Live GitHub Pages preview"},
+  "c-student-record-manager":{title:"C Student Record Manager",path:"c-student-record-manager/",meta:"Live browser demo"},
+  "jems":{title:"Jems AI",path:"jems/",meta:"Live GitHub Pages preview"},
+  "student-academic-planner":{title:"Student Academic Planner",path:"student-academic-planner/",meta:"Live GitHub Pages preview"},
+  "student-study-planner":{title:"Student Study Planner",path:"student-study-planner/",meta:"Live GitHub Pages preview"},
+  "student-resource-hub":{title:"Student Resource Hub — Static Preview",path:"student-resource-hub/",meta:"Live static project preview"},
+  "email-campaign-builder":{title:"Email Campaign Builder — Static Preview",path:"email-campaign-builder/",meta:"Live static product preview"},
+  "pdf-studio":{title:"PDF Studio",path:"pdf-studio/",meta:"Live GitHub Pages preview"}
+};
+const select=document.getElementById("projectSelect");
+const frame=document.getElementById("previewFrame");
+const openLive=document.getElementById("openLive");
+const showQr=document.getElementById("showQr");
+const viewerTitle=document.getElementById("viewerTitle");
+const viewerMeta=document.getElementById("viewerMeta");
+const viewerUrl=document.getElementById("viewerUrl");
+const modal=document.getElementById("qrModal");
+const qrBox=document.getElementById("qrBox");
+const qrTitle=document.getElementById("qrTitle");
+const qrDescription=document.getElementById("qrDescription");
 const year=document.getElementById("year");
 year.textContent=String(new Date().getFullYear());
 
-function renderQr(id,url){
-  const el=document.getElementById(id);
-  if(!el)return;
+function urlFor(key){return base+projects[key].path}
+function selectProject(key,scroll){
+  const item=projects[key]; if(!item)return;
+  select.value=key;
+  const url=urlFor(key);
+  frame.src=url;
+  frame.title=item.title+" live preview";
+  openLive.href=url;
+  viewerTitle.textContent=item.title;
+  viewerMeta.textContent=item.meta;
+  viewerUrl.textContent=url;
+  if(scroll)document.querySelector(".viewer").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showQrFor(key){
+  const item=projects[key]; if(!item)return;
+  qrTitle.textContent=item.title+" — QR";
+  qrDescription.textContent="Scan to open "+item.title+".";
+  qrBox.replaceChildren();
+  modal.hidden=false;
   if(typeof window.QRCode!=="function"){
-    el.innerHTML='<div class="qr-fallback">QR service is unavailable. Use “Open Live” instead.</div>';
+    qrBox.textContent="QR service unavailable. Use Open Live instead.";
     return;
   }
   try{
-    new window.QRCode(el,{text:url,width:170,height:170,correctLevel:window.QRCode.CorrectLevel.H});
+    new window.QRCode(qrBox,{text:urlFor(key),width:190,height:190,correctLevel:window.QRCode.CorrectLevel.H});
   }catch{
-    el.innerHTML='<div class="qr-fallback">QR could not be generated. Use “Open Live” instead.</div>';
+    qrBox.textContent="QR generation failed. Use Open Live instead.";
   }
 }
-function printQr(id,title){
-  const el=document.getElementById(id);
-  if(!el)return;
-  const qr=el.innerHTML;
-  if(!qr || el.querySelector(".qr-fallback"))return;
-  const w=window.open("","_blank","width=500,height=600");
-  if(!w)return;
-  const safeTitle=title.replace(/[<>&"']/g,"");
-  w.document.write("<!doctype html><html><head><title>"+safeTitle+" QR</title><style>body{font-family:Arial;text-align:center;padding:40px}img,canvas{width:300px;height:300px}h1{font-size:22px}</style></head><body><h1>"+safeTitle+"</h1>"+qr+"<p>Scan to open the live demo</p><script>window.onload=function(){window.print()}<\\/script></body></html>");
-  w.document.close();
-}
-document.querySelectorAll(".print-qr").forEach(function(button){
-  button.addEventListener("click",function(){printQr(button.dataset.qr,button.dataset.title);});
-});
-window.addEventListener("load",function(){
-  renderQr("qr-study",urls.study);
-  renderQr("qr-productivity",urls.productivity);
-  renderQr("qr-c",urls.c);
-});
+select.addEventListener("change",()=>selectProject(select.value,false));
+showQr.addEventListener("click",()=>showQrFor(select.value));
+document.getElementById("closeQr").addEventListener("click",()=>{modal.hidden=true});
+modal.addEventListener("click",e=>{if(e.target===modal)modal.hidden=true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.hidden=true});
+document.querySelectorAll(".choose").forEach(btn=>btn.addEventListener("click",()=>{
+  const key=btn.closest("[data-project]").dataset.project; selectProject(key,true);
+}));
+document.querySelectorAll(".qr-btn").forEach(btn=>btn.addEventListener("click",()=>{
+  const key=btn.closest("[data-project]").dataset.project; selectProject(key,false); showQrFor(key);
+}));
 })();
 </script>
 </body>
