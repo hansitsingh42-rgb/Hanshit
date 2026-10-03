@@ -41,3 +41,6 @@ This is an active learning prototype. Product assumptions are documented as hypo
 - Responsive layout
 - Keyboard interaction
 - Local-only state behavior
+
+
+> **Live Preview:** [Open Student Study Planner](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=student-study-planner)
