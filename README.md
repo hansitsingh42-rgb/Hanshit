@@ -197,63 +197,6 @@ This makes the repository easier to inspect and helps separate **what is built**
 
 ---
 
-## ⚡ Developer Snapshot
-
-> Core skills · workflow · design · AI · direction
-
-| Focus | Current Direction |
-|---|---|
-| 🎓 Education | Polytechnic Computer Science |
-| 🌐 Building | Web apps & student-focused tools |
-| 🎨 Design | UI/UX, information architecture & user flows |
-| 💻 Core | C • JavaScript • HTML • CSS |
-| 🤖 Exploring | AI tools & prompt engineering |
-| 🧰 Workflow | Git • GitHub • Jira • Agile/Scrum |
-| 🎯 Goal | Become a stronger practical developer |
-
----
-
-## 🚀 Currently Working On
-
-Right now, most of my time goes into:
-
-- 🌐 Building practical web projects
-- 📚 Improving a personal study-resource library
-- 🧩 Making small student-focused tools
-- 🎨 Practising UI/UX design and product thinking
-- 🔧 Getting more comfortable with Git and GitHub
-- 📖 Practising programming and core Computer Science concepts
-- 🛠️ Turning ideas into projects that actually work
-
----
-
-## 🚀 Currently Building
-
-**01 — Student-focused web tools**  
-Building simple browser-based tools around problems I come across while studying.
-
-**02 — Student Resource Hub**  
-Building a structured academic resource experience around **Subject → Chapter → Resource**, with search, filters, previews and student-focused navigation.
-
-**03 — Jems AI**  
-Working on a small assistant that presents documented information about my profile, projects, and repository.
-
-**04 — Developer Foundations**  
-Practising C, JavaScript, Git/GitHub, Computer Networks, and other core Computer Science topics.
-
----
-
-## 🛠️ What I Build
-
-- 🌐 Practical web applications
-- 📚 Study & productivity tools
-- 🤖 AI-related experiments
-- 💻 Beginner-friendly Computer Science projects
-- 🧩 Small utilities that help me learn by doing
-- 🎨 Interfaces designed with usability and accessibility in mind
-
----
-
 ## 🎨 UI/UX Design & Product Thinking
 
 > Problem → Research → IA → Flow → Wireframe → UI → Prototype → Test → Improve
@@ -304,40 +247,6 @@ A UX case study currently being developed in Figma, covering:
 - Git & GitHub
 - Computer Networks
 
-## 💡 Ask Me About
-
-- Computer Science student projects
-- Web development basics
-- UI/UX fundamentals
-- Information architecture and user flows
-- Git & GitHub
-- Learning resources
-
-## 🤝 Looking to Collaborate On
-
-- Beginner-friendly web projects
-- Student projects
-- Open-source projects
-- Learning-focused experiments
-- UI/UX and product-design practice
-- Projects where I can learn while contributing
-
----
-
-## 🛠️ Skills & Tools
-
-> Development · Version control · Product design · Collaboration
-
-<p>
-<img src="https://img.shields.io/badge/C-Programming-555555?style=for-the-badge&logo=c&logoColor=white" alt="C" />
-<img src="https://img.shields.io/badge/JavaScript-Learning-555555?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
-<img src="https://img.shields.io/badge/Git-Tools-555555?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub-Workflow-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-<img src="https://img.shields.io/badge/Figma-UI%2FUX-555555?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
-</p>
-
----
-
 ## 🧠 Skills & Technologies
 
 <details>
@@ -375,27 +284,6 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-## 🌱 Learning Progress
-
-<details>
-<summary>View progress details</summary>
-
-```text
-C Programming           ███████░░░  Building fundamentals
-JavaScript              ██████░░░░  Growing web development skills
-Git & GitHub            ███████░░░  Improving workflow
-Computer Networks       ██████░░░░  Strengthening fundamentals
-UI/UX Design            █████░░░░░  Building design foundations
-Core CS                 █████░░░░░  Learning step by step
-Practical AI            ██████░░░░  Exploring useful applications
-```
-
-> Progress matters more than pretending to know everything.
-
-</details>
-
----
-
 ## 📊 GitHub Analytics
 
 > Repository activity and language signals
@@ -406,22 +294,6 @@ Practical AI            ██████░░░░  Exploring useful applica
 </div>
 
 > These analytics cards are self-hosted in the repository, so the profile does not depend on a third-party image endpoint.
-
----
-
-## 🔥 Contribution Streak
-
-<div align="center">
-<img src="./assets/github-streak.svg" alt="GitHub contribution streak" />
-</div>
-
----
-
-## 📈 Contribution Graph
-
-<div align="center">
-<img src="./assets/github-contribution-graph.svg" alt="GitHub contribution graph" />
-</div>
 
 ---
 
@@ -437,56 +309,10 @@ Practical AI            ██████░░░░  Exploring useful applica
 
 ---
 
-## 🎨 Project Brand Gallery
-
-> Every project gets its own visual identity while keeping one portfolio language
-
-<table>
-<tr>
-<td align="center"><img src="./assets/project-logos/skycast.svg" width="150" alt="SKH Cast+ logo" /></td>
-<td align="center"><img src="./assets/project-logos/study-resource-manager.svg" width="150" alt="Study Resource Manager logo" /></td>
-<td align="center"><img src="./assets/project-logos/productivity-dashboard.svg" width="150" alt="Student Productivity Dashboard logo" /></td>
-</tr>
-<tr>
-<td align="center">SKH Cast+</td>
-<td align="center">Study Resource Manager</td>
-<td align="center">Student Productivity Dashboard</td>
-</tr>
-<tr>
-<td align="center"><img src="./assets/project-logos/c-student-record.svg" width="150" alt="C Student Record Manager logo" /></td>
-<td align="center"><img src="./assets/project-logos/jems-ai.svg" width="150" alt="Jems AI logo" /></td>
-<td align="center"><img src="./assets/project-logos/student-resource-hub.svg" width="150" alt="Student Resource Hub logo" /></td>
-</tr>
-<tr>
-<td align="center">C Student Record Manager</td>
-<td align="center">Jems AI</td>
-<td align="center">Student Resource Hub</td>
-</tr>
-<tr>
-<td align="center"><img src="./assets/project-logos/student-academic-planner.svg" width="150" alt="Student Academic Planner logo" /></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Student Academic Planner</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><img src="./assets/project-logos/student-study-planner.svg" width="150" alt="Student Study Planner logo" /></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Student Study Planner</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</table>
-
----
-
 ## 🚀 Selected Work
+
+> **Canonical project index:** purpose → engineering → stack → evidence → learning.
+
 
 > Selected projects are presented as engineering evidence: **problem → implementation → engineering decisions → verification → demo/source**.
 
@@ -628,48 +454,6 @@ A browser-based academic dashboard for subjects, attendance, assignments, study 
 > **Selection principle:** projects remain visible because they document the learning path. Claims are kept proportional to what is actually implemented and verified.
 ---
 
-## 🧩 Project Branding Standard
-
-> Logo → layout → evidence → accessibility → repeatable project template
-
-I use the following presentation standard across the projects in this repository:
-
-- Dedicated SVG project logo
-- Consistent visual language
-- README presentation with logo, purpose, highlights, stack, and live/source links
-- Accessible assets with descriptive alt text
-- Shared **LIVE PREVIEW** button for deployed projects
-- All project logos are stored in `assets/project-logos/`
-- New projects follow the same branding system
-
-### New Project Template
-
-```text
-assets/project-logos/<project-name>.svg
-README.md → Brand Gallery + Selected Work + Project Hub
-projects/<project-name>/
-```
-
-> The goal is to keep the repository easy to explore while still giving each project its own identity.
-
----
-
-## 🧩 What You'll Find Here
-
-📁 Projects & experiments  •  📝 Learning notes  •  💻 Code practice  •  🚀 Future builds
-
-This repository grows as I learn. I add projects, experiments, notes, and useful resources here as I go.
-
----
-
-## 🎯 My Goal
-
-My goal is to become a stronger developer by learning projects, understanding user needs, designing usable interfaces, and improving through iteration.
-
-For me, working on real projects is one of the best ways to understand what I'm learning.
-
----
-
 ## 🤖 Ask Jems AI
 
 > Documented data → grounded interaction → clear source of truth
@@ -688,69 +472,10 @@ Jems uses documented repository information as its source of truth and avoids in
 
 ---
 
-## 📱 Portfolio QR
 
-<div align="center">
-<a href="https://hansitsingh42-rgb.github.io/Hanshit/">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fhansitsingh42-rgb.github.io%2FHanshit%2F" width="140" alt="QR code to Hanshit Singh portfolio" />
-</a>
-
-**Scan to open my portfolio.**
-</div>
 
 ---
 
-## 📁 Project Hub
+### Quick Links
 
-> Live preview ↔ source ↔ project identity
-
-| Project | Live Preview | Source |
-|---|---|---|
-| 🌦️ SKH Cast+ Weather Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) | [Source](./projects/advanced-weather-app/) |
-| 📚 Study Resource Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) | [Source](./projects/study-resource-manager/) |
-| 📊 Student Productivity Dashboard | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) | [Source](./projects/student-productivity-dashboard/) |
-| 💻 C Student Record Manager | [Open](https://hansitsingh42-rgb.github.io/Hanshit/c-student-record-manager/) | [Source](./projects/c-student-record-manager/) |
-| 🤖 Jems AI | [Open](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | [Source](./jems/) |
-| 📘 Student Resource Hub | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) | [Source](./projects/student-resource-hub/) |
-| 📅 Student Study Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) | [Source](./projects/student-study-planner/) |
-| 📅 Student Academic Planner | [Open](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) | [Source](./projects/student-academic-planner/) |
-
----
-
----
-
-## ⚡ Fun Fact
-
-A lot of my learning starts with a simple question: can I turn this into something that actually works?
-
----
-
-<div align="center">
-### Thanks for visiting! ⭐
-
-**Built with curiosity, consistency, and a lot of learning.**
-
-<img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&style=flat-square&label=Profile+Views" alt="Profile views" />
-</div>
-
-⭐ If you find something useful here, feel free to explore the repository.
-
-<details>
-<summary><strong>◈ Visual System Notes</strong> — how the repository presentation is structured</summary>
-
-| Layer | Component pattern | Purpose |
-|---|---|---|
-| Identity | Hero + profile + layered system visual | Establish developer identity |
-| Engineering | Pipeline + skill matrix + evidence gates | Show how work is built and reviewed |
-| UX/UI | Process stepper + structured cards | Show product-thinking and usability practice |
-| Projects | Brand gallery + project cards + evidence | Make each project easy to inspect |
-| Security | Security checklist + quality gate | Surface secure-development habits |
-| Data | Analytics + progress blocks | Present measurable repository signals |
-| 3D / Visual | Existing 3D SVG assets + depth-based diagrams | Add visual hierarchy without hiding the content |
-| Navigation | Live preview + source + project hub | Keep every important destination discoverable |
-
-> **Implementation rule:** existing README content is preserved. The component layer is added around the ready-made information instead of replacing it.
-
-> **GitHub rendering note:** GitHub README rendering does not execute inline SVG animation/scripts, so the visual system uses GitHub-compatible SVG/Markdown/HTML presentation rather than pretending unsupported animation is live.
-
-</details>
+[Portfolio](https://hansitsingh42-rgb.github.io/Hanshit/) · [Jems AI](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Repository](https://github.com/hansitsingh42-rgb/Hanshit) · [Security](./SECURITY.md) · [Engineering](./docs/ENGINEERING.md)
