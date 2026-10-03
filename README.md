@@ -7,92 +7,8 @@
 
 <img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="58%" />
 
-<img src="./assets/readme-developer-system.svg" alt="Layered developer, coder, UX/UI and security component system" width="62%" />
 
-<details>
-<summary><strong>Developer Component System</strong> — optional visual/structure reference</summary>
 
-<div align="center">
-<table>
-<tr>
-<td align="center" width="25%">
-
-### ◉ Identity
-**Hanshit Developer**
-
-CSE Student
-
-</td>
-<td align="center" width="25%">
-
-### ◈ Build
-**Building Projects**
-
-Ideas → Code
-
-</td>
-<td align="center" width="25%">
-
-### ◇ Learn
-**Learning by Building**
-
-Test → Improve
-
-</td>
-<td align="center" width="25%">
-
-### ◎ Secure
-**Security First**
-
-Validate → Review
-
-</td>
-</tr>
-</table>
-</div>
-
-#### 01 — Build Pipeline
-
-`Understand` → `Plan` → `Design` → `Build` → `Test` → `Secure` → `Document` → `Improve`
-
-#### 02 — Skill Matrix
-
-| Core Development | Product & UX | Workflow | AI & Productivity |
-|---|---|---|---|
-| `C` `JavaScript` | `Figma` `UI/UX` | `Git` `GitHub` | `AI Tools` |
-| `HTML` `CSS` | `IA` `User Flows` | `Jira` `Agile/Scrum` | `Prompt Engineering` |
-| `Computer Networks` | `Wireframing` `Accessibility` | `Testing` `CI` | `Excel` `PowerPoint` |
-
-#### 03 — Project Component Cards
-
-<table>
-<tr>
-<td><strong>🌦️ SKH Cast+</strong><br/>Live weather · API · Geolocation</td>
-<td><strong>📚 Study Resource Manager</strong><br/>Search · Filters · Favorites</td>
-<td><strong>📊 Productivity Dashboard</strong><br/>Tasks · Timer · Progress</td>
-</tr>
-<tr>
-<td><strong>💻 C Student Record Manager</strong><br/>C · CRUD · File Handling</td>
-<td><strong>🤖 Jems AI</strong><br/>Assistant · Documented Data</td>
-<td><strong>📘 Student Resource Hub</strong><br/>Subject → Chapter → Resource</td>
-</tr>
-</table>
-
-#### 04 — 3D / Visual Layer
-
-<div align="center">
-<img src="./assets/3d-skills-visual.svg" width="560" alt="3D-style skills visualization" />
-</div>
-
-#### 05 — Evidence Layer
-
-`Live Preview` · `Source` · `Security` · `UX Case Study` · `Documentation`
-
-**Engineering Quality** — [Security Policy](./SECURITY.md) · [Engineering Baseline](./docs/ENGINEERING.md) · CodeQL · CI quality checks · [Repository Architecture](./docs/REPOSITORY_ARCHITECTURE.md) · Dependency Review
-
-> Existing project details remain below. This component layer is an additional presentation system, not a replacement.
-
-</details>
 
 <p>
 [Portfolio](https://hansitsingh42-rgb.github.io/Hanshit/) · [Jems AI](https://hansitsingh42-rgb.github.io/Hanshit/jems/) · [Repository](https://github.com/hansitsingh42-rgb/Hanshit)
@@ -252,12 +168,10 @@ A UX case study currently being developed in Figma, covering:
 <img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,figma,vscode" alt="Development and design skills" />
 </div>
 
-</details>
+
 
 ---
 
-<details>
-<summary>🧊 3D Skills Visualization</summary>
 
 
 > **3D VISUAL COMPONENT** · Spatial skill map for the existing capability data
@@ -268,8 +182,6 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-<details>
-<summary>📊 GitHub Analytics</summary>
 
 > Repository activity and language signals
 
@@ -282,7 +194,7 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-</details>
+
 
 ## 🏆 Milestones
 
