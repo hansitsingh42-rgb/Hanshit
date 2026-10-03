@@ -140,7 +140,9 @@ function showQrFor(key){
     qrBox.textContent="QR generation failed. Use Open Live instead.";
   }
 }
-select.addEventListener("change",()=>selectProject(select.value,false));
+const initialProject=new URLSearchParams(window.location.search).get("project");
+select.addEventListener("change",()=>{selectProject(select.value,false);});
+if(initialProject&&projects[initialProject]) selectProject(initialProject,false);
 showQr.addEventListener("click",()=>showQrFor(select.value));
 document.getElementById("closeQr").addEventListener("click",()=>{modal.hidden=true});
 modal.addEventListener("click",e=>{if(e.target===modal)modal.hidden=true});
