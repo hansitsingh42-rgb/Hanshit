@@ -4,6 +4,8 @@
 
 ### CSE Student | Developer | Learning by Building
 
+<img src="./assets/hanshit-developer-sequence.svg" alt="Hanshit Developer — CSE Student — Building Projects — Learning by Building" width="100%" />
+
 <img src="./assets/hanshit-developer-profile.svg" alt="Hanshit Singh CSE student developer profile card" width="100%" />
 
 <p>
