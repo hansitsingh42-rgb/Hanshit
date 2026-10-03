@@ -89,3 +89,6 @@ This project demonstrates practical frontend development, responsive UI/UX, brow
 - Responsive navigation
 - Reduced-motion behavior
 - Deployment path validation
+
+
+> **Live Preview:** [Open Student Resource Hub — Static Preview](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=student-resource-hub)
