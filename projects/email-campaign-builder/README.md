@@ -82,3 +82,6 @@ The repository intentionally does not contain a fabricated lockfile.
 ## Repository safety
 
 This project is isolated under `projects/email-campaign-builder/`. Existing repository projects are not modified or deleted as part of this project.
+
+
+> **Live Preview:** [Open Email Campaign Builder](https://hansitsingh42-rgb.github.io/Hanshit/email-campaign-builder/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=email-campaign-builder)
