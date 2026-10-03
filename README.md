@@ -168,6 +168,8 @@ A UX case study currently being developed in Figma, covering:
 <img src="https://skillicons.dev/icons?i=c,js,html,css,git,github,figma,vscode" alt="Development and design skills" />
 </div>
 
+</details>
+
 
 
 ---
