@@ -1,4 +1,18 @@
-const seed=[{title:'Computer Networks Notes',subject:'Computer',type:'Notes',url:'https://www.geeksforgeeks.org/computer-network-tutorials/'},{title:'JavaScript Basics',subject:'Web Development',type:'Video',url:'https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting'},{title:'C Programming Reference',subject:'C Programming',type:'Link',url:'https://en.cppreference.com/w/c'},{title:'Study Planning Guide',subject:'Productivity',type:'PDF',url:''}];
+const seed=[
+{title:'Computer Networks Fundamentals',subject:'Computer',type:'Guide',url:'https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html'},
+{title:'C Language Reference',subject:'C Programming',type:'Reference',url:'https://en.cppreference.com/w/c'},
+{title:'JavaScript Guide',subject:'Web Development',type:'Guide',url:'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide'},
+{title:'JavaScript Interactivity',subject:'Web Development',type:'Tutorial',url:'https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity'},
+{title:'Physics Fundamentals',subject:'Physics',type:'Textbook',url:'https://openstax.org/books/physics/pages/1-introduction'},
+{title:'Physics: Simple Machines',subject:'Mechanics',type:'Textbook',url:'https://openstax.org/books/physics/pages/9-3-simple-machines'},
+{title:'Physics: Key Equations',subject:'Physics',type:'Reference',url:'https://openstax.org/books/physics/pages/9-key-equations'},
+{title:'Chemistry Fundamentals',subject:'Chemistry',type:'Textbook',url:'https://openstax.org/books/chemistry-2e/pages/1-introduction'},
+{title:'Chemistry: Atomic Structure',subject:'Chemistry',type:'Textbook',url:'https://openstax.org/books/chemistry-2e/pages/2-introduction'},
+{title:'Introduction to AI',subject:'AI',type:'Learning Path',url:'https://developer.ibm.com/learningpaths/get-started-artificial-intelligence/'},
+{title:'Artificial Intelligence Guide',subject:'AI',type:'Guide',url:'https://www.ibm.com/think/topics/artificial-intelligence'},
+{title:'English Speaking Practice',subject:'English',type:'Practice',url:'https://learnenglish.britishcouncil.org/skills/speaking'},
+{title:'Study Planning Guide',subject:'Productivity',type:'Guide',url:'https://openstax.org/subjects'}
+];
 let resources=load('studyResources',seed), favOnly=false;
 const $=id=>document.getElementById(id);
 function load(k,f){try{const x=localStorage.getItem(k);const parsed=x?JSON.parse(x):f;return Array.isArray(parsed)?parsed:f}catch{return f}}
