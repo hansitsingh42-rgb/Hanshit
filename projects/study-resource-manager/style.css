@@ -27,3 +27,36 @@ body{background:var(--ui-bg);color:var(--ui-text)}.topbar{background:rgba(255,25
 button,.primary,.secondary,.icon-btn{border-radius:10px}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(79,70,229,.2);outline-offset:2px}
 @media(max-width:720px){.hero{padding-top:28px}.toolbar{display:grid;gap:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+/* Theme reliability fix: later product-surface rules must respect body.dark. */
+body{
+  --page-bg:#f5f7fb;
+  --page-surface:#ffffff;
+  --page-border:#e5e7eb;
+  --page-text:#171a21;
+  --page-muted:#6b7280;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body.dark{
+  --page-bg:#101114;
+  --page-surface:#17191d;
+  --page-border:#2c2f35;
+  --page-text:#f4f5f7;
+  --page-muted:#a7aab1;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body .topbar,
+body .stats article,
+body .card,
+body input,
+body select,
+body .toolbar,
+body dialog{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
+body .muted,
+body .eyebrow,
+body .stats span{color:var(--page-muted)}
+body .badge{background:color-mix(in srgb,var(--page-border) 70%,transparent);color:var(--page-text)}
+body .secondary,
+body .icon-btn{background:var(--page-surface);color:var(--page-text);border-color:var(--page-border)}
+body .primary{background:var(--page-text);color:var(--page-bg)}
