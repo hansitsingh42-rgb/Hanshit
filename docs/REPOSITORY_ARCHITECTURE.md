@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Hanshit is a CSE student developer portfolio and a collection of practical learning projects. The repository is intentionally organized so portfolio presentation, individual projects, documentation, and engineering automation can evolve independently.
+Hanshit is a CSE student developer portfolio and a collection of practical CSE learning projects. The repository is intentionally organized so portfolio presentation, individual projects, documentation, and engineering automation can evolve independently.
 
 ## Top-level structure
 
@@ -12,7 +12,6 @@ Hanshit is a CSE student developer portfolio and a collection of practical learn
 | `projects/` | Individual CSE/student projects |
 | `jems/` | Jems AI project |
 | `pdf-studio/` | PDF Studio project |
-| `visitor-analytics/` | Analytics project/demo |
 | `assets/` | Portfolio visual assets and reusable media |
 | `.github/` | CI, security, contribution and repository automation |
 | `docs/` | Engineering and project documentation |
