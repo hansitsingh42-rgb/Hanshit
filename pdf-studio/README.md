@@ -65,3 +65,6 @@ A browser-first PDF creation and editing workspace inside the Hanshit portfolio.
 6. Final accessibility, security and performance audit
 
 No existing Hanshit projects are removed or replaced.
+
+
+> **Live Preview:** [Open PDF Studio](https://hansitsingh42-rgb.github.io/Hanshit/pdf-studio/) · [Open in Live Preview Viewer](https://hansitsingh42-rgb.github.io/Hanshit/demo/?project=pdf-studio)
