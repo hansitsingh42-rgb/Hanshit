@@ -82,3 +82,63 @@ body .icon-btn,body .secondary,body .text-btn{background:var(--surface-soft);col
 body.light .icon-btn,body.light .secondary,body.light .text-btn{background:#fff}
 @media(max-width:700px){.task-form{flex-direction:column}.task-form button{width:100%}.topbar{align-items:center}.stats{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.stats{grid-template-columns:1fr}.app{padding:14px}.card{padding:16px}.timer-actions{flex-wrap:wrap}.timer-actions button{width:100%}}
+
+
+/* Final UI reliability layer v2 — explicit theme tokens */
+body{
+  --page-bg:#070b14;
+  --page-surface:#0f172a;
+  --page-soft:#0b1220;
+  --page-border:#24324a;
+  --page-text:#e8eef8;
+  --page-muted:#8c99ad;
+  background:var(--page-bg);
+  color:var(--page-text);
+  overflow-x:hidden;
+}
+body.light{
+  --page-bg:#f5f7fa;
+  --page-surface:#ffffff;
+  --page-soft:#f7f9fc;
+  --page-border:#d9e0ea;
+  --page-text:#172033;
+  --page-muted:#64748b;
+  background:var(--page-bg);
+  color:var(--page-text);
+}
+body .topbar,
+body .card{
+  background:var(--page-surface);
+  color:var(--page-text);
+  border-color:var(--page-border);
+}
+body .icon-btn,
+body .secondary,
+body .text-btn{
+  background:var(--page-surface);
+  color:var(--page-text);
+  border-color:var(--page-border);
+}
+body .muted,
+body .stat span,
+body footer{color:var(--page-muted)}
+body .task-form input{
+  background:var(--page-soft);
+  color:var(--page-text);
+  border-color:var(--page-border);
+}
+body .task{border-bottom-color:var(--page-border)}
+body .delete{color:var(--page-muted)}
+body .bar{background:var(--page-soft)}
+@media(max-width:700px){
+  .task-form{flex-direction:column}
+  .task-form button{width:100%}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr}
+  .app{padding:14px}
+  .card{padding:16px}
+  .timer-actions{flex-wrap:wrap}
+  .timer-actions button{width:100%}
+}
