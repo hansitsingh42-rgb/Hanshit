@@ -16,7 +16,7 @@
 </div>
 
 
-> **Start here:** Featured Builds → Engineering → Security & Quality → Selected Work → GitHub evidence.
+> **Start here:** Featured Builds → Engineering → Security & Quality → Current Learning → Jems AI. Expand the sections below for the complete project record and visual evidence.
 
 ---
 
@@ -33,6 +33,8 @@
 | **Product thinking** | Clear user problems, information architecture, responsive UI and usability considerations |
 
 ### Featured Build Evidence
+
+> **30% view:** the most important engineering evidence stays visible first; detailed project records, design work and analytics remain available below.
 
 - **SKH Cast+** — API integration, geolocation, async requests, cancellation, local storage and responsive weather UI
 - **Study Resource Manager** — filtering, favorites, persistence, URL validation and safe DOM rendering
@@ -95,6 +97,9 @@ This makes the repository easier to inspect and helps separate **what is built**
 
 ---
 
+<details>
+<summary>🎨 UI/UX Design & Product Thinking — expand for design evidence</summary>
+
 ## 🎨 UI/UX Design & Product Thinking
 
 > Problem → Research → IA → Flow → Wireframe → UI → Prototype → Test → Improve
@@ -133,6 +138,8 @@ A UX case study currently being developed in Figma, covering:
 > This section represents my current design practice and documented work. Research assumptions are kept separate from validated findings.
 
 ---
+
+</details>
 
 ## 🌱 Currently Learning
 
@@ -174,7 +181,8 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
-
+<details>
+<summary>📊 Visual & GitHub Evidence — expand for analytics and 3D views</summary>
 
 > **3D VISUAL COMPONENT** · Spatial skill map for the existing capability data
 
@@ -196,7 +204,10 @@ A UX case study currently being developed in Figma, covering:
 
 ---
 
+</details>
 
+<details>
+<summary>🏆 Milestones & Full Project Evidence — expand for the complete portfolio record</summary>
 
 ## 🏆 Milestones
 
@@ -374,6 +385,8 @@ A browser-based academic dashboard for subjects, attendance, assignments, study 
 
 > **Selection principle:** projects remain visible because they document the learning path. Claims are kept proportional to what is actually implemented and verified.
 ---
+
+</details>
 
 ## 🤖 Ask Jems AI
 
