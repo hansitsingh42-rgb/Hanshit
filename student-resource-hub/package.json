@@ -28,7 +28,7 @@
     "@types/bcryptjs": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "prisma": "6.19.3"
+    "prisma": "7.10.0"
   },
   "overrides": {
     "deepmerge-ts": "8.0.1"
