@@ -53,10 +53,16 @@ async function processClaimedJob(jobId){
 
     const finalize=await getClient();
     try{
-      await finalize.query(
-        "UPDATE delivery_jobs SET status=$2,provider_message_id=$3,processing_started_at=NULL,last_error_code=NULL,updated_at=NOW() WHERE id=$1 AND status='processing' AND provider_idempotency_key=$4",
+      const finalized=await finalize.query(
+        "UPDATE delivery_jobs SET status=$2,provider_message_id=$3,processing_started_at=NULL,last_error_code=NULL,updated_at=NOW() WHERE id=$1 AND status='processing' AND provider_idempotency_key=$4 RETURNING status",
         [jobId,result.accepted ? "sent" : "failed",result.providerMessageId,idempotencyKey]
       );
+      if(finalized.rowCount!==1){
+        // A webhook may have finalized or suppressed this job while the provider request was in flight.
+        // Do not report the worker's optimistic result as if this UPDATE had succeeded.
+        const current=await finalize.query("SELECT status FROM delivery_jobs WHERE id=$1",[jobId]);
+        return {status:current.rows[0]?.status || "unknown",reconciled:true};
+      }
     }finally{
       finalize.release();
     }
