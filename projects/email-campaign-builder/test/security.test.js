@@ -95,6 +95,10 @@ async function run(){
   assert.match(source11,/Cache-Control.*no-store/);
   const source12=fs.readFileSync(path.join(__dirname,"../api/delivery/prepare.js"),"utf8");
   assert.match(source12,/Cache-Control.*no-store/);
+  const deliveryWorker=fs.readFileSync(path.join(__dirname,"../lib/delivery-worker.js"),"utf8");
+  assert.match(deliveryWorker,/RETURNING status/);
+  assert.match(deliveryWorker,/finalized\.rowCount!==1/);
+  assert.match(deliveryWorker,/reconciled:true/);
   const staleRecovery=fs.readFileSync(path.join(__dirname,"../lib/stale-job-recovery.js"),"utf8");
   assert.match(staleRecovery,/stale\.attempts=2 THEN 5/);
   assert.match(staleRecovery,/stale\.attempts=8 THEN 480 ELSE 720/);
