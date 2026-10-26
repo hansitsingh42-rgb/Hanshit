@@ -124,21 +124,3 @@ if('IntersectionObserver'in window){
   }),{threshold:.12});
   revealItems.forEach(el=>observer.observe(el));
 }else revealItems.forEach(el=>el.classList.add('visible'));
-
-// Pointer interaction uses CSS variables so it does not fight the core animation transform.
-const orbit=document.querySelector('.hero-orbit');
-if(orbit&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  orbit.addEventListener('pointermove',e=>{
-    if(e.pointerType!=='mouse')return;
-    const r=orbit.getBoundingClientRect();
-    if(!r.width||!r.height)return;
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    orbit.style.setProperty('--orbit-x',`${x*18}px`);
-    orbit.style.setProperty('--orbit-y',`${y*10}px`);
-  });
-  orbit.addEventListener('pointerleave',()=>{
-    orbit.style.setProperty('--orbit-x','0px');
-    orbit.style.setProperty('--orbit-y','0px');
-  });
-}
