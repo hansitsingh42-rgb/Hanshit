@@ -114,10 +114,10 @@ Problem, users and context, assumptions, research plan, goals, information archi
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=8957e5" height="160" alt="GitHub stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff" height="160" alt="Top languages" />
+<img src="https://github-stats-extended.vercel.app/api?username=hansitsingh42-rgb&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=8957e5" height="160" alt="GitHub stats" />
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=hansitsingh42-rgb&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff" height="160" alt="Top languages" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=hansitsingh42-rgb&theme=tokyonight&hide_border=true&background=0d1117" alt="GitHub streak" />
+<img src="https://streak-stats.demolab.com/?user=hansitsingh42-rgb&theme=tokyonight&hide_border=true&background=0d1117" alt="GitHub streak" />
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=hansitsingh42-rgb&theme=tokyo-night&hide_border=true&bg_color=0d1117&area=true&color=58a6ff&line=8957e5&point=ffffff" width="100%" alt="Contribution activity graph" />
 
