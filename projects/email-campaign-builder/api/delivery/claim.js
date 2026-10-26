@@ -1,10 +1,12 @@
 "use strict";
 
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
+const { validCsrf } = require("../../lib/request-security");
 const BATCH_SIZE=25;
 
 module.exports=async function handler(req,res){
  if(req.method!=="POST"){res.setHeader("Allow","POST");return res.status(405).json({error:"Method not allowed"});}
+ if(!validCsrf(req))return res.status(403).json({error:"Request validation failed."});
  const token=parseCookies(req.headers.cookie)["__Host-ecb_session"];
  if(!token)return res.status(401).json({error:"Authentication required."});
  let client;
