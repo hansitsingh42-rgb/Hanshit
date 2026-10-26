@@ -106,11 +106,9 @@ Problem, users and context, assumptions, research plan, goals, information archi
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/hansitsingh42-rgb/Hanshit/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution graph" />
+<img src="./assets/github-contribution-graph.svg" width="100%" alt="GitHub contribution activity graph" />
 
 </div>
-
-If this image shows blank, your existing 3D contribution workflow has not generated the file yet. See the notes below the code block.
 
 ## // GITHUB ANALYTICS
 
