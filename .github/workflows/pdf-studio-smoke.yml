@@ -45,7 +45,7 @@ jobs:
 
       - name: Run browser smoke tests
         run: |
-          cat > /tmp/pdf-studio-smoke.mjs <<'EOF'
+          cat > pdf-studio/.pdf-studio-smoke.mjs <<'EOF'
           import { chromium } from 'playwright';
           import { PDFDocument } from 'pdf-lib';
           import fs from 'node:fs/promises';
@@ -126,7 +126,8 @@ jobs:
             await browser.close();
           }
           EOF
-          node /tmp/pdf-studio-smoke.mjs
+          node pdf-studio/.pdf-studio-smoke.mjs
+          rm -f pdf-studio/.pdf-studio-smoke.mjs
 
       - name: Show server log on failure
         if: failure()
