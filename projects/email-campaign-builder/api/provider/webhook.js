@@ -28,10 +28,15 @@ module.exports=async function handler(req,res){
   }else if(type==="failed"){
    result=await client.query("UPDATE delivery_jobs SET status=CASE WHEN attempts>=10 THEN 'failed' ELSE 'queued' END,available_at=CASE WHEN attempts>=10 THEN available_at ELSE NOW()+INTERVAL '5 minutes' END,processing_started_at=NULL,last_error_code='PROVIDER_DELIVERY_FAILED',updated_at=NOW() WHERE id=$1 AND status='processing' RETURNING id",[jobId]);
   }else{
-   result=await client.query("UPDATE delivery_jobs SET status='failed',processing_started_at=NULL,last_error_code=$2,updated_at=NOW() WHERE id=$1 AND status='processing' RETURNING contact_id",[jobId,type==="bounced"?"RECIPIENT_BOUNCED":"RECIPIENT_UNSUBSCRIBED"]);
+   // Provider bounce/unsubscribe events can arrive after the worker has marked a job sent.
+   // Resolve the job independently of its current status so the contact is still suppressed.
+   result=await client.query("SELECT contact_id,status FROM delivery_jobs WHERE id=$1 FOR UPDATE",[jobId]);
    if(result.rowCount===1){
-    const contactId=result.rows[0].contact_id;
-    await client.query("UPDATE audience_contacts SET status=$2,updated_at=NOW() WHERE id=$1",[contactId,type==="bounced"?"suppressed":"unsubscribed"]);
+    const job=result.rows[0];
+    if(job.status==="processing"||job.status==="queued"){
+     await client.query("UPDATE delivery_jobs SET status='failed',processing_started_at=NULL,last_error_code=$2,updated_at=NOW() WHERE id=$1",[jobId,type==="bounced"?"RECIPIENT_BOUNCED":"RECIPIENT_UNSUBSCRIBED"]);
+    }
+    await client.query("UPDATE audience_contacts SET status=$2,updated_at=NOW() WHERE id=$1",[job.contact_id,type==="bounced"?"suppressed":"unsubscribed"]);
    }
   }
   if(result.rowCount!==1){await client.query("ROLLBACK");return res.status(404).json({error:"Delivery job not found."});}
