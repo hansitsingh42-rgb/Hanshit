@@ -87,6 +87,8 @@ async function run(){
   assert.match(source8,/Cache-Control.*no-store/);
   const source9=fs.readFileSync(path.join(__dirname,"../api/provider/webhook.js"),"utf8");
   assert.match(source9,/Cache-Control.*no-store/);
+  assert.match(source9,/SELECT contact_id,status FROM delivery_jobs WHERE id=\$1 FOR UPDATE/);
+  assert.match(source9,/UPDATE audience_contacts SET status=\$2,updated_at=NOW\(\) WHERE id=\$1/);
   const source10=fs.readFileSync(path.join(__dirname,"../api/delivery/process.js"),"utf8");
   assert.match(source10,/Cache-Control.*no-store/);
   const source11=fs.readFileSync(path.join(__dirname,"../api/delivery/recover.js"),"utf8");
