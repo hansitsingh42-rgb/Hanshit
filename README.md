@@ -8,8 +8,6 @@
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-VISIT-58A6FF?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0d1117)](https://hansitsingh42-rgb.github.io/Hanshit/)
 [![Figma](https://img.shields.io/badge/FIGMA-CASE_STUDY-F24E1E?style=for-the-badge&logo=figma&logoColor=white&labelColor=0d1117)](https://www.figma.com/design/Oc854NFgEm0ovihPL5qfY8)
-[![Email](https://img.shields.io/badge/EMAIL-CONTACT-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117)](mailto:YOUR_EMAIL)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117)](YOUR_LINKEDIN_URL)
 
 <img src="https://komarev.com/ghpvc/?username=hansitsingh42-rgb&label=PROFILE+VIEWS&color=8957e5&style=for-the-badge&labelColor=0d1117" alt="Profile views" />
 
@@ -153,7 +151,6 @@ I keep secrets out of code, validate input, and run CI checks and CodeQL. See [S
 
 Open to internships, junior roles and collaboration.
 
-Email: YOUR_EMAIL · LinkedIn: YOUR_LINKEDIN_URL
 
 <div align="center">
 
