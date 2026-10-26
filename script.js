@@ -98,12 +98,8 @@ cards.forEach(card=>card.addEventListener('click',()=>{
 const year=$('#year');
 if(year)year.textContent=new Date().getFullYear();
 
-// Premium visual layer: lightweight 3D-inspired hero + build snapshot.
-const premium=document.createElement('link');
-premium.rel='stylesheet';
-premium.href='assets/premium.css';
-document.head.appendChild(premium);
-
+// The hero/build visual layer is already part of style.css.
+// Keep behavior here only; avoid injecting a second stylesheet after page load.
 const welcome=$('.welcome-card');
 if(welcome){
   const hero=document.createElement('section');
@@ -129,20 +125,20 @@ if('IntersectionObserver'in window){
   revealItems.forEach(el=>observer.observe(el));
 }else revealItems.forEach(el=>el.classList.add('visible'));
 
-// Pointer interaction is disabled for reduced motion and touch/pen input.
+// Pointer interaction uses CSS variables so it does not fight the core animation transform.
 const orbit=document.querySelector('.hero-orbit');
 if(orbit&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   orbit.addEventListener('pointermove',e=>{
     if(e.pointerType!=='mouse')return;
-    const core=orbit.querySelector('.orbit-core');
-    if(!core)return;
     const r=orbit.getBoundingClientRect();
+    if(!r.width||!r.height)return;
     const x=(e.clientX-r.left)/r.width-.5;
     const y=(e.clientY-r.top)/r.height-.5;
-    core.style.transform=`translate(${x*18}px,calc(-50% + ${y*10}px))`;
+    orbit.style.setProperty('--orbit-x',`${x*18}px`);
+    orbit.style.setProperty('--orbit-y',`${y*10}px`);
   });
   orbit.addEventListener('pointerleave',()=>{
-    const core=orbit.querySelector('.orbit-core');
-    if(core)core.style.transform='translateY(-50%)';
+    orbit.style.setProperty('--orbit-x','0px');
+    orbit.style.setProperty('--orbit-y','0px');
   });
 }
