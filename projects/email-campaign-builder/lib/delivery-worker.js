@@ -7,6 +7,7 @@ const { isUuid } = require("./input-validation");
 
 async function processClaimedJob(jobId){
   let attemptCount=1;
+  let providerAccepted=false;
   if(!isUuid(jobId)) throw new TypeError("Invalid delivery job id.");
 
   const client=await getClient();
@@ -50,6 +51,7 @@ async function processClaimedJob(jobId){
       body:row.body_text || row.headline || "",
       idempotencyKey
     }));
+    providerAccepted=result.accepted;
 
     const finalize=await getClient();
     try{
@@ -70,6 +72,17 @@ async function processClaimedJob(jobId){
     return {status:result.accepted ? "sent" : "failed",providerMessageId:result.providerMessageId};
   }catch(error){
     try{await client.query("ROLLBACK");}catch{}
+    if(providerAccepted){
+      // The provider accepted this message, so do not blindly requeue it when DB finalization fails.
+      let observedStatus=null;
+      let statusClient;
+      try{
+        statusClient=await getClient();
+        const observed=await statusClient.query("SELECT status FROM delivery_jobs WHERE id=$1",[jobId]);
+        observedStatus=observed.rows[0]?.status || null;
+      }catch{}finally{statusClient?.release();}
+      return {status:observedStatus || "processing",reconciliationRequired:!observedStatus || observedStatus==="processing"};
+    }
     if(error?.retryable && error?.code){
       try{
         return await requeueFailedJob(jobId, attemptCount, error.code);
