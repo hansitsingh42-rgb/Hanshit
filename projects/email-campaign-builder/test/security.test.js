@@ -95,6 +95,10 @@ async function run(){
   assert.match(source11,/Cache-Control.*no-store/);
   const source12=fs.readFileSync(path.join(__dirname,"../api/delivery/prepare.js"),"utf8");
   assert.match(source12,/Cache-Control.*no-store/);
+  const staleRecovery=fs.readFileSync(path.join(__dirname,"../lib/stale-job-recovery.js"),"utf8");
+  assert.match(staleRecovery,/stale\.attempts=2 THEN 5/);
+  assert.match(staleRecovery,/stale\.attempts=8 THEN 480 ELSE 720/);
+  assert.match(staleRecovery,/stale\.attempts<10 THEN 'queued' ELSE 'failed'/);
   console.log("security tests passed");
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
