@@ -27,7 +27,7 @@ jobs:
       - name: Check required portfolio files
         run: |
           set -eu
-          for f in README.md SECURITY.md CONTRIBUTING.md index.html style.css script.js; do
+          for f in README.md SECURITY.md CONTRIBUTING.md index.html style.css script.js LICENSE; do
             test -f "$f"
           done
       - name: Reject tracked environment files
@@ -67,6 +67,8 @@ jobs:
               parser.close()
               print(f"validated: {path}")
           PY
+      - name: Run repository smoke tests
+        run: node --test tests/portfolio-smoke.test.mjs
       - name: Check for accidental escaped-newline source artifacts
         shell: bash
         run: |
