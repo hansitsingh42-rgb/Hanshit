@@ -27,6 +27,8 @@ const requestedSubject=new URLSearchParams(window.location.search).get('subject'
 const $=id=>document.getElementById(id);
 function load(k,f){try{const x=localStorage.getItem(k);const parsed=x?JSON.parse(x):f;return Array.isArray(parsed)?parsed:f}catch{return f}}
 function save(){try{localStorage.setItem('studyResources',JSON.stringify(resources));return true}catch{return false}}
+// Persist generated IDs and normalized legacy records so item actions remain stable after reload.
+save();
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function safeUrl(value){if(!value)return '';try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}}
 function makeId(){return globalThis.crypto?.randomUUID?.()??`${Date.now()}-${Math.random().toString(36).slice(2)}`}
