@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define MAX_STUDENTS 100
 #define NAME_LEN 60
@@ -31,19 +32,27 @@ void addStudent(void) {
     printf("\nEnter student ID: ");
     if (scanf("%d", &s.id) != 1) { clearInput(); printf("Invalid ID.\n"); return; }
     clearInput();
+    for (int i = 0; i < studentCount; i++) {
+        if (students[i].id == s.id) {
+            printf("A student with this ID already exists.\n");
+            return;
+        }
+    }
 
     printf("Enter name: ");
     if (!fgets(s.name, sizeof(s.name), stdin)) return;
     s.name[strcspn(s.name, "\n")] = '\0';
+    if (s.name[0] == '\0') { printf("Name cannot be empty.\n"); return; }
 
     printf("Enter course: ");
     if (!fgets(s.course, sizeof(s.course), stdin)) return;
     s.course[strcspn(s.course, "\n")] = '\0';
+    if (s.course[0] == '\0') { printf("Course cannot be empty.\n"); return; }
 
     printf("Enter marks (0-100): ");
     if (scanf("%f", &s.marks) != 1) { clearInput(); printf("Invalid marks.\n"); return; }
     clearInput();
-    if (s.marks < 0 || s.marks > 100) { printf("Marks must be between 0 and 100.\n"); return; }
+    if (!isfinite(s.marks) || s.marks < 0 || s.marks > 100) { printf("Marks must be a finite number between 0 and 100.\n"); return; }
 
     students[studentCount++] = s;
     printf("Student added successfully.\n");

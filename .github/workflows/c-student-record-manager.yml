@@ -1,0 +1,33 @@
+name: C Student Record Manager
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "projects/c-student-record-manager/**"
+      - ".github/workflows/c-student-record-manager.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "projects/c-student-record-manager/**"
+      - ".github/workflows/c-student-record-manager.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-and-smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - name: Compile and run validation smoke tests
+        run: python projects/c-student-record-manager/tests/smoke.py
