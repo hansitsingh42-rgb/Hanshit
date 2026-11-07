@@ -13,7 +13,16 @@ const seed=[
 {title:'English Speaking Practice',subject:'English',type:'Practice',url:'https://learnenglish.britishcouncil.org/skills/speaking'},
 {title:'Study Planning Guide',subject:'Productivity',type:'Guide',url:'https://openstax.org/subjects'}
 ];
-let resources=load('studyResources',seed), favOnly=false;
+let resources=load('studyResources',seed).filter(r=>r&&typeof r==='object'&&!Array.isArray(r)).map(r=>({
+  ...r,
+  id:typeof r.id==='string'&&r.id.trim()?r.id:makeId(),
+  title:String(r.title??''),
+  subject:String(r.subject??''),
+  type:String(r.type??'Guide'),
+  url:safeUrl(r.url),
+  favorite:Boolean(r.favorite)
+})), favOnly=false;
+
 const requestedSubject=new URLSearchParams(window.location.search).get('subject');
 const $=id=>document.getElementById(id);
 function load(k,f){try{const x=localStorage.getItem(k);const parsed=x?JSON.parse(x):f;return Array.isArray(parsed)?parsed:f}catch{return f}}
