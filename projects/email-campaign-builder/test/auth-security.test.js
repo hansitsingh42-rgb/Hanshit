@@ -16,10 +16,7 @@ const {
 const { validCsrf } = require("../lib/request-security");
 
 function mockReq(overrides = {}) {
-  return {
-    headers: {},
-    ...overrides
-  };
+  return { headers: {}, ...overrides };
 }
 
 function run() {
@@ -64,7 +61,11 @@ function run() {
   assert.equal(sameOriginRequest(mockReq({headers:{origin:"https://example.com",host:"example.com"}})), true);
   assert.equal(sameOriginRequest(mockReq({headers:{origin:"https://evil.example",host:"example.com"}})), false);
   assert.equal(sameOriginRequest(mockReq({headers:{origin:"not-a-url",host:"example.com"}})), false);
-  assert.equal(sameOriginRequest(mockReq({headers:{host:"example.com"}})), true);
+  assert.equal(sameOriginRequest(mockReq({headers:{host:"example.com"}})), false);
+  assert.equal(sameOriginRequest(mockReq({headers:{referer:"https://example.com/account",host:"example.com"}})), true);
+  assert.equal(sameOriginRequest(mockReq({headers:{referer:"https://evil.example/account",host:"example.com"}})), false);
+  assert.equal(sameOriginRequest(mockReq({headers:{referer:"javascript:alert(1)",host:"example.com"}})), false);
+  assert.equal(sameOriginRequest(mockReq({headers:{origin:"null",referer:"https://example.com",host:"example.com"}})), false);
 
   const csrfToken = "csrf-test-token";
   const csrfReq = mockReq({
@@ -78,6 +79,9 @@ function run() {
   assert.equal(validCsrf(csrfReq), true);
   assert.equal(validCsrf({...csrfReq, headers:{...csrfReq.headers, "x-csrf-token":"wrong"}}), false);
   assert.equal(validCsrf({...csrfReq, headers:{...csrfReq.headers, origin:"https://evil.example"}}), false);
+  const refererCsrfReq = {...csrfReq, headers:{...csrfReq.headers, origin:undefined, referer:"https://example.com/settings"}};
+  assert.equal(validCsrf(refererCsrfReq), true);
+  assert.equal(validCsrf({...csrfReq, headers:{...csrfReq.headers, origin:undefined}}), false);
 
   console.log("auth security tests passed");
 }
