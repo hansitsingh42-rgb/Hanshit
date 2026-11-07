@@ -11,7 +11,7 @@ function readTasks() {
     const stored = JSON.parse(localStorage.getItem('studentTasks') || '[]');
     return Array.isArray(stored)
       ? stored.filter((task) => task && typeof task.text === 'string' && task.text.trim().length > 0 && task.text.length <= 100).slice(0, MAX_TASKS).map((task) => ({
-          text: task.text.replace(/[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F]/g, '').trim(),
+          text: task.text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim(),
           done: task.done === true
         })).filter((task) => task.text.length > 0)
       : [];
@@ -93,7 +93,7 @@ $('#taskForm').onsubmit = (event) => {
   const text = input.value.trim();
   if (!text) return;
   if (text.length > 100 || tasks.length >= MAX_TASKS) return;
-  tasks.push({ text: text.replace(/[\\u0000-\\u001F\\u007F]/g, ''), done: false });
+  tasks.push({ text: text.replace(/[\u0000-\u001F\u007F]/g, ''), done: false });
   input.value = '';
   save();
   render();
