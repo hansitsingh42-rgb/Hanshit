@@ -1,7 +1,7 @@
 const KEY='studentos-planner-v1';
 const defaults={subjects:[{name:'Computer',attendance:82},{name:'Mathematics',attendance:74},{name:'Physics',attendance:79}],assignments:[{title:'Computer Networks notes',date:'2026-09-18',done:false},{title:'Mechanics revision',date:'2026-09-20',done:false}],notes:'',studyMinutes:0};
 const $=id=>document.getElementById(id);const clone=o=>JSON.parse(JSON.stringify(o));
-let state=(()=>{try{return JSON.parse(localStorage.getItem(KEY))||clone(defaults)}catch{return clone(defaults)}})();
+let state=(()=>{try{return normalizePlannerState(JSON.parse(localStorage.getItem(KEY)))}catch{return normalizePlannerState(null)}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};
 const esc=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\\':'&#39;'}[c]));
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
