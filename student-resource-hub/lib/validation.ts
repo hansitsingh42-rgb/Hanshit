@@ -74,8 +74,9 @@ export function validateResourceInput(input: ResourceInput) {
     if (url.length > MAX_URL_LENGTH) throw new ValidationError("Resource URL is too long.");
     try {
       const parsed = new URL(url);
-      if (!["http:", "https:"].includes(parsed.protocol)) throw new ValidationError();
-    } catch {
+      if (!["http:", "https:"].includes(parsed.protocol)) throw new ValidationError("Resource URL must use HTTP or HTTPS.");
+    } catch (error) {
+      if (error instanceof ValidationError) throw error;
       throw new ValidationError("Resource URL must be a valid HTTP or HTTPS URL.");
     }
   }
