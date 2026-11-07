@@ -1,0 +1,22 @@
+name: Study Resource Manager Regression
+on:
+  pull_request:
+    paths:
+      - 'projects/study-resource-manager/**'
+      - '.github/workflows/study-resource-manager-regression.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'projects/study-resource-manager/**'
+      - '.github/workflows/study-resource-manager-regression.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node projects/study-resource-manager/tests/regression.cjs
