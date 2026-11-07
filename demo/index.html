@@ -86,7 +86,7 @@ body.light{background:#f5f7fb;color:#172033}body.light .theme-btn{background:#ff
 </div>
 </div>
 
-<script src="vendor/qrcode.min.js" defer></script>
+<script src="vendor/qrcode.min.js"></script>
 <script>
 (function(){
 "use strict";
@@ -120,7 +120,7 @@ const qrDescription=document.getElementById("qrDescription");
 const year=document.getElementById("year");
 year.textContent=String(new Date().getFullYear());
 
-function urlFor(key){return base+projects[key].path}
+function urlFor(key){return new URL(projects[key].path,base).href}
 function selectProject(key,scroll){
   const item=projects[key]; if(!item)return;
   select.value=key;
