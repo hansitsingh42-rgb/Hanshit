@@ -92,7 +92,7 @@ function filterLibrary(){
 if(search)search.addEventListener('input',filterLibrary);
 cards.forEach(card=>card.addEventListener('click',()=>{
   const subject=card.dataset.subject||card.dataset.name;
-  if(subject)window.location.href=`study-resource-manager/?subject=${encodeURIComponent(subject)}`;
+  if(subject)window.location.href=`projects/study-resource-manager/?subject=${encodeURIComponent(subject)}`;
 }));
 
 const year=$('#year');
