@@ -42,7 +42,7 @@ body.light{background:#f5f7fb;color:#172033}body.light .theme-btn{background:#ff
 </select>
 </label>
 <div style="display:flex;align-items:flex-end;gap:8px">
-<a id="openLive" class="btn primary" href="../skycast/" target="_blank" rel="noopener noreferrer">Open Live ↗</a>
+<a id="openLive" class="btn primary" href="../projects/advanced-weather-app/" target="_blank" rel="noopener noreferrer">Open Live ↗</a>
 <button id="showQr" class="btn" type="button">QR Code</button>
 </div>
 </div>
@@ -54,10 +54,10 @@ body.light{background:#f5f7fb;color:#172033}body.light .theme-btn{background:#ff
 <span class="status" id="viewerStatus">LIVE PREVIEW</span>
 </div>
 <div class="frame-wrap">
-<iframe id="previewFrame" title="Selected project live preview" src="../skycast/" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe id="previewFrame" title="Selected project live preview" src="../projects/advanced-weather-app/" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 <div class="viewer-foot">
-<span id="viewerUrl">../skycast/</span>
+<span id="viewerUrl">../projects/advanced-weather-app/</span>
 <span>Use “Open Live” if a project blocks embedding.</span>
 </div>
 </section>
@@ -86,7 +86,7 @@ body.light{background:#f5f7fb;color:#172033}body.light .theme-btn{background:#ff
 </div>
 </div>
 
-<script src="vendor/qrcode.min.js" defer></script>
+<script src="vendor/qrcode.min.js"></script>
 <script>
 (function(){
 "use strict";
@@ -95,15 +95,15 @@ function applyViewerTheme(theme,persist=true){const light=theme==="light";docume
 let savedTheme="dark";try{savedTheme=localStorage.getItem("hanshit-viewer-theme")||"dark"}catch{}applyViewerTheme(savedTheme,false);themeButton.addEventListener("click",()=>applyViewerTheme(document.body.classList.contains("light")?"dark":"light"));
 const base=window.location.origin+window.location.pathname.replace(/\/demo\/?$/,"/");
 const projects={
-  "skycast":{title:"SKH Cast+ — Advanced Weather Dashboard",path:"skycast/",meta:"Live GitHub Pages preview"},
-  "study-resource-manager":{title:"Study Resource Manager",path:"study-resource-manager/",meta:"Live GitHub Pages preview"},
-  "student-productivity-dashboard":{title:"Student Productivity Dashboard",path:"student-productivity-dashboard/",meta:"Live GitHub Pages preview"},
-  "c-student-record-manager":{title:"C Student Record Manager",path:"c-student-record-manager/",meta:"Live browser demo"},
+  "skycast":{title:"SKH Cast+ — Advanced Weather Dashboard",path:"projects/advanced-weather-app/",meta:"Live GitHub Pages preview"},
+  "study-resource-manager":{title:"Study Resource Manager",path:"projects/study-resource-manager/",meta:"Live GitHub Pages preview"},
+  "student-productivity-dashboard":{title:"Student Productivity Dashboard",path:"projects/student-productivity-dashboard/",meta:"Live GitHub Pages preview"},
+  "c-student-record-manager":{title:"C Student Record Manager",path:"projects/c-student-record-manager/live-demo/",meta:"Live browser demo"},
   "jems":{title:"Jems AI",path:"jems/",meta:"Live GitHub Pages preview"},
-  "student-academic-planner":{title:"Student Academic Planner",path:"student-academic-planner/",meta:"Live GitHub Pages preview"},
-  "student-study-planner":{title:"Student Study Planner",path:"student-study-planner/",meta:"Live GitHub Pages preview"},
-  "student-resource-hub":{title:"Student Resource Hub — Static Preview",path:"student-resource-hub/",meta:"Live static project preview"},
-  "email-campaign-builder":{title:"Email Campaign Builder — Static Preview",path:"email-campaign-builder/",meta:"Live static product preview"},
+  "student-academic-planner":{title:"Student Academic Planner",path:"projects/student-academic-planner/",meta:"Live GitHub Pages preview"},
+  "student-study-planner":{title:"Student Study Planner",path:"projects/student-study-planner/",meta:"Live GitHub Pages preview"},
+  "student-resource-hub":{title:"Student Resource Hub — Static Preview",path:"projects/student-resource-hub/",meta:"Live static project preview"},
+  "email-campaign-builder":{title:"Email Campaign Builder — Static Preview",path:"projects/email-campaign-builder/",meta:"Live static product preview"},
   "pdf-studio":{title:"PDF Studio",path:"pdf-studio/",meta:"Live GitHub Pages preview"}
 };
 const select=document.getElementById("projectSelect");
@@ -120,7 +120,7 @@ const qrDescription=document.getElementById("qrDescription");
 const year=document.getElementById("year");
 year.textContent=String(new Date().getFullYear());
 
-function urlFor(key){return base+projects[key].path}
+function urlFor(key){return new URL(projects[key].path,base).href}
 function selectProject(key,scroll){
   const item=projects[key]; if(!item)return;
   select.value=key;

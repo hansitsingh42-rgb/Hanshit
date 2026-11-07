@@ -63,3 +63,40 @@ body .chat,body dialog{background:var(--page-surface);color:var(--page-text);bor
 body .chat form button{background:var(--page-text);color:var(--page-bg);border:1px solid var(--page-border)}
 body.light .chat form button{background:#161a22;color:#fff}
 @media(max-width:600px){.app{width:min(100% - 14px,1000px)}.chat form{flex-direction:column}.chat form button{min-height:44px;padding:10px 14px}.hero{padding-top:24px}.messages{max-height:55vh}.msg-wrap{max-width:96%}}
+
+
+/* Jems dark/light surface consistency: the app shell must follow the selected theme too. */
+body{
+  --shell-bg:#0f131b;
+  --shell-border:#303744;
+  --shell-text:#f5f7fb;
+  --shell-muted:#8993a5;
+  --header-bg:rgba(15,19,27,.96);
+}
+body.light{
+  --shell-bg:#ffffff;
+  --shell-border:#d7dce4;
+  --shell-text:#161a22;
+  --shell-muted:#667085;
+  --header-bg:rgba(255,255,255,.96);
+}
+body .app{
+  background:var(--shell-bg);
+  border-color:var(--shell-border);
+  color:var(--shell-text);
+}
+body .top{
+  background:var(--header-bg);
+  border-color:var(--shell-border);
+}
+body .hero h1,
+body .dialog-head h2{color:var(--shell-text)}
+body .hero>p,
+body .note,
+body .footer-row,
+body .char-count{color:var(--shell-muted)}
+body .messages{background:transparent}
+body .typing{color:var(--shell-muted)}
+body .searchbox input{background:transparent;color:var(--page-text)}
+body.light .messages{background:transparent}
+@media(prefers-reduced-motion:reduce){body .app,body .chat,body .top{transition:none!important}}
