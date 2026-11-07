@@ -1,0 +1,25 @@
+name: Academic Planner Security Tests
+
+on:
+  pull_request:
+    paths:
+      - "projects/student-academic-planner/**"
+      - ".github/workflows/academic-planner-security.yml"
+  push:
+    branches: [main]
+    paths:
+      - "projects/student-academic-planner/**"
+      - ".github/workflows/academic-planner-security.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  state-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node projects/student-academic-planner/tests/state.test.js
