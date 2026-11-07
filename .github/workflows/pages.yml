@@ -94,6 +94,7 @@ jobs:
           test -f _site/script.js
           test -f _site/assets/contributions.js
           test -f _site/assets/contributions.css
+          test -f _site/demo/vendor/qrcode.min.js
           for f in             _site/student-productivity-dashboard/index.html             _site/study-resource-manager/index.html            _site/demo/index.html             _site/c-student-record-manager/index.html             _site/jems/index.html _site/jems/style.css _site/jems/script.js             _site/skycast/index.html _site/skycast/style.css _site/skycast/script.js             _site/student-academic-planner/index.html _site/student-academic-planner/style.css             _site/student-academic-planner/script.js _site/student-academic-planner/interactions.js             _site/student-academic-planner/runtime-check.js             _site/student-study-planner/index.html _site/student-study-planner/style.css             _site/student-study-planner/script.js             _site/student-resource-hub/index.html _site/student-resource-hub/style.css             _site/student-resource-hub/script.js             _site/pdf-studio/index.html _site/pdf-studio/app.js             _site/pdf-studio/pdf-engine.js _site/pdf-studio/styles.css             _site/email-campaign-builder/index.html \
             _site/projects/advanced-weather-app/index.html \
             _site/projects/study-resource-manager/index.html \
