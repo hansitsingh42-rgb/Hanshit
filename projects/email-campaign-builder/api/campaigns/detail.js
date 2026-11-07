@@ -2,6 +2,7 @@
 const { parseCookies, hashToken, getClient } = require("../../lib/auth");
 const { isUuid } = require("../../lib/input-validation");
 module.exports = async function handler(req,res){
+ res.setHeader("Cache-Control","no-store");
  if(req.method!=="GET"){res.setHeader("Allow","GET");return res.status(405).json({error:"Method not allowed"});}
  const id=typeof req.query?.id==="string"?req.query.id:"";
  if(!isUuid(id))return res.status(400).json({error:"Invalid campaign id."});
