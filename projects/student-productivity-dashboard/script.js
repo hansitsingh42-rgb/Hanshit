@@ -1,6 +1,8 @@
 const $ = (selector) => document.querySelector(selector);
 const list = $('#taskList');
 const SESSION_SECONDS = 25 * 60;
+const MAX_TASKS = 200;
+const MAX_STUDY_SECONDS = 10 * 365 * 24 * 60 * 60;
 let timerId = null;
 let remaining = SESSION_SECONDS;
 
@@ -8,10 +10,10 @@ function readTasks() {
   try {
     const stored = JSON.parse(localStorage.getItem('studentTasks') || '[]');
     return Array.isArray(stored)
-      ? stored.filter((task) => task && typeof task.text === 'string' && task.text.trim().length > 0 && task.text.length <= 100).map((task) => ({
-          text: task.text.trim(),
-          done: Boolean(task.done)
-        }))
+      ? stored.filter((task) => task && typeof task.text === 'string' && task.text.trim().length > 0 && task.text.length <= 100).slice(0, MAX_TASKS).map((task) => ({
+          text: task.text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim(),
+          done: task.done === true
+        })).filter((task) => task.text.length > 0)
       : [];
   } catch {
     return [];
@@ -20,7 +22,7 @@ function readTasks() {
 
 function readStudySeconds() {
   const value = Number(localStorage.getItem('studySeconds') || '0');
-  return Number.isFinite(value) && value >= 0 ? Math.floor(value) : 0;
+  return Number.isFinite(value) && value >= 0 ? Math.min(Math.floor(value), MAX_STUDY_SECONDS) : 0;
 }
 
 let tasks = readTasks();
@@ -90,8 +92,8 @@ $('#taskForm').onsubmit = (event) => {
   const input = $('#taskInput');
   const text = input.value.trim();
   if (!text) return;
-  if (text.length > 100) return;
-  tasks.push({ text, done: false });
+  if (text.length > 100 || tasks.length >= MAX_TASKS) return;
+  tasks.push({ text: text.replace(/[\u0000-\u001F\u007F]/g, ''), done: false });
   input.value = '';
   save();
   render();
@@ -139,7 +141,7 @@ function startTimer() {
 
   timerId = setInterval(() => {
     remaining -= 1;
-    studySeconds += 1;
+    studySeconds = Math.min(studySeconds + 1, MAX_STUDY_SECONDS);
     saveStudyTime();
     showTimer();
 
