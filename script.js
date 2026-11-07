@@ -124,3 +124,23 @@ if('IntersectionObserver'in window){
   }),{threshold:.12});
   revealItems.forEach(el=>observer.observe(el));
 }else revealItems.forEach(el=>el.classList.add('visible'));
+
+
+// Pointer-responsive depth on the portfolio's CSS 3D hero. No third-party runtime.
+(()=> {
+  const scene=document.querySelector('.hero-orbit');
+  const orb=document.querySelector('.orbit-core');
+  if(!scene||!orb||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  let frame=0,px=0;
+  scene.addEventListener('pointermove',event=>{
+    const rect=scene.getBoundingClientRect();
+    px=((event.clientX-rect.left)/rect.width-.5)*2;
+    if(frame)return;
+    frame=requestAnimationFrame(()=>{
+      orb.style.marginLeft=(px*9).toFixed(1)+'px';
+      orb.style.filter='hue-rotate('+(px*7).toFixed(1)+'deg)';
+      frame=0;
+    });
+  },{passive:true});
+  scene.addEventListener('pointerleave',()=>{orb.style.marginLeft='0';orb.style.filter='none'},{passive:true});
+})();
