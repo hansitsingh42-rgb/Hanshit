@@ -60,7 +60,7 @@ Live weather, city search, geolocation, hourly and 7-day forecasts.
 - Saved unit and theme preferences, responsive layout
 
 **Stack:** HTML, CSS, JavaScript
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/skycast/) · [Source](./projects/advanced-weather-app/)
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/projects/advanced-weather-app/) · [Source](./projects/advanced-weather-app/)
 
 ### Student Productivity Dashboard
 Tasks, focus timer and study-time tracking in one place.
@@ -68,7 +68,7 @@ Tasks, focus timer and study-time tracking in one place.
 - Input validation and accessible controls
 
 **Stack:** HTML, CSS, JavaScript
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/projects/student-productivity-dashboard/) · [Source](./projects/student-productivity-dashboard/)
 
 ### Student Study Planner : UX Prototype
 A weekly planner designed around visible next actions and distraction-free focus.
@@ -76,7 +76,7 @@ A weekly planner designed around visible next actions and distraction-free focus
 - Accessibility and privacy considered
 
 **Stack:** HTML, CSS, JavaScript, Figma
-[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/student-study-planner/) · [Case Study](./docs/ui-ux/student-study-planner-case-study.md)
+[Live Demo](https://hansitsingh42-rgb.github.io/Hanshit/projects/student-study-planner/) · [Case Study](./docs/ui-ux/student-study-planner-case-study.md)
 
 ## // UX CASE STUDY (IN PROGRESS)
 
@@ -91,10 +91,10 @@ Problem, users and context, assumptions, research plan, goals, information archi
 
 | Project | What it is | Status |
 |---|---|---|
-| [Study Resource Manager](https://hansitsingh42-rgb.github.io/Hanshit/study-resource-manager/) | Search, filter and favorite study material | Deployed |
-| [Student Academic Planner](https://hansitsingh42-rgb.github.io/Hanshit/student-academic-planner/) | Subjects, attendance, assignments, notes | Deployed |
+| [Study Resource Manager](https://hansitsingh42-rgb.github.io/Hanshit/projects/study-resource-manager/) | Search, filter and favorite study material | Deployed |
+| [Student Academic Planner](https://hansitsingh42-rgb.github.io/Hanshit/projects/student-academic-planner/) | Subjects, attendance, assignments, notes | Deployed |
 | [C Student Record Manager](./projects/c-student-record-manager/) | CRUD with structs and validated input in C | Learning project |
-| [Student Resource Hub](https://hansitsingh42-rgb.github.io/Hanshit/student-resource-hub/) | Subject, Chapter, Resource discovery | Active build |
+| [Student Resource Hub](https://hansitsingh42-rgb.github.io/Hanshit/projects/student-resource-hub/) | Subject, Chapter, Resource discovery | Active build |
 | [Email Campaign Builder](./projects/email-campaign-builder/) | Backend foundation with auth and security work | Work in progress |
 | [Jems AI](https://hansitsingh42-rgb.github.io/Hanshit/jems/) | Small assistant answering from documented info | Experimental |
 
