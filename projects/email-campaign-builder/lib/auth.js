@@ -87,11 +87,23 @@ function clearSessionCookie() {
   return `__Host-ecb_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`;
 }
 
+// Browser mutations must carry an Origin header or a same-origin Referer.
+// Missing provenance is rejected rather than treated as trusted.
 function sameOriginRequest(req) {
-  const origin = req.headers.origin;
-  if (!origin) return true;
-  const host = req.headers.host;
-  try { return new URL(origin).host === host; } catch { return false; }
+  const headers = req && req.headers;
+  if (!headers || typeof headers.host !== "string" || !headers.host.trim()) return false;
+  const candidate = typeof headers.origin === "string" && headers.origin
+    ? headers.origin
+    : headers.referer;
+  if (typeof candidate !== "string" || !candidate) return false;
+
+  try {
+    const url = new URL(candidate);
+    return (url.protocol === "https:" || url.protocol === "http:") &&
+      url.host.toLowerCase() === headers.host.trim().toLowerCase();
+  } catch {
+    return false;
+  }
 }
 
 async function getClient() {
