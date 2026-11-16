@@ -1,13 +1,15 @@
 "use strict";
 
-const { sameOriginRequest, parseCookies, hashToken, clearSessionCookie, getClient } = require("../../lib/auth");
+const { parseCookies, hashToken, clearSessionCookie, getClient } = require("../../lib/auth");
+const { validCsrf } = require("../../lib/request-security");
 
 module.exports = async function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
   }
-  if (!sameOriginRequest(req)) return res.status(403).json({ error: "Request origin rejected." });
+  if (!validCsrf(req)) return res.status(403).json({ error: "Request validation failed." });
 
   const token = parseCookies(req.headers.cookie)["__Host-ecb_session"];
   let client;
@@ -16,7 +18,6 @@ module.exports = async function handler(req, res) {
       client = await getClient();
       await client.query("DELETE FROM sessions WHERE token_hash=$1", [hashToken(token)]);
     }
-    res.setHeader("Cache-Control", "no-store");
     res.setHeader("Set-Cookie", clearSessionCookie());
     return res.status(200).json({ ok: true });
   } catch {
