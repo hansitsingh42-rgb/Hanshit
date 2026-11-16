@@ -89,6 +89,7 @@ button.secondary{background:#202b46;color:var(--page-text)}
   const STORAGE_KEY = "c-student-record-demo";
   const byId = (id) => document.getElementById(id);
   let records = [];
+  let editingId = null;
 
   function loadRecords() {
     try {
@@ -157,6 +158,13 @@ button.secondary{background:#202b46;color:var(--page-text)}
       });
 
       const actionCell = document.createElement("td");
+      const editButton = document.createElement("button");
+      editButton.type = "button";
+      editButton.textContent = "Edit";
+      editButton.setAttribute("aria-label", "Edit student " + record.id);
+      editButton.addEventListener("click", () => editRecord(record.id));
+      actionCell.appendChild(editButton);
+
       const deleteButton = document.createElement("button");
       deleteButton.type = "button";
       deleteButton.className = "secondary";
@@ -173,7 +181,29 @@ button.secondary{background:#202b46;color:var(--page-text)}
     container.appendChild(table);
   }
 
+  function editRecord(id) {
+    const record = records.find((item) => item.id === id);
+    if (!record) return;
+    editingId = id;
+    byId("id").value = String(record.id);
+    byId("name").value = record.name;
+    byId("course").value = record.course;
+    byId("marks").value = String(record.marks);
+    byId("id").disabled = true;
+    byId("form").querySelector('button[type="submit"]').textContent = "Save Changes";
+    byId("status").textContent = "Editing student " + id + ".";
+    byId("name").focus();
+  }
+
+  function resetEditor() {
+    editingId = null;
+    byId("id").disabled = false;
+    byId("form").reset();
+    byId("form").querySelector('button[type="submit"]').textContent = "Add Record";
+  }
+
   function removeRecord(id) {
+    if (editingId === id) resetEditor();
     records = records.filter((record) => record.id !== id);
     persist();
     byId("status").textContent = "Record deleted.";
@@ -192,15 +222,23 @@ button.secondary{background:#202b46;color:var(--page-text)}
       return;
     }
 
-    if (records.some((record) => record.id === id)) {
+    if (records.some((record) => record.id === id && record.id !== editingId)) {
       byId("status").textContent = "Student ID already exists.";
       return;
     }
 
-    records.push({ id, name, course, marks });
-    persist();
-    event.currentTarget.reset();
-    byId("status").textContent = "Record added successfully.";
+    const updated = { id: editingId ?? id, name, course, marks };
+    if (editingId !== null) {
+      records = records.map((record) => record.id === editingId ? updated : record);
+      resetEditor();
+      persist();
+      byId("status").textContent = "Record updated successfully.";
+    } else {
+      records.push(updated);
+      persist();
+      event.currentTarget.reset();
+      byId("status").textContent = "Record added successfully.";
+    }
   });
 
   byId("clear").addEventListener("click", () => {
