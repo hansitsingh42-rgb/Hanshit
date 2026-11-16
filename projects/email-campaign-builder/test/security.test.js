@@ -67,6 +67,12 @@ async function run(){
   assert.match(integrityMigration,/NOT VALID/g);
   assert.match(integrityMigration,/IF NOT EXISTS \(SELECT 1 FROM pg_constraint/);
 
+  const logoutSource=fs.readFileSync(path.join(__dirname,"../api/auth/logout.js"),"utf8");
+  assert.match(logoutSource,/validCsrf\(req\)/);
+  const dashboardSource=fs.readFileSync(path.join(__dirname,"../app/dashboard.js"),"utf8");
+  assert.match(dashboardSource,/csrfData\.token/);
+  assert.doesNotMatch(dashboardSource,/csrfData\.csrfToken/);
+
   const source0=fs.readFileSync(path.join(__dirname,"../api/campaigns/create.js"),"utf8");
   assert.match(source0,/Cache-Control.*no-store/);
   const source1=fs.readFileSync(path.join(__dirname,"../api/campaigns/update.js"),"utf8");
