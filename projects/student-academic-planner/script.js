@@ -3,7 +3,7 @@ const defaults={subjects:[{name:'Computer',attendance:82},{name:'Mathematics',at
 const $=id=>document.getElementById(id);const clone=o=>JSON.parse(JSON.stringify(o));
 let state=(()=>{try{return JSON.parse(localStorage.getItem(KEY))||clone(defaults)}catch{return clone(defaults)}})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};
-const esc=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\\':'&#39;'}[c]));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
 function render(){const avg=state.subjects.length?Math.round(state.subjects.reduce((a,s)=>a+s.attendance,0)/state.subjects.length):0;$('subjectCount').textContent=state.subjects.length;$('attendanceAverage').textContent=avg+'%';$('pendingCount').textContent=state.assignments.filter(a=>!a.done).length;$('studyMinutes').textContent=(state.studyMinutes||0)+'m';$('notes').value=state.notes||'';$('todayLabel').textContent=new Intl.DateTimeFormat(undefined,{dateStyle:'medium'}).format(new Date());
 $('subjectList').innerHTML=state.subjects.length?state.subjects.map((s,i)=>`<article class="subject-item"><div class="subject-row"><strong>${esc(s.name)}</strong><span>${s.attendance}%</span></div><div class="meter"><span style="width:${s.attendance}%"></span></div><button class="icon-btn" type="button" data-remove-subject="${i}">Remove</button></article>`).join(''):'<p class="hero-copy">No subjects yet. Add your first subject.</p>';
